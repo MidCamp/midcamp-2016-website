@@ -1,0 +1,7 @@
+name = MidCamp Main profile
+core = 7.x
+package = Profiles
+dependencies[] = features
+dependencies[] = profile2
+features[profile2_type][] = main
+features[features_api][] = api:2

@@ -1,0 +1,85 @@
+/**
+ * @file
+ * Styles are organized using the SMACSS technique. @see http://smacss.com/book/
+ *
+ * When you turn on CSS aggregation at admin/config/development/performance, all
+ * of these @include files will be combined into a single file.
+ */
+
+/* Import Sass mixins, variables, Compass modules, etc. */
+@import "init";
+
+/* HTML element (SMACSS base) rules */
+@import "normalize";
+
+/* Layout rules */
+@import "layouts/responsive";
+@import "layouts/l-3up";
+@import "layouts/l-4up";
+@import "layouts/l-5up";
+
+/* Rest column-count from the layouts in buffer */
+$zen-column-count: 1 !default;
+
+/* Component (SMACSS module) rules */
+
+@import "components/buttons";
+@import "components/comments";
+@import "components/footer";
+@import "components/forms";
+@import "components/header";
+@import "components/menus";
+@import "components/misc";
+@import "components/navbar";
+@import "components/news";
+@import "components/rwd-nav";
+@import "components/page";
+@import "components/page-home";
+@import "components/page-general";
+@import "components/node--page-titles";
+@import "components/node--post";
+@import "components/node--venue";
+@import "components/node--admission.scss";
+@import "components/additional-info.scss";
+@import "components/pager";
+@import "components/persons";
+@import "components/price-table";
+@import "components/related-users";
+@import "components/search";
+@import "components/sessions";
+@import "components/sessions--schedule";
+@import "components/sidebar";
+@import "components/social";
+@import "components/speakers";
+@import "components/shouts";
+@import "components/slideshow";
+@import "components/sponsors";
+@import "components/tabs";
+@import "components/teaser";
+@import "components/trainings";
+@import "components/users";
+@import "components/video-fluid";
+@import "components/venue-map";
+
+
+// Optionally, add your own components here.
+@import "print";
+
+/* SMACSS theme rules */
+/* @import "theme-A"; */
+/* @import "theme-B"; */
+
+html body.admin-menu {
+  margin-top: 0 !important;
+
+  @include breakpoint($md, $no-query: true) {
+    margin-top: 29px !important;
+  }
+
+  #admin-menu {
+    display: none;
+    @include breakpoint($md, $no-query: true) {
+      display: block;
+    }
+  }
+}

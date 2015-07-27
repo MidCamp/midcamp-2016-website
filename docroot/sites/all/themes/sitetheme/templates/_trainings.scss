@@ -1,0 +1,61 @@
+
+/* Trainings */
+.view-trainings {
+  .view-content {
+    margin-top: 1em;
+    overflow: hidden;
+
+    > div { // .views-row
+      float: left;
+      margin-bottom: 20px;
+      @media all and (min-width: 960px) {
+        width: 50%;
+        &:nth-child(2n+1) {
+          clear: left;
+        }
+      }
+
+      > div { // .views-field
+        margin: 0 15px;
+        padding: 0 15px;
+        background: white;
+
+        &:first-child {
+          margin-top: 15px;
+          padding-top: 15px;
+          border-radius: 5px 5px 0 0;
+        }
+        &:last-child {
+          border-radius: 0 0 5px 5px;
+        }
+
+        :first-child {margin-top: 0;}
+        :last-child {margin-bottom: 0;}
+
+        &.views-field-title {
+          padding-bottom: 1em;
+
+          .field-content {
+            @extend h3;
+          }
+        }
+
+        &:not(.views-field) {
+          padding-top: 1em;
+        }
+        &.views-field-field-register-for-this-training {
+          padding-bottom: 1em;
+          padding-top: 0.5em;
+          a {
+            color: #18545e;
+            &:hover {
+              color: #6cd2ea;
+            }
+          }
+        }
+
+      }
+    }
+  }
+}
+

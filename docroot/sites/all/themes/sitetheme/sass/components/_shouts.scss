@@ -1,0 +1,73 @@
+/**
+ * Shouts.
+ */
+.shout {
+  position: relative;
+  display: inline-block;
+  padding-top: 19px;
+  background: url(../images/triangle-up.png) no-repeat center;
+  span {
+    @include box-sizing(border-box);
+    font-family: $raleway;
+    font-weight: 500;
+    width: 235px;
+    display: inline-block;
+    padding: 20px;
+    @include border-radius(10px);
+    background-color: rgba(107, 209, 233, 0.2);
+    @include breakpoint($sm, $no-query: true) {
+      min-height: 108px;
+      @include adjust-font-size-to( 20px, 1 );
+      width: 246px;
+      padding: 30px;
+      margin-bottom: 20px;
+    }
+  }
+  @include breakpoint($sm, $no-query: true) {
+    display: none;
+  }
+  @include breakpoint($md-lg, $no-query: true) {
+    display: inline-block;
+  }
+}
+
+.shout_0 {
+  background-position: 5% top;
+  left: -15px;
+  @include breakpoint($sm, $no-query: true) {
+    left: 90px;
+    padding-right: 33px;
+    background: url(../images/triangle-right.png) no-repeat right center;
+  }
+}
+
+.shout_2 {
+  background-position: 5% top;
+  left: -15px;
+  @include breakpoint($sm, $no-query: true) {
+    left: -90px;
+    padding-left: 33px;
+    background: url(../images/triangle-left.png) no-repeat left center;
+  }
+}
+
+.shout_1 {
+  background-position: 95% top;
+  right: -15px;
+  @include breakpoint($sm, $no-query: true) {
+    right: -150px;
+    padding-right: 37px;
+    background: url(../images/arrow-right-upper.png) no-repeat right center;
+  }
+}
+
+.shout_3 {
+  background-position: 95% top;
+  right: -15px;
+  @include breakpoint($sm, $no-query: true) {
+    left: -150px;
+    right: 0;
+    padding-left: 37px;
+    background: url(../images/arrow-left-upper.png) no-repeat left center;
+  }
+}

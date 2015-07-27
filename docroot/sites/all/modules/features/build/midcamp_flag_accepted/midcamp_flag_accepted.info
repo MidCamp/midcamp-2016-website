@@ -1,0 +1,7 @@
+name = MidCamp Node: Accepted
+core = 7.x
+package = Flags
+dependencies[] = features
+dependencies[] = flag
+features[flag][] = accepted
+features[features_api][] = api:2

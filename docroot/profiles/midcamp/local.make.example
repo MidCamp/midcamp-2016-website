@@ -1,0 +1,86 @@
+; midcamp make file for local development
+core = "7.x"
+api = "2"
+
+projects[drupal][version] = "7.x"
+; include the d.o. profile base
+includes[] = "drupal-org.make"
+
+; +++++ TODO modules without versions +++++
+
+projects[midcamp_views][subdir] = "custom"
+
+projects[midcamp_fields][subdir] = "custom"
+
+projects[midcamp_media][subdir] = "custom"
+
+projects[midcamp_menu][subdir] = "custom"
+
+projects[midcamp_site][subdir] = "custom"
+
+projects[midcamp_taxonomy][subdir] = "custom"
+
+projects[midcamp_users][subdir] = "custom"
+
+projects[midcamp_node_job][subdir] = "custom"
+
+projects[midcamp_node_news][subdir] = "custom"
+
+projects[midcamp_node_page][subdir] = "custom"
+
+projects[midcamp_node_schedule_item][subdir] = "custom"
+
+projects[midcamp_node_session][subdir] = "custom"
+
+projects[midcamp_node_sponsor][subdir] = "custom"
+
+projects[midcamp_node_training][subdir] = "custom"
+
+projects[midcamp_node_webform][subdir] = "custom"
+
+projects[midcamp_panels][subdir] = "custom"
+
+projects[midcamp_eck_scamp][subdir] = "custom"
+
+projects[midcamp_flag_accepted][subdir] = "custom"
+
+projects[midcamp_flag_featured_user][subdir] = "custom"
+
+projects[midcamp_goodies][subdir] = "custom"
+
+projects[midcamp_og_features_permission_node_sponsor][subdir] = "custom"
+
+projects[midcamp_og_membership_type_og_membership_type_og_membership_type_default][subdir] = "custom"
+
+projects[scamp_schedule][subdir] = "custom"
+
+projects[midcamp_profile2_type_conference_details][subdir] = "custom"
+
+projects[midcamp_profile2_type_main][subdir] = "custom"
+
+projects[midcamp_profile2_type_orders][subdir] = "custom"
+
+; +++++ Libraries +++++
+
+; mailchimp
+libraries[mailchimp][directory_name] = "mailchimp"
+libraries[mailchimp][type] = "library"
+libraries[mailchimp][destination] = "libraries"
+libraries[mailchimp][download][type] = "get"
+libraries[mailchimp][download][url] = "https://bitbucket.org/mailchimp/mailchimp-api-php/get/2.0.6.zip"
+
+; modernizr
+libraries[modernizr][directory_name] = "modernizr"
+libraries[modernizr][type] = "library"
+libraries[modernizr][destination] = "libraries"
+libraries[modernizr][download][type] = "get"
+libraries[modernizr][download][url] = "" ; TODO add download URI
+
+; responsive-nav
+libraries[responsive-nav][directory_name] = "responsive-nav"
+libraries[responsive-nav][type] = "library"
+libraries[responsive-nav][destination] = "libraries"
+libraries[responsive-nav][download][type] = "get"
+libraries[responsive-nav][download][url] = "https://github.com/viljamis/responsive-nav.js/archive/master.zip";
+
+

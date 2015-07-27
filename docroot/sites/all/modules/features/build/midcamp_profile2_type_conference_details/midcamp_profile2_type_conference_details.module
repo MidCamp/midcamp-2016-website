@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the MidCamp Conference Details feature.
+ */
+
+include_once 'midcamp_profile2_type_conference_details.features.inc';

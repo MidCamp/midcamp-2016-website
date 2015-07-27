@@ -1,0 +1,56 @@
+/**
+ * Home page.
+ */
+.front .page__title {
+  @include element-invisible;
+}
+
+.highlights {
+}
+
+.homepage-call-to-action {
+  border-bottom: 1px solid #ccc;
+  //background: url(../images/drop-small.png) no-repeat center bottom;
+  @include breakpoint($md, $no-query: true) {
+    margin-bottom: rhythm(1);
+    padding: 0 40px rhythm(1) 40px;
+  }
+}
+
+.homepage-features,
+.homepage-highlights {
+  @include breakpoint($md, $no-query: true) {
+    padding: 0 50px;
+  }
+
+  .field-type-image {
+    img {
+      @include rwdImage;
+    }
+  }
+}
+
+.view-front-news.view-display-id-page {
+  .views-row {
+    float: left;
+    border-bottom: 1px solid rgba(24, 84, 94, 0.5);
+    padding: 2em 0;
+
+    @include breakpoint($md, $no-query: true) {
+      width: 30%;
+      margin-left: 5%;
+      border-bottom-width: 0;
+      padding: 0;
+    }
+
+    &.views-row-first {
+      margin-left: 0;
+    }
+
+    .field-name-field-image {
+      width: 33%;
+      float: left;
+      margin-right: 2em;
+    }
+  }
+}

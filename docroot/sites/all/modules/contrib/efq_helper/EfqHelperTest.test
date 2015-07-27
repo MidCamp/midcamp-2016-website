@@ -1,0 +1,130 @@
+<?php
+
+/**
+ * @file
+ *
+ * EfqHelperTest class.
+ */
+
+class EfqHelperTest extends DrupalWebTestCase {
+
+  protected $nodes = array();
+
+  /**
+   * Test information for SimpleTest display.
+   */
+  public static function getInfo() {
+    return array(
+      'name' => 'EfqHelper Test',
+      'description' => 'Tests to ensure EfqHelper performs expected query functionality.',
+      'group' => 'EfqHelper',
+    );
+  }
+
+  /**
+   * @inherit
+   */
+  public function setUp() {
+    parent::setUp(array('efq_helper'));
+
+    // Create nodes for testing.
+    $settings = array(
+      'type' => 'page',
+      'title' => 'One',
+      'body' => array(LANGUAGE_NONE => array(array($this->randomName(64)))),
+    );
+    $nodes[] = $this->drupalCreateNode($settings);
+    $settings = array(
+      'type' => 'page',
+      'title' => 'Two',
+      'body' => array(LANGUAGE_NONE => array(array($this->randomName(64)))),
+    );
+    $nodes[] = $this->drupalCreateNode($settings);
+    $settings = array(
+      'type' => 'page',
+      'title' => 'Three',
+      'body' => array(LANGUAGE_NONE => array(array($this->randomName(64)))),
+    );
+    $nodes[] = $this->drupalCreateNode($settings);
+
+    $this->verbose('Nodes created: ' . var_export($nodes, TRUE));
+  }
+
+  /**
+   * Test the result of the execute() method.
+   */
+  public function testExecuteQuery() {
+    $query = self::getQuery();
+    $data = $query->execute();
+    $this->verbose('Data returned by EfqHelper->execute(): ' . var_export($data, TRUE));
+
+    if (empty($data['node'])) {
+      $this->assertTrue(FALSE, t('No node data returned by query.'));
+      return;
+    }
+
+    $ids = array_keys($data['node']);
+    $this->assertTrue(in_array(1, $ids), t('Node with nid @value returned by query.', array('@value' => 1)));
+    $this->assertFalse(in_array(2, $ids), t('Node with nid @value not returned by query.', array('@value' => 2)));
+    $this->assertTrue(in_array(3, $ids), t('Node with nid @value returned by query.', array('@value' => 3)));
+  }
+
+  /**
+   * Test the result of the result() method.
+   */
+  public function testResultQuery() {
+    $query = self::getQuery();
+    $result = $query->result();
+    $this->verbose('Data returned by EfqHelper->result(): ' . var_export($result, TRUE));
+
+    $ids = array();
+    foreach ($result as $node) {
+      $ids[] = $node->nid;
+    }
+
+    $this->assertTrue(in_array(1, $ids), t('Node with nid @value returned by query.', array('@value' => 1)));
+    $this->assertFalse(in_array(2, $ids), t('Node with nid @value not returned by query.', array('@value' => 2)));
+    $this->assertTrue(in_array(3, $ids), t('Node with nid @value returned by query.', array('@value' => 3)));
+  }
+
+  /**
+   * Test the result of the ids() method.
+   */
+  public function testIdQuery() {
+    $query = self::getQuery();
+    $ids = $query->ids();
+
+    $this->verbose('Data returned by EfqHelper->ids(): ' . var_export($ids, TRUE));
+
+    $this->assertTrue(in_array(1, $ids), t('ID @value returned by query.', array('@value' => 1)));
+    $this->assertFalse(in_array(2, $ids), t('ID @value not returned by query.', array('@value' => 2)));
+    $this->assertTrue(in_array(3, $ids), t('ID @value returned by query.', array('@value' => 3)));
+  }
+
+  /**
+   * Test the result of the first() method.
+   */
+  public function testFirstQuery() {
+    $query = self::getQuery();
+    $node = $query->first();
+
+    $this->verbose('Data returned by EfqHelper->first(): ' . var_export($node, TRUE));
+
+    $this->assertTrue($node->nid == 1, t('ID @value returned by query.', array('@value' => 1)));
+  }
+
+  /**
+   * Provides a generic query for testing.
+   *
+   * This should return nodes 1 and 3 in that order, but not node 2.
+   *
+   * @return EfqHelper
+   */
+  protected static function getQuery() {
+    $query = new EfqHelper('node');
+    $query->propertyOrderBy('title')
+      ->range(0, 2);
+    return $query;
+  }
+
+}

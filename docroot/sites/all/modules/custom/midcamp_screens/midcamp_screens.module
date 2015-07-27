@@ -1,0 +1,51 @@
+<?php
+
+/**
+ * @file
+ * MidCamp Screens module code.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function midcamp_screens_menu() {
+
+  $items['screens/next'] = array(
+    'title' => 'Next Sessions',
+    'type' => MENU_CALLBACK,
+    'page callback' => 'midcamp_screens_next_endpoint',
+    'access callback' => TRUE,
+    'delivery callback' => 'midcamp_screens_jsonp_output',
+    'file' => 'midcamp_screens.endpoints.inc',
+  );
+
+  $items['screens/sponsors'] = array(
+    'title' => 'Sponsors',
+    'type' => MENU_CALLBACK,
+    'page callback' => 'midcamp_screens_sponsors_endpoint',
+    'access callback' => TRUE,
+    'delivery callback' => 'midcamp_screens_jsonp_output',
+    'file' => 'midcamp_screens.endpoints.inc',
+  );
+
+  return $items;
+}
+
+/**
+ * Delivery callback for returning JSONP output.
+ *
+ * @see drupal_json_output().
+ */
+function midcamp_screens_jsonp_output($var = NULL) {
+
+  $params = drupal_get_query_parameters();
+  $callback = isset($params['callback']) ? $params['callback'] : 'callback';
+
+  // We are returning JSON, so tell the browser.
+  drupal_add_http_header('Content-Type', 'application/javascript');
+
+  if (isset($var)) {
+    $var = drupal_json_encode($var);
+    echo "$callback($var);";
+  }
+}

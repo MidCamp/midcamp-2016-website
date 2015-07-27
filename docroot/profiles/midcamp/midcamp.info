@@ -1,0 +1,147 @@
+; Packaging information for midcamp
+name = "MidCamp"
+description = "MidCamp website"
+exclusive = "1"
+core = "7.x"
+; ----------
+; Dependencies
+; ----------
+; Administration
+dependencies[] = admin_menu
+dependencies[] = admin_views
+dependencies[] = adminimal_admin_menu
+dependencies[] = module_filter
+; Chaos tool suite
+dependencies[] = ctools
+dependencies[] = ctools_custom_content
+dependencies[] = page_manager
+dependencies[] = views_content
+; Core
+dependencies[] = block
+dependencies[] = contextual
+dependencies[] = dblog
+dependencies[] = field
+dependencies[] = field_sql_storage
+dependencies[] = field_ui
+dependencies[] = file
+dependencies[] = filter
+dependencies[] = help
+dependencies[] = image
+dependencies[] = list
+dependencies[] = menu
+dependencies[] = node
+dependencies[] = number
+dependencies[] = options
+dependencies[] = path
+dependencies[] = system
+dependencies[] = taxonomy
+dependencies[] = text
+dependencies[] = update
+dependencies[] = user
+; Date/Time
+dependencies[] = date
+dependencies[] = date_api
+dependencies[] = date_popup
+dependencies[] = date_views
+; Development
+dependencies[] = devel
+dependencies[] = efq_helper
+dependencies[] = profiler_builder
+; ECK
+dependencies[] = eck
+; Fields
+dependencies[] = entityreference
+dependencies[] = entityreference_prepopulate
+dependencies[] = field_group
+dependencies[] = field_permissions
+dependencies[] = link
+dependencies[] = name
+dependencies[] = select_or_other
+dependencies[] = youtube
+; Flags
+dependencies[] = flag
+; Input filters
+dependencies[] = pathologic
+; MailChimp
+dependencies[] = mailchimp
+dependencies[] = mailchimp_lists
+; Media
+dependencies[] = imce
+; MidCamp
+dependencies[] = midcamp_goodies
+; Organic groups
+dependencies[] = og
+dependencies[] = og_access
+dependencies[] = og_context
+dependencies[] = og_ui
+; Other
+dependencies[] = backup_migrate
+dependencies[] = diff
+dependencies[] = entity
+dependencies[] = entity_token
+dependencies[] = entity_view_mode
+dependencies[] = environment_indicator
+dependencies[] = libraries
+dependencies[] = linkit
+dependencies[] = menu_block
+dependencies[] = menu_block_export
+dependencies[] = pathauto
+dependencies[] = profile2
+dependencies[] = redirect
+dependencies[] = scamp_schedule
+dependencies[] = strongarm
+dependencies[] = token
+dependencies[] = transliteration
+; Panels
+dependencies[] = panels
+dependencies[] = panels_mini
+; Path management
+dependencies[] = globalredirect
+; Performance and scalability
+dependencies[] = memcache
+dependencies[] = memcache_admin
+; SEO
+dependencies[] = metatag
+; Spam control
+dependencies[] = honeypot
+; User interface
+dependencies[] = jquery_update
+dependencies[] = wysiwyg
+; Views
+dependencies[] = views
+dependencies[] = views_bulk_operations
+dependencies[] = views_data_export
+dependencies[] = views_random_seed
+dependencies[] = views_responsive_grid
+dependencies[] = views_ui
+; Webform
+dependencies[] = webform
+; Features
+dependencies[] = features
+dependencies[] = features_builder
+dependencies[] = features_builder_default
+dependencies[] = midcamp_eck_scamp
+dependencies[] = midcamp_fields
+dependencies[] = midcamp_flag_accepted
+dependencies[] = midcamp_flag_featured_user
+dependencies[] = midcamp_media
+dependencies[] = midcamp_menu
+dependencies[] = midcamp_node_job
+dependencies[] = midcamp_node_news
+dependencies[] = midcamp_node_page
+dependencies[] = midcamp_node_schedule_item
+dependencies[] = midcamp_node_session
+dependencies[] = midcamp_node_sponsor
+dependencies[] = midcamp_node_training
+dependencies[] = midcamp_node_webform
+dependencies[] = midcamp_og_features_permission_node_sponsor
+dependencies[] = midcamp_og_membership_type_og_membership_type_og_membership_type_default
+dependencies[] = midcamp_panels
+dependencies[] = midcamp_profile2_type_conference_details
+dependencies[] = midcamp_profile2_type_main
+dependencies[] = midcamp_profile2_type_orders
+dependencies[] = midcamp_site
+dependencies[] = midcamp_taxonomy
+; dependencies[] = midcamp_users
+dependencies[] = midcamp_views
+

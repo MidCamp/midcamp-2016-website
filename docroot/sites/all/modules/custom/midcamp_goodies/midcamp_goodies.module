@@ -1,0 +1,189 @@
+<?php
+/**
+ * @file
+ * MidCamp things.
+ */
+
+/**
+ * Implements hook_field_formatter_info().
+ */
+function midcamp_goodies_field_formatter_info() {
+  return array(
+    'midcamp_goodies_twitter_link' => array(
+      'label' => t('Twitter link'),
+      'field types' => array('text'),
+    ),
+    'midcamp_goodies_drupal_org_link' => array(
+      'label' => t('Username, as absolute link to d.o profile'),
+      'field types' => array('link_field'),
+      'multiple values' => FIELD_BEHAVIOR_DEFAULT,
+    ),
+  );
+}
+
+/**
+ * Implements hook_field_formatter_view().
+ */
+function midcamp_goodies_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+  $element = array();
+
+  switch ($display['type']) {
+    case 'midcamp_goodies_twitter_link':
+      foreach ($items as $delta => $item) {
+        // Normalize the value to without the @.
+        $pattern = '/^[@]?([a-zA-Z0-9_]+)$/';
+        preg_match($pattern, $item['value'], $matches);
+        if (!empty($matches[1])) {
+          $value = $matches[1];
+          $link = array(
+            '#theme' => 'link',
+            '#path' => 'https://twitter.com/' . $value,
+            '#text' => '@' . $value,
+          );
+          $link['#options']['html'] = FALSE;
+          $link['#options']['attributes']['target'] = '_blank';
+          $element[$delta] = $link;
+        }
+      }
+      break;
+
+    case 'midcamp_goodies_drupal_org_link':
+      // Some users put in their usernames instead of a url, which still
+      // passes Drupal's valid_url function. Therefore, let's make sure the
+      // field value is already an external link.
+      foreach ($items as $delta => $item) {
+        $url = array_key_exists('url', $item) ? $item['url'] : '';
+        if (valid_url($url, TRUE)) {
+          $link = array(
+            '#theme' => 'link',
+            '#path' => $url,
+            '#text' => $entity->name,
+          );
+          $link['#options']['html'] = FALSE;
+          $link['#options']['attributes']['target'] = '_blank';
+          $element[$delta] = $link;
+        }
+      }
+
+  }
+
+  return $element;
+}
+
+/**
+ * Implements hook_field_widget_WIDGET_TYPE_form_alter().
+ */
+function midcamp_goodies_field_widget_text_textfield_form_alter(&$element, &$form_state, $context) {
+  if ($element['#field_name'] == 'field_twitter') {
+    $element['#element_validate'][] = 'midcamp_goodies_twitter_field_validate';
+  }
+}
+
+/**
+ * Validate function for twitter handle.
+ *
+ * @param array $element
+ *   The twitter field form element.
+ */
+function midcamp_goodies_twitter_field_validate($element) {
+  $pattern = '/^[@]?[a-zA-Z0-9_]+$/';
+  if (!empty($element['value']['#value']) && !preg_match($pattern, $element['value']['#value'])) {
+    form_error($element, t('%name must be a valid Twitter handle, @katyperry @BillGates @justinbieber @ConanOBrien @Oprah.', array('%name' => $element['#title'])));
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function midcamp_goodies_form_user_profile_form_alter(&$form, &$form_state, $form_id) {
+  midcamp_validate_user_form_alter($form);
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function midcamp_goodies_form_user_register_form_alter(&$form, &$form_state, $form_id) {
+  midcamp_validate_user_form_alter($form);
+}
+
+function midcamp_validate_user_form_alter(&$form) {
+  $field_name = 'field_drupal_org_profile';
+  if (array_key_exists($field_name, $form)) {
+    $lang = $form[$field_name]['#language'];
+    $form[$field_name][$lang][0]['#element_validate'] = array('midcamp_validate_drupal_org_profile');
+  }
+}
+
+/**
+ * Form element validation handler for integer elements.
+ */
+function midcamp_validate_drupal_org_profile($element, &$form_state) {
+  $value = reset($element['#value']);
+  // We wouldn't be here if the field was required, so let's first check to see
+  // that there is a value.
+  if ($value && strlen($value) != 0) {
+    // Verify the url is external.
+    if (!valid_url($value, TRUE)) {
+      form_error($element, t('Please input the absolute url to your drupal.org profile.'));
+    }
+
+    // Does it look like a d.o url?
+    $valid_drupal_org_url = FALSE;
+    $message = t("Hmmm, something doesn't seem right with your drupal.org profile url.");
+    $parts = explode('/', $value);
+
+    // Todo: Be classy and use preg_match.
+    if (
+      count($parts) == 5 &&
+      ($parts[2] == 'drupal.org' || $parts[2] == 'www.drupal.org')
+    ) {
+      switch ($parts[3]) {
+        case 'u':
+          // Assume the username is right.
+          $valid_drupal_org_url = TRUE;
+          break;
+
+        case 'user':
+          // Check that the uid if a digit.
+          if (is_numeric($parts[4])) {
+            $valid_drupal_org_url = TRUE;
+          }
+          break;
+
+      }
+    }
+    if (!$valid_drupal_org_url) {
+      form_error($element, $message);
+    }
+  }
+}
+
+/**
+ * Re-set schedule after shuffling around the structure of the entities and
+ * relationships.
+ */
+function midcamp_goodies_schedule_import($input, $reset = FALSE) {
+  $input = explode("\n", $input);
+  foreach ($input as $line) {
+    $data = str_getcsv($line);
+    $node = node_load($data[0]);
+    $room = entity_load_single('scamp', $data['1']);
+    $timeslot = entity_load_single('scamp', $data['2']);
+
+    if ($node && $room && $timeslot) {
+      $assignment = scamp_schedule_assignment_load($room, $timeslot, TRUE);
+      $aw = entity_metadata_wrapper('scamp', $assignment);
+      $val = ($reset) ? array() : $aw->field_sessions->value();
+      $val[] = $node;
+      $aw->field_sessions->set($val);
+      $aw->save();
+    }
+  }
+}
+
+/**
+ * Implements hook_ctools_plugin_directory().
+ */
+function midcamp_goodies_ctools_plugin_directory($owner, $plugin_type) {
+  return "plugins/$owner/$plugin_type";
+}

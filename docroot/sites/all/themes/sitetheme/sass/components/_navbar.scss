@@ -1,0 +1,175 @@
+/**
+ * Navigation bar.
+ */
+
+%main-menu {
+  padding: rhythm(1) 0;
+  width: 100%;
+  background-color: white;
+  margin: 0;
+  @include breakpoint(max-width $md, $no-query: true) {
+    padding: 0;
+  }
+  @include breakpoint($md, $no-query: true) {
+    background-color: transparent;
+    /* margin: rhythm(1) 0 4px 0; */
+    padding: 0;
+  }
+}
+
+// Top level li
+%main-menu__top {
+  @include breakpoint(max-width $md, $no-query: true) {
+    border-bottom: 1px solid $aqua;
+  }
+  @include breakpoint($md, $no-query: true) {
+    position: relative;
+    float: left;
+    width: 16.66667%;
+    padding-bottom: 17px;
+  }
+  @include breakpoint($xl, $no-query: true) {
+  }
+
+  &:hover > a,
+  a:focus {
+    outline: 0;
+    background-color: 4A8294;
+    background-color: rgba(74, 130, 148, 0.2);
+    @include breakpoint($md, $no-query: true) {
+      @include border-radius(10px);
+      margin: 0;
+      padding: 10px 20px;
+    }
+  }
+}
+
+// Top level links
+%main-menu__top-links {
+  outline: none;
+  text-transform: uppercase;
+  padding: 10px 0;
+  display: block;
+  font-weight: 800;
+  font-family: $raleway;
+  &:link,
+  &:visited {
+    outline: 0;
+    color: $muted-aqua;
+    text-decoration: none;
+  }
+  &:active {
+    outline: 0;
+    color: $light-aqua;
+    text-shadow: 0px 0px 24px rgba(51,51,51,1),
+                 2px 2px 1px rgba(0,0,0,0.6);
+  }
+  @include breakpoint($md, $no-query: true) {
+    @include transition(all 300ms ease);
+    background-color: transparent;
+    display: inline-block;
+    margin: 10px 20px;
+    padding: 0;
+    @include adjust-font-size-to( 17px, 1 );
+  }
+}
+
+// Dropdown
+%main-menu__submenu {
+  display: none;
+  background-color: white;
+  margin: 0;
+  @include breakpoint($md, $no-query: true) {
+    @include box-sizing(border-box);
+    position: absolute;
+    width: 100%;
+    left: 0;
+    z-index: 9;
+    min-width: 220px;
+
+    li:last-child & {
+      left: auto;
+      right: 0;
+    }
+  }
+}
+
+// Dropdown links
+%main-menu__submenu-links {
+  color: $muted-aqua;
+  display: block;
+  padding: 10px 20px;
+  text-align: left;
+
+  &:hover,
+  &:focus {
+    background-color: rgba(74, 130, 148, 0.2);
+  }
+}
+
+#navigation {
+  @include box-shadow(0px 6px 16px -6px rgba($black, 0.3));
+  text-align: center;
+  background: $aqua;
+  position: relative;
+  z-index: 5;
+
+  @include breakpoint($md, $no-query: true) {
+    @include box-sizing(border-box);
+    background: $off-white inline-image("bg-header-optimized_top.jpg") no-repeat center top;
+    height: 78px;
+    padding-bottom: 0;
+    padding-top: 18px;
+  }
+  .block {
+    margin-bottom: 0;
+  }
+
+  .block-menu .block__title,
+  .block-menu-block .block__title {
+    @extend %element-invisible;
+  }
+
+  ul,
+  li {
+    list-style-type: none;
+    list-style-image: none;
+  }
+
+  /* Main menu and secondary menu links and menu block links. */
+  .menu {
+    @extend %main-menu;
+    // Top level menu items
+    > .level-1 {
+      @extend %main-menu__top;
+      > a {
+        @extend %main-menu__top-links;
+      }
+      // Hello subnav!
+      &.clicked ul {
+        display: block;
+      }
+    }
+    // Submenu
+    ul {
+      @extend %main-menu__submenu;
+      > .level-2 {
+        > a {
+          @extend %main-menu__submenu-links;
+        }
+      }
+    }
+  }
+}
+
+// .links--mobile__container should always be visible when not mobile.
+@include breakpoint($md, $no-query: true) {
+  .links--mobile__container {
+    display: block !important;
+  }
+  #navigation {
+    #user-menu {
+      @include element-invisible;
+    }
+  }
+}

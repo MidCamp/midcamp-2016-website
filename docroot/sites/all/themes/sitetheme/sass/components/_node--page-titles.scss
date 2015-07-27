@@ -1,0 +1,43 @@
+.node-type-sponsor,
+.node-type-session,
+.node-type-training,
+.node-type-venue,
+.node-type-post,
+.section-users,
+.page-node-edit {
+  .header__badge {
+    position: relative;
+  }
+  
+  .header__logo {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .header__name-and-slogan {
+    @include breakpoint($md, $no-query: true) {
+      display: inline-block;
+      vertical-align: top;
+      margin-top: 0;
+      margin-left: 0;
+      padding-left: 153px;
+    }
+  }
+  
+  .header__site-name {
+    @include breakpoint($md, $no-query: true) {
+      @include adjust-font-size-to( 36px, 2 );
+    }
+  }
+  
+  .page__title {
+    @include breakpoint($sm, $no-query: true) {
+      @include adjust-font-size-to( $page-title / 2);
+      line-height: 1.325em;
+      display: block;
+      margin-left: 0;
+      text-shadow: 2px 4px 4px rgba($black, 0.3);
+    }
+  }
+}

@@ -12,8 +12,8 @@ define('MADCAMP_PLACEHOLDER_PREVIOUS_FRONTPAGE', 'madcamp_placeholder_previous_f
  */
 function madcamp_placeholder_menu() {
   $items[MADCAMP_PLACEHOLDER_PATH] = array(
-    'title' => t('MadCamp 2015'),
-    'description' => t('Placeholder for MadCamp 2015'),
+    'title' => t('MadCamp 2016'),
+    'description' => t('Placeholder for MadCamp 2016'),
     'type' => MENU_CALLBACK,
     'page callback' => 'madcamp_placeholder_page',
     'access callback' => TRUE,
@@ -140,47 +140,4 @@ function madcamp_placeholder_delivery($page_callback_result) {
 
   // Perform end-of-request tasks.
   drupal_page_footer();
-}
-
-/**
- * Implements hook_enable().
- */
-function madcamp_placeholder_enable() {
-  // save current site_frontpage
-  variable_set(MADCAMP_PLACEHOLDER_PREVIOUS_FRONTPAGE, variable_get('site_frontpage', 'node'));
-
-  // this is a somewhat ugly way to make sure jquery update is 1.7 or greater
-  // but I want to just enable this module and be good and not have to do anything else
-  // besides, this is just a temporary module
-  if (module_exists('jquery_update')) {
-    $version = variable_get('jquery_update_jquery_version');
-    if ($version == '1.5') {
-      variable_set('jquery_update_jquery_version', '1.7');
-    }
-  }
-
-  // set site_frontpage to placeholder
-  variable_set('site_frontpage', MADCAMP_PLACEHOLDER_PATH);
-  $frontpage_link = l('MadCamp placeholder', '<front>');
-  drupal_set_message("Site front page is now showing the {$frontpage_link}. Disable module to revert site front page.");
-}
-
-/**
- * Implements hook_disable().
- */
-function madcamp_placeholder_disable() {
-  $site_frontpage = variable_get(MADCAMP_PLACEHOLDER_PREVIOUS_FRONTPAGE, 'node');
-  if (drupal_valid_path($site_frontpage)) {
-    variable_set('site_frontpage', $site_frontpage);
-  }
-  else {
-    variable_set('site_frontpage', 'node');
-  }
-}
-
-/**
- * Implements hook_uninstall().
- */
-function madcamp_placeholder_uninstall() {
-  variable_del(MADCAMP_PLACEHOLDER_PREVIOUS_FRONTPAGE);
 }

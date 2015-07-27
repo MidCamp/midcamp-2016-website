@@ -1,0 +1,14 @@
+/**
+ * Teaser.
+ */
+.node-teaser {
+  margin-bottom: 30px;
+  .node__title {
+    a {
+      color: $aqua;
+    }
+  }
+  .links {
+    display: none;
+  }
+}

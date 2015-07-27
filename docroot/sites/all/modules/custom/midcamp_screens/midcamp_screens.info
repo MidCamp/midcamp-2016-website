@@ -1,0 +1,6 @@
+name = MidCamp Screens
+description = Provides webservices for the screens to query data from the website.
+package = MidCamp
+core = 7.x
+
+dependencies[] = efq_helper

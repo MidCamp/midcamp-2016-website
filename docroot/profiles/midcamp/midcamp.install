@@ -1,0 +1,161 @@
+<?php
+/**
+ * Implements hook_install().
+ *
+ * Perform actions to set up the site for this profile.
+ */
+function midcamp_install() {
+  $t = get_t();
+
+  // Enable default and admin themes.
+  $default_theme = 'sitetheme';
+  $admin_theme = 'adminimal';
+
+  // Disable the rest.
+  db_update('system')
+    ->fields(array('status' => 0))
+    ->condition('type', 'theme')
+    ->execute();
+
+  // Enable $default_theme.
+  db_update('system')
+    ->fields(array('status' => 1))
+    ->condition('type', 'theme')
+    ->condition('name', $default_theme)
+    ->execute();
+
+  // Enable $admin_theme.
+  db_update('system')
+    ->fields(array('status' => 1))
+    ->condition('type', 'theme')
+    ->condition('name', $admin_theme)
+    ->execute();
+  variable_set('theme_default', $default_theme);
+  variable_set('admin_theme', $admin_theme);
+
+  // Activate admin theme when editing a node.
+  variable_set('node_admin_theme', '1');
+  $blocks = array(
+    array(
+      'module' => 'system',
+      'delta' => 'main',
+      'theme' => $default_theme,
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'content',
+      'pages' => '',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'system',
+      'delta' => 'help',
+      'theme' => $default_theme,
+      'status' => 1,
+      'weight' => -10,
+      'region' => 'content',
+      'pages' => '',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'system',
+      'delta' => 'user-menu',
+      'theme' => $default_theme,
+      'status' => 1,
+      'weight' => -10,
+      'region' => 'header',
+      'pages' => '',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'system',
+      'delta' => 'main',
+      'theme' => $admin_theme,
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'content',
+      'pages' => '',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'system',
+      'delta' => 'help',
+      'theme' => $admin_theme,
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'help',
+      'pages' => '',
+      'cache' => -1,
+    ),
+  );
+
+  // Drop system / user blocks to ensure correct building.
+  db_delete('block')->condition('module', 'system')->execute();
+  db_delete('block')->condition('module', 'user')->execute();
+
+  // Add in our blocks defined above.
+  $query = db_insert('block')->fields(array('module', 'delta', 'theme', 'status', 'weight', 'region', 'pages', 'cache'));
+  foreach ($blocks as $block) {
+    $query->values($block);
+  }
+  $query->execute();
+
+  // Create a default role for site administrators, with all available permissions assigned.
+  $admin_role = new stdClass();
+  $admin_role->name = 'administrator';
+  $admin_role->weight = 10;
+  user_role_save($admin_role);
+  user_role_grant_permissions($admin_role->rid, array_keys(module_invoke_all('permission')));
+  // Set this as the administrator role.
+  variable_set('user_admin_role', $admin_role->rid);
+
+  // Assign user 1 the "administrator" role.
+  db_insert('users_roles')
+    ->fields(array('uid' => 1, 'rid' => $admin_role->rid))
+    ->execute();
+
+  // Enable modules that depend on the admin role.
+  $module_list = array('midcamp_users');
+  if (!module_enable($module_list)) {
+    drupal_set_message($t('Unable to enabled @modules', array(
+      '@modules' => implode(',', $module_list),
+    )), 'error');
+  };
+
+  // Update the menu router information.
+  menu_rebuild();
+
+  // Revert features to ensure they are all installed.
+  $features = array(
+    'midcamp_eck_scamp',
+    'midcamp_fields',
+    'midcamp_flag_accepted',
+    'midcamp_flag_featured_user',
+    'midcamp_media',
+    'midcamp_menu',
+    'midcamp_node_job',
+    'midcamp_node_news',
+    'midcamp_node_page',
+    'midcamp_node_schedule_item',
+    'midcamp_node_session',
+    'midcamp_node_sponsor',
+    'midcamp_node_training',
+    'midcamp_node_webform',
+    'midcamp_og_features_permission_node_sponsor',
+    'midcamp_og_membership_type_og_membership_type_og_membership_type_default',
+    'midcamp_panels',
+    'midcamp_profile2_type_conference_details',
+    'midcamp_profile2_type_main',
+    'midcamp_profile2_type_orders',
+    'midcamp_site',
+    'midcamp_taxonomy',
+    'midcamp_users',
+    'midcamp_views'
+  );
+  features_revert($features);
+
+  // Ignore any rebuild messages.
+  node_access_needs_rebuild(FALSE);
+
+  // Ignore any other install messages.
+  drupal_get_messages();
+}
