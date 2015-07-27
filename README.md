@@ -1,3 +1,3 @@
 MidCamp
 =======
-Master branch intentionally left blank.
+2016 MidCamp placeholder page.

@@ -1,0 +1,6 @@
+name = MadCamp Placeholder
+description = Temporary placeholder for Madcamp 2016
+package = MadCamp
+core = 7.x
+
+depedencies[] = jquery_update
