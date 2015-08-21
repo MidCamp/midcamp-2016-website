@@ -15,7 +15,7 @@ before_install:
  - composer self-update
  - ci/install_drush.sh
  - ci/install_tests.sh
- - ci/install_drupal.sh
+ - ci/install_drupal_mysql.sh
 
 install:
  - phpenv rehash
