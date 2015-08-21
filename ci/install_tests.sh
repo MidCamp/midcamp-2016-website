@@ -1,3 +1,3 @@
 #!/bin/bash
 
-$BASEDIR/tests composer install
+cd $BASEDIR/tests composer install
