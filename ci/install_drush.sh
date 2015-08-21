@@ -3,4 +3,4 @@
 cd $BASEDIR/ci
 composer install
 
-alias drush = "$BASEDIR/vendor/drush/drush"
+alias drush="$BASEDIR/vendor/drush/drush"
