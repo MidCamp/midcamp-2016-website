@@ -14,7 +14,6 @@ before_install:
  - export BASEDIR=${PWD}
  - composer self-update
  - ci/install_drush.sh
- - alias drush="$BASEDIR/ci/vendor/bin/drush"
  - ci/install_tests.sh
  - ci/install_drupal_mysql.sh
 
