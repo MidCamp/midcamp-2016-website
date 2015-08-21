@@ -11,5 +11,14 @@ services:
   - memcached
 
 before_install:
-  - composer self-update
-  - export BASEDIR=${PWD}
+ - export BASEDIR=${PWD}
+ - composer self-update
+ - ci/install_drush.sh
+ - ci/install_tests.sh
+ - ci/install_drupal.sh
+
+install:
+ - phpenv rehash
+
+script:
+  - $BASEDIR/tests/vendor/bin/behat -fprogress
