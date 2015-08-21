@@ -20,5 +20,8 @@ before_install:
 install:
  - phpenv rehash
 
+before_script:
+ - phpenv config-add ci/php/memcache.ini
+
 script:
   - $BASEDIR/tests/vendor/bin/behat -fprogress
