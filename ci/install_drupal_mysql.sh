@@ -1,3 +1,3 @@
 #!/bin/bash
 
-$BASEDIR/vendor/bin/ci/drush si -y midcamp --db-url=mysql://root@localhost/drupal
+$BASEDIR/ci/vendor/bin/drush si -y midcamp --db-url=mysql://root@localhost/drupal
