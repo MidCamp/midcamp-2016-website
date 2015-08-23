@@ -22,6 +22,9 @@ before_install:
  - ci/install_tests.sh
 
 install:
+ - sudo apt-get update > /dev/null
+ - sudo apt-get install -y --force-yes apache2 libapache2-mod-php5 php5-curl php5-mysql
+ - sudo ci/install_vhost.sh
  - phpenv rehash
 
 before_script:
@@ -31,4 +34,4 @@ before_script:
 
 script:
   - cd $BASEDIR/tests && ./bin/behat -fprogress
-  - cd $BASEDIR && ci/vendor/bin/phploc --names=*.php,*.module,*.install,*.inc docroot/sites/all/modules/custom
+  - cd $BASEDIR && phploc --names=*.php,*.module,*.install,*.inc docroot/sites/all/modules/custom
