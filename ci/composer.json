@@ -1,5 +1,9 @@
 {
     "require": {
         "drush/drush": "7.*"
+    },
+    "require-dev": {
+        "phploc/phploc": "*",
+        "phpmd/phpmd" : "@stable"
     }
 }
