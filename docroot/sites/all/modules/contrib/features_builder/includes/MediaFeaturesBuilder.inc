@@ -79,7 +79,7 @@ class MediaFeaturesBuilder extends FeaturesBuilderBase {
 
     if (module_exists('ckeditor')) {
       $this->dependencies[] = 'ckeditor';
-      $this->setAllComponents('ckeditor_profiles');
+      $this->setAllComponents('ckeditor_profile');
     }
 
     $this->setNamedComponents('dependencies', array_filter($this->dependencies));
