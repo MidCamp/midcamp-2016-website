@@ -1,0 +1,27 @@
+language: php
+php:
+  - 5.5
+
+mysql:
+  database: drupal
+  username: root
+  encoding: utf8
+
+services:
+  - memcached
+
+before_install:
+ - export BASEDIR=${PWD}
+ - composer self-update
+ - ci/install_drush.sh
+ - ci/install_tests.sh
+
+install:
+ - phpenv rehash
+
+before_script:
+ - phpenv config-add ci/php/memcache.ini
+ - ci/install_drupal_mysql.sh
+
+script:
+  - $BASEDIR/tests/vendor/bin/behat -fprogress
