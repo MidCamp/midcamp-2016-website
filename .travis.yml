@@ -25,12 +25,15 @@ install:
  - sudo apt-get update > /dev/null
  - sudo apt-get install -y --force-yes apache2 libapache2-mod-php5 php5-curl php5-mysql
  - sudo ci/install_vhost.sh
+ - ci/install_selenium.sh
  - phpenv rehash
 
 before_script:
  - phpenv config-add ci/php/memcache.ini
  - phpenv config-add ci/php/tweaks.ini
  - ci/install_drupal_mysql.sh
+ - "sh -e /etc/init.d/xvfb start"
+ - "export DISPLAY=:99.0"
 
 script:
   - cd $BASEDIR/tests && ./bin/behat -fprogress
