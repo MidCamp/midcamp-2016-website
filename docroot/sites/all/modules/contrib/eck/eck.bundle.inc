@@ -19,6 +19,23 @@ function eck__bundle__menu($entity_type) {
   $path = eck__entity_type__path();
   $menu = array();
 
+  // Dummy menu items so that entity translation will not complain about there
+  // not being a default.
+  // @todo: Remove these dummy items once issue https://drupal.org/node/2273189
+  // is resolved.
+  $menu["$entity_type->name/%"] = array(
+    'page callback' => FALSE,
+    'page arguments' => array(),
+    'access callback' => FALSE,
+    'access arguments' => array(),
+  );
+  $menu["$entity_type->name/%/edit"] = array(
+    'page callback' => FALSE,
+    'page arguments' => array(),
+    'access callback' => FALSE,
+    'access arguments' => array(),
+  );
+
   // DELETE Entity Types.
   $menu["{$path}/{$entity_type->name}/delete"] = array(
     'title' => "Delete",
@@ -295,6 +312,31 @@ function eck__bundle__edit_form($form, &$form_state, $entity_type_name, $bundle_
     '#value' => $bundle,
   );
 
+  $form['label'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Label'),
+    '#default_value' => $bundle->label,
+    '#required' => TRUE,
+  );
+
+  // Create a list of properties for this bundle.
+  $properties = array();
+  foreach ($entity_type->properties as $property => $info) {
+    $properties[$property] = $property . ' (' . $info['label'] . ')';
+  }
+  // Determine which managed fields should be checked by default.
+  $default_properties = (!empty($bundle->config['managed_properties']) && is_array($bundle->config['managed_properties'])) ? array_intersect_key($bundle->config['managed_properties'], $properties) : array();
+
+  // Add configuration to manage property display through the manage field
+  // forms.
+  $form['config_managed_properties'] = array(
+    '#type' => 'checkboxes',
+    '#options' => $properties,
+    '#default_value' => $default_properties,
+    '#title' => t('Managed Properties'),
+    '#description' => t('Select the properties you would like to be able to manage like fields through the "Manage Fields" and "Display Fields" tabs on this Bundle.'),
+  );
+
   // Let the behaviors to modify form.
   $vars = eck_property_behavior_invoke_plugin_alter($entity_type, 'bundle_form', array('form' => $form, 'form_state' => $form_state));
   $form = $vars['form'];
@@ -324,6 +366,9 @@ function eck__bundle__edit_form_submit($form, &$form_state) {
     }
   }
   $bundle->config = $bundle_config;
+
+  $bundle->label = $form_state['values']['label'];
+
   // Save the bundle object to the database.
   $bundle->save();
 

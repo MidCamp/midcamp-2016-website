@@ -1,10 +1,16 @@
 <?php
 /**
+ * @file
+ * MidCamp profile install tasks.
+ */
+
+/**
  * Implements hook_install().
  *
  * Perform actions to set up the site for this profile.
  */
 function midcamp_install() {
+  variable_set('features_rebuild_on_module_install', FALSE);
   $t = get_t();
 
   // Enable default and admin themes.
@@ -93,7 +99,16 @@ function midcamp_install() {
   db_delete('block')->condition('module', 'user')->execute();
 
   // Add in our blocks defined above.
-  $query = db_insert('block')->fields(array('module', 'delta', 'theme', 'status', 'weight', 'region', 'pages', 'cache'));
+  $query = db_insert('block')->fields(array(
+    'module',
+    'delta',
+    'theme',
+    'status',
+    'weight',
+    'region',
+    'pages',
+    'cache'
+  ));
   foreach ($blocks as $block) {
     $query->values($block);
   }
@@ -113,19 +128,22 @@ function midcamp_install() {
     ->fields(array('uid' => 1, 'rid' => $admin_role->rid))
     ->execute();
 
-  // Enable modules that depend on the admin role.
-  $module_list = array('midcamp_users');
+  // The midcamp_users module defines roles and permissions, and is enabled
+  // here instead of as a dependency so we can guarantee the administrator role
+  // as rid 3. The og feature modules are here because the install does not see
+  // group reference field on the user at this point.
+  $module_list = array('midcamp_og_features_permission_node_sponsor','midcamp_og_membership_type_og_membership_type_og_membership_type_default', 'midcamp_eck_scamp', 'midcamp_users');
   if (!module_enable($module_list)) {
     drupal_set_message($t('Unable to enabled @modules', array(
       '@modules' => implode(',', $module_list),
     )), 'error');
   };
 
-  // Update the menu router information.
   menu_rebuild();
 
   // Revert features to ensure they are all installed.
   $features = array(
+    /*
     'midcamp_eck_scamp',
     'midcamp_fields',
     'midcamp_flag_accepted',
@@ -150,8 +168,11 @@ function midcamp_install() {
     'midcamp_taxonomy',
     'midcamp_users',
     'midcamp_views'
+    */
   );
   features_revert($features);
+
+  variable_del('features_rebuild_on_module_install');
 
   // Ignore any rebuild messages.
   node_access_needs_rebuild(FALSE);

@@ -167,16 +167,6 @@ function midcamp_users_user_default_permissions() {
     'module' => 'environment_indicator',
   );
 
-  // Exported permission: 'access memcache statistics'.
-  $permissions['access memcache statistics'] = array(
-    'name' => 'access memcache statistics',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-      'Session Selection Admin' => 'Session Selection Admin',
-    ),
-    'module' => 'memcache_admin',
-  );
-
   // Exported permission: 'access own webform results'.
   $permissions['access own webform results'] = array(
     'name' => 'access own webform results',
@@ -223,16 +213,6 @@ function midcamp_users_user_default_permissions() {
       'Session Selection Admin' => 'Session Selection Admin',
     ),
     'module' => 'system',
-  );
-
-  // Exported permission: 'access slab cachedump'.
-  $permissions['access slab cachedump'] = array(
-    'name' => 'access slab cachedump',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-      'Session Selection Admin' => 'Session Selection Admin',
-    ),
-    'module' => 'memcache_admin',
   );
 
   // Exported permission: 'access user profiles'.
@@ -422,15 +402,6 @@ function midcamp_users_user_default_permissions() {
       'Session Selection Admin' => 'Session Selection Admin',
     ),
     'module' => 'linkit',
-  );
-
-  // Exported permission: 'administer mailchimp'.
-  $permissions['administer mailchimp'] = array(
-    'name' => 'administer mailchimp',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'mailchimp',
   );
 
   // Exported permission: 'administer menu'.
@@ -769,16 +740,6 @@ function midcamp_users_user_default_permissions() {
     'roles' => array(
       'Administrator' => 'Administrator',
       'Session Selection Admin' => 'Session Selection Admin',
-    ),
-    'module' => 'field_permissions',
-  );
-
-  // Exported permission: 'create field_subscribe_speaker'.
-  $permissions['create field_subscribe_speaker'] = array(
-    'name' => 'create field_subscribe_speaker',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-      'anonymous user' => 'anonymous user',
     ),
     'module' => 'field_permissions',
   );
@@ -1643,15 +1604,6 @@ function midcamp_users_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
-  // Exported permission: 'edit field_subscribe_speaker'.
-  $permissions['edit field_subscribe_speaker'] = array(
-    'name' => 'edit field_subscribe_speaker',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'field_permissions',
-  );
-
   // Exported permission: 'edit field_timeslot'.
   $permissions['edit field_timeslot'] = array(
     'name' => 'edit field_timeslot',
@@ -1731,15 +1683,6 @@ function midcamp_users_user_default_permissions() {
       'Administrator' => 'Administrator',
       'Session Selection Admin' => 'Session Selection Admin',
       'Speaker' => 'Speaker',
-    ),
-    'module' => 'field_permissions',
-  );
-
-  // Exported permission: 'edit own field_subscribe_speaker'.
-  $permissions['edit own field_subscribe_speaker'] = array(
-    'name' => 'edit own field_subscribe_speaker',
-    'roles' => array(
-      'Administrator' => 'Administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -2222,15 +2165,6 @@ function midcamp_users_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
-  // Exported permission: 'view field_subscribe_speaker'.
-  $permissions['view field_subscribe_speaker'] = array(
-    'name' => 'view field_subscribe_speaker',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'field_permissions',
-  );
-
   // Exported permission: 'view field_timeslot'.
   $permissions['view field_timeslot'] = array(
     'name' => 'view field_timeslot',
@@ -2298,15 +2232,6 @@ function midcamp_users_user_default_permissions() {
     'roles' => array(
       'Administrator' => 'Administrator',
       'Session Selection Admin' => 'Session Selection Admin',
-    ),
-    'module' => 'field_permissions',
-  );
-
-  // Exported permission: 'view own field_subscribe_speaker'.
-  $permissions['view own field_subscribe_speaker'] = array(
-    'name' => 'view own field_subscribe_speaker',
-    'roles' => array(
-      'Administrator' => 'Administrator',
     ),
     'module' => 'field_permissions',
   );
