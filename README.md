@@ -21,8 +21,8 @@ drush si
   --account-pass={correct horse battery staple}
   --account-mail={admin@example.com}
   --site-name=MidCamp
-  --site-mail={tap-admin@example.com}
-  -yes
+  --site-mail={info@example.com}
+  --yes
 ```
 
 TEST SETUP
@@ -34,4 +34,3 @@ CONFIGURATION
 
 More Information
 ----------------
-

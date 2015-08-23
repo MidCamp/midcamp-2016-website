@@ -62,9 +62,6 @@ dependencies[] = youtube
 dependencies[] = flag
 ; Input filters
 dependencies[] = pathologic
-; MailChimp
-dependencies[] = mailchimp
-dependencies[] = mailchimp_lists
 ; Media
 dependencies[] = imce
 ; MidCamp
@@ -97,9 +94,6 @@ dependencies[] = panels
 dependencies[] = panels_mini
 ; Path management
 dependencies[] = globalredirect
-; Performance and scalability
-dependencies[] = memcache
-dependencies[] = memcache_admin
 ; SEO
 dependencies[] = metatag
 ; Spam control
@@ -120,7 +114,7 @@ dependencies[] = webform
 dependencies[] = features
 dependencies[] = features_builder
 dependencies[] = features_builder_default
-dependencies[] = midcamp_eck_scamp
+;dependencies[] = midcamp_eck_scamp
 dependencies[] = midcamp_fields
 dependencies[] = midcamp_flag_accepted
 dependencies[] = midcamp_flag_featured_user
@@ -134,8 +128,8 @@ dependencies[] = midcamp_node_session
 dependencies[] = midcamp_node_sponsor
 dependencies[] = midcamp_node_training
 dependencies[] = midcamp_node_webform
-dependencies[] = midcamp_og_features_permission_node_sponsor
-dependencies[] = midcamp_og_membership_type_og_membership_type_og_membership_type_default
+;dependencies[] = midcamp_og_features_permission_node_sponsor
+;dependencies[] = midcamp_og_membership_type_og_membership_type_og_membership_type_default
 dependencies[] = midcamp_panels
 dependencies[] = midcamp_profile2_type_conference_details
 dependencies[] = midcamp_profile2_type_main

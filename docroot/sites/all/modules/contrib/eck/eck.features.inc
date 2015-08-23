@@ -123,7 +123,9 @@ function eck_entity_type_features_rebuild($module) {
 
       $entity_type->save();
     }
+    drupal_get_schema(NULL, TRUE);
     variable_set('eck_clear_caches', TRUE);
+
   }
 }
 
@@ -186,6 +188,7 @@ function eck_bundle_features_export_render($module, $data, $export = NULL) {
     'entity_type' => NULL,
     'name' => NULL,
     'label' => NULL,
+    'config' => NULL,
   );
   $output = array();
   $output[] = '  $items = array(';

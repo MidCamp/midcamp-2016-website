@@ -1243,52 +1243,6 @@ Prof.',
     'type' => 'datetime',
   );
 
-  // Exported field_base: 'field_subscribe'
-  $field_bases['field_subscribe'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_subscribe',
-    'field_permissions' => array(
-      'type' => 1,
-    ),
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'mailchimp_lists',
-    'settings' => array(
-      'double_opt_in' => 0,
-      'mc_list_id' => '12c897b018',
-      'profile2_private' => FALSE,
-      'send_welcome' => 0,
-    ),
-    'translatable' => 0,
-    'type' => 'mailchimp_lists_subscription',
-  );
-
-  // Exported field_base: 'field_subscribe_speaker'
-  $field_bases['field_subscribe_speaker'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_subscribe_speaker',
-    'field_permissions' => array(
-      'type' => 2,
-    ),
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'mailchimp_lists',
-    'settings' => array(
-      'double_opt_in' => 0,
-      'mc_list_id' => '55f7a36262',
-      'profile2_private' => FALSE,
-      'send_welcome' => 0,
-    ),
-    'translatable' => 0,
-    'type' => 'mailchimp_lists_subscription',
-  );
-
   // Exported field_base: 'field_t_shirt_size'
   $field_bases['field_t_shirt_size'] = array(
     'active' => 1,
