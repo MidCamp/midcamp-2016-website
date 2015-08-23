@@ -18,6 +18,7 @@ before_install:
  - export BASEDIR=${PWD}
  - composer self-update
  - ci/install_ci.sh
+ - export PATH="$BASEDIR/ci/bin:$PATH"
  - ci/install_tests.sh
 
 install:
