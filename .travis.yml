@@ -18,7 +18,7 @@ before_install:
  - export BASEDIR=${PWD}
  - composer self-update
  - source ci/install_drush.sh
- - ci/install_tests.sh
+ - cd $BASEDIR && ci/install_tests.sh
 
 install:
  - phpenv rehash
