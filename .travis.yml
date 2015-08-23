@@ -17,7 +17,7 @@ addons:
 before_install:
  - export BASEDIR=${PWD}
  - composer self-update
- - ci/install_drush.sh
+ - source ci/install_drush.sh
  - ci/install_tests.sh
 
 install:
