@@ -30,3 +30,4 @@ before_script:
 
 script:
   - cd $BASEDIR/tests && ./bin/behat -fprogress
+  - cd $BASEDIR && ci/vendor/bin/phploc --names=*.php,*.module,*.install,*.inc docroot/sites/all/modules/custom
