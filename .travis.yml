@@ -10,6 +10,10 @@ mysql:
 services:
   - memcached
 
+addons:
+  hosts:
+    - travis.midcamp.dev
+
 before_install:
  - export BASEDIR=${PWD}
  - composer self-update
