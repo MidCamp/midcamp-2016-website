@@ -17,8 +17,9 @@ addons:
 before_install:
  - export BASEDIR=${PWD}
  - composer self-update
- - source ci/install_drush.sh
- - cd $BASEDIR && ci/install_tests.sh
+ - ci/install_drush.sh
+ - alias drush='$BASEDIR/ci/vendor/drush/drush'
+ - ci/install_tests.sh
 
 install:
  - phpenv rehash
