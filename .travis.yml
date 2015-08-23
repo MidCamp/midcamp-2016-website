@@ -29,4 +29,4 @@ before_script:
  - ci/install_drupal_mysql.sh
 
 script:
-  - $BASEDIR/tests/bin/behat -fprogress
+  - $BASEDIR/tests/bin/behat --config $BASEDIR/tests/behat.yml -fprogress
