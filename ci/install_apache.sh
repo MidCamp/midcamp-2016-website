@@ -7,7 +7,7 @@ a2dissite 000-default
 a2enmod rewrite
 
 # Install site.
-sed 's|!DOCROOT!|${BASEDIR}/docroot|' <$BASEDIR/ci/apache/vhost.conf >/etc/apache2/sites-available/midcamp.conf
+sed 's|!DOCROOT!|${BASEDIR}/docroot|' < ${BASEDIR}/ci/apache/vhost.conf > /etc/apache2/sites-available/midcamp.conf
 a2ensite midcamp
 
 service apache2 restart
