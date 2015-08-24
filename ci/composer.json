@@ -4,6 +4,7 @@
     },
     "require-dev": {
         "phploc/phploc": "*",
-        "phpmd/phpmd" : "@stable"
+        "phpmd/phpmd" : "@stable",
+        "squizlabs/php_codesniffer": "2.*"
     }
 }

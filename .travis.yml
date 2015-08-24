@@ -22,9 +22,7 @@ before_install:
  - ci/install_tests.sh
 
 install:
- - sudo apt-get update > /dev/null
- - sudo apt-get install -y --force-yes apache2 libapache2-mod-php5 php5-curl php5-mysql
- - sudo ci/install_vhost.sh
+ - sudo ci/install_apache.sh
  - ci/install_selenium.sh
  - phpenv rehash
 
