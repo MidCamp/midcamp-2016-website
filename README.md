@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/MidCamp/midcamp-website.svg?branch=develop)](https://travis-ci.org/MidCamp/midcamp-website)
+
 MidCamp
 =======
 Repository for the 2016 MidCamp Drupal site.
