@@ -35,5 +35,5 @@ before_script:
 
 script:
   - cd $BASEDIR/tests && ./bin/behat -fprogress
-  - cd $BASEDIR && less tests/failures/*
+  - cd $BASEDIR && cat tests/failures/*
   - cd $BASEDIR && phploc --names=*.php,*.module,*.install,*.inc docroot/sites/all/modules/custom
