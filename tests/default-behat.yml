@@ -2,6 +2,7 @@ default:
   suites:
     default:
       contexts:
+        - FailureContext
         - FeatureContext
         - MidCampDrushContext
         - MidCampMinkContext
@@ -9,6 +10,8 @@ default:
         - Drupal\DrupalExtension\Context\DrupalContext
         - Drupal\DrupalExtension\Context\MarkupContext
         - Drupal\DrupalExtension\Context\MessageContext
+      failure_path:
+          failure_path: '%paths.base%/failures'
   extensions:
     Behat\MinkExtension:
       goutte: ~
