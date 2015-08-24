@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -ev
+
 CONFIG_NAME=$1
 DOCROOT=$2
 TEMPLATE=$3
