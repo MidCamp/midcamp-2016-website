@@ -23,6 +23,7 @@ before_install:
 
 install:
  - sudo ci/install_apache.sh
+ - sudo ci/config_vhost.sh midcamp $BASEDIR/docroot
  - ci/install_selenium.sh
  - phpenv rehash
 
@@ -36,4 +37,4 @@ before_script:
 script:
   - cd $BASEDIR/tests && ./bin/behat -fprogress
   - cd $BASEDIR && cat tests/failures/*
-  - cd $BASEDIR && phploc --names=*.php,*.module,*.install,*.inc docroot/sites/all/modules/custom
+#  - cd $BASEDIR && phploc --names=*.php,*.module,*.install,*.inc docroot/sites/all/modules/custom
