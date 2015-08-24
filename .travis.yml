@@ -23,7 +23,7 @@ before_install:
 
 install:
  - sudo ci/install_apache.sh
- - sudo ci/config_vhost.sh midcamp $BASEDIR/docroot
+ - sudo ci/config_vhost.sh midcamp $BASEDIR/docroot $BASEDIR/ci/apache/vhost.conf
  - ci/install_selenium.sh
  - phpenv rehash
 
