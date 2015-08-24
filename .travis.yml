@@ -16,20 +16,21 @@ addons:
 
 before_install:
  - export BASEDIR=${PWD}
+ - sudo apt-get update
  - composer self-update
- - ci/install_ci.sh
- - export PATH="$BASEDIR/ci/vendor/bin:$PATH"
- - ci/install_tests.sh
 
 install:
  - sudo ci/install_apache.sh
  - sudo ci/config_vhost.sh midcamp $BASEDIR/docroot $BASEDIR/ci/apache/vhost.conf
+ - phpenv config-add ci/php/memcache.ini
+ - phpenv config-add ci/php/tweaks.ini
+ - ci/install_ci.sh
+ - export PATH="$BASEDIR/ci/vendor/bin:$PATH"
+ - ci/install_tests.sh
  - ci/install_selenium.sh
  - phpenv rehash
 
 before_script:
- - phpenv config-add ci/php/memcache.ini
- - phpenv config-add ci/php/tweaks.ini
  - ci/install_drupal_mysql.sh
  - "sh -e /etc/init.d/xvfb start"
  - "export DISPLAY=:99.0"
