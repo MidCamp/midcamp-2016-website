@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export BASEDIR=${PWD}
+
 apt-get update > /dev/null
 apt-get install -y --force-yes apache2 libapache2-mod-php5 php5-curl php5-mysql
 
