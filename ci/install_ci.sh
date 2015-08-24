@@ -2,4 +2,4 @@
 
 cd $BASEDIR/ci
 mkdir bin
-composer install
+composer install --no-interaction --prefer-source
