@@ -1,5 +1,10 @@
 {
     "require": {
         "drush/drush": "7.*"
+    },
+    "require-dev": {
+        "phploc/phploc": "*",
+        "phpmd/phpmd" : "@stable",
+        "squizlabs/php_codesniffer": "2.*"
     }
 }
