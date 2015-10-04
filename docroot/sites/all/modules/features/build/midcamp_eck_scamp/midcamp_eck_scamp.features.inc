@@ -23,18 +23,21 @@ function midcamp_eck_scamp_eck_bundle_info() {
       'entity_type' => 'scamp',
       'name' => 'assignment',
       'label' => 'Assignment',
+      'config' => array(),
     ),
     'scamp_room' => array(
       'machine_name' => 'scamp_room',
       'entity_type' => 'scamp',
       'name' => 'room',
       'label' => 'Room',
+      'config' => array(),
     ),
     'scamp_timeslot' => array(
       'machine_name' => 'scamp_timeslot',
       'entity_type' => 'scamp',
       'name' => 'timeslot',
       'label' => 'Timeslot',
+      'config' => array(),
     ),
   );
   return $items;
