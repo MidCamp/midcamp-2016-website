@@ -25,6 +25,7 @@
   @include breakpoint($md, $no-query: true) {
     position: relative;
     float: left;
+    /* width: 16.66667%; */
     width: 16.66667%;
     padding-bottom: 17px;
   }
