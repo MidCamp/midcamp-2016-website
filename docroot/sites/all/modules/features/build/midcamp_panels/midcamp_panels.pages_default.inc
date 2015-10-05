@@ -1300,7 +1300,7 @@ function midcamp_panels_default_page_manager_pages() {
     'relationships' => array(),
   );
   $display = new panels_display();
-  $display->layout = 'zen_no_wrapper';
+  $display->layout = 'threecol_33_34_33';
   $display->layout_settings = array(
     'main_classes' => '',
   );
@@ -1310,6 +1310,9 @@ function midcamp_panels_default_page_manager_pages() {
       'feature_1' => NULL,
       'feature_2' => NULL,
       'main' => NULL,
+      'left' => NULL,
+      'middle' => NULL,
+      'right' => NULL,
     ),
   );
   $display->cache = array();
@@ -1317,11 +1320,154 @@ function midcamp_panels_default_page_manager_pages() {
   $display->uuid = 'a162d926-1261-4de3-ac93-0613b389f8ca';
   $display->content = array();
   $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-c077ea32-fc10-422d-b218-4a443ecd5e84';
+    $pane->panel = 'left';
+    $pane->type = 'custom';
+    $pane->subtype = 'home_dates';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => '',
+      'title' => '',
+      'body' => '',
+      'format' => 'full_html',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'c077ea32-fc10-422d-b218-4a443ecd5e84';
+    $display->content['new-c077ea32-fc10-422d-b218-4a443ecd5e84'] = $pane;
+    $display->panels['left'][0] = 'new-c077ea32-fc10-422d-b218-4a443ecd5e84';
+    $pane = new stdClass();
+    $pane->pid = 'new-af8f8a71-3724-4b70-91e1-058ec9f64482';
+    $pane->panel = 'middle';
+    $pane->type = 'custom';
+    $pane->subtype = 'home_sponsors';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => '',
+      'title' => '',
+      'body' => '',
+      'format' => 'full_html',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'af8f8a71-3724-4b70-91e1-058ec9f64482';
+    $display->content['new-af8f8a71-3724-4b70-91e1-058ec9f64482'] = $pane;
+    $display->panels['middle'][0] = 'new-af8f8a71-3724-4b70-91e1-058ec9f64482';
+    $pane = new stdClass();
+    $pane->pid = 'new-038630c9-b100-499d-a660-50b07cafe919';
+    $pane->panel = 'right';
+    $pane->type = 'custom';
+    $pane->subtype = 'home_mailchimp';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => '',
+      'title' => '',
+      'body' => '',
+      'format' => 'full_html',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '038630c9-b100-499d-a660-50b07cafe919';
+    $display->content['new-038630c9-b100-499d-a660-50b07cafe919'] = $pane;
+    $display->panels['right'][0] = 'new-038630c9-b100-499d-a660-50b07cafe919';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
   $pages['midcamp_home_page'] = $page;
+
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
+  $page->name = 'page_become_a_sponsor';
+  $page->task = 'page';
+  $page->admin_title = 'page-become-a-sponsor';
+  $page->admin_description = '';
+  $page->path = 'become-a-sponsor';
+  $page->access = array();
+  $page->menu = array(
+    'type' => 'normal',
+    'title' => 'Become a Sponsor',
+    'name' => 'main-menu',
+    'weight' => '0',
+    'parent' => array(
+      'type' => 'none',
+      'title' => '',
+      'name' => 'navigation',
+      'weight' => '0',
+    ),
+  );
+  $page->arguments = array();
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_page_become_a_sponsor__panel';
+  $handler->task = 'page';
+  $handler->subtask = 'page_become_a_sponsor';
+  $handler->handler = 'panel_context';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'Panel',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'name' => 'panel',
+  );
+  $display = new panels_display();
+  $display->layout = 'zen_no_wrapper';
+  $display->layout_settings = array(
+    'main_classes' => '',
+  );
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'main' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->uuid = '268618d3-c383-47dc-a844-dcd21de05901';
+  $display->content = array();
+  $display->panels = array();
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['page_become_a_sponsor'] = $page;
 
   $page = new stdClass();
   $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
@@ -2201,6 +2347,7 @@ function midcamp_panels_default_page_manager_pages() {
       'body' => '<p>Want to add your name to this list of amazing businesses and organizations? Find out how to <strong><a href="/sponsor">be a sponsor</a></strong>.</p>',
       'format' => 'full_html',
       'substitute' => TRUE,
+      'name' => 'sponsore_become',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -2378,6 +2525,31 @@ function midcamp_panels_default_page_manager_pages() {
     $pane->uuid = '5f38b742-23be-4e18-ad76-40d51dd9a70a';
     $display->content['new-5f38b742-23be-4e18-ad76-40d51dd9a70a'] = $pane;
     $display->panels['middle'][7] = 'new-5f38b742-23be-4e18-ad76-40d51dd9a70a';
+    $pane = new stdClass();
+    $pane->pid = 'new-2c84a8be-333f-4ba6-8da2-ef0395a21b78';
+    $pane->panel = 'middle';
+    $pane->type = 'custom';
+    $pane->subtype = 'sponsors_become_a_sponsor';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => '',
+      'title' => '',
+      'body' => '',
+      'format' => 'full_html',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 8;
+    $pane->locks = array();
+    $pane->uuid = '2c84a8be-333f-4ba6-8da2-ef0395a21b78';
+    $display->content['new-2c84a8be-333f-4ba6-8da2-ef0395a21b78'] = $pane;
+    $display->panels['middle'][8] = 'new-2c84a8be-333f-4ba6-8da2-ef0395a21b78';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
