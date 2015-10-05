@@ -52,11 +52,27 @@ function midcamp_panels_default_ctools_custom_content() {
   $content->settings = array(
     'admin_title' => '',
     'title' => '',
-    'body' => '<h2><a href="/sponsor">Sponsor MidCamp 2016</a></h2><p>Grab the opportunity to help us put on MidCamp 2016 by becoming a Sponsor.</p><p><a href="/sponsor" class="button">Learn more</a></p>',
+    'body' => '<h2><a href="/become-a-sponsor">Sponsor MidCamp 2016</a></h2><p>Grab the opportunity to help us put on MidCamp 2016 by becoming a Sponsor.</p><p><a class="button" href="/become-a-sponsor">Learn more</a></p>',
     'format' => 'full_html',
     'substitute' => 1,
   );
   $export['home_sponsors'] = $content;
+
+  $content = new stdClass();
+  $content->disabled = FALSE; /* Edit this to true to make a default content disabled initially */
+  $content->api_version = 1;
+  $content->name = 'sponsor_content';
+  $content->admin_title = 'Become a Sponsor Content';
+  $content->admin_description = '';
+  $content->category = 'Custom';
+  $content->settings = array(
+    'admin_title' => '',
+    'title' => '',
+    'body' => '<h2>Become a Sponsor for MidCamp 2016</h2><p><meta charset="utf-8"></p><p>MidCamp 2015 had 300 attendees with training, sprints, and almost 50 sessions over 4 days in the heart of Chicago. &nbsp;Our camp is quickly becoming one of the premier Drupal events in the United States.</p><p>With MidCamp 2016, we are expecting growth in attendance, and the same high-caliber involvement and speaking engagements from Drupal focused agencies and community leaders. &nbsp;Sponsoring MidCamp is a great way to promote your company, organization, or product and to show your support for Drupal, and the Midwest Drupal community.</p><p>We have a wide variety of sponsor packages designed to meet the needs of companies and organizations both large and small. Contact us to get started today!</p>',
+    'format' => 'full_html',
+    'substitute' => 1,
+  );
+  $export['sponsor_content'] = $content;
 
   $content = new stdClass();
   $content->disabled = FALSE; /* Edit this to true to make a default content disabled initially */

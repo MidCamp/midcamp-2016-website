@@ -1463,6 +1463,31 @@ function midcamp_panels_default_page_manager_pages() {
   $display->uuid = '268618d3-c383-47dc-a844-dcd21de05901';
   $display->content = array();
   $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-1a010456-cc51-43ab-b8d4-43d4a062fb1e';
+    $pane->panel = 'main';
+    $pane->type = 'custom';
+    $pane->subtype = 'sponsor_content';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => '',
+      'title' => '',
+      'body' => '',
+      'format' => 'full_html',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '1a010456-cc51-43ab-b8d4-43d4a062fb1e';
+    $display->content['new-1a010456-cc51-43ab-b8d4-43d4a062fb1e'] = $pane;
+    $display->panels['main'][0] = 'new-1a010456-cc51-43ab-b8d4-43d4a062fb1e';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

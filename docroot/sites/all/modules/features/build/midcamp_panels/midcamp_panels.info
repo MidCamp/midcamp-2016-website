@@ -11,6 +11,7 @@ dependencies[] = strongarm
 features[ctools_custom_content][] = home_dates
 features[ctools_custom_content][] = home_mailchimp
 features[ctools_custom_content][] = home_sponsors
+features[ctools_custom_content][] = sponsor_content
 features[ctools_custom_content][] = sponsors_become_a_sponsor
 features[page_manager_handlers][] = node_edit_panel_context
 features[page_manager_handlers][] = node_edit_panel_context_2
