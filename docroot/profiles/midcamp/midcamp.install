@@ -13,6 +13,19 @@ function midcamp_install() {
   variable_set('features_rebuild_on_module_install', FALSE);
   $t = get_t();
 
+  // Create and enable custom blocks.
+  $bid = db_insert('block_custom')
+    ->fields(array(
+      'body' => "<p>March 17-20, 2016 at University of Illinois at Chicago (UIC)</p>",
+      'info' => 'Date and venue',
+      'format' => 'full_html'
+      ))
+    ->execute();
+  $insert = db_insert('block')
+    ->fields(array('module', 'delta', 'theme', 'status', 'weight', 'region', 'custom', 'visibility', 'pages', 'title', 'cache'))
+    ->values(array('block', $bid, 'sitetheme', 1, 2, 'header', 0, 0, '', '', -1))
+    ->execute();
+
   // Enable default and admin themes.
   $default_theme = 'sitetheme';
   $admin_theme = 'adminimal';
@@ -150,6 +163,7 @@ function midcamp_install() {
     'midcamp_flag_featured_user',
     'midcamp_media',
     'midcamp_menu',
+    'midcamp_menu_links',
     'midcamp_node_job',
     'midcamp_node_news',
     'midcamp_node_page',

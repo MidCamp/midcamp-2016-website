@@ -1,6 +1,7 @@
 name = MidCamp Conference Details
 core = 7.x
 package = Profiles
+dependencies[] = features
 dependencies[] = midcamp_fields
 dependencies[] = profile2
 dependencies[] = strongarm

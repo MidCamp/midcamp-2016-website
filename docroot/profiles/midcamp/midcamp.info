@@ -120,6 +120,7 @@ dependencies[] = midcamp_flag_accepted
 dependencies[] = midcamp_flag_featured_user
 dependencies[] = midcamp_media
 dependencies[] = midcamp_menu
+dependencies[] = midcamp_menu_links
 dependencies[] = midcamp_node_job
 dependencies[] = midcamp_node_news
 dependencies[] = midcamp_node_page

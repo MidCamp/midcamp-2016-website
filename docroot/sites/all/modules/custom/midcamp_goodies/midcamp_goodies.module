@@ -187,3 +187,16 @@ function midcamp_goodies_schedule_import($input, $reset = FALSE) {
 function midcamp_goodies_ctools_plugin_directory($owner, $plugin_type) {
   return "plugins/$owner/$plugin_type";
 }
+
+/**
+ * Implements hook_features_builders_info().
+ */
+function midcamp_goodies_features_builders_info() {
+  $builders = array(
+    'features_builder_menu_links' => array(
+      'label' => t('Menu links'),
+      'class' => 'MenuLinksFeaturesBuilder',
+    ),
+  );
+  return $builders;
+}

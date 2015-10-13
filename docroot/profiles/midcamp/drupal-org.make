@@ -16,7 +16,7 @@ projects[adminimal_admin_menu][subdir] = "contrib"
 projects[module_filter][version] = "2.0"
 projects[module_filter][subdir] = "contrib"
 
-projects[ctools][version] = "1.7"
+projects[ctools][version] = "1.9"
 projects[ctools][subdir] = "contrib"
 
 projects[date][version] = "2.8"
@@ -31,7 +31,7 @@ projects[efq_helper][subdir] = "contrib"
 projects[profiler_builder][version] = "1.2"
 projects[profiler_builder][subdir] = "contrib"
 
-projects[eck][version] = "2.0-rc7"
+projects[eck][version] = "2.x-dev"
 projects[eck][subdir] = "contrib"
 
 projects[features][version] = "2.6"
@@ -97,7 +97,7 @@ projects[environment_indicator][subdir] = "contrib"
 projects[libraries][version] = "2.2"
 projects[libraries][subdir] = "contrib"
 
-projects[linkit][version] = "3.3"
+projects[linkit][version] = "3.4"
 projects[linkit][subdir] = "contrib"
 
 projects[menu_block][version] = "2.7"
@@ -164,7 +164,7 @@ projects[webform][subdir] = "contrib"
 
 ; adminimal_theme
 projects[adminimal_theme][type] = "theme"
-projects[adminimal_theme][version] = "1.21"
+projects[adminimal_theme][version] = "1.22"
 projects[adminimal_theme][subdir] = "contrib"
 
 ; zen

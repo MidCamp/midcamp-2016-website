@@ -56,7 +56,7 @@ function midcamp_site_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'clean_url';
-  $strongarm->value = 1;
+  $strongarm->value = TRUE;
   $export['clean_url'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -329,7 +329,7 @@ function midcamp_site_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'site_mail';
-  $strongarm->value = 'info@midcamp.org';
+  $strongarm->value = 'evilehk@gmail.com';
   $export['site_mail'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -448,7 +448,7 @@ function midcamp_site_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'update_notify_emails';
   $strongarm->value = array(
-    0 => 'info@midcamp.org',
+    0 => 'evilehk@gmail.com',
   );
   $export['update_notify_emails'] = $strongarm;
 

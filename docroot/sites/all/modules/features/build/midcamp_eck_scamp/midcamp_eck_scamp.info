@@ -4,6 +4,7 @@ package = Entity
 dependencies[] = date
 dependencies[] = eck
 dependencies[] = entityreference
+dependencies[] = features
 dependencies[] = midcamp_fields
 dependencies[] = options
 dependencies[] = strongarm
