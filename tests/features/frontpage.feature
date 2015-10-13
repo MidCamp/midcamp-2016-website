@@ -39,4 +39,12 @@ Feature: Front page content
       | EMAIL | drewpaul |
       | FNAME | Drew     |
       | LNAME | Paul     |
-    Then I should see "Please enter a valid email address." in the ".mce_inline_error" element
+    Then I should see "Please enter a valid email address." in the "div[for=mce-EMAIL].mce_inline_error" element
+
+    @midcamp-225
+    Scenario: Main menu links
+      Given I am an anonymous user
+      And I am on the homepage
+      Then I should see 2 "ul.menu--main-menu.menu.links li" elements
+      And the "ul.menu--main-menu.menu.links li:nth-child(1)" element should contain "Become a Sponsor"
+      And the "ul.menu--main-menu.menu.links li:nth-child(2)" element should contain "2015 MidCamp"
