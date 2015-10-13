@@ -1,14 +1,15 @@
 name = MidCamp Webform
 core = 7.x
 package = Content
-dependencies[] = ctools
 dependencies[] = features
 dependencies[] = midcamp_fields
 dependencies[] = strongarm
+features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:2
 features[node][] = webform
+features[variable][] = comment_webform
 features[variable][] = menu_options_webform
 features[variable][] = menu_parent_webform
 features[variable][] = node_options_webform
 features[variable][] = node_preview_webform
 features[variable][] = node_submitted_webform
-features[features_api][] = api:2

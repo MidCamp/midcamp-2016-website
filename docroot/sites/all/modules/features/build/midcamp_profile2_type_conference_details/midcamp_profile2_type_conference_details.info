@@ -1,15 +1,14 @@
 name = MidCamp Conference Details
 core = 7.x
 package = Profiles
-dependencies[] = ctools
-dependencies[] = features
 dependencies[] = midcamp_fields
 dependencies[] = profile2
 dependencies[] = strongarm
+features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:2
 features[field_instance][] = profile2-conference_details-field_dietary_restrictions
 features[field_instance][] = profile2-conference_details-field_interest_social_fri
 features[field_instance][] = profile2-conference_details-field_interest_social_sat
 features[field_instance][] = profile2-conference_details-field_t_shirt_size
 features[profile2_type][] = conference_details
 features[variable][] = field_bundle_settings_profile2__conference_details
-features[features_api][] = api:2
