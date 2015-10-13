@@ -56,7 +56,6 @@ tests/vendor
 tests/bin
 tests/composer.phar
 tests/behat.phar
-tests/failures
 
 # OS generated files #
 ######################

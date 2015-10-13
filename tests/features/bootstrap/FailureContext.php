@@ -1,16 +1,22 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: will
- * Date: 6/22/15
- * Time: 6:59 AM
- */
 
 use Behat\Mink\Driver\Selenium2Driver;
 use Behat\Behat\Hook\Scope\AfterStepScope;
-use Behat\MinkExtension\Context\RawMinkContext;
+use Behat\Behat\Context\Context;
+use Behat\Behat\Hook\Scope\BeforeScenarioScope;
 
-class FailureContext extends RawMinkContext {
+class FailureContext implements Context {
+
+  protected $contexts = array();
+  protected $failurePath;
+
+  /**
+   * @BeforeScenario
+   */
+  public function prepare(BeforeScenarioScope $scope) {
+    $this->contexts['mink'] = $scope->getEnvironment()->getContext('MidCampMinkContext');
+    $this->failurePath = $scope->getEnvironment()->getSuite()->getSetting('failure_path');
+  }
 
   /**
    * @AfterStep
@@ -27,14 +33,29 @@ class FailureContext extends RawMinkContext {
   }
 
   /**
+   * @Then /^I take an awesome screenshot$/
+   */
+  public function takeScreenShot() {
+    $fileName = $this->fileName();
+    $this->dumpMarkup($fileName);
+    $this->screenShot($fileName);
+  }
+
+  /**
    * Compute a file name for the output.
    */
-  protected function fileName($scope) {
-    $baseName = pathinfo($scope->getFeature()->getFile());
-    $baseName = substr($baseName['basename'], 0 , strlen($baseName['basename']) - strlen($baseName['extension']) - 1);
-    $baseName .= '-' . $scope->getStep()->getLine();
-    $baseName .= '-' . time();
-    $baseName = $scope->getEnvironment()->getSuite()->getSetting('failure_path') . '/' . $baseName;
+  protected function fileName($scope = NULL) {
+    if ($scope) {
+      $baseName = pathinfo($scope->getFeature()->getFile());
+      $baseName = substr($baseName['basename'], 0 , strlen($baseName['basename']) - strlen($baseName['extension']) - 1);
+      $baseName .= '-' . $scope->getStep()->getLine();
+    }
+    else {
+      $baseName = 'screenshot';
+    }
+
+    $baseName .= '-' . date('YmdHis');
+    $baseName = $this->failurePath . '/' . $baseName;
     return $baseName;
   }
 
@@ -43,7 +64,7 @@ class FailureContext extends RawMinkContext {
    */
   protected function dumpMarkup($fileName) {
     $fileName .= '.html';
-    $html = $this->getSession()->getPage()->getContent();
+    $html = $this->contexts['mink']->getSession()->getPage()->getContent();
     file_put_contents($fileName, $html);
     sprintf("HTML available at: %s\n", $fileName);
   }
@@ -53,10 +74,10 @@ class FailureContext extends RawMinkContext {
    */
   protected function screenShot($fileName) {
     $fileName .= '.png';
-    $driver = $this->getSession()->getDriver();
+    $driver = $this->contexts['mink']->getSession()->getDriver();
 
     if ($driver instanceof Selenium2Driver) {
-      file_put_contents($fileName, $this->getSession()->getDriver()->getScreenshot());
+      file_put_contents($fileName, $this->contexts['mink']->getSession()->getDriver()->getScreenshot());
       sprintf("Screen shot available at: %s\n", $fileName);
       return;
     }
