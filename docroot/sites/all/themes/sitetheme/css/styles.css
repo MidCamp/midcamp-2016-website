@@ -2613,7 +2613,8 @@ tr.selected td {
   #navigation .menu > .level-1 {
     position: relative;
     float: left;
-    width: 16.66667%;
+    width: 20%;
+    /* width: 16.66667%; */
     padding-bottom: 17px;
   }
 }
@@ -5713,4 +5714,9 @@ html body.admin-menu #admin-menu {
   html body.admin-menu #admin-menu {
     display: block;
   }
+}
+
+/* Mailchimp form */
+#mc_embed_signup_scroll input {
+  width: 100%;
 }
