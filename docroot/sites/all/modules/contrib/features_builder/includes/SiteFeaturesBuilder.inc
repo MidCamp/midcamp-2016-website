@@ -99,6 +99,11 @@ class SiteFeaturesBuilder extends FeaturesBuilderBase {
       $this->setNamedComponents('variable', $variables);
     }
 
+    if (module_exists('simplify')) {
+      $this->setNamedComponents('dependencies', array('simplify'));
+      $this->setRegexComponents('variable', '/^simplify_/');
+    }
+
     if (module_exists('transliteration')) {
       $this->setNamedComponents('dependencies', array('transliteration'));
       $this->setRegexComponents('variable', '/^transliteration_/');

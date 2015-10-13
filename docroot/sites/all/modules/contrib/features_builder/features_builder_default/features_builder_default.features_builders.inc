@@ -58,9 +58,17 @@ function features_builder_default_features_builders_info() {
       'label' => t('Panels'),
       'class' => 'PanelsFeaturesBuilder',
     ),
+    'features_builder_paragraphs' => array(
+      'label' => t('Paragraphs'),
+      'class' => 'ParagraphsFeaturesBuilder',
+    ),
     'features_builder_profile2' => array(
       'label' => t('Profile2'),
       'class' => 'Profile2FeaturesBuilder',
+    ),
+    'features_builder_search_api' => array(
+      'label' => t('Search'),
+      'class' => 'SearchApiBuilder',
     ),
     'features_builder_seo' => array(
       'label' => t('SEO'),

@@ -207,31 +207,6 @@ function features_builder_exportable_count_states() {
 }
 
 /**
- * List all exportables available to Features.
- * 
- * @todo: Review if this is necessary. Thought it would be, seems less so now.
- * 
- * @return array
- *   An array of strings, one for each exportable. The array is keyed by a 
- *   string in the form of "component:exportable_name" and the values are the 
- *   human-readable names as provided by Features.
- */
-function features_builder_list_exportables() {
-  $exportables = &drupal_static(__FUNCTION__);
-
-  if ($exportables === NULL) {
-    $exportables = array();
-    foreach (features_builder_get_exportables() as $component => $exportable) {
-      foreach ($exportable as $id => $label) {
-        $exportables["$component:$id"] = $label;
-      }
-    }
-  }
-
-  return $exportables;
-}
-
-/**
  * Get a list of all builders available.
  * 
  * @return array
@@ -270,6 +245,9 @@ function features_builder_load_includes() {
 
 /**
  * Load a builder definition.
+ *
+ * @param string $name
+ * @return array
  */
 function features_builder_load($name) {
   $builders = features_builder_get_builders();
@@ -286,7 +264,7 @@ function features_builder_load($name) {
  * @param string $feature
  *   The name feature on which the builder is operating.
  * 
- * @return object
+ * @return FeaturesBuilderInterface
  *   An instantiated instance of a class that extends FeaturesBuilderBase.
  */
 function features_builder_get_class($name, $feature) {
@@ -313,81 +291,9 @@ function features_builder_get_features() {
 }
 
 /**
- * This is the money-maker.
- *
- * Deprecated in favor of batch process.
- */
-function features_builder_build() {
-
-  // Set up temp space.
-  $directory = 'temporary://features_builder';
-  if (is_readable($directory)) {
-    file_unmanaged_delete_recursive($directory);
-  }
-  file_prepare_directory($directory, FILE_CREATE_DIRECTORY || FILE_MODIFY_PERMISSIONS);
-
-  // Generate all of the files.
-  $features = array();
-  foreach (features_builder_get_features() as $feature => $builder_class) {
-    $builder = features_builder_get_class($builder_class, $feature);
-    $builder->export($directory);
-    $features[$builder->moduleName] = $builder;
-  }
-
-  // Move all files into place.
-  foreach ($features as $feature => $builder) {
-    if (is_readable($builder->featureDir())) {
-      file_unmanaged_delete_recursive($builder->featureDir());
-    }
-    if (is_readable("$directory/$feature")) {
-      $dir = dirname($builder->featureDir());
-      file_prepare_directory($dir, FILE_CREATE_DIRECTORY || FILE_MODIFY_PERMISSIONS);
-      @rename(drupal_realpath("$directory/$feature"), $builder->featureDir());
-    }
-  }
-
-  // Clean up temp space.
-  file_unmanaged_delete_recursive($directory);
-
-}
-
-/**
- * Move a build feature from temp storage to its final location.
- */
-function _features_builder_build($feature, $class, $temp_dir) {
-  $builder = features_builder_get_class($class, $feature);
-  $builder->export($temp_dir);
-  $features[$builder->moduleName] = $builder;
-}
-
-/**
- * Move a built feature from temp storage to its final location.
- */
-function _features_builder_move($feature, $class, $temp_dir) {
-  $builder = features_builder_get_class($class, $feature);
-  $temp = "$temp_dir/{$builder->moduleName}";
-
-  if (!is_readable($temp)) {
-    return;
-  }
-
-  if (is_readable($builder->featureDir())) {
-    file_unmanaged_delete_recursive($builder->featureDir());
-  }
-
-  $dest = dirname($builder->featureDir());
-  file_prepare_directory($dest, FILE_CREATE_DIRECTORY || FILE_MODIFY_PERMISSIONS);
-  @rename(drupal_realpath($temp), $builder->featureDir());
-}
-
-/**
  * Batch declaration for the build process.
  */
 function features_builder_prep_batch($options = array()) {
-
-  // Set up temp space.
-  $directory = 'temporary://features-builder-' . REQUEST_TIME;
-  file_prepare_directory($directory, FILE_CREATE_DIRECTORY || FILE_MODIFY_PERMISSIONS);
 
   $batch = array(
     'title' => t('Building features.'),
@@ -396,17 +302,13 @@ function features_builder_prep_batch($options = array()) {
     'finished' => 'features_builder_batch_finalize',
   );
 
-  if (!$data = features_builder_get_features()) {
-    return $batch;
-  }
+  module_load_include('inc', 'features_builder', 'features_builder.build');
+  $manifest = features_builder_get_manifest();
+  $dependencies = features_builder_build_get_dependencies($manifest);
+  $manifest = features_builder_build_order_manifest($manifest, $dependencies);
+  $manifest = features_builder_build_set_dependencies($manifest, $dependencies);
 
-//  $batch['operations'][] = array('features_builder_hijack_batch', array($data));
-  $batch['operations'][] = array('features_builder_build_batch', array($data, $directory));
-  $batch['operations'][] = array('features_builder_move_batch', array($data, $directory));
-
-  if (!empty($options['enable'])) {
-    $batch['operations'][] = array('features_builder_enable_batch', array($data));
-  }
+  $batch['operations'][] = array('features_builder_build_batch', array($manifest, $options));
 
   return $batch;
 }

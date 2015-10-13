@@ -23,16 +23,18 @@ files[] = includes/MessageFeaturesBuilder.inc
 files[] = includes/NodeFeaturesBuilder.inc
 files[] = includes/OgFeaturesBuilder.inc
 files[] = includes/PanelsFeaturesBuilder.inc
+files[] = includes/ParagraphsFeaturesBuilder.inc
 files[] = includes/Profile2FeaturesBuilder.inc
+files[] = includes/SearchApiBuilder.inc
 files[] = includes/SeoFeaturesBuilder.inc
 files[] = includes/SiteFeaturesBuilder.inc
 files[] = includes/TaxonomyFeaturesBuilder.inc
 files[] = includes/UserFeaturesBuilder.inc
 files[] = includes/ViewsFeaturesBuilder.inc
 
-; Information added by Drupal.org packaging script on 2015-07-27
-version = "7.x-1.x-dev"
+; Information added by Drupal.org packaging script on 2015-10-05
+version = "7.x-1.0-alpha2"
 core = "7.x"
 project = "features_builder"
-datestamp = "1438026860"
+datestamp = "1444083757"
 

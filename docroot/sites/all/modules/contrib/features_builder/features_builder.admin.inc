@@ -55,9 +55,8 @@ function features_builder_admin_build() {
     // List the features modules provided by the builder.
     $items = array();
     foreach ($builder['class']::listFeatures() as $name => $feature) {
-      $builder_class = features_builder_get_class($builder['name'], $name);
       $label = l($feature, "admin/structure/features/build/{$builder['name']}/$name");
-      $items[] = t('!label (@name): !status', array('!label' => $label, '@name' => $name, '!status' => $builder_class->statusLabel()));
+      $items[] = t('!label (@name)', array('!label' => $label, '@name' => $name));
     }
     if (count($items) > 0) {
       $row[] = theme('item_list', array('items' => $items));
