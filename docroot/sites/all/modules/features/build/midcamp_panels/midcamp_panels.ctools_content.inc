@@ -68,7 +68,162 @@ function midcamp_panels_default_ctools_custom_content() {
   $content->settings = array(
     'admin_title' => '',
     'title' => '',
-    'body' => '<h2>Become a Sponsor for MidCamp 2016</h2><p>MidCamp 2015 had 300 attendees with training, sprints, and almost 50 sessions over 4 days in the heart of Chicago. &nbsp;Our camp is quickly becoming one of the premier Drupal events in the United States.</p><p>With MidCamp 2016, we are expecting growth in attendance, and the same high-caliber involvement and speaking engagements from Drupal focused agencies and community leaders. &nbsp;Sponsoring MidCamp is a great way to promote your company, organization, or product and to show your support for Drupal, and the Midwest Drupal community.</p><p>We have a wide variety of sponsor packages designed to meet the needs of companies and organizations both large and small. <a href="mailto:sponsor@midcamp.org">Contact us to get started today</a>!</p><h3>Platinum Sponsorship</h3><ul><li>$7,500.71</li><li>Everything from Gold level plus:</li><li>Introduce keynote speaker</li><li>Logo on badge</li><li>Keynote Room Naming</li><li>One On Site Sponsorship Add On</li><li>Contact us to customized your package!</li></ul><h3>Gold Sponsorship</h3><ul><li>$3,000.71</li><li>Everything from Silver level plus:</li><li>Primary logo placement on website</li><li>Company description on website</li><li>Logo in printed program</li><li>Exposure on camp website news</li><li>Table at the event</li><li>Social media promotion</li><li>Introduction during keynote address</li><li>Logo placement in keynote address</li><li>Attendee list</li><li>6 tickets</li><li>Session Room Naming (First come, first served)</li></ul><h3>Silver Sponsorship</h3><ul><li>$1,871.71</li><li>Everything from Bronze level plus:</li><li>Secondary logo placement on website</li><li>Company description on website</li><li>Logo in printed program</li><li>Social media promotion</li><li>3 tickets</li></ul><h3>Bronze Sponsorship</h3><ul><li>$500.71</li><li>Logo on website</li><li>Job Board Listing</li><li>Social media promotion</li><li>2 tickets</li></ul><h3>Individual Sponsorship</h3><ul><li>$100.71</li><li>Name on website</li><li>1 ticket</li></ul><h2>On Site Sponsorship Options</h2><p>MidCamp 2016 will also have several additional On Site Sponsorships available:</p><h4>Closed Caption Sponsors</h4><p>Sponsor the daily Close Captioning of a session room. Be one of the first to help us make Drupal Camps more inclusive!</p><ul><li>$1,871.71</li><li>Company description and logo on website</li><li>Exposure on camp website news</li><li>Social media promotion</li></ul><h4>Coffee Sponsors</h4><p>Drupalers like coffee, and coffee likes you! Become one of the coffee sponsors and have your company name associated with the liquid refueling station!</p><ul><li>$1,871.71</li><li>Company description and logo on website</li><li>Exposure on camp website news</li><li>Social media promotion</li><li>Signage on coffee tables</li></ul><h4>Breakfast Sponsors</h4><p>Delicious! Early risers, eager learners, and keynote attendees will love your sponsporship of breakfast items!</p><ul><li>$1,871.71</li><li>Company description and logo on website</li><li>Exposure on camp website news</li><li>Social media promotion</li><li>Signage on buffet tables</li></ul><h4>Lunch Sponsors</h4><p>What is better than Breakfast and Dinner? Lunch! The perfect opportunity to get your name in front of all of the attendees is to reach them at lunch.</p><ul><li>$1.871.71</li><li>Company description and logo on website</li><li>Exposure on camp website news</li><li>Social media promotion</li><li>Signage on buffet tables</li></ul><h4>Sprint Sponsors</h4><p>MidCamp sprints are well attended by community leaders, those with new interest, and everyone in between. Your sponsorship will help us provide space for giving back.</p><ul><li>$1,871.71</li><li>Company description and logo on website</li></ul><h4>Program Sponsor</h4><p>Our programs end up in the hands of every MidCamp attendee, you sponsorship of the program will be a fnatastic investment.</p><ul><li>$1,871.71</li><li>Full back cover ad on printed program</li><li>Company description and logo on website</li></ul><h4>Training Day</h4><p>Training day is a smaller, more focused event where your sponsorship will reach highly focused trainees.</p><ul><li>$1,871.71</li><li>Company description and logo on website</li><li>Exposure on camp website news</li><li>Social media promotion</li><li>Exclusive Signage at the venue</li></ul><h4>Evening Social Sponsor</h4><p>You are the life of the party, and know how to throw a good one! Sponsor one of the evening socials and have your name up in lights!</p><ul><li>$1,871.71 (2 available)</li><li>Company description and logo on website</li><li>Exposure on camp website news</li><li>Social media promotion</li></ul><h4>Job Board</h4><p>Sponsor the whole job board on <a href="http://www.midcamp.org">http://www.midcamp.org</a>.</p><ul><li>$1,871.71</li><li>Company description and logo on website</li><li>Exposure on camp website news</li><li>Social media promotion</li></ul><h4>Training Day Coffee Sponsor</h4><p>Providing coffee to attendees of the Training day is a worthy and just act of nobility, and will put your name in front of coffee drinking trainees.</p><ul><li>$500.71</li><li>Company description and logo on website</li><li>Signage on coffee tables</li></ul><h4>Table at Venue</h4><p>Not all sponsors want a booth, or to staff it. If you do, we can help with this add on sponsrship.</p><ul><li>$500.71</li></ul><h4>The Expert is In</h4><p>Staff our booth with your Expert so attendees can ask questions about life, Drupal, and your product!</p><ul><li>$500.71</li></ul><p>If you&rsquo;re interested (and we know you are!), let us know and we will be in touch!</p><h2>Custom and In-Kind Sponsorships</h2><p>In addition to these packages, custom and in-kind sponsorship opportunities are available. Do you have a product, service that you&#39;d like to offer MidCamp attendees? <a href="mailto:sponsor@midcamp.org">Just let us know</a> and we will work with you to customize a sponsorship.</p><p>Why do the prices for our sponsor packages end in .71? It helps our fiscal agent, the Drupal Association, make sure that your funds get directed to the right place. It&rsquo;s also our tongue-in-cheek tribute to one of Chicago&rsquo;s most momentous events, the Great Chicago Fire of 1871.</p>',
+    'body' => '<div style="float:right;width:300px;margin:0 0 20px 20px;padding:0 20px 20px 20px; background:#EDEDED;border-radius:10px;">
+    <h3><a href="mailto:sponsors@midcamp.org">Contact Us</a></h3>
+    <p>Please <a href="mailto:sponsors@midcamp.org">contact us</a> if you are interested in sponsoring MidCamp 2016</a></p>
+    <p><a href="/sites/all/themes/sitetheme/assets/MidCamp-2016-Sponsor-Prospectus.pdf">Download the MidCamp 2016 Prospectus</a></p>
+</div>
+<h2>Become a Sponsor for MidCamp 2016</h2>
+<p>March 17th - 20th, 2016, UIC Student Center West</p>
+<p>MidCamp is an annual event held in Chicago that brings together people who use, develop, design, and support the Web’s leading content management platform, Drupal. Organized by volunteers from the regional Drupal community, MidCamp features curated sessions and panel conversations by internationally-renowned Drupal experts. MidCamp offers attendees the opportunity to increase their Drupal knowledge through networking, contribution sprints, training, and more.</p>
+<p>MidCamp is quickly becoming one of the leading Drupal gatherings for people all over the United States and beyond. MidCamp 2015 provided 300 attendees with training, sprints, and almost 50 sessions over 4 days in the heart of Chicago, and our 2016 event will be even bigger and better.</p>
+<p>MidCamp is an event for anyone who uses Drupal or is responsible for designing, building, developing, and supporting Drupal in any capacity. It is a place where designers, developers, and Drupal users can brush shoulders with Drupal service providers, hosting vendors, and other members of the broader Web development community.</p>
+<p>Sponsoring MidCamp is a great way to promote your company, organization, or product and to show your support for Drupal and the Midwest Drupal community. It also is a great opportunity to connect with potential customers and recruit talent.</p>
+<p>We have a wide variety of sponsor packages designed to meet the needs of companies and organizations both large and small. <u>Contact us to get started today</u>!</p>
+<h3>Platinum Sponsorship</h3>
+<ul>
+    <li>$7,500.71</li>
+    <li>Everything from Gold level plus:</li>
+    <li>Welcome attendees before keynote</li>
+    <li>Keynote room naming</li>
+    <li>One on-site sponsorship add-on</li>
+    <li>Training day session</li>
+    <li>Contact us to customize your package!</li>
+</ul>
+<h3>Gold Sponsorship</h3>
+<ul>
+    <li>$3,000.71</li>
+    <li>Everything from Silver level plus:</li>
+    <li>Primary logo placement on website</li>
+    <li>Exposure in camp website news</li>
+    <li>Introduction during keynote address</li>
+    <li>Logo placement in keynote address</li>
+    <li>List of opted-in attendee names </li>
+    <li>Session room naming (limited number)</li>
+    <li>6 tickets</li>
+</ul>
+<h3>Silver Sponsorship</h3>
+<ul>
+    <li>$1,871.71</li>
+    <li>Everything from Bronze level plus:</li>
+    <li>Secondary logo placement on website</li>
+    <li>Logo in printed program</li>
+    <li>3 tickets</li>
+</ul>
+<h3>Bronze Sponsorship</h3>
+<ul>
+    <li>$500.71</li>
+    <li>Logo on website</li>
+    <li>Company description on website</li>
+    <li>Job Board listing</li>
+    <li>Social media promotion</li>
+    <li>2 tickets</li>
+</ul>
+<h3>Individual Sponsorship</h3>
+<ul>
+    <li>$100.71</li>
+    <li>Name on website</li>
+    <li>1 ticket</li>
+</ul>
+<h2>On-Site Sponsorship Options</h2>
+<p>MidCamp 2016 will also have several additional On-Site Sponsorships available:</p>
+<h4>Closed Caption Sponsors</h4>
+<p>Sponsor the daily closed captioning of a session room, and help us make Drupal Camps more inclusive!</p>
+<ul>
+    <li>$1,871.71</li>
+    <li>Company description and logo on website</li>
+    <li>Exposure on camp website news</li>
+    <li>Social media promotion</li>
+</ul>
+<h4>Coffee Sponsors</h4>
+<p>Drupalers like coffee. Earn the gratitude of our attendees by having your company name associated with the liquid refueling station!</p>
+<ul>
+    <li>$1,871.71</li>
+    <li>Company description and logo on website</li>
+    <li>Exposure on camp website news</li>
+    <li>Social media promotion</li>
+    <li>Signage on coffee tables</li>
+</ul>
+<h4>Breakfast Sponsors</h4>
+<p>Early risers, eager learners, and keynote attendees will love your sponsorship of breakfast items!</p>
+<ul>
+    <li>$1,871.71</li>
+    <li>Company description and logo on website</li>
+    <li>Exposure on camp website news</li>
+    <li>Social media promotion</li>
+    <li>Signage on buffet tables</li>
+</ul>
+<h4>Lunch Sponsors</h4>
+<p>What is better than breakfast and dinner? Lunch! The perfect opportunity to get your name in front of all of the attendees is to reach them at lunch.</p>
+<ul>
+    <li>$1.871.71</li>
+    <li>Company description and logo on website</li>
+    <li>Exposure on camp website news</li>
+    <li>Social media promotion</li>
+    <li>Signage on buffet tables</li>
+</ul>
+<h4>Contribution Sprint Sponsors</h4>
+<p>MidCamp sprints are well attended by community leaders, newcomers, and everyone in between. Your sponsorship will help us provide space for giving back to the Drupal project and community.</p>
+<ul>
+    <li>$1,871.71</li>
+    <li>Company description and logo on website</li>
+    <li>Signage in sprint space</li>
+</ul>
+<h4>Program Sponsor</h4>
+<p>Distributed to every MidCamp attendee, sponsorship of the printed event program is a great investment.</p>
+<ul>
+    <li>$1,871.71</li>
+    <li>Company description and logo on website</li>
+    <li>Prominent logo placement on the program</li>
+</ul>
+<h4>Training Day Sponsor</h4>
+<p>Training Day is a smaller, more focused event targeted at attendees looking for more in-depth Drupal training. </p>
+<ul>
+    <li>$1,871.71</li>
+    <li>Company description and logo on website</li>
+    <li>Exposure in camp website news</li>
+    <li>Social media promotion</li>
+    <li>Exclusive signage at the venue</li>
+</ul>
+<h4>Evening Social Sponsor</h4>
+<p>Earn the goodwill of our attendees by sponsoring our evening social events! </p>
+<ul>
+    <li>$1,871.71</li>
+    <li>Company description and logo on website</li>
+    <li>Exposure in camp website news</li>
+    <li>Social media promotion</li>
+</ul>
+<h4>Job Board Sponsor</h4>
+<p>Get your name in front of Drupal talent by sponsoring the job board on <a href="http://www.midcamp.org">midcamp.org</a>.</p>
+<ul>
+    <li>$1,871.71</li>
+    <li>Company description and logo on website</li>
+    <li>Exposure in camp website news</li>
+    <li>Social media promotion</li>
+</ul>
+<h4>Training Day Coffee Sponsor</h4>
+<p>Help keep our Training Day attendees focused and energized by sponsoring the coffee table.</p>
+<ul>
+    <li>$500.71</li>
+    <li>Company description and logo on website</li>
+    <li>Signage on coffee tables</li>
+</ul>
+<h4>Table at Venue</h4>
+<p>If you’d like to have a dedicated table at MidCamp, this add-on sponsorship is available with any other package. </p>
+<ul>
+    <li>$500.71</li>
+    <li>6’ x 30” skirted table</li>
+</ul>
+<h4>The Expert Is In Sponsor</h4>
+<p>New for MidCamp 2016 is a special “The Expert Is In” booth where sponsor-provided experts answer questions about their products and services, Drupal, and life in general. This sponsorship includes a dedicated 2-hour timeslot as well as signage and publicity.  </p>
+<ul>
+    <li>$500.71</li>
+    <li>2-hour scheduled time slot</li>
+    <li>Signage at booth</li>
+</ul>
+<h2>Custom and In-Kind Sponsorships</h2>
+<p>In addition to these packages, custom and in-kind sponsorship opportunities are available. Do you have a product, service that you would like to offer MidCamp attendees? <a href="mailto:sponsors@midcamp.org">Just let us know</a> and we will work with you to customize a sponsorship.</p>
+<p>Why do the prices for our sponsor packages end in .71? It helps our fiscal agent, the Drupal Association, make sure that your funds get directed to the right place. It’s also our tongue-in-cheek tribute to one of Chicago’s most momentous events, the Great Chicago Fire of 1871.</p>',
     'format' => 'full_html',
     'substitute' => 1,
   );
