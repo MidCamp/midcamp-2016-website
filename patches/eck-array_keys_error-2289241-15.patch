@@ -1,0 +1,10 @@
+--- a/eck.features.inc	2015-02-09 17:16:40.000000000 +1000
++++ b/eck.features.inc	2015-02-09 17:16:12.000000000 +1000
+@@ -123,6 +123,7 @@
+ 
+       $entity_type->save();
+     }
++    drupal_get_schema(NULL, TRUE);
+     variable_set('eck_clear_caches', TRUE);
+   }
+ }

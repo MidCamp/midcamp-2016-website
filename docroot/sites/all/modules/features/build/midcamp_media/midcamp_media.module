@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the MidCamp Media feature.
+ */
+
+include_once 'midcamp_media.features.inc';

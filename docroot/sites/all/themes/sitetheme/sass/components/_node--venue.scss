@@ -1,0 +1,29 @@
+.node--venue__teaser {
+  .node__title {
+    margin-bottom: 0;
+  }
+  
+  .inner-wrapper {
+    padding-left: 80px;
+    
+    @include breakpoint($md, $no-query: true) {
+      padding-left: 112px;
+    }
+  }
+  
+  .field-type-image {
+    max-width: 72px;
+    display: inline-block;
+    float: left;
+    vertical-align: top;
+    margin-left: -112px;
+    
+    img {
+      @include rwdImage;
+    }
+    
+    @include breakpoint($md, $no-query: true) {
+      max-width: 100px;
+    }
+  }
+}

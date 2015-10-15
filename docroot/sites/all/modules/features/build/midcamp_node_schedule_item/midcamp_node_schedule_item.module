@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the MidCamp Schedule Item feature.
+ */
+
+include_once 'midcamp_node_schedule_item.features.inc';

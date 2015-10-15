@@ -1,0 +1,115 @@
+/* FlexSlider Necessary Styles
+*********************************/
+.flexslider {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  
+  .slides {
+    > li {
+      display: none;
+      -webkit-backface-visibility: hidden;
+    }
+    
+    img {
+      width: 100%;
+      display: none;
+    }
+  }
+}
+
+.flex-pauseplay span {
+  text-transform: capitalize;
+}
+
+/* Clearfix for the .slides element */
+.slides:after {content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;}
+html[xmlns] .slides {display: block;}
+* html .slides {height: 1%;}
+
+/* No JavaScript Fallback */
+/* If you are not using another script, such as Modernizr, make sure you
+ * include js that eliminates this class on page load */
+.no-js .slides > li:first-child {display: block;}
+
+
+/**
+ * Slideshow.
+ */
+.slides {
+  margin: 0;
+  padding: 0;
+}
+
+.slide {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 495px;
+  @include breakpoint($xl, $no-query: true) {
+    background-position: center;
+  }
+}
+
+.slider {
+  display: none;
+  @include breakpoint($md, $no-query: true) {
+    display: block;
+    height: 495px;
+    position: relative;
+  }
+}
+
+.slideshow__item {
+}
+
+.flex-viewport {
+  width: 100%;
+}
+
+.node > .slider {
+  display: none;
+}
+
+.flex-direction-nav {
+  height: 0;
+  padding: 0;
+  margin: 0;
+  li {
+    height: 0;
+    padding: 0;
+    margin: 0;
+   a {
+      width: 30px;
+      height: 30px;
+      display: block;
+      background: url(../images/bg_direction_nav.png) no-repeat 0 0;
+      position: absolute;
+      top: 50%;
+      cursor: pointer;
+      text-indent: -9999px;
+      &.flex-prev {
+        left: 0;
+      }
+      &.flex-next {
+        background-position: 100% 0;
+        right: 0;
+      }
+    }
+  }
+}
+
+.slideshow__link_lede {
+  color: white;
+}
+
+.field-name-field-slideshow-link {
+  @include adjust-font-size-to( $h1-font-size, 1 );
+}
+
+.field-name-field-slideshow-lede {
+  @include adjust-font-size-to( $h1-font-size, 1 );
+}

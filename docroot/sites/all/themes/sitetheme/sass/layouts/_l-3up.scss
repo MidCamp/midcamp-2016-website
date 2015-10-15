@@ -1,0 +1,40 @@
+/**
+ * @file
+ * .l-3up
+ *
+ * Adds 3 column layout elements
+ *
+ *
+ */
+
+$zen-column-count: 1;
+
+.l-3up__1,
+.l-3up__2,
+.l-3up__3 {
+  @include zen-grid-item-base();
+}
+
+@include breakpoint($md, $no-query: true) {
+  [class*="l-3up__"] {
+    width: 50%;
+    float: left;
+  }
+}
+
+$zen-column-count: 3;
+  
+@include breakpoint($md-lg, $no-query: true) {
+
+  .l-3up__1 {
+    @include zen-grid-item(1, 1);
+    @include zen-clear();
+  }
+  .l-3up__2 {
+    @include zen-grid-item(1, 2);
+  }
+  .l-3up__3 {
+    @include zen-grid-item(1, 3);
+  }
+}
+

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the MidCamp Orders feature.
+ */
+
+include_once 'midcamp_profile2_type_orders.features.inc';

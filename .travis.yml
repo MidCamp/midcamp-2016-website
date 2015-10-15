@@ -1,0 +1,41 @@
+language: php
+php:
+  - 5.5
+
+mysql:
+  database: drupal
+  username: root
+  encoding: utf8
+
+services:
+  - memcached
+
+addons:
+  hosts:
+    - travis.midcamp.dev
+
+before_install:
+ - export BASEDIR=${PWD}
+ - sudo apt-get update
+ - composer self-update
+
+install:
+ - sudo ci/install_apache.sh
+ - sudo ci/config_vhost.sh midcamp $BASEDIR/docroot $BASEDIR/ci/apache/vhost.conf
+ - phpenv config-add ci/php/memcache.ini
+ - phpenv config-add ci/php/tweaks.ini
+ - ci/install_ci.sh
+ - export PATH="$BASEDIR/ci/vendor/bin:$PATH"
+ - ci/install_tests.sh
+ - ci/install_selenium.sh
+ - phpenv rehash
+
+before_script:
+ - ci/install_drupal_mysql.sh
+ - "sh -e /etc/init.d/xvfb start"
+ - "export DISPLAY=:99.0"
+
+script:
+  - cd $BASEDIR/tests && ./bin/behat -fprogress
+#  - cd $BASEDIR && cat tests/failures/*
+#  - cd $BASEDIR && phploc --names=*.php,*.module,*.install,*.inc docroot/sites/all/modules/custom

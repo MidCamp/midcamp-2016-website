@@ -1,0 +1,282 @@
+.view-schedule {
+  .view-content {
+    position: relative;
+
+    @include breakpoint($md-med, $no-query: true) {
+      &:before {
+        content: "";
+        background-color: $light-grey;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 10px;
+        left: 24%;
+        margin-left: -10px;
+      }
+    }
+  }
+}
+
+.schedule--list {
+  width: 90%;
+  margin: 0 auto;
+  padding: 32px 1.875em 0;
+  /* position: relative; */
+
+  > h3 {
+    color: $aqua;
+    width: 100%;
+    position: relative;
+    margin: 0;
+    padding: 0;
+
+    span {
+      text-align: left;
+    }
+  }
+
+  &.item-list ul li {
+    list-style: none outside none;
+    margin: 0;
+    padding: 15px 0 0;
+  }
+}
+
+.schedule--session-list {
+  list-style: none outside none;
+  margin: 0;
+  padding: 0;
+  /* position: relative; */
+
+  .node {
+    @include border-radius(6px);
+    background-color: $light-aqua;
+    color: white;
+    font-weight: 400;
+    position: static;
+  }
+
+  .node-schedule-item {
+    background-color: $aqua;
+  }
+
+  h2.node__title {
+    border-bottom: 1px solid white;
+    color: white;
+    margin: 0;
+    padding-bottom: 0.625rem;
+    position: relative;
+
+    a {
+      &:link,
+      &:visited {
+        color: white !important;
+      }
+
+      &:hover,
+      &:focus {
+        color: $aqua !important;
+      }
+    }
+
+    @include breakpoint($md-med, $no-query: true) {
+      &:before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-left: medium none;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        border-right:10px solid $light-aqua;
+        left: -24px;
+      }
+    }
+  }
+
+  @include breakpoint($md-med, $no-query: true) {
+    .node--schedule_item__teaser h2.node__title {
+      &:before {
+        border-right-color: $aqua !important;
+      }
+    }
+  }
+
+  @include breakpoint($md-med, $no-query: true) {
+    padding-left: 25%;
+  }
+}
+
+li.session--schedule-item {
+  @include box-sizing(border-box);
+
+  .session--track {
+    color: $aqua;
+    /* position: relative; */
+    float: right;
+    left: auto;
+    margin: -60px 5px 0 0;
+  }
+
+  @include breakpoint($md-med, $no-query: true) {
+    .session--track {
+      position: absolute;
+      left: 21.5%;
+      margin: -13px 0 0;
+    }
+
+    &:last-child {
+      .node {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  @include breakpoint($lg, $no-query: true) {
+    .session--track {
+      left: 22%;
+    }
+  }
+}
+
+.node--session__teaser,
+.node--schedule_item__teaser {
+  @include box-sizing(border-box);
+  display: block;
+  margin: 0 0 30px 0;
+  padding: 1em;
+  /* position: relative; */
+
+  .field-name-field-presenters {
+    .field-items,
+    .field-item,
+    .profile {
+      display: inline-block;
+    }
+
+    .field-item {
+      padding-right: 1em;
+
+      .field-item {
+        padding-right: 0;
+      }
+    }
+
+    .field-type-image {
+      display: inline-block;
+
+      a,
+      img {
+        display: inline-block;
+        vertical-align: bottom;
+      }
+
+      a {
+        padding-right: 0.375em;
+      }
+    }
+
+    h2 {
+      display: inline-block;
+      vertical-align: bottom;
+      margin: 0;
+    }
+  }
+}
+
+.session--track__icon {
+  @include border-radius(100px);
+  background-color: transparent;
+  background-image: image-url("track-icons.png");
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  margin: 6px 0;
+  padding: 5px;
+
+  @include breakpoint($md-med, $no-query: true) {
+    background-color: $light-grey;
+    display: block;
+  }
+
+  &.track--icon__begin {
+    background-position: center -275px;
+  }
+  &.track--icon__coding {
+    background-position: center -35px;
+  }
+  &.track--icon__devops {
+    background-position: center -75px;
+  }
+  &.track--icon__bus {
+    background-position: center 5px;
+  }
+  &.track--icon__d8 {
+    background-position: center -115px;
+  }
+  &.track--icon__front {
+    background-position: center -315px;
+  }
+  &.track--icon__build {
+    background-position: center -155px;
+  }
+  &.track--icon__other {
+    background-position: center -195px;
+  }
+}
+
+.page-schedule {
+  .pane-title {
+    background: $deep-aqua;
+    color: white;
+    margin: (1.26984em * 2) -10px 0;
+    padding: 1.26984em 0.75em;
+  }
+  .panel-pane:first-child .pane-title {
+    margin-top: 0;
+  }
+  .panel-panel {
+    margin-bottom: 5em;
+  }
+}
+
+.view-timeslot-sessions {
+  .views-row {
+    padding: (1.36752em * 1.17) 0;
+    border-bottom: 1px solid #333333;
+    margin-left: -10px;
+    padding-left: 10px;
+    margin-right: -10px;
+    padding-right: 10px;
+
+    h3 {
+      margin-top: 0;
+      a {color: $aqua;}
+    }
+
+    .field-label {
+      width: 6em;
+    }
+    .field-items {
+      display: inline;
+    }
+
+    &.views-row-odd {
+      background: white;
+    }
+
+    &.views-row-last {
+      border-bottom-width: 0;
+    }
+
+    // highlight Keynotes
+    .node-134,
+    .node-135 {
+      background: $lighter-aqua;
+      margin: -1.6em -10px;
+      padding: 1.6em 10px;
+    }
+
+  }
+}

@@ -1,0 +1,34 @@
+/**
+ * Global Page.
+ */
+.block-search {
+  .form-text {
+    border: 1px solid $light-aqua;
+    background-color: $light-aqua;
+    padding: 5px;
+    @include box-sizing(border-box);
+    width: 85%;
+    
+    &:focus {
+      outline: none;
+    }
+    
+    // for now, these have to be separated out into individual rules
+    // in order to correctly target each browser.
+    &::-webkit-input-placeholder {
+      color: $aqua;
+    }
+    &:-moz-placeholder {
+      color: $aqua;
+    }
+    &::-moz-placeholder {
+      color: $aqua;
+    }
+    &:-ms-input-placeholder {
+      color: $aqua;
+    }
+  }
+  .form-submit {
+    vertical-align: middle;
+  }
+}

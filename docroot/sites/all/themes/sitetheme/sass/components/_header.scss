@@ -1,0 +1,299 @@
+/**
+ * Branding header.
+ */
+
+.header-wrapper {
+  background: $off-white inline-image("bg-header-optimized_bottom.jpg") repeat-y center top;
+}
+
+#header {
+  position: relative;
+  color: white;
+  text-align: center;
+
+  @include breakpoint($md, $no-query: true) {
+    background: $deep-aqua;
+    padding-bottom: 60px;
+    background: none;
+    padding: 28px 0;
+    background: url(../images/midwest.png) no-repeat 90% center;
+    .front & {
+      background: url(../images/bg-header--midwest-states.jpg) no-repeat center transparent;
+      background-size: cover;
+      padding: 0;
+    }
+  }
+}
+
+.header__badge {
+  text-align: left;
+  padding: 24px 0;
+
+  @include breakpoint(max-width $md, $no-query: true) {
+    background: transparent url(../images/midwest.png) no-repeat 90% center;
+
+    body.front & {
+      display: none;
+    }
+  }
+
+  @include breakpoint($md, $no-query: true) {
+    display: block;
+    float: left;
+    padding: 0;
+
+    .front & {
+      text-align: center;
+      padding: rhythm(1) 15px;
+      width: 50%;
+      /* margin-top: -449px; */
+      margin-left: 25%;
+      position: relative;
+      z-index: 2;
+    }
+  }
+
+  @include breakpoint($lg, $no-query: true) {
+    .front & {
+      width: 33.33333%;
+      margin-left: 33.33333%;
+    }
+  }
+}
+
+/* Wrapping link for logo. */
+.header__logo {
+  @include breakpoint(max-width $md, $no-query: true) {
+    display: none;
+  }
+
+  @include breakpoint($md, $no-query: true) {
+    display: inline-block;
+    text-align: center;
+
+    .front & {
+      float: none;
+      display: block;
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+
+/* Logo image. */
+.header__logo-image {
+  width: 45%;
+  @include breakpoint($sm, $no-query: true) {
+    .front & {
+      width: auto;
+    }
+  }
+}
+
+/* Wrapper for website name and slogan. */
+.header__name-and-slogan {
+  @include breakpoint($md, $no-query: true) {
+    display: inline-block;
+    vertical-align: top;
+    /* margin-left: -30px; */
+  }
+
+  @include breakpoint($md-lg, $no-query: true) {
+    .front & {
+      float: none;
+      margin: 0
+    }
+  }
+
+  @include breakpoint($lg, $no-query: true) {
+    margin-top: 10px;
+  }
+}
+
+/* The name of the website. */
+.header__site-name {
+  /* white-space:nowrap; */
+  font-family: $logo-text;
+  font-weight: 400;
+  margin: 0;
+  text-transform: none;
+
+  @include breakpoint(max-width $md, $no-query: true) {
+    display: none;
+  }
+
+  @include breakpoint($md, $no-query: true) {
+    @include adjust-font-size-to( 36px, 2 );
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  @include breakpoint($lg, $no-query: true) {
+    display: inline-block;
+
+    @include adjust-font-size-to( 62px, 3 );
+    .front & {
+      float: none;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+/* The link around the name of the website. */
+.header__site-link {
+  &:link,
+  &:visited {
+    color: white;
+    text-decoration: none;
+  }
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+/* The slogan (or tagline) of a website. */
+.header__site-slogan {
+  /* white-space:nowrap; */
+  font-family: $raleway;
+  font-weight: 400;
+  margin: 0;
+  @include breakpoint($sm, $no-query: true) {
+    .front & {
+      letter-spacing: -2px;
+      @include adjust-font-size-to( 24px, 1.5 );
+
+      .date {
+        display: block;
+        clear: both;
+        width: 100%;
+        text-align: center;
+        font-weight: 700;
+      }
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+
+  @include breakpoint($lg, $no-query: true) {
+    .front & {
+      @include adjust-font-size-to( 36px, 2 );
+
+      .date {
+        margin-bottom: 0.5em;
+      }
+    }
+  }
+}
+
+/* The secondary menu (login, etc.) */
+.header__secondary-menu {
+}
+
+/* Wrapper for any blocks placed in the header region. */
+.header__region {
+  /* Clear the logo. */
+  clear: both;
+
+  .block {
+    margin-bottom: 0;
+    p {
+      margin: 0;
+    }
+  }
+
+  @include breakpoint($lg, $no-query: true) {
+    .block {
+      width: 50%;
+      float: right;
+      text-align: right;
+      &:nth-child(2n) {
+        float: left;
+        text-align: left;
+      }
+    }
+  }
+
+}
+
+.header__top {
+  @include adjust-font-size-to(13px);
+  font-family: $raleway;
+  font-weight: 600;
+  text-transform: uppercase;
+  overflow: hidden;
+  background-color: $aqua;
+  padding: 10px 0;
+  color: $lighter-aqua;
+  text-align: center;
+
+  .block {
+    .block__title {
+      @include element-invisible;
+    }
+/*     @include breakpoint(\$sm, \$no-query: true) {
+  float: right;
+  margin-left: 20px;
+  margin-bottom: 0;
+} */
+  }
+  .header__region {
+    ul,
+    li {
+      display: inline;
+    }
+  }
+  a {
+    padding: 0 10px;
+    &:link,
+    &:visited {
+      color: $lighter-aqua;
+      text-decoration: none;
+    }
+    &:hover,
+    &:focus {
+      color: white;
+      text-decoration: none;
+    }
+  }
+
+  @include breakpoint($md, $no-query: true) {
+    text-align: left;
+  }
+}
+
+.site__slogan--header {
+  @include breakpoint($md, $no-query: true) {
+    max-width: 50%;
+    display: inline-block;
+    float: left;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .slogan__location--short {
+    @include breakpoint($md-med, $no-query: true) {
+      @include element-invisible;
+    }
+  }
+  .slogan__location--long {
+    @include breakpoint(max-width $md-med, $no-query: true) {
+      @include element-invisible;
+    }
+  }
+}
+
+@include breakpoint (max-width $md, $no-query: true) {
+  .field-collection-container {
+    margin-bottom: 0;
+  }
+}

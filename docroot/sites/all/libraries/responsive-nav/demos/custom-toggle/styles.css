@@ -1,0 +1,11 @@
+button {
+  color: white;
+  padding: 1em;
+  border: 0;
+  cursor: pointer;
+  background: red;
+}
+
+button.active {
+  background: green;
+}

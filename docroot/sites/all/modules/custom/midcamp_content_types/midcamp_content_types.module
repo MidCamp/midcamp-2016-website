@@ -1,0 +1,69 @@
+<?php
+/**
+ * @file
+ * MidCamp functionality related to node bundles.
+ */
+
+/**
+ * Implements hook_views_api().
+ */
+function midcamp_content_types_views_api() {
+  return array(
+    'api' => 3,
+  );
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function midcamp_content_types_form_sponsor_node_form_alter(&$form, &$form_state, $form_id) {
+  // Change the add more button label on field_attendees.
+  $form['field_attendees'][$form['field_attendees']['#language']]['add_more']['#value'] = t('Add another attendee');
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function midcamp_content_types_form_eck__entity__form_add_scamp_room_alter(&$form, &$form_state, $form_id) {
+  // Add description to Title field when creating or updating a room.
+  if (array_key_exists('title', $form) && !array_key_exists('#description', $form['title'])) {
+    $form['title']['#description'] = t('Name of the room.');
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function midcamp_content_types_form_session_node_form_alter(&$form, &$form_state, $form_id) {
+  // The poor mans redirect.
+  // The session node form is accessible to anonymous users, but panels does not
+  // display the node form until the user is logged in. If user logs in from
+  // session node add form, then redirect to session node add form.
+  if (user_is_anonymous() && !array_key_exists('destination', $_GET)) {
+    $_GET['destination'] = $_GET['q'];
+  }
+}
+
+/**
+ * Access callback for the views_plugin_access_not_role access plugin.
+ *
+ * Determine if specified user has access to view on basis they do not have
+ * any of the requested roles. If $account is NULL, the current user is used.
+ *
+ * Based on views_check_roles in views.module.
+ *
+ * @param array $rids
+ *   Array of role ids.
+ * @param null|object $account
+ *   The user account.
+ *
+ * @return bool
+ *   TRUE if user does not have a role in $rids.
+ */
+function views_check_roles_negate($rids, $account = NULL) {
+  global $user;
+  $account = isset($account) ? $account : $user;
+  $roles = array_keys($account->roles);
+  $roles[] = $account->uid ? DRUPAL_AUTHENTICATED_RID : DRUPAL_ANONYMOUS_RID;
+  return user_access('access all views', $account) || !array_intersect(array_filter($rids), $roles);
+}

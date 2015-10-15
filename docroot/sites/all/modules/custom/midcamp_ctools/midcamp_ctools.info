@@ -1,0 +1,11 @@
+name = MidCamp CTools
+description = Provides Chaosy goodness to the site.
+core = 7.x
+package = MidCamp
+
+dependencies[] = ctools
+dependencies[] = panels
+dependencies[] = scamp_schedule
+
+; Views Handlers
+files[] = views/midcamp_ctools_handler_smarttimeslot.inc

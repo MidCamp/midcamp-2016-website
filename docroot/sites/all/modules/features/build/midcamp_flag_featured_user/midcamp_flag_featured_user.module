@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the MidCamp User: Featured user feature.
+ */
+
+include_once 'midcamp_flag_featured_user.features.inc';

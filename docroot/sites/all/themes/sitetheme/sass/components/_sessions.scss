@@ -1,0 +1,24 @@
+/**
+ * Sessions.
+ */
+.session {
+  .node-session {
+    @include border-radius(10px);
+    padding: 20px;
+    background-color: $light-grey;
+  }
+}
+
+/**
+ * The submission list.
+ */
+.view-session-submissions {
+  tbody {
+    .views-field-field-track,
+    .views-field-field-audience,
+    .views-field-field-presenters {
+      font-size: 80%;
+      padding: 5px;
+    }
+  }
+}

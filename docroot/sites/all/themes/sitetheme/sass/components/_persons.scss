@@ -1,0 +1,92 @@
+/**
+ * Persons.
+ */
+.person {
+  .profile {
+    @include border-radius(10px);
+    padding: 20px;
+    background-color: $light-grey;
+    margin: 0 0 rhythm(1) 0;
+
+    .view-attendee-user-profiles-block & {
+      height: auto;
+
+      .views-field-field-image {
+        text-align: center;
+        height: auto;
+        overflow: hidden;
+
+        img {
+          display: inline-block;
+          height: auto;
+          max-height: auto;
+          width: auto;
+          min-width: 100%;
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.view-id-attendee_user_profiles {
+  .view-content,
+  .view-footer {
+    @include zen-grid-container();
+  }
+  .profile {
+    position: relative;
+    @include breakpoint($md, $no-query: true) {
+      height: 425px;
+      overflow: hidden;
+    }
+  }
+  &.view-display-id-panel_pane__individual_sponsors {
+    .profile {
+      @include breakpoint($md, $no-query: true) {
+        height: auto;
+      }
+    }
+  }
+  h2 {
+    margin-bottom: 8px;
+  }
+  h3 {
+    color: $deep-aqua;
+    font-family: $raleway;
+    font-weight: 800;
+    border: 0;
+    margin-bottom: 0;
+  }
+  .views-field-field-image {
+    text-align: center;
+    max-height: 300px;
+    overflow: hidden;
+
+    img {
+      display: inline-block;
+      height: auto;
+      min-width: 100%;
+      width: auto;
+    }
+  }
+  .views-field-field-company-name {
+    color: $grey;
+    margin-bottom: 12px;
+    font-weight: 800;
+    @include breakpoint($md, $no-query: true) {
+      height: 3em;
+      overflow: hidden;
+    }
+  }
+  @include breakpoint($md, $no-query: true) {
+    .views-field-view-user {
+      position: absolute;
+      top: 425px;
+    }
+  }
+}
+.views-field-field-about-me {
+  font-size: 90%;
+  line-height: 1.35em;
+}

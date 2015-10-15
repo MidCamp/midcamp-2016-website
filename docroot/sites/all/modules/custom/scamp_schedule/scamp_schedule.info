@@ -1,0 +1,7 @@
+name = SCAMP Schedule
+description = Scheduling utility.
+core = 7.x
+
+dependencies[] = efq_helper
+
+config = admin/content/schedule

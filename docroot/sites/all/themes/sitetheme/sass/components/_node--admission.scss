@@ -1,0 +1,123 @@
+.node-admission {
+  .field-name-commerce-price {
+    @include adjust-font-size-to( 62px, 3 );
+    color: $aqua;
+    display: inline-block;
+    float: right;
+    vertical-align: top;
+    padding: 0.5em;
+  }
+}
+
+#midcamp-commerce-registration-form {
+  .form-type-name-element {
+    .form-item {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  .form-item-anon-mail {
+    input {
+      width: 100%;
+    }
+  }
+
+  .field-type-list-text {
+    .form-item {
+      margin-top: 0;
+    }
+  }
+
+  @include breakpoint($sm, $no-query: true) {
+    $zen-column-count: 2;
+    .field-type-list-text {
+      @include zen-grid-item(1, 1);
+
+      &.field-name-field-t-shirt-size {
+        @include zen-grid-item(1, 2);
+      }
+    }
+    .field-name-field-volunteer,
+    .form-actions {
+      @include zen-grid-item(2,1);
+      @include zen-clear();
+
+      .form-item {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+#views-form-commerce-cart-form-default {
+  table {
+    width: 100%;
+  }
+}
+
+#commerce-checkout-form-checkout {
+  table {
+    &.views-table {
+      width: 100%;
+    }
+
+    &.commerce-price-formatted-components {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+
+  #edit-account-login-mail {
+    width: 100%;
+    max-width: 32em;
+  }
+
+  #edit-customer-profile-billing-commerce-customer-address-und-0-administrative-area {
+    max-width: 8em;
+  }
+
+  fieldset {
+    border: medium none;
+    outline: none;
+
+    .form-item {
+      margin-top: 0;
+    }
+  }
+
+  .fieldset-legend {
+    @extend h2;
+  }
+}
+
+#commerce-checkout-form-review {
+  table {
+    width: 100%;
+  }
+
+  fieldset {
+    border: medium none;
+    outline: none;
+
+    .form-item {
+      margin-top: 0;
+    }
+  }
+
+  @include breakpoint($md, $no-query: true) {
+    $zen-column-count: 2;
+    #edit-checkout-review {
+      @include zen-grid-item(1, 1);
+    }
+
+    #edit-commerce-payment {
+      @include zen-grid-item(1, 2);
+    }
+
+    .checkout-buttons {
+      @include zen-grid-item(2, 1);
+      @include zen-clear();
+    }
+  }
+}

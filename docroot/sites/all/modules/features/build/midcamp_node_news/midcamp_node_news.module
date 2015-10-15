@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the MidCamp News Item feature.
+ */
+
+include_once 'midcamp_node_news.features.inc';

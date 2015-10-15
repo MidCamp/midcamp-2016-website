@@ -1,0 +1,35 @@
+default:
+  suites:
+    default:
+      contexts:
+        - FailureContext
+        - FeatureContext
+        - MidCampDrushContext
+        - MidCampMinkContext
+        - Drupal\DrupalExtension\Context\BatchContext
+        - Drupal\DrupalExtension\Context\DrupalContext
+        - Drupal\DrupalExtension\Context\MarkupContext
+        - Drupal\DrupalExtension\Context\MessageContext
+      failure_path: '%paths.base%/failures'
+  extensions:
+    Behat\MinkExtension:
+      goutte: ~
+      selenium2: ~
+      base_url: http://changethisto.local
+    Drupal\DrupalExtension:
+      blackbox: ~
+      api_driver: 'drupal'
+      drupal:
+        drupal_root: ../docroot
+      drush:
+         root: ../docroot
+      region_map:
+        header: "header.header"
+        header_top: "div.header__top"
+        navigation: "div#navigation"
+        content: "div#page"
+        footer: "div.footer-wrapper"
+      selectors:
+        message_selector: '.messages.status'
+        error_message_selector: '.messages.error'
+        success_message_selector: '.messages'

@@ -1,0 +1,283 @@
+<?php
+
+/**
+ * @file
+ * SCAMP Schedule module code.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function scamp_schedule_menu() {
+  $items['admin/content/schedule'] = array(
+    'title' => 'Schedule',
+    'page callback' => 'scamp_schedule_admin_schedule',
+    'page arguments' => array(3),
+    'access arguments' => array('administer nodes'),
+    'file' => 'scamp_schedule.admin.inc',
+  );
+
+  $items['admin/content/schedule/assign/%scamp_schedule/%scamp_schedule'] = array(
+    'title' => 'Assign Schedule',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array(
+      'scamp_schedule_admin_schedule_assign_form',
+      4,
+      5
+    ),
+    'access arguments' => array('administer nodes'),
+    'file' => 'scamp_schedule.admin.inc',
+  );
+
+  return $items;
+}
+
+/**
+ * Loads a scamp type entity.
+ */
+function scamp_schedule_load($id) {
+  return entity_load_single('scamp', $id);
+}
+
+/**
+ * Loads the assignment for a room/timeslot.
+ *
+ * If no assignment exists, optionally a new empty one may be created.
+ */
+function scamp_schedule_assignment_load($room, $timeslot, $create = FALSE) {
+  $q = new EfqHelper('scamp');
+  $q->propertyCondition('type', 'assignment')
+    ->fieldCondition('field_room', 'target_id', $room->id)
+    ->fieldCondition('field_timeslot', 'target_id', $timeslot->id);
+  $assignment = $q->first();
+
+  // If we successfully loaded an assignment or we don't care to create one,
+  // return what we've got.
+  if (!$create || $assignment) {
+    return $assignment;
+  }
+
+  // Otherwise create a new one.
+  $values = array(
+    'type' => 'assignment',
+  );
+  $assignment = entity_create('scamp', $values);
+  $w = entity_metadata_wrapper('scamp', $assignment);
+  $w->field_room->set($room);
+  $w->field_timeslot->set($timeslot);
+  return $assignment;
+}
+
+/**
+ * Get the dates for which we have timeslots.
+ */
+function scamp_schedule_get_dates() {
+  $dates = &drupal_static(__FUNCTION__, NULL);
+
+  if ($dates !== NULL) {
+    return $dates;
+  }
+
+  // Grab all the timeslots.
+  $q = new EfqHelper('scamp');
+  $q->entityCondition('bundle', 'timeslot');
+  $timeslots = $q->result();
+
+  $dates = array();
+
+  foreach ($timeslots as $timeslot) {
+    $date = scamp_schedule_get_timeslot_date($timeslot);
+    $dates[$date] = $date;
+  }
+
+  asort($dates);
+
+  // Format the dates.
+  foreach ($dates as $key => $val) {
+    $dates[$key] = date('n/j/Y', strtotime($val));
+  }
+
+  return $dates;
+}
+
+/**
+ * Get the date from a timeslot.
+ */
+function scamp_schedule_get_timeslot_date($timeslot) {
+  $w = entity_metadata_wrapper('scamp', $timeslot);
+  $date = $w->field_date_time->value();
+  $date = strtotime($date['value'] . " " . $date['timezone_db']);
+  $date = date('Y-m-d', $date);
+  return $date;
+}
+
+/**
+ * Implements hook_entity_info_alter().
+ */
+function scamp_schedule_entity_info_alter(&$info) {
+  $schedule = array(
+    'label' => t('Schedule'),
+    'custom settings' => FALSE,
+  );
+
+  $info['node']['view modes']['schedule'] = $schedule;
+}
+
+/**
+ * Implements hook_field_extra_fields().
+ */
+function scamp_schedule_field_extra_fields() {
+  $half = array(
+    'label' => t('20 min times'),
+    'description' => t('20 min times'),
+    'weight' => 100,
+  );
+
+  $extra['node']['session']['display']['scamp_schedule_half'] = $half;
+
+  $room = array(
+    'label' => t('Room'),
+    'description' => t('Room'),
+    'weight' => 100,
+  );
+
+  $extra['node']['schedule_item']['display']['scamp_schedule_room'] = $room;
+  $extra['node']['session']['display']['scamp_schedule_room'] = $room;
+
+  return $extra;
+}
+
+/**
+ * Implements hook_node_view().
+ */
+function scamp_schedule_node_view($node, $view_mode) {
+
+  switch ($node->type) {
+    case 'schedule_item':
+      _scamp_schedule_node_room($node);
+      break;
+
+    case 'session':
+      _scamp_schedule_node_room($node);
+      _scamp_schedule_node_half($node);
+      break;
+  }
+
+}
+
+/**
+ * Adds the room information into a scheduled node's rendering.
+ */
+function _scamp_schedule_node_room($node) {
+  // Find the assignment.
+  $query = new EfqHelper('scamp');
+  $query->propertyCondition('type', 'assignment')
+    ->fieldCondition('field_sessions', 'target_id', $node->nid);
+  if (!$assignment = $query->first()) {
+    return;
+  }
+  // Find the room.
+  $aw = entity_metadata_wrapper('scamp', $assignment);
+  $room = $aw->field_room->value();
+
+  $node->content['scamp_schedule_room'] = array(
+    '#theme' => 'scamp_session_room',
+    '#room' => $room,
+  );
+}
+
+/**
+ * Adds the 20-min scheduling information into a scheduled node's rendering.
+ */
+function _scamp_schedule_node_half($node) {
+  $w = entity_metadata_wrapper('node', $node);
+
+  $is_20 = $w->field_length->value() == 'short';
+
+  // Find the assignment.
+  $query = new EfqHelper('scamp');
+  $query->propertyCondition('type', 'assignment')
+    ->fieldCondition('field_sessions', 'target_id', $node->nid);
+  if (!$assignment = $query->first()) {
+    return;
+  }
+
+  // Find the timeslot.
+  $aw = entity_metadata_wrapper('scamp', $assignment);
+  $timeslot = $aw->field_timeslot->value();
+
+  // Find the delta.
+  $delta = -1;
+  $aw = entity_metadata_wrapper('scamp', $assignment);
+  foreach ($aw->field_sessions as $index => $value) {
+    $val = $value->value();
+    if ($val->nid == $node->nid) {
+      $delta = $index;
+    }
+  }
+
+  if ($delta < 0) {
+    return;
+  }
+
+  $tw = entity_metadata_wrapper('scamp', $timeslot);
+  $time = $tw->field_date_time->value();
+  $start = strtotime($time['value'] . ' ' . $time['timezone_db']);
+  $end = strtotime($time['value2'] . ' ' . $time['timezone_db']);
+  if ($is_20) {
+    $start = $start + $delta * (30 * 60);
+    $end = $start + (20 * 60);
+  }
+
+  $start = date('g:ia', $start);
+  $end = date('g:ia', $end);
+
+  $node->content['scamp_schedule_half'] = array(
+    '#theme' => 'scamp_session_half',
+    '#start' => $start,
+    '#end' => $end,
+  );
+}
+
+/**
+ * Implements hook_theme().
+ */
+function scamp_schedule_theme() {
+  return array(
+    'scamp_session_half' => array(
+      'variables' => array('start' => '', 'end' => '', 'label_hidden' => FALSE),
+      'file' => 'scamp_schedule.theme.inc',
+    ),
+    'scamp_session_room' => array(
+      'variables' => array('room' => NULL),
+      'file' => 'scamp_schedule.theme.inc',
+    ),
+  );
+}
+
+/**
+ * Find the next timeslot that will be occurring.
+ */
+function scamp_schedule_next_timeslot($today = TRUE) {
+  // This is actually not the correct way, but it works since we're dealing with
+  // timezone offsets of whole hours. Will cause weirdness with half hours, etc.
+  $offset = date('O', REQUEST_TIME) / 100 * 3600;
+  $time = date('Y-m-d H:i:s', REQUEST_TIME - $offset - 1800);
+
+  // Limited to these timeslot IDs.
+  $ids = array(2, 4, 6, 8, 10, 12, 15, 17, 19, 21, 23, 25);
+
+  // Find the next timeslot.
+  $q = new EfqHelper('scamp');
+  $q->propertyCondition('type','timeslot')
+    ->propertyCondition('id', $ids, 'IN')
+    ->fieldCondition('field_date_time', 'value', $time, '>')
+    ->fieldOrderBy('field_date_time', 'value');
+
+  // If filtering for current day only.
+  if ($today) {
+    $q->fieldCondition('field_date_time', 'value', date('Y-m-d', REQUEST_TIME - $offset) . '%', 'LIKE');
+  }
+
+  return $q->first();
+}

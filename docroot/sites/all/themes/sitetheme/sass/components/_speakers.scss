@@ -1,0 +1,36 @@
+/**
+ * The speakers page.
+ */
+
+.view-id-speakers {
+  h2 {
+    margin-bottom: 8px;
+  }
+  h3 {
+    color: $deep-aqua;
+    font-family: $raleway;
+    font-weight: 800;
+    border: 0;
+    margin-bottom: 0;
+  }
+  .views-field-field-image {
+    height: 300px;
+    overflow: hidden;
+  }
+  .views-field-field-company-name {
+    color: $grey;
+    margin-bottom: 12px;
+    font-weight: 800;
+    height: 3em;
+    overflow: hidden;
+  }
+  .views-field-field-speaker-bio {
+    height: 175px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .profile {
+    height: 650px;
+    overflow: hidden;
+  }
+}

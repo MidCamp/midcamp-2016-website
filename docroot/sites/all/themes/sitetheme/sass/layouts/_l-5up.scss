@@ -1,0 +1,38 @@
+/**
+ * @file
+ * .l-4up
+ *
+ * Adds 4 column layout elements
+ *
+ *
+ */
+
+$zen-column-count:  1;
+
+.l-5up__1,
+.l-5up__2,
+.l-5up__3,
+.l-5up__4,
+.l-5up__5 {
+  @include zen-grid-item-base();
+}
+
+$zen-column-count: 5;
+@include breakpoint($md, $no-query: true) {
+
+  .l-5up__1 {
+    @include zen-grid-item(1, 1);
+  }
+  .l-5up__2 {
+    @include zen-grid-item(1, 2);
+  }
+  .l-5up__3 {
+    @include zen-grid-item(1, 3);
+  }
+  .l-5up__4 {
+    @include zen-grid-item(1, 4);
+  }
+  .l-5up__5 {
+    @include zen-grid-item(1, 5);
+  }
+}

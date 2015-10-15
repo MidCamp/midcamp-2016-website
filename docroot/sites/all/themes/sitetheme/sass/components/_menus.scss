@@ -1,0 +1,318 @@
+/**
+ * Menus.
+ */
+.menu__item.is-leaf {
+  list-style-image: inline-image("menu-leaf.png");
+  @if $legacy-support-for-ie6 or $legacy-support-for-ie7 {
+    *list-style-image: image-url("menu-leaf.png");
+  }
+  list-style-type: square;
+}
+.menu__item.is-expanded {
+  list-style-image: inline-image("menu-expanded.png");
+  @if $legacy-support-for-ie6 or $legacy-support-for-ie7 {
+    *list-style-image: image-url("menu-expanded.png");
+  }
+  list-style-type: circle;
+}
+.menu__item.is-collapsed {
+  list-style-image: inline-image("menu-collapsed.png"); /* LTR */
+  @if $legacy-support-for-ie6 or $legacy-support-for-ie7 {
+    *list-style-image: image-url("menu-collapsed.png"); /* LTR */
+  }
+  list-style-type: disc;
+}
+
+.node,
+.item-list {
+  ul {
+    li {
+      list-style-image: inline-image("star.png");
+      @if $legacy-support-for-ie6 or $legacy-support-for-ie7 {
+        *list-style-image: image-url("star.png");
+      }
+      list-style-type: square;
+      padding-left: 0.5em;
+
+      li {
+        list-style-image: inline-image("star_grey.png");
+        @if $legacy-support-for-ie6 or $legacy-support-for-ie7 {
+          *list-style-image: image-url("star_grey.png");
+        }
+      }
+    }
+  }
+}
+
+ul {
+  &.inline--links {
+    display: inline-block;
+    margin: 0;
+
+    li {
+      display: inline-block;
+    }
+  }
+}
+
+/**
+ * User Menu :: Global Header
+ */
+#block-system-user-menu {
+  margin-bottom: 0;
+
+  @include breakpoint(max-width $md, $no-query: true ) {
+    @include element-invisible;
+  }
+
+  @include breakpoint($md, $no-query: true) {
+    max-width: 50%;
+    display: inline-block;
+    float: right;
+  }
+}
+/*
+input#user-menu-toggle[type=checkbox] {
+  @include breakpoint(max-width $md, $no-query: true) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    display: none;
+
+    ~ ul {}
+
+    &:checked  {
+      ~ label {
+        color: $off-white;
+      }
+
+      ~ ul {}
+    }
+  }
+
+  @include breakpoint($md, $no-query: true) {
+    @include element-invisible;
+  }
+}
+
+input#user-menu-toggle[type=checkbox] {
+  @include breakpoint(max-width $md, $no-query: true) {
+    ~ ul {
+      @include transition-property(margin-bottom max-height);
+      @include transition-duration(600ms);
+      position: relative;
+      margin-bottom: 0;
+      max-height: 0;
+      overflow: hidden;
+      top: 0;
+      z-index: 4;
+    }
+
+    ~ label {
+      @include transition-property(bottom);
+      @include transition-duration(600ms);
+      bottom: 0;
+    }
+
+    &:checked  {
+      ~ label {
+        bottom: -46px;
+        z-index: 5;
+      }
+
+      ~ ul {
+        margin-bottom: 46px;
+        max-height: 320px;
+      }
+    }
+  }
+}
+
+label[for="user-menu-toggle"] {
+  @include breakpoint(max-width $md, $no-query: true) {
+    width: 44px;
+    height: 46px;
+    margin: 0 10px;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+  }
+
+  @include breakpoint($md, $no-query: true) {
+    @include element-invisible;
+  }
+}
+
+label[for="user-menu-toggle"] {
+  //background-image: image-url("icons/icon--user.png");
+}
+*/
+#user-menu {
+ outline: none !important;
+
+ * {
+   &:focus {
+     outline: none !important;
+   }
+ }
+
+ .block {
+   margin-bottom: 0;
+ }
+
+ ul,
+ li {
+   list-style-type: none;
+   list-style-image: none;
+ }
+
+ @include breakpoint($md, $no-query: true) {
+   padding: 0;
+   text-align: right;
+ }
+}
+
+/**
+ * Call to Action :: Front page
+ */
+#block-menu-menu-call-to-action {
+  a {
+    color: white;
+  }
+}
+.block--menu__call-to-action {
+  border-bottom: 2px solid rgba($deep-aqua, 0.5);
+  display: block;
+  padding-bottom: 2.6em;
+  margin-top: 1.625em;
+  margin-bottom: 2.6em;
+  widows: 100%;
+  position: relative;
+
+  &:after {
+    $bg-image: inline-image("drop-small_light.png");
+    background: $off-white $bg-image no-repeat center center;
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 32px;
+    height: 32px;
+    margin-top: -16px;
+    margin-left: -16px;
+  }
+}
+
+.menu__call-to-action {
+  margin: 0;
+  padding: 0 24px;
+  font-size: 0;
+
+  @include breakpoint($md, $no-query: true) {}
+  @include breakpoint($md-lg, $no-query: true) {
+    padding: 0 50px;
+  }
+
+  .menu__item.is-leaf {
+    @include box-sizing(border-box);
+    list-style: none outside none;
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+    margin-bottom: 8px;
+    padding: 0 6px;
+    width: 100%;
+    vertical-align: middle;
+
+    @include breakpoint($md, $no-query: true) {
+      display: inline-block;
+      max-width: 33%;
+    }
+
+    @include breakpoint($md-lg, $no-query: true) {
+      padding: 0 24px;
+    }
+  }
+
+  a {
+    @include border-radius(10px);
+    @include box-sizing(border-box);
+    margin: 0;
+    padding: 1.2em 0;
+    width: 100%;
+
+/*
+    &:link,
+    &:visited {
+      background-color: $aqua;
+      color: white;
+      text-transform: uppercase;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $muted-aqua;
+      color: $light-aqua;
+    }
+*/
+  }
+}
+
+// Footer Navigation
+.menu__footer-navigation {
+  text-align: center;
+
+  &.inline {
+    display: block;
+  }
+
+  .menu__item {
+    display: block;
+    line-height: $base-line-height * 2;
+    @include breakpoint($md, $no-query: true) {
+      display: inline;
+      line-height: $base-line-height;
+    }
+  }
+
+  .menu__link {}
+}
+
+// Footer Main Nav
+/* #block-system-main-menu {
+  display: none;
+  margin-bottom: 0;
+
+  \$zen-column-count: 3;
+
+  @include breakpoint(\$md, \$no-query: true) {
+    @include zen-grid-item(3, 1);
+    display: block;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  @include breakpoint(\$md-lg, \$no-query: true) {
+    @include zen-grid-item(2, 1);
+    text-align: left;
+
+    .menu--main-menu {
+      a {
+        font-size: 0.875em;
+      }
+    }
+  }
+
+  #main-menu {
+
+    input {
+      display: none;
+    }
+
+    .menu--main-menu {
+      @extend %inline--separated;
+      margin: 1em 0;
+    }
+  }
+} */
