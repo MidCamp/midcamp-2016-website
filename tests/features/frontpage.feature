@@ -12,7 +12,7 @@ Feature: Front page content
     #Info section
     #And I see the heading "Save the Date for MidCamp 2016"
     And I should see "Save the Date for" in the content
-    And I see the heading "MidCamp"
+    And the ".panel-panel.panel-col-first" element should contain "MidCamp 2016"
 
     #Sponsor section
     And I see the heading "Sponsor MidCamp 2016"
