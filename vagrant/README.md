@@ -70,7 +70,7 @@ things. Once complete, you're ready to develop.
 
 ## Notes
 
-* When logging into the VM, be sure to run the "sudo su" command. Most things
+* When logging into the VM, be sure to run the `sudo su` command. Most things
   you'll want to do on the VM require you be act as the root user.
 
 * Perform all drush operations from the VM's command line.
@@ -85,7 +85,7 @@ things. Once complete, you're ready to develop.
 * Selenium, Firefox, and Xvfb are installed and ready to run headfull tests.
 
 * Xdebug is available for PHP debugging. Use PhpStorm's "zero configuration
-  debugging" with the IDE key of "vagrant".
+  debugging" with the IDE key of `vagrant`.
 
   https://confluence.jetbrains.com/display/PhpStorm/Zero-configuration+Web+Application+Debugging+with+Xdebug+and+PhpStorm
 
@@ -115,8 +115,8 @@ things. Once complete, you're ready to develop.
 * A few helpful aliases are configured. Execute the following commands to
   perform these operations:
 
-  * "midcamp" - Switch to the site's docroot.
+  * `midcamp` - Switch to the site's docroot.
 
-  * "tests" - Switch to the test suite.
+  * `tests` - Switch to the test suite.
 
-  * "freset" - Forcefully revert features, only from within the site's docroot.
+  * `freset` - Forcefully revert features, only from within the site's docroot.
