@@ -1,0 +1,28 @@
+#!/bin/bash
+
+line=$(grep '127.0.0.1 local.midcamp.org' /etc/hosts)
+if [ $? -eq 1 ]
+  then
+  echo "127.0.0.1 local.midcamp.org" >> /etc/hosts
+fi
+
+cp midcamp.conf /etc/apache2/sites-available
+
+a2ensite midcamp
+
+service apache2 reload
+
+mysql -u root -proot < mysql_users.sql
+
+cd /var/www/midcamp-website/docroot
+drush si -y --db-url=mysql://midcamp:midcamp@localhost/midcamp
+
+# Prep test suite
+cd /var/www/midcamp-website/tests
+mkdir failures
+composer install
+sed "s|http://changethisto.local|http://local.midcamp.org|;" default-behat.yml > behat.yml
+
+echo 'alias midcamp="cd /var/www/midcamp-website/docroot"' >> ~/.bashrc
+echo 'alias tests="cd /var/www/midcamp-website/tests"' >> ~/.bashrc
+echo 'alias freset="drush cc all; drush fra -y --force; drush cc all"' >> ~/.bashrc
