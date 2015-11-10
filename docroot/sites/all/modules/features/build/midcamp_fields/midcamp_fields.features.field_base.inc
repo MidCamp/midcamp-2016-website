@@ -10,7 +10,7 @@
 function midcamp_fields_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'body'
+  // Exported field_base: 'body'.
   $field_bases['body'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -36,7 +36,7 @@ function midcamp_fields_field_default_field_bases() {
     'type' => 'text_with_summary',
   );
 
-  // Exported field_base: 'field_about_me'
+  // Exported field_base: 'field_about_me'.
   $field_bases['field_about_me'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -58,7 +58,7 @@ function midcamp_fields_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_attendees'
+  // Exported field_base: 'field_attendees'.
   $field_bases['field_attendees'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -89,7 +89,7 @@ function midcamp_fields_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_audience'
+  // Exported field_base: 'field_audience'.
   $field_bases['field_audience'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -119,7 +119,7 @@ function midcamp_fields_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_company_website'
+  // Exported field_base: 'field_company_website'.
   $field_bases['field_company_website'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -152,7 +152,7 @@ function midcamp_fields_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_cost'
+  // Exported field_base: 'field_cost'.
   $field_bases['field_cost'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -175,7 +175,7 @@ function midcamp_fields_field_default_field_bases() {
     'type' => 'number_decimal',
   );
 
-  // Exported field_base: 'field_date_time'
+  // Exported field_base: 'field_date_time'.
   $field_bases['field_date_time'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -208,7 +208,7 @@ function midcamp_fields_field_default_field_bases() {
     'type' => 'datetime',
   );
 
-  // Exported field_base: 'field_dietary_restrictions'
+  // Exported field_base: 'field_dietary_restrictions'.
   $field_bases['field_dietary_restrictions'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -232,7 +232,7 @@ function midcamp_fields_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_drupal_org_profile'
+  // Exported field_base: 'field_drupal_org_profile'.
   $field_bases['field_drupal_org_profile'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -265,7 +265,7 @@ function midcamp_fields_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_eventbrite_order_url'
+  // Exported field_base: 'field_eventbrite_order_url'.
   $field_bases['field_eventbrite_order_url'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -298,7 +298,7 @@ function midcamp_fields_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_experience'
+  // Exported field_base: 'field_experience'.
   $field_bases['field_experience'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -322,7 +322,7 @@ function midcamp_fields_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_facebook_url'
+  // Exported field_base: 'field_facebook_url'.
   $field_bases['field_facebook_url'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -354,7 +354,7 @@ function midcamp_fields_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_google_plus_url'
+  // Exported field_base: 'field_google_plus_url'.
   $field_bases['field_google_plus_url'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -386,7 +386,7 @@ function midcamp_fields_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_image'
+  // Exported field_base: 'field_image'.
   $field_bases['field_image'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -412,7 +412,7 @@ function midcamp_fields_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_interest_social_fri'
+  // Exported field_base: 'field_interest_social_fri'.
   $field_bases['field_interest_social_fri'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -436,7 +436,7 @@ function midcamp_fields_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_interest_social_sat'
+  // Exported field_base: 'field_interest_social_sat'.
   $field_bases['field_interest_social_sat'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -460,7 +460,7 @@ function midcamp_fields_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_job_title'
+  // Exported field_base: 'field_job_title'.
   $field_bases['field_job_title'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -484,7 +484,7 @@ function midcamp_fields_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_job_type'
+  // Exported field_base: 'field_job_type'.
   $field_bases['field_job_type'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -516,7 +516,7 @@ function midcamp_fields_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_joind_in_url'
+  // Exported field_base: 'field_joind_in_url'.
   $field_bases['field_joind_in_url'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -548,7 +548,7 @@ function midcamp_fields_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_length'
+  // Exported field_base: 'field_length'.
   $field_bases['field_length'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -578,7 +578,7 @@ function midcamp_fields_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_level'
+  // Exported field_base: 'field_level'.
   $field_bases['field_level'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -608,7 +608,7 @@ function midcamp_fields_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_location'
+  // Exported field_base: 'field_location'.
   $field_bases['field_location'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -633,7 +633,7 @@ function midcamp_fields_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_midcamp_tickets'
+  // Exported field_base: 'field_midcamp_tickets'.
   $field_bases['field_midcamp_tickets'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -664,7 +664,7 @@ function midcamp_fields_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_midcamp_training'
+  // Exported field_base: 'field_midcamp_training'.
   $field_bases['field_midcamp_training'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -696,7 +696,7 @@ function midcamp_fields_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_name'
+  // Exported field_base: 'field_name'.
   $field_bases['field_name'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -800,7 +800,7 @@ Prof.',
     'type' => 'name',
   );
 
-  // Exported field_base: 'field_organization'
+  // Exported field_base: 'field_organization'.
   $field_bases['field_organization'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -824,7 +824,7 @@ Prof.',
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_personal_website'
+  // Exported field_base: 'field_personal_website'.
   $field_bases['field_personal_website'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -857,7 +857,7 @@ Prof.',
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_photo'
+  // Exported field_base: 'field_photo'.
   $field_bases['field_photo'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -883,7 +883,7 @@ Prof.',
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_register_for_this_training'
+  // Exported field_base: 'field_register_for_this_training'.
   $field_bases['field_register_for_this_training'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -913,7 +913,7 @@ Prof.',
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_related_content'
+  // Exported field_base: 'field_related_content'.
   $field_bases['field_related_content'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -946,7 +946,7 @@ Prof.',
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_room'
+  // Exported field_base: 'field_room'.
   $field_bases['field_room'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -985,7 +985,7 @@ Prof.',
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_session_video'
+  // Exported field_base: 'field_session_video'.
   $field_bases['field_session_video'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1009,7 +1009,7 @@ Prof.',
     'type' => 'youtube',
   );
 
-  // Exported field_base: 'field_sessions'
+  // Exported field_base: 'field_sessions'.
   $field_bases['field_sessions'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -1051,7 +1051,7 @@ Prof.',
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_skill_level'
+  // Exported field_base: 'field_skill_level'.
   $field_bases['field_skill_level'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1081,7 +1081,7 @@ Prof.',
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_slides'
+  // Exported field_base: 'field_slides'.
   $field_bases['field_slides'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1108,7 +1108,7 @@ Prof.',
     'type' => 'file',
   );
 
-  // Exported field_base: 'field_slides_url'
+  // Exported field_base: 'field_slides_url'.
   $field_bases['field_slides_url'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1141,7 +1141,7 @@ Prof.',
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_speakers'
+  // Exported field_base: 'field_speakers'.
   $field_bases['field_speakers'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -1180,7 +1180,7 @@ Prof.',
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_sponsor'
+  // Exported field_base: 'field_sponsor'.
   $field_bases['field_sponsor'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1213,7 +1213,7 @@ Prof.',
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_start_time'
+  // Exported field_base: 'field_start_time'.
   $field_bases['field_start_time'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1243,7 +1243,7 @@ Prof.',
     'type' => 'datetime',
   );
 
-  // Exported field_base: 'field_t_shirt_size'
+  // Exported field_base: 'field_t_shirt_size'.
   $field_bases['field_t_shirt_size'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1268,7 +1268,7 @@ Prof.',
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_tc'
+  // Exported field_base: 'field_tc'.
   $field_bases['field_tc'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1297,7 +1297,7 @@ Prof.',
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_timeslot'
+  // Exported field_base: 'field_timeslot'.
   $field_bases['field_timeslot'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1330,7 +1330,7 @@ Prof.',
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_track'
+  // Exported field_base: 'field_track'.
   $field_bases['field_track'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -1359,7 +1359,7 @@ Prof.',
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_trainers'
+  // Exported field_base: 'field_trainers'.
   $field_bases['field_trainers'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -1393,7 +1393,7 @@ Prof.',
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_training_length'
+  // Exported field_base: 'field_training_length'.
   $field_bases['field_training_length'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1420,7 +1420,7 @@ Prof.',
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_twitter_handle'
+  // Exported field_base: 'field_twitter_handle'.
   $field_bases['field_twitter_handle'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1445,7 +1445,7 @@ Prof.',
     'type' => 'text',
   );
 
-  // Exported field_base: 'group_group'
+  // Exported field_base: 'group_group'.
   $field_bases['group_group'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1474,7 +1474,7 @@ Prof.',
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'og_group_ref'
+  // Exported field_base: 'og_group_ref'.
   $field_bases['og_group_ref'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1519,7 +1519,7 @@ Prof.',
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'og_membership_request'
+  // Exported field_base: 'og_membership_request'.
   $field_bases['og_membership_request'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1540,13 +1540,45 @@ Prof.',
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'og_user_node'
+  // Exported field_base: 'og_user_node'.
   $field_bases['og_user_node'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'og_user_node',
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'entityreference',
+    'settings' => array(
+      'handler' => 'og',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'og_behavior' => array(
+            'status' => TRUE,
+          ),
+        ),
+        'membership_type' => 'og_membership_type_default',
+        'target_bundles' => array(),
+      ),
+      'handler_submit' => 'Change handler',
+      'target_type' => 'node',
+    ),
+    'translatable' => 0,
+    'type' => 'entityreference',
+  );
+
+  // Exported field_base: 'og_user_node1'.
+  $field_bases['og_user_node1'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'og_user_node1',
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',

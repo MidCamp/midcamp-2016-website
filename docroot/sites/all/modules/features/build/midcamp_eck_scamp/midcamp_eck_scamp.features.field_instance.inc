@@ -10,7 +10,7 @@
 function midcamp_eck_scamp_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'scamp-assignment-field_room'
+  // Exported field_instance: 'scamp-assignment-field_room'.
   $field_instances['scamp-assignment-field_room'] = array(
     'bundle' => 'assignment',
     'default_value' => NULL,
@@ -52,7 +52,7 @@ function midcamp_eck_scamp_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'scamp-assignment-field_sessions'
+  // Exported field_instance: 'scamp-assignment-field_sessions'.
   $field_instances['scamp-assignment-field_sessions'] = array(
     'bundle' => 'assignment',
     'default_value' => NULL,
@@ -95,7 +95,7 @@ function midcamp_eck_scamp_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'scamp-assignment-field_timeslot'
+  // Exported field_instance: 'scamp-assignment-field_timeslot'.
   $field_instances['scamp-assignment-field_timeslot'] = array(
     'bundle' => 'assignment',
     'default_value' => NULL,
@@ -137,7 +137,7 @@ function midcamp_eck_scamp_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'scamp-room-field_sponsor'
+  // Exported field_instance: 'scamp-room-field_sponsor'.
   $field_instances['scamp-room-field_sponsor'] = array(
     'bundle' => 'room',
     'default_value' => NULL,
@@ -180,7 +180,7 @@ function midcamp_eck_scamp_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'scamp-timeslot-field_date_time'
+  // Exported field_instance: 'scamp-timeslot-field_date_time'.
   $field_instances['scamp-timeslot-field_date_time'] = array(
     'bundle' => 'timeslot',
     'deleted' => 0,
@@ -195,6 +195,7 @@ function midcamp_eck_scamp_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 0,

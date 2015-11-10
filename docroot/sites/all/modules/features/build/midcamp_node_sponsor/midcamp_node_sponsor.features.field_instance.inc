@@ -10,7 +10,7 @@
 function midcamp_node_sponsor_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-sponsor-body'
+  // Exported field_instance: 'node-sponsor-body'.
   $field_instances['node-sponsor-body'] = array(
     'bundle' => 'sponsor',
     'default_value' => NULL,
@@ -61,7 +61,7 @@ function midcamp_node_sponsor_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-sponsor-field_attendees'
+  // Exported field_instance: 'node-sponsor-field_attendees'.
   $field_instances['node-sponsor-field_attendees'] = array(
     'bundle' => 'sponsor',
     'default_value' => NULL,
@@ -110,7 +110,7 @@ function midcamp_node_sponsor_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-sponsor-field_image'
+  // Exported field_instance: 'node-sponsor-field_image'.
   $field_instances['node-sponsor-field_image'] = array(
     'bundle' => 'sponsor',
     'deleted' => 0,
@@ -166,7 +166,7 @@ function midcamp_node_sponsor_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-sponsor-field_level'
+  // Exported field_instance: 'node-sponsor-field_level'.
   $field_instances['node-sponsor-field_level'] = array(
     'bundle' => 'sponsor',
     'default_value' => NULL,
@@ -209,7 +209,7 @@ function midcamp_node_sponsor_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-sponsor-group_group'
+  // Exported field_instance: 'node-sponsor-group_group'.
   $field_instances['node-sponsor-group_group'] = array(
     'bundle' => 'sponsor',
     'default_value' => array(

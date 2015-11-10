@@ -9,7 +9,6 @@ dependencies[] = link
 dependencies[] = list
 dependencies[] = midcamp_fields
 dependencies[] = options
-dependencies[] = strongarm
 dependencies[] = taxonomy
 dependencies[] = youtube
 features[ctools][] = field_group:field_group:1

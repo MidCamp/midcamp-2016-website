@@ -10,7 +10,7 @@
 function midcamp_node_training_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-training-body'
+  // Exported field_instance: 'node-training-body'.
   $field_instances['node-training-body'] = array(
     'bundle' => 'training',
     'default_value' => NULL,
@@ -60,7 +60,7 @@ function midcamp_node_training_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-training-field_audience'
+  // Exported field_instance: 'node-training-field_audience'.
   $field_instances['node-training-field_audience'] = array(
     'bundle' => 'training',
     'default_value' => NULL,
@@ -103,7 +103,7 @@ function midcamp_node_training_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-training-field_cost'
+  // Exported field_instance: 'node-training-field_cost'.
   $field_instances['node-training-field_cost'] = array(
     'bundle' => 'training',
     'default_value' => NULL,
@@ -155,7 +155,7 @@ function midcamp_node_training_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-training-field_register_for_this_training'
+  // Exported field_instance: 'node-training-field_register_for_this_training'.
   $field_instances['node-training-field_register_for_this_training'] = array(
     'bundle' => 'training',
     'default_value' => NULL,
@@ -223,7 +223,7 @@ function midcamp_node_training_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-training-field_room'
+  // Exported field_instance: 'node-training-field_room'.
   $field_instances['node-training-field_room'] = array(
     'bundle' => 'training',
     'default_value' => NULL,
@@ -268,7 +268,7 @@ function midcamp_node_training_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-training-field_start_time'
+  // Exported field_instance: 'node-training-field_start_time'.
   $field_instances['node-training-field_start_time'] = array(
     'bundle' => 'training',
     'deleted' => 0,
@@ -283,6 +283,7 @@ function midcamp_node_training_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 7,
@@ -327,7 +328,7 @@ function midcamp_node_training_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-training-field_trainers'
+  // Exported field_instance: 'node-training-field_trainers'.
   $field_instances['node-training-field_trainers'] = array(
     'bundle' => 'training',
     'default_value' => NULL,
@@ -376,7 +377,7 @@ function midcamp_node_training_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-training-field_training_length'
+  // Exported field_instance: 'node-training-field_training_length'.
   $field_instances['node-training-field_training_length'] = array(
     'bundle' => 'training',
     'default_value' => NULL,
