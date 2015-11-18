@@ -10,7 +10,7 @@
 function midcamp_node_session_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-session-body'
+  // Exported field_instance: 'node-session-body'.
   $field_instances['node-session-body'] = array(
     'bundle' => 'session',
     'default_value' => NULL,
@@ -67,7 +67,7 @@ function midcamp_node_session_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-session-field_audience'
+  // Exported field_instance: 'node-session-field_audience'.
   $field_instances['node-session-field_audience'] = array(
     'bundle' => 'session',
     'default_value' => NULL,
@@ -117,7 +117,7 @@ function midcamp_node_session_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-session-field_experience'
+  // Exported field_instance: 'node-session-field_experience'.
   $field_instances['node-session-field_experience'] = array(
     'bundle' => 'session',
     'default_value' => NULL,
@@ -174,7 +174,7 @@ function midcamp_node_session_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-session-field_length'
+  // Exported field_instance: 'node-session-field_length'.
   $field_instances['node-session-field_length'] = array(
     'bundle' => 'session',
     'default_value' => array(
@@ -227,7 +227,7 @@ function midcamp_node_session_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-session-field_related_content'
+  // Exported field_instance: 'node-session-field_related_content'.
   $field_instances['node-session-field_related_content'] = array(
     'bundle' => 'session',
     'default_value' => NULL,
@@ -301,7 +301,7 @@ function midcamp_node_session_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-session-field_session_video'
+  // Exported field_instance: 'node-session-field_session_video'.
   $field_instances['node-session-field_session_video'] = array(
     'bundle' => 'session',
     'default_value' => NULL,
@@ -360,7 +360,7 @@ function midcamp_node_session_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-session-field_slides'
+  // Exported field_instance: 'node-session-field_slides'.
   $field_instances['node-session-field_slides'] = array(
     'bundle' => 'session',
     'deleted' => 0,
@@ -414,7 +414,7 @@ function midcamp_node_session_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-session-field_slides_url'
+  // Exported field_instance: 'node-session-field_slides_url'.
   $field_instances['node-session-field_slides_url'] = array(
     'bundle' => 'session',
     'default_value' => NULL,
@@ -488,7 +488,7 @@ function midcamp_node_session_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-session-field_speakers'
+  // Exported field_instance: 'node-session-field_speakers'.
   $field_instances['node-session-field_speakers'] = array(
     'bundle' => 'session',
     'default_value' => NULL,
@@ -546,7 +546,7 @@ function midcamp_node_session_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-session-field_tc'
+  // Exported field_instance: 'node-session-field_tc'.
   $field_instances['node-session-field_tc'] = array(
     'bundle' => 'session',
     'default_value' => array(
@@ -600,7 +600,7 @@ function midcamp_node_session_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-session-field_track'
+  // Exported field_instance: 'node-session-field_track'.
   $field_instances['node-session-field_track'] = array(
     'bundle' => 'session',
     'default_value' => NULL,

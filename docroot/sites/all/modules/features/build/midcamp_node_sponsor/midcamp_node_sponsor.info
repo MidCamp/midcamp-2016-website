@@ -6,7 +6,6 @@ dependencies[] = features
 dependencies[] = image
 dependencies[] = midcamp_fields
 dependencies[] = options
-dependencies[] = strongarm
 dependencies[] = taxonomy
 features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2

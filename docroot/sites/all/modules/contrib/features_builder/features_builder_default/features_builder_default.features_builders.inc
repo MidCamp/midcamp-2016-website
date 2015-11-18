@@ -66,6 +66,10 @@ function features_builder_default_features_builders_info() {
       'label' => t('Profile2'),
       'class' => 'Profile2FeaturesBuilder',
     ),
+    'features_builder_scheduler' => array(
+      'label' => t('Scheduler'),
+      'class' => 'SchedulerFeaturesBuilder',
+    ),
     'features_builder_search_api' => array(
       'label' => t('Search'),
       'class' => 'SearchApiBuilder',

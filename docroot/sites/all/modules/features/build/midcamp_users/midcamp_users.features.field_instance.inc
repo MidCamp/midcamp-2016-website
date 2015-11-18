@@ -10,7 +10,7 @@
 function midcamp_users_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'user-user-field_about_me'
+  // Exported field_instance: 'user-user-field_about_me'.
   $field_instances['user-user-field_about_me'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -61,7 +61,7 @@ function midcamp_users_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_company_website'
+  // Exported field_instance: 'user-user-field_company_website'.
   $field_instances['user-user-field_company_website'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -130,7 +130,7 @@ function midcamp_users_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_drupal_org_profile'
+  // Exported field_instance: 'user-user-field_drupal_org_profile'.
   $field_instances['user-user-field_drupal_org_profile'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -199,7 +199,7 @@ function midcamp_users_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_facebook_url'
+  // Exported field_instance: 'user-user-field_facebook_url'.
   $field_instances['user-user-field_facebook_url'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -268,7 +268,7 @@ function midcamp_users_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_google_plus_url'
+  // Exported field_instance: 'user-user-field_google_plus_url'.
   $field_instances['user-user-field_google_plus_url'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -337,7 +337,7 @@ function midcamp_users_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_image'
+  // Exported field_instance: 'user-user-field_image'.
   $field_instances['user-user-field_image'] = array(
     'bundle' => 'user',
     'deleted' => 0,
@@ -401,7 +401,7 @@ function midcamp_users_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_job_title'
+  // Exported field_instance: 'user-user-field_job_title'.
   $field_instances['user-user-field_job_title'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -453,7 +453,7 @@ function midcamp_users_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_joind_in_url'
+  // Exported field_instance: 'user-user-field_joind_in_url'.
   $field_instances['user-user-field_joind_in_url'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -522,7 +522,7 @@ function midcamp_users_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_name'
+  // Exported field_instance: 'user-user-field_name'.
   $field_instances['user-user-field_name'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -637,7 +637,7 @@ function midcamp_users_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_organization'
+  // Exported field_instance: 'user-user-field_organization'.
   $field_instances['user-user-field_organization'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -689,7 +689,7 @@ function midcamp_users_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_personal_website'
+  // Exported field_instance: 'user-user-field_personal_website'.
   $field_instances['user-user-field_personal_website'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -758,7 +758,7 @@ function midcamp_users_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_twitter_handle'
+  // Exported field_instance: 'user-user-field_twitter_handle'.
   $field_instances['user-user-field_twitter_handle'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -810,7 +810,7 @@ function midcamp_users_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-og_user_node'
+  // Exported field_instance: 'user-user-og_user_node'.
   $field_instances['user-user-og_user_node'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -860,6 +860,59 @@ function midcamp_users_field_default_field_instances() {
       'settings' => array(),
       'type' => 'og_complex',
       'weight' => 64,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-og_user_node1'.
+  $field_instances['user-user-og_user_node1'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'og_ui',
+        'settings' => array(),
+        'type' => 'og_list_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'og_user_node1',
+    'label' => 'Group membership',
+    'required' => FALSE,
+    'settings' => array(
+      'behaviors' => array(
+        'og_widget' => array(
+          'admin' => array(
+            'widget_type' => 'entityreference_autocomplete',
+          ),
+          'default' => array(
+            'widget_type' => 'options_select',
+          ),
+          'status' => TRUE,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'view modes' => array(
+      'full' => array(
+        'custom settings' => FALSE,
+        'label' => 'Full',
+        'type' => 'og_list_default',
+      ),
+      'teaser' => array(
+        'custom settings' => FALSE,
+        'label' => 'Teaser',
+        'type' => 'og_list_default',
+      ),
+    ),
+    'widget' => array(
+      'module' => 'og',
+      'settings' => array(),
+      'type' => 'og_complex',
+      'weight' => 41,
     ),
   );
 

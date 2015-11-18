@@ -23,7 +23,6 @@ class PanelsFeaturesBuilder extends FeaturesBuilderBase {
     // Page Manager.
     if (module_exists('page_manager')) {
       $this->setNamedComponents('dependencies', array('page_manager'));
-      $this->setAllComponents('panels_mini');
       $this->setAllComponents('page_manager_handlers');
       $this->setAllComponents('page_manager_pages');
       $this->setNamedComponents('variable', array('default_page_manager_handlers', 'default_page_manager_pages'));

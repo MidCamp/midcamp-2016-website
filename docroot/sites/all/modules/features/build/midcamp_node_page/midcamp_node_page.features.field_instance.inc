@@ -10,7 +10,7 @@
 function midcamp_node_page_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-page-body'
+  // Exported field_instance: 'node-page-body'.
   $field_instances['node-page-body'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
@@ -60,7 +60,7 @@ function midcamp_node_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_photo'
+  // Exported field_instance: 'node-page-field_photo'.
   $field_instances['node-page-field_photo'] = array(
     'bundle' => 'page',
     'deleted' => 0,

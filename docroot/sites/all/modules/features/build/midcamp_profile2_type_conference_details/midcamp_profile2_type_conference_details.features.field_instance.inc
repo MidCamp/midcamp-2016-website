@@ -11,7 +11,7 @@ function midcamp_profile2_type_conference_details_field_default_field_instances(
   $field_instances = array();
 
   // Exported field_instance:
-  // 'profile2-conference_details-field_dietary_restrictions'
+  // 'profile2-conference_details-field_dietary_restrictions'.
   $field_instances['profile2-conference_details-field_dietary_restrictions'] = array(
     'bundle' => 'conference_details',
     'default_value' => NULL,
@@ -51,7 +51,7 @@ function midcamp_profile2_type_conference_details_field_default_field_instances(
   );
 
   // Exported field_instance:
-  // 'profile2-conference_details-field_interest_social_fri'
+  // 'profile2-conference_details-field_interest_social_fri'.
   $field_instances['profile2-conference_details-field_interest_social_fri'] = array(
     'bundle' => 'conference_details',
     'default_value' => NULL,
@@ -91,7 +91,7 @@ function midcamp_profile2_type_conference_details_field_default_field_instances(
   );
 
   // Exported field_instance:
-  // 'profile2-conference_details-field_interest_social_sat'
+  // 'profile2-conference_details-field_interest_social_sat'.
   $field_instances['profile2-conference_details-field_interest_social_sat'] = array(
     'bundle' => 'conference_details',
     'default_value' => NULL,
@@ -130,7 +130,7 @@ function midcamp_profile2_type_conference_details_field_default_field_instances(
     ),
   );
 
-  // Exported field_instance: 'profile2-conference_details-field_t_shirt_size'
+  // Exported field_instance: 'profile2-conference_details-field_t_shirt_size'.
   $field_instances['profile2-conference_details-field_t_shirt_size'] = array(
     'bundle' => 'conference_details',
     'default_value' => NULL,

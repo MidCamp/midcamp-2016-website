@@ -25,6 +25,7 @@ files[] = includes/OgFeaturesBuilder.inc
 files[] = includes/PanelsFeaturesBuilder.inc
 files[] = includes/ParagraphsFeaturesBuilder.inc
 files[] = includes/Profile2FeaturesBuilder.inc
+files[] = includes/SchedulerFeaturesBuilder.inc
 files[] = includes/SearchApiBuilder.inc
 files[] = includes/SeoFeaturesBuilder.inc
 files[] = includes/SiteFeaturesBuilder.inc
@@ -32,9 +33,9 @@ files[] = includes/TaxonomyFeaturesBuilder.inc
 files[] = includes/UserFeaturesBuilder.inc
 files[] = includes/ViewsFeaturesBuilder.inc
 
-; Information added by Drupal.org packaging script on 2015-10-05
-version = "7.x-1.0-alpha2"
+; Information added by Drupal.org packaging script on 2015-10-27
+version = "7.x-1.0-alpha2+5-dev"
 core = "7.x"
 project = "features_builder"
-datestamp = "1444083757"
+datestamp = "1445951659"
 

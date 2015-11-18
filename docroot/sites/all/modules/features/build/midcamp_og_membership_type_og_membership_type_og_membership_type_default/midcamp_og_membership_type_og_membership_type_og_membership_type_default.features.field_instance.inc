@@ -11,7 +11,7 @@ function midcamp_og_membership_type_og_membership_type_og_membership_type_defaul
   $field_instances = array();
 
   // Exported field_instance:
-  // 'og_membership-og_membership_type_default-og_membership_request'
+  // 'og_membership-og_membership_type_default-og_membership_request'.
   $field_instances['og_membership-og_membership_type_default-og_membership_request'] = array(
     'bundle' => 'og_membership_type_default',
     'default_value' => NULL,

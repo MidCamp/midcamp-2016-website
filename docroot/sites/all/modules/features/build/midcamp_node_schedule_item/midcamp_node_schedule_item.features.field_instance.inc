@@ -10,7 +10,7 @@
 function midcamp_node_schedule_item_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-schedule_item-body'
+  // Exported field_instance: 'node-schedule_item-body'.
   $field_instances['node-schedule_item-body'] = array(
     'bundle' => 'schedule_item',
     'default_value' => NULL,

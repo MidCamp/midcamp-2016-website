@@ -10,7 +10,7 @@
 function midcamp_profile2_type_orders_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'profile2-orders-field_eventbrite_order_url'
+  // Exported field_instance: 'profile2-orders-field_eventbrite_order_url'.
   $field_instances['profile2-orders-field_eventbrite_order_url'] = array(
     'bundle' => 'orders',
     'default_value' => NULL,
@@ -66,7 +66,7 @@ function midcamp_profile2_type_orders_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'profile2-orders-field_midcamp_tickets'
+  // Exported field_instance: 'profile2-orders-field_midcamp_tickets'.
   $field_instances['profile2-orders-field_midcamp_tickets'] = array(
     'bundle' => 'orders',
     'default_value' => NULL,
@@ -97,7 +97,7 @@ function midcamp_profile2_type_orders_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'profile2-orders-field_midcamp_training'
+  // Exported field_instance: 'profile2-orders-field_midcamp_training'.
   $field_instances['profile2-orders-field_midcamp_training'] = array(
     'bundle' => 'orders',
     'default_value' => NULL,

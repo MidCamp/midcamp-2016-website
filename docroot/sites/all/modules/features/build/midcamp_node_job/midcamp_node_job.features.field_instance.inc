@@ -10,7 +10,7 @@
 function midcamp_node_job_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-job-body'
+  // Exported field_instance: 'node-job-body'.
   $field_instances['node-job-body'] = array(
     'bundle' => 'job',
     'default_value' => NULL,
@@ -66,7 +66,7 @@ function midcamp_node_job_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-job-field_job_type'
+  // Exported field_instance: 'node-job-field_job_type'.
   $field_instances['node-job-field_job_type'] = array(
     'bundle' => 'job',
     'default_value' => NULL,
@@ -110,7 +110,7 @@ function midcamp_node_job_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-job-field_location'
+  // Exported field_instance: 'node-job-field_location'.
   $field_instances['node-job-field_location'] = array(
     'bundle' => 'job',
     'default_value' => NULL,
@@ -162,7 +162,7 @@ function midcamp_node_job_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-job-field_skill_level'
+  // Exported field_instance: 'node-job-field_skill_level'.
   $field_instances['node-job-field_skill_level'] = array(
     'bundle' => 'job',
     'default_value' => NULL,
@@ -206,7 +206,7 @@ function midcamp_node_job_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-job-og_group_ref'
+  // Exported field_instance: 'node-job-og_group_ref'.
   $field_instances['node-job-og_group_ref'] = array(
     'bundle' => 'job',
     'default_value' => NULL,

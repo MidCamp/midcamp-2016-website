@@ -121,7 +121,8 @@ function features_builder_build_diff($export, $component_types) {
  *   A manifest array.
  *
  * @return array
- *   An array of dependencies, keyed by feature.
+ *   An array of dependencies, keyed by feature. Values are arrays of the
+ *   component's owner, keyed by "component_type|component".
  */
 function features_builder_build_get_dependencies($manifest) {
   $dependencies = array();
@@ -137,11 +138,6 @@ function features_builder_build_get_dependencies($manifest) {
         }
       }
     }
-  }
-
-  // Remove duplicates.
-  foreach ($dependencies as &$dependency) {
-    $dependency = array_unique($dependency);
   }
 
   return $dependencies;

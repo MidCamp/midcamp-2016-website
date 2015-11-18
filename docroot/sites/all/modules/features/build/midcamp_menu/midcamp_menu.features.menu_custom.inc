@@ -61,6 +61,5 @@ function midcamp_menu_menu_default_menu_custom() {
   t('User menu');
   t('twitter, CoC, etc.');
 
-
   return $menus;
 }
