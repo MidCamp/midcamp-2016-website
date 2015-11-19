@@ -6,35 +6,31 @@
 
 use Behat\Behat\Context\SnippetAcceptingContext;
 use Behat\Gherkin\Node\TableNode;
-use Drupal\DrupalDriverManager;
-use Drupal\DrupalExtension\Context\DrupalContext;
-use Drupal\DrupalExtension\Context\DrupalSubContextBase;
+use Drupal\DrupalExtension\Context\RawDrupalContext;
 
 /**
  * Defines application features from the specific context.
  */
-class FeatureContext extends DrupalSubContextBase implements SnippetAcceptingContext {
+class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext {
 
   protected $placeholderEnabled;
 
   /**
-   * {@inheritdoc}
+   * Instantiate this FeatureContext class.
    */
-  public function __construct(DrupalDriverManager $drupal) {
-    parent::__construct($drupal);
+  public function __construct() {
     $this->placeholderEnabled = module_exists('madcamp_placeholder');
   }
 
   /**
    * Get the DrupalContext.
    *
-   * @param \Drupal\DrupalExtension\Context\DrupalContext|NULL $context
-   *   DrupalContext.
-   *
    * @return \Drupal\DrupalExtension\Context\DrupalContext
    */
-  protected function getDrupalContext(DrupalContext $context = NULL) {
-    return $context;
+  protected function getDrupalContext() {
+    return $this->getDrupal()
+      ->getEnvironment()
+      ->getContext('Drupal\DrupalExtension\Context\DrupalContext');
   }
 
   /**
@@ -46,7 +42,7 @@ class FeatureContext extends DrupalSubContextBase implements SnippetAcceptingCon
    * @Given sponsors:
    */
   public function createSponsors(TableNode $table) {
-    $drupal_context = $this->getDrupalContext($this->getContext('Drupal\DrupalExtension\Context\DrupalContext'));
+    $drupal_context = $this->getDrupalContext();
     $type = 'sponsor';
     foreach ($table->getHash() as $hash) {
       $hash['type'] = $type;
@@ -88,7 +84,6 @@ class FeatureContext extends DrupalSubContextBase implements SnippetAcceptingCon
 
     return file_save_data($data, $destination, FILE_EXISTS_REPLACE);
   }
-
 
 
   /**
