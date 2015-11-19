@@ -3586,7 +3586,7 @@ function midcamp_views_views_default_views() {
   $view = new view();
   $view->name = 'random_sponsor';
   $view->description = '';
-  $view->tag = 'default';
+  $view->tag = 'MidCamp';
   $view->base_table = 'node';
   $view->human_name = 'Random Sponsor';
   $view->core = 7;
@@ -3634,11 +3634,34 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'sponsor' => 'sponsor',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
 
-  /* Display: Random Gold Sponsor */
-  $handler = $view->new_display('block', 'Random Gold Sponsor', 'gold');
+  /* Display: Random gold sponsor logo */
+  $handler = $view->new_display('panel_pane', 'Random gold sponsor logo', 'panel_pane_gold_sponsor_logo');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Is a Gold Sponsor!';
+  $handler->display->display_options['title'] = 'Is a gold sponsor!';
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Field: Logo */
+  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['label'] = '';
+  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image']['settings'] = array(
+    'image_style' => 'sponsor_footer',
+    'image_link' => 'content',
+  );
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Is a gold sponsor!';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'h2';
+  $handler->display->display_options['fields']['nothing']['element_wrapper_class'] = 'sponsor-title';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -3655,20 +3678,49 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'sponsor' => 'sponsor',
   );
-  /* Filter criterion: Content: Sponsorship Level (field_level) */
-  $handler->display->display_options['filters']['field_level_tid']['id'] = 'field_level_tid';
-  $handler->display->display_options['filters']['field_level_tid']['table'] = 'field_data_field_level';
-  $handler->display->display_options['filters']['field_level_tid']['field'] = 'field_level_tid';
-  $handler->display->display_options['filters']['field_level_tid']['value'] = array(
-    2 => '2',
+  /* Filter criterion: Content: Sponsorship Level (field_sponsorship_level) */
+  $handler->display->display_options['filters']['field_sponsorship_level_value']['id'] = 'field_sponsorship_level_value';
+  $handler->display->display_options['filters']['field_sponsorship_level_value']['table'] = 'field_data_field_sponsorship_level';
+  $handler->display->display_options['filters']['field_sponsorship_level_value']['field'] = 'field_sponsorship_level_value';
+  $handler->display->display_options['filters']['field_sponsorship_level_value']['value'] = array(
+    'gold' => 'gold',
   );
-  $handler->display->display_options['filters']['field_level_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_level_tid']['vocabulary'] = 'sponsor_levels';
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
 
-  /* Display: Random Silver Sponsor */
-  $handler = $view->new_display('block', 'Random Silver Sponsor', 'silver');
+  /* Display: Random silver sponsor logo */
+  $handler = $view->new_display('panel_pane', 'Random silver sponsor logo', 'panel_pane_silver_sponsor_logo');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Is a Silver Sponsor!';
+  $handler->display->display_options['title'] = 'Is a silver sponsor!';
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Field: Logo */
+  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['label'] = '';
+  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image']['settings'] = array(
+    'image_style' => 'sponsor_footer',
+    'image_link' => 'content',
+  );
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Is a silver sponsor!';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'h2';
+  $handler->display->display_options['fields']['nothing']['element_wrapper_class'] = 'sponsor-title';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -3685,15 +3737,22 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'sponsor' => 'sponsor',
   );
-  /* Filter criterion: Content: Sponsorship Level (field_level) */
-  $handler->display->display_options['filters']['field_level_tid']['id'] = 'field_level_tid';
-  $handler->display->display_options['filters']['field_level_tid']['table'] = 'field_data_field_level';
-  $handler->display->display_options['filters']['field_level_tid']['field'] = 'field_level_tid';
-  $handler->display->display_options['filters']['field_level_tid']['value'] = array(
-    3 => '3',
+  /* Filter criterion: Content: Sponsorship Level (field_sponsorship_level) */
+  $handler->display->display_options['filters']['field_sponsorship_level_value']['id'] = 'field_sponsorship_level_value';
+  $handler->display->display_options['filters']['field_sponsorship_level_value']['table'] = 'field_data_field_sponsorship_level';
+  $handler->display->display_options['filters']['field_sponsorship_level_value']['field'] = 'field_sponsorship_level_value';
+  $handler->display->display_options['filters']['field_sponsorship_level_value']['value'] = array(
+    'silver' => 'silver',
   );
-  $handler->display->display_options['filters']['field_level_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_level_tid']['vocabulary'] = 'sponsor_levels';
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
   $export['random_sponsor'] = $view;
 
   $view = new view();

@@ -166,19 +166,19 @@ function midcamp_node_sponsor_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-sponsor-field_level'.
-  $field_instances['node-sponsor-field_level'] = array(
+  // Exported field_instance: 'node-sponsor-field_sponsorship_level'.
+  $field_instances['node-sponsor-field_sponsorship_level'] = array(
     'bundle' => 'sponsor',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Please select the sponsorship level for this sponsor.',
     'display' => array(
       'default' => array(
-        'label' => 'inline',
-        'module' => 'taxonomy',
+        'label' => 'above',
+        'module' => 'list',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 1,
+        'type' => 'list_default',
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -186,15 +186,9 @@ function midcamp_node_sponsor_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
-      'user_page_teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_level',
+    'field_name' => 'field_sponsorship_level',
     'label' => 'Sponsorship Level',
     'required' => 1,
     'settings' => array(
@@ -278,6 +272,7 @@ function midcamp_node_sponsor_field_default_field_instances() {
   t('Determine if this is an OG group.');
   t('Group');
   t('Logo');
+  t('Please select the sponsorship level for this sponsor.');
   t('Sponsorship Level');
   t('Type the username of your attendees, and to add more attendees click "Add another attendee".');
 

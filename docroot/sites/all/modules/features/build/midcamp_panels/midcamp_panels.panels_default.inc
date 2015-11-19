@@ -13,6 +13,89 @@ function midcamp_panels_default_panels_mini() {
   $mini = new stdClass();
   $mini->disabled = FALSE; /* Edit this to true to make a default mini disabled initially */
   $mini->api_version = 1;
+  $mini->name = 'sponsor_footer_logos';
+  $mini->category = 'MidCamp';
+  $mini->admin_title = 'Sponsor footer logos';
+  $mini->admin_description = '';
+  $mini->requiredcontexts = array();
+  $mini->contexts = array();
+  $mini->relationships = array();
+  $display = new panels_display();
+  $display->layout = 'zen_no_wrapper';
+  $display->layout_settings = array(
+    'main_classes' => '',
+  );
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'main' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->uuid = '944813ad-549b-4181-9110-0b325a4a0833';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-38c849bc-7ba5-4c4f-bd67-088a319948a5';
+    $pane->panel = 'main';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'random_sponsor-panel_pane_gold_sponsor_logo';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => '',
+    );
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '38c849bc-7ba5-4c4f-bd67-088a319948a5';
+    $display->content['new-38c849bc-7ba5-4c4f-bd67-088a319948a5'] = $pane;
+    $display->panels['main'][0] = 'new-38c849bc-7ba5-4c4f-bd67-088a319948a5';
+    $pane = new stdClass();
+    $pane->pid = 'new-feca2027-6820-46a3-a505-b5d3945fe2b8';
+    $pane->panel = 'main';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'random_sponsor-panel_pane_silver_sponsor_logo';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => '',
+    );
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = 'feca2027-6820-46a3-a505-b5d3945fe2b8';
+    $display->content['new-feca2027-6820-46a3-a505-b5d3945fe2b8'] = $pane;
+    $display->panels['main'][1] = 'new-feca2027-6820-46a3-a505-b5d3945fe2b8';
+  $display->hide_title = PANELS_TITLE_NONE;
+  $display->title_pane = 'new-38c849bc-7ba5-4c4f-bd67-088a319948a5';
+  $mini->display = $display;
+  $export['sponsor_footer_logos'] = $mini;
+
+  $mini = new stdClass();
+  $mini->disabled = FALSE; /* Edit this to true to make a default mini disabled initially */
+  $mini->api_version = 1;
   $mini->name = 'sponsor_sidebar';
   $mini->category = 'MidCamp';
   $mini->admin_title = 'Sponsor sidebar';

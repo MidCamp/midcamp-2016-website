@@ -123,7 +123,9 @@
 /* Random Sponsor */
 #footer {
 
+  .block-panels-mini,
   .block-views {
+    .pane-inner,
     .block-inner {
       margin: 10px;
       padding: 20px;
@@ -136,6 +138,7 @@
           margin: 0 auto;
         }
       }
+      h2.sponsor-title,
       .block__title {
         text-align: right;
         margin-bottom: 0;
@@ -146,9 +149,11 @@
   @media all and (min-width: 960px) {
 
     $zen-column-count: 5;
+    .pane-random-sponsor-panel-pane-gold-sponsor-logo,
     #block-views-random-sponsor-gold {
       @include zen-grid-item(3, 1);
     }
+    .pane-random-sponsor-panel-pane-silver-sponsor-logo,
     #block-views-random-sponsor-silver {
       @include zen-grid-item(2, 4);
     }

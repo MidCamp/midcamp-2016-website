@@ -28,6 +28,7 @@ features[page_manager_pages][] = page_become_a_sponsor
 features[page_manager_pages][] = schedule
 features[page_manager_pages][] = sponsors
 features[page_manager_pages][] = trainings
+features[panels_mini][] = sponsor_footer_logos
 features[panels_mini][] = sponsor_sidebar
 features[variable][] = default_page_manager_handlers
 features[variable][] = default_page_manager_pages

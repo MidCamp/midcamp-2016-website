@@ -18,6 +18,7 @@ default:
       goutte: ~
       selenium2: ~
       base_url: http://changethisto.local
+      files_path: %paths.base%/files/
     Drupal\DrupalExtension:
       blackbox: ~
       api_driver: 'drupal'
