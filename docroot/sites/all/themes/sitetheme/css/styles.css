@@ -1370,6 +1370,7 @@ h2 a:link, #commerce-checkout-form-checkout .fieldset-legend a:link, h2 a:visite
  */
 /* Random Sponsor */
 /* line 127, ../sass/components/_footer.scss */
+#footer .block-panels-mini .pane-inner,
 #footer .block-views .block-inner {
   margin: 10px;
   padding: 20px;
@@ -1381,17 +1382,20 @@ h2 a:link, #commerce-checkout-form-checkout .fieldset-legend a:link, h2 a:visite
   margin-bottom: 1em;
 }
 /* line 134, ../sass/components/_footer.scss */
+#footer .block-panels-mini .pane-inner .view-content img,
 #footer .block-views .block-inner .view-content img {
   display: block;
   margin: 0 auto;
 }
 /* line 139, ../sass/components/_footer.scss */
+#footer .block-panels-mini .pane-inner h2.sponsor-title,
 #footer .block-views .block-inner .block__title {
   text-align: right;
   margin-bottom: 0;
 }
 @media all and (min-width: 960px) {
   /* line 149, ../sass/components/_footer.scss */
+  #footer .pane-random-sponsor-panel-pane-gold-sponsor-logo,
   #footer #block-views-random-sponsor-gold {
     float: left;
     width: 60%;
@@ -1399,6 +1403,7 @@ h2 a:link, #commerce-checkout-form-checkout .fieldset-legend a:link, h2 a:visite
     margin-right: -60%;
   }
   /* line 152, ../sass/components/_footer.scss */
+  #footer .pane-random-sponsor-panel-pane-silver-sponsor-logo,
   #footer #block-views-random-sponsor-silver {
     float: left;
     width: 40%;

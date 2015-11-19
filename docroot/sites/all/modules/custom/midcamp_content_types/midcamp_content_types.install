@@ -1,0 +1,12 @@
+<?php
+/**
+ * @file
+ * Install, update, and uninstall functions for the MidCamp content types.
+ */
+
+/**
+ * Implements hook_update_N().
+ */
+function midcamp_content_types_update_7001() {
+  field_delete_field('field_level');
+}

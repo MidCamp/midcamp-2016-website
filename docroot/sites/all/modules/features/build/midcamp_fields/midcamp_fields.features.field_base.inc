@@ -578,36 +578,6 @@ function midcamp_fields_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_level'.
-  $field_bases['field_level'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_level',
-    'field_permissions' => array(
-      'type' => 0,
-    ),
-    'indexes' => array(
-      'tid' => array(
-        0 => 'tid',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'taxonomy',
-    'settings' => array(
-      'allowed_values' => array(
-        0 => array(
-          'vocabulary' => 'sponsor_levels',
-          'parent' => 0,
-        ),
-      ),
-      'profile2_private' => FALSE,
-    ),
-    'translatable' => 0,
-    'type' => 'taxonomy_term_reference',
-  );
-
   // Exported field_base: 'field_location'.
   $field_bases['field_location'] = array(
     'active' => 1,
@@ -1211,6 +1181,39 @@ Prof.',
     ),
     'translatable' => 0,
     'type' => 'entityreference',
+  );
+
+  // Exported field_base: 'field_sponsorship_level'.
+  $field_bases['field_sponsorship_level'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_sponsorship_level',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        'gold' => 'Gold',
+        'silver' => 'Silver',
+        'bronze' => 'Bronze',
+        'sprint' => 'Sprint day',
+        'program' => 'Program',
+        'other' => 'Other Valued Sponsor',
+      ),
+      'allowed_values_function' => '',
+      'profile2_private' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'list_text',
   );
 
   // Exported field_base: 'field_start_time'.
