@@ -19,7 +19,7 @@ projects[module_filter][subdir] = "contrib"
 projects[ctools][version] = "1.9"
 projects[ctools][subdir] = "contrib"
 
-projects[date][version] = "2.8"
+projects[date][version] = "2.9"
 projects[date][subdir] = "contrib"
 
 projects[devel][version] = "1.5"
@@ -34,7 +34,7 @@ projects[profiler_builder][subdir] = "contrib"
 projects[eck][version] = "2.x-dev"
 projects[eck][subdir] = "contrib"
 
-projects[features][version] = "2.6"
+projects[features][version] = "2.7"
 projects[features][subdir] = "contrib"
 
 projects[features_builder][version] = "1.x-dev"
@@ -64,7 +64,7 @@ projects[select_or_other][subdir] = "contrib"
 projects[youtube][version] = "1.6"
 projects[youtube][subdir] = "contrib"
 
-projects[flag][version] = "3.6"
+projects[flag][version] = "3.7"
 projects[flag][subdir] = "contrib"
 
 projects[pathologic][version] = "2.12"
@@ -91,7 +91,7 @@ projects[entity][subdir] = "contrib"
 projects[entity_view_mode][version] = "1.x-dev"
 projects[entity_view_mode][subdir] = "contrib"
 
-projects[environment_indicator][version] = "2.7"
+projects[environment_indicator][version] = "2.8"
 projects[environment_indicator][subdir] = "contrib"
 
 projects[libraries][version] = "2.2"
@@ -103,7 +103,7 @@ projects[linkit][subdir] = "contrib"
 projects[menu_block][version] = "2.7"
 projects[menu_block][subdir] = "contrib"
 
-projects[pathauto][version] = "1.2"
+projects[pathauto][version] = "1.3"
 projects[pathauto][subdir] = "contrib"
 
 projects[profile2][version] = "1.3"
@@ -133,22 +133,22 @@ projects[memcache][subdir] = "contrib"
 projects[metatag][version] = "1.7"
 projects[metatag][subdir] = "contrib"
 
-projects[honeypot][version] = "1.19"
+projects[honeypot][version] = "1.21"
 projects[honeypot][subdir] = "contrib"
 
-projects[jquery_update][version] = "2.6"
+projects[jquery_update][version] = "2.7"
 projects[jquery_update][subdir] = "contrib"
 
 projects[wysiwyg][version] = "2.x-dev"
 projects[wysiwyg][subdir] = "contrib"
 
-projects[views][version] = "3.11"
+projects[views][version] = "3.13"
 projects[views][subdir] = "contrib"
 
 projects[views_bulk_operations][version] = "3.3"
 projects[views_bulk_operations][subdir] = "contrib"
 
-projects[views_data_export][version] = "3.0-beta8"
+projects[views_data_export][version] = "3.0-beta9"
 projects[views_data_export][subdir] = "contrib"
 
 projects[views_random_seed][version] = "1.x-dev"
@@ -157,14 +157,14 @@ projects[views_random_seed][subdir] = "contrib"
 projects[views_responsive_grid][version] = "1.3"
 projects[views_responsive_grid][subdir] = "contrib"
 
-projects[webform][version] = "4.10"
+projects[webform][version] = "4.12"
 projects[webform][subdir] = "contrib"
 
 ; +++++ Themes +++++
 
 ; adminimal_theme
 projects[adminimal_theme][type] = "theme"
-projects[adminimal_theme][version] = "1.22"
+projects[adminimal_theme][version] = "1.23"
 projects[adminimal_theme][subdir] = "contrib"
 
 ; zen
