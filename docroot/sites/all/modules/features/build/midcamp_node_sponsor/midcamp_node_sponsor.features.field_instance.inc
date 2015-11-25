@@ -258,7 +258,7 @@ function midcamp_node_sponsor_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(
         'display_label' => 0,
-        'og_hide' => 0,
+        'og_hide' => 1,
       ),
       'type' => 'options_onoff',
       'weight' => 0,

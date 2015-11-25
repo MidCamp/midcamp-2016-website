@@ -16,6 +16,12 @@ function midcamp_users_user_default_roles() {
     'weight' => 4,
   );
 
+  // Exported role: Content Editor.
+  $roles['Content Editor'] = array(
+    'name' => 'Content Editor',
+    'weight' => 7,
+  );
+
   // Exported role: Individual Sponsor.
   $roles['Individual Sponsor'] = array(
     'name' => 'Individual Sponsor',

@@ -8,7 +8,6 @@ dependencies[] = midcamp_fields
 dependencies[] = midcamp_goodies
 dependencies[] = og
 dependencies[] = options
-dependencies[] = strongarm
 features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
 features[field_instance][] = node-job-body
