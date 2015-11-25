@@ -126,4 +126,37 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
       ->getContext('MidCampDrushContext'));
   }
 
+  /**
+   * @Then I should see the fields:
+   *
+   * @param \Behat\Gherkin\Node\TableNode $fields
+   *   Fields to verify.
+   * @param bool $negate
+   *   Defaults to FALSE. If TRUE will chek that fields do not exist.
+   *
+   * @throws \Behat\Mink\Exception\ElementNotFoundException
+   */
+  public function assertFields(TableNode $fields, $negate = FALSE) {
+    foreach ($fields->getHash() as $key => $value) {
+      $field = trim(reset($value));
+      if ($negate) {
+        $this->assertSession()->fieldNotExists($field);
+      }
+      else {
+        $this->assertSession()->fieldExists($field);
+      }
+    }
+  }
+
+  /**
+   * @Then I should not see the fields:
+   *
+   * @param \Behat\Gherkin\Node\TableNode $fields
+   *   Fields to verify.
+   *
+   * @throws \Behat\Mink\Exception\ElementNotFoundException
+   */
+  public function assertNotFields(TableNode $fields) {
+    $this->assertFields($fields, TRUE);
+  }
 }
