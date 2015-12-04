@@ -11,8 +11,12 @@ MidCamp is based on the Drupal platform, and is built to run on top of PHP 5.5. 
 * Composer [Install Composer](https://getcomposer.org/doc/00-intro.md)
 * Drush [GitHub repo](https://github.com/drush-ops/drush)
 
-INSTALLATION
-------------
+INSTALLATION VIA VAGRANT
+------------------------
+The vagrant install will take care of the site install and test setup. See [README.md](https://github.com/MidCamp/midcamp-website/blob/develop/vagrant/README.md) in vagrant folder.
+
+INSTALLATION FOR LOCAL INSTALL
+------------------------------
 You can use `drush si` or go through the UI install wizard. We assume the database is created and is accessible. Replace '{...}' with appropriate values.
 
 ```
