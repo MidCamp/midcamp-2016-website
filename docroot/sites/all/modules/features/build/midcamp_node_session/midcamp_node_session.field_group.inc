@@ -21,11 +21,8 @@ function midcamp_node_session_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Scheduling',
-    'weight' => '13',
-    'children' => array(
-      0 => 'field_room',
-      1 => 'field_timeslot',
-    ),
+    'weight' => '16',
+    'children' => array(),
     'format_type' => 'tab',
     'format_settings' => array(
       'formatter' => 'closed',

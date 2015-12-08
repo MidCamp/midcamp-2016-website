@@ -44,13 +44,13 @@ function midcamp_node_session_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '13',
+          'weight' => '17',
         ),
         'redirect' => array(
-          'weight' => '12',
+          'weight' => '15',
         ),
         'metatags' => array(
-          'weight' => '15',
+          'weight' => '18',
         ),
         'xmlsitemap' => array(
           'weight' => '14',

@@ -567,9 +567,8 @@ function midcamp_fields_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
-        'regular' => '50 minutes',
-        'short' => '20 minutes',
-        'party' => '2 hours',
+        'regular' => '60 minutes',
+        'short' => '30 minutes',
       ),
       'allowed_values_function' => '',
       'profile2_private' => FALSE,
@@ -955,6 +954,64 @@ Prof.',
     'type' => 'entityreference',
   );
 
+  // Exported field_base: 'field_session_drupal_beginners'.
+  $field_bases['field_session_drupal_beginners'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_session_drupal_beginners',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => 'No',
+        1 => 'Yes',
+      ),
+      'allowed_values_function' => '',
+      'profile2_private' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'list_boolean',
+  );
+
+  // Exported field_base: 'field_session_drupal_specific'.
+  $field_bases['field_session_drupal_specific'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_session_drupal_specific',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => 'No',
+        1 => 'Yes',
+      ),
+      'allowed_values_function' => '',
+      'profile2_private' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'list_boolean',
+  );
+
   // Exported field_base: 'field_session_video'.
   $field_bases['field_session_video'] = array(
     'active' => 1,
@@ -977,6 +1034,36 @@ Prof.',
     ),
     'translatable' => 0,
     'type' => 'youtube',
+  );
+
+  // Exported field_base: 'field_session_whos_presenting'.
+  $field_bases['field_session_whos_presenting'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_session_whos_presenting',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        'single' => 'Just me',
+        'double' => 'Me and one other person',
+        'panel' => 'I am proposing a panel discussion',
+      ),
+      'allowed_values_function' => '',
+      'profile2_private' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'list_text',
   );
 
   // Exported field_base: 'field_sessions'.
@@ -1357,6 +1444,7 @@ Prof.',
           'parent' => 0,
         ),
       ),
+      'profile2_private' => FALSE,
     ),
     'translatable' => 0,
     'type' => 'taxonomy_term_reference',
