@@ -807,7 +807,7 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['relationships']['flag_content_rel']['required'] = 0;
   $handler->display->display_options['relationships']['flag_content_rel']['flag'] = 'featured_user';
   $handler->display->display_options['relationships']['flag_content_rel']['user_scope'] = 'any';
-  /* Field: Field: Logo */
+  /* Field: Field: Avatar */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -934,7 +934,7 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: Logo */
+  /* Field: Field: Avatar */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -1068,7 +1068,7 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['footer']['area']['content'] = '<a href="community">All user profiles (to flag more featured)</a>';
   $handler->display->display_options['footer']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: Logo */
+  /* Field: Field: Avatar */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -1156,7 +1156,7 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['fields']['ops']['label'] = '';
   $handler->display->display_options['fields']['ops']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Field: Logo (field_image:fid) */
+  /* Sort criterion: Field: Avatar (field_image:fid) */
   $handler->display->display_options['sorts']['field_image_fid']['id'] = 'field_image_fid';
   $handler->display->display_options['sorts']['field_image_fid']['table'] = 'field_data_field_image';
   $handler->display->display_options['sorts']['field_image_fid']['field'] = 'field_image_fid';
@@ -1252,7 +1252,7 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['relationships']['flag_content_rel']['flag'] = 'featured_user';
   $handler->display->display_options['relationships']['flag_content_rel']['user_scope'] = 'any';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: Logo */
+  /* Field: Field: Avatar */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -1361,7 +1361,7 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: Logo */
+  /* Field: Field: Avatar */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -1501,7 +1501,7 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['relationships']['reverse_field_speakers_node']['table'] = 'users';
   $handler->display->display_options['relationships']['reverse_field_speakers_node']['field'] = 'reverse_field_speakers_node';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: Logo */
+  /* Field: Field: Avatar */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -1679,7 +1679,7 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: Logo */
+  /* Field: Field: Avatar */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -1803,7 +1803,7 @@ function midcamp_views_views_default_views() {
   $view->human_name = 'Clone of Session Submissions';
   $view->core = 7;
   $view->api_version = '3.0';
-  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+  $view->disabled = TRUE; /* Edit this to true to make a default view disabled initially */
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
@@ -2209,7 +2209,7 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['fields']['changed']['label'] = 'Updated';
   $handler->display->display_options['fields']['changed']['date_format'] = 'long';
   $handler->display->display_options['fields']['changed']['second_date_format'] = 'long';
-  /* Field: Field: Logo */
+  /* Field: Field: Avatar */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -2614,7 +2614,7 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['fields']['access']['field'] = 'access';
   $handler->display->display_options['fields']['access']['date_format'] = 'raw time ago';
   $handler->display->display_options['fields']['access']['second_date_format'] = 'long';
-  /* Field: Field: Logo */
+  /* Field: Field: Avatar */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -3605,7 +3605,7 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '1';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Field: Field: Logo */
+  /* Field: Field: Avatar */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -3642,7 +3642,7 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['title'] = 'Is a gold sponsor!';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: Logo */
+  /* Field: Field: Avatar */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -3701,7 +3701,7 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['title'] = 'Is a silver sponsor!';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: Logo */
+  /* Field: Field: Avatar */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -4176,7 +4176,7 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['fields']['field_room']['settings'] = array(
     'link' => 0,
   );
-  /* Field: Broken/missing handler */
+  /* Field: Content: Smart timeslot */
   $handler->display->display_options['fields']['smart_timeslot']['id'] = 'smart_timeslot';
   $handler->display->display_options['fields']['smart_timeslot']['table'] = 'node';
   $handler->display->display_options['fields']['smart_timeslot']['field'] = 'smart_timeslot';
@@ -4393,7 +4393,7 @@ function midcamp_views_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Field: Broken/missing handler */
+  /* Field: Content: Smart timeslot */
   $handler->display->display_options['fields']['smart_timeslot']['id'] = 'smart_timeslot';
   $handler->display->display_options['fields']['smart_timeslot']['table'] = 'node';
   $handler->display->display_options['fields']['smart_timeslot']['field'] = 'smart_timeslot';
@@ -5275,11 +5275,10 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Sponsorship Level */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_level']['id'] = 'field_level';
   $handler->display->display_options['fields']['field_level']['table'] = 'field_data_field_level';
   $handler->display->display_options['fields']['field_level']['field'] = 'field_level';
-  $handler->display->display_options['fields']['field_level']['type'] = 'taxonomy_term_reference_plain';
   /* Field: Content: Attendees */
   $handler->display->display_options['fields']['field_attendees']['id'] = 'field_attendees';
   $handler->display->display_options['fields']['field_attendees']['table'] = 'field_data_field_attendees';
@@ -5307,11 +5306,10 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'sponsor' => 'sponsor',
   );
-  /* Filter criterion: Content: Sponsorship Level (field_level) */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['field_level_tid']['id'] = 'field_level_tid';
   $handler->display->display_options['filters']['field_level_tid']['table'] = 'field_data_field_level';
   $handler->display->display_options['filters']['field_level_tid']['field'] = 'field_level_tid';
-  $handler->display->display_options['filters']['field_level_tid']['value'] = '';
   $handler->display->display_options['filters']['field_level_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_level_tid']['expose']['operator_id'] = 'field_level_tid_op';
   $handler->display->display_options['filters']['field_level_tid']['expose']['label'] = 'Sponsorship Level (field_level)';
@@ -5324,7 +5322,6 @@ function midcamp_views_views_default_views() {
     4 => 0,
     3 => 0,
   );
-  $handler->display->display_options['filters']['field_level_tid']['vocabulary'] = 'sponsor_levels';
   $export['sponsor_table'] = $view;
 
   $view = new view();
@@ -5352,7 +5349,7 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['style_options']['wrapper_classes'] = 'views-zen-grid-container';
   $handler->display->display_options['style_options']['column_classes'] = 'views-sponsors-gold-column';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Field: Field: Logo */
+  /* Field: Field: Avatar */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -5381,15 +5378,13 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'sponsor' => 'sponsor',
   );
-  /* Filter criterion: Content: Sponsorship Level (field_level) */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['field_level_tid']['id'] = 'field_level_tid';
   $handler->display->display_options['filters']['field_level_tid']['table'] = 'field_data_field_level';
   $handler->display->display_options['filters']['field_level_tid']['field'] = 'field_level_tid';
   $handler->display->display_options['filters']['field_level_tid']['value'] = array(
     2 => '2',
   );
-  $handler->display->display_options['filters']['field_level_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_level_tid']['vocabulary'] = 'sponsor_levels';
 
   /* Display: Gold sponsor pane */
   $handler = $view->new_display('panel_pane', 'Gold sponsor pane', 'panel_pane_gold_sponsor');
@@ -5429,7 +5424,7 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: Logo */
+  /* Field: Field: Avatar */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -5456,15 +5451,13 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'sponsor' => 'sponsor',
   );
-  /* Filter criterion: Content: Sponsorship Level (field_level) */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['field_level_tid']['id'] = 'field_level_tid';
   $handler->display->display_options['filters']['field_level_tid']['table'] = 'field_data_field_level';
   $handler->display->display_options['filters']['field_level_tid']['field'] = 'field_level_tid';
   $handler->display->display_options['filters']['field_level_tid']['value'] = array(
     3 => '3',
   );
-  $handler->display->display_options['filters']['field_level_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_level_tid']['vocabulary'] = 'sponsor_levels';
   $handler->display->display_options['allow']['use_pager'] = 0;
   $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
   $handler->display->display_options['allow']['offset'] = 0;
@@ -5498,7 +5491,7 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: Logo */
+  /* Field: Field: Avatar */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -5525,15 +5518,13 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'sponsor' => 'sponsor',
   );
-  /* Filter criterion: Content: Sponsorship Level (field_level) */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['field_level_tid']['id'] = 'field_level_tid';
   $handler->display->display_options['filters']['field_level_tid']['table'] = 'field_data_field_level';
   $handler->display->display_options['filters']['field_level_tid']['field'] = 'field_level_tid';
   $handler->display->display_options['filters']['field_level_tid']['value'] = array(
     18 => '18',
   );
-  $handler->display->display_options['filters']['field_level_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_level_tid']['vocabulary'] = 'sponsor_levels';
   $handler->display->display_options['allow']['use_pager'] = 0;
   $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
   $handler->display->display_options['allow']['offset'] = 0;
@@ -5567,7 +5558,7 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: Logo */
+  /* Field: Field: Avatar */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -5594,15 +5585,13 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'sponsor' => 'sponsor',
   );
-  /* Filter criterion: Content: Sponsorship Level (field_level) */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['field_level_tid']['id'] = 'field_level_tid';
   $handler->display->display_options['filters']['field_level_tid']['table'] = 'field_data_field_level';
   $handler->display->display_options['filters']['field_level_tid']['field'] = 'field_level_tid';
   $handler->display->display_options['filters']['field_level_tid']['value'] = array(
     20 => '20',
   );
-  $handler->display->display_options['filters']['field_level_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_level_tid']['vocabulary'] = 'sponsor_levels';
   $handler->display->display_options['allow']['use_pager'] = 0;
   $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
   $handler->display->display_options['allow']['offset'] = 0;
@@ -5637,7 +5626,7 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: Logo */
+  /* Field: Field: Avatar */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -5664,15 +5653,13 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'sponsor' => 'sponsor',
   );
-  /* Filter criterion: Content: Sponsorship Level (field_level) */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['field_level_tid']['id'] = 'field_level_tid';
   $handler->display->display_options['filters']['field_level_tid']['table'] = 'field_data_field_level';
   $handler->display->display_options['filters']['field_level_tid']['field'] = 'field_level_tid';
   $handler->display->display_options['filters']['field_level_tid']['value'] = array(
     19 => '19',
   );
-  $handler->display->display_options['filters']['field_level_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_level_tid']['vocabulary'] = 'sponsor_levels';
   $handler->display->display_options['allow']['use_pager'] = 0;
   $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
   $handler->display->display_options['allow']['offset'] = 0;
@@ -5696,7 +5683,7 @@ function midcamp_views_views_default_views() {
   /* Display: Other Sponsors pane */
   $handler = $view->new_display('panel_pane', 'Other Sponsors pane', 'panel_pane_1');
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: Logo */
+  /* Field: Field: Avatar */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -5723,7 +5710,7 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'sponsor' => 'sponsor',
   );
-  /* Filter criterion: Other Valued Sponsors */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['field_level_tid']['id'] = 'field_level_tid';
   $handler->display->display_options['filters']['field_level_tid']['table'] = 'field_data_field_level';
   $handler->display->display_options['filters']['field_level_tid']['field'] = 'field_level_tid';
@@ -5731,8 +5718,6 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['filters']['field_level_tid']['value'] = array(
     21 => '21',
   );
-  $handler->display->display_options['filters']['field_level_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_level_tid']['vocabulary'] = 'sponsor_levels';
   $handler->display->display_options['allow']['use_pager'] = 0;
   $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
   $handler->display->display_options['allow']['offset'] = 0;

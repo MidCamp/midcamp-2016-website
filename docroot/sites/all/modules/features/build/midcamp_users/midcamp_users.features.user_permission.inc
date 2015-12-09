@@ -158,6 +158,15 @@ function midcamp_users_user_default_permissions() {
     'module' => 'environment_indicator',
   );
 
+  // Exported permission: 'access memcache statistics'.
+  $permissions['access memcache statistics'] = array(
+    'name' => 'access memcache statistics',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'memcache_admin',
+  );
+
   // Exported permission: 'access own webform results'.
   $permissions['access own webform results'] = array(
     'name' => 'access own webform results',
@@ -201,6 +210,15 @@ function midcamp_users_user_default_permissions() {
       'Administrator' => 'Administrator',
     ),
     'module' => 'system',
+  );
+
+  // Exported permission: 'access slab cachedump'.
+  $permissions['access slab cachedump'] = array(
+    'name' => 'access slab cachedump',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'memcache_admin',
   );
 
   // Exported permission: 'access user profiles'.

@@ -186,6 +186,12 @@ function midcamp_node_sponsor_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'user_page_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_sponsorship_level',

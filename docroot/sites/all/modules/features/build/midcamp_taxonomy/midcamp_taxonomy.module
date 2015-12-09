@@ -1,7 +1,5 @@
 <?php
 /**
  * @file
- * Code for the MidCamp Taxonomy feature.
+ * Drupal needs this blank file.
  */
-
-include_once 'midcamp_taxonomy.features.inc';
