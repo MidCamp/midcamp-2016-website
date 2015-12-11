@@ -4,6 +4,7 @@ package = Profiles
 dependencies[] = features
 dependencies[] = midcamp_fields
 dependencies[] = profile2
+dependencies[] = strongarm
 features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
 features[field_instance][] = profile2-conference_details-field_dietary_restrictions

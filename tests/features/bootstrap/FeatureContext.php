@@ -159,4 +159,34 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
   public function assertNotFields(TableNode $fields) {
     $this->assertFields($fields, TRUE);
   }
+
+  /**
+   * Asserts attribute in element contains text.
+   *
+   * @Then the :attr attribute in the :elem element contains :text
+   *
+   * @param string $attr
+   *   Attribute name.
+   * @param string $elem
+   *   CSS selector for element containg attribute.
+   * @param string $text
+   *   Text to search for in elements attribute.
+   */
+  public function theAttributeInTheElementContains($attr, $elem, $text) {
+    $this->assertSession()
+      ->elementAttributeContains('css', $elem, $attr, $text);
+  }
+
+  /**
+   * I wait x seconds.
+   *
+   * @When I wait :seconds seconds
+   *
+   * @param int $seconds
+   *   Number of seconds to wait.
+   */
+  public function iWaitSeconds($seconds) {
+    $ms = $seconds * 1000;
+    $this->getSession()->wait($ms);
+  }
 }

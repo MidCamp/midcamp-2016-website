@@ -33,6 +33,7 @@ dependencies[] = pathauto
 dependencies[] = profile2
 dependencies[] = profiler_builder
 dependencies[] = redirect
+dependencies[] = strongarm
 dependencies[] = webform
 features[ctools][] = field_group:field_group:1
 features[ctools][] = strongarm:strongarm:1

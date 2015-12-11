@@ -84,8 +84,7 @@ function midcamp_panels_default_ctools_custom_content() {
   $content->settings = array(
     'admin_title' => '',
     'title' => '',
-    'body' => '<h2><a href="/become-a-sponsor">Become a Sponsor</a></h2>
-<p>Want to add your name to this list of amazing businesses and organizations? Find out how to <strong><a href="/become-a-sponsor">be a sponsor</a></strong>.</p>',
+    'body' => '<h2><a href="/become-a-sponsor">Become a Sponsor</a></h2><p>Want to add your name to this list of amazing businesses and organizations? Find out how to <strong><a href="/become-a-sponsor">become a sponsor</a></strong>.</p>',
     'format' => 'full_html',
     'substitute' => 1,
   );

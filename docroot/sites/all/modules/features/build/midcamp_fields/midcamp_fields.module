@@ -1,5 +1,7 @@
 <?php
 /**
  * @file
- * Drupal needs this blank file.
+ * Code for the MidCamp Fields feature.
  */
+
+include_once 'midcamp_fields.features.inc';

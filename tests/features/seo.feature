@@ -1,6 +1,7 @@
-@api
+@api @seo
 Feature: Test SEO features
 
+  @url-alias
   Scenario: Sponsor url alias
     Given I am viewing an "sponsor" content:
       | title | sponsor123 |
