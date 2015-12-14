@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 Vagrant.configure(2) do |config|
-  config.vm.box = "lamp"
+  config.vm.box = "kerasai/lamp"
 
   # Change this to avoid collisions, if necessary.
   config.vm.network "private_network", ip: "192.168.33.10"

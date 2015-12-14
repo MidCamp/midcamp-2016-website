@@ -8,11 +8,12 @@ fi
 
 cp midcamp.conf /etc/apache2/sites-available
 
+a2dissite web
 a2ensite midcamp
 
 service apache2 reload
 
-mysql -u root -proot < mysql_users.sql
+mysqlcreate midcamp
 
 cd /var/www/midcamp-website/docroot
 drush si -y --db-url=mysql://midcamp:midcamp@localhost/midcamp
