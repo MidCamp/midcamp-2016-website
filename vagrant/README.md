@@ -11,15 +11,6 @@ vagrant plugin install vagrant-bindfs
 vagrant plugin install vagrant-hostsupdater
 ```
 
-## Download Vagrant Box
-
-The box is a generic LAMP installation, intended to be reusable across mutliple
-projects. I recommend downloading the file and adding the local file.
-
-https://www.dropbox.com/sh/8mrohws8twvpl31/AABbzjEb-3kwCm6gPQjZlYcja/boxes/lamp.box?dl=1
-
-`vagrant box add lamp /path/to/lamp.box`
-
 ## Project Setup
 
 Clone the repository into a directory on the host where you'd like to work.
@@ -43,9 +34,14 @@ needed, since we're using the included Vagrantfile.
 
 `vagrant up`
 
-This will take a few moments to generate the new VM. You will also be prompted
-for your password (host machine) in order to set entries in the hosts file and
-attach the NFS share.
+If this is the first time you've ran vagrant with the `kerasai/lamp` box, 
+vagrant will download the box file. This file is approximately 600MB so it may
+take a few minutes to download. This is only necessary once and your machine 
+will reuse the download for subsequent vagrant initializations.
+
+When the VM begin to initialize, it will take a few moments to generate the new
+VM. You will also be prompted for your password (host machine) in order to set
+entries in the hosts file and attach the NFS share.
 
 You'll see a warning stating that bindfs is not installed, ignore.
 
@@ -71,7 +67,7 @@ things. Once complete, you're ready to develop.
 ## Notes
 
 * When logging into the VM, be sure to run the `sudo su` command. Most things
-  you'll want to do on the VM require you be act as the root user.
+  you'll want to do on the VM require you be acting as the root user.
 
 * Perform all drush operations from the VM's command line.
 
