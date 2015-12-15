@@ -651,15 +651,6 @@ function midcamp_users_user_default_permissions() {
     'module' => 'user',
   );
 
-  // Exported permission: 'create field_experience'.
-  $permissions['create field_experience'] = array(
-    'name' => 'create field_experience',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'field_permissions',
-  );
-
   // Exported permission: 'create field_related_content'.
   $permissions['create field_related_content'] = array(
     'name' => 'create field_related_content',
@@ -757,6 +748,7 @@ function midcamp_users_user_default_permissions() {
     'name' => 'create session content',
     'roles' => array(
       'Administrator' => 'Administrator',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'node',
   );
@@ -1501,15 +1493,6 @@ function midcamp_users_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'edit field_experience'.
-  $permissions['edit field_experience'] = array(
-    'name' => 'edit field_experience',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'field_permissions',
-  );
-
   // Exported permission: 'edit field_related_content'.
   $permissions['edit field_related_content'] = array(
     'name' => 'edit field_related_content',
@@ -1571,15 +1554,6 @@ function midcamp_users_user_default_permissions() {
       'Administrator' => 'Administrator',
     ),
     'module' => 'profile2',
-  );
-
-  // Exported permission: 'edit own field_experience'.
-  $permissions['edit own field_experience'] = array(
-    'name' => 'edit own field_experience',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'field_permissions',
   );
 
   // Exported permission: 'edit own field_related_content'.
@@ -1688,6 +1662,7 @@ function midcamp_users_user_default_permissions() {
     'name' => 'edit own session content',
     'roles' => array(
       'Administrator' => 'Administrator',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'node',
   );
@@ -2034,15 +2009,6 @@ function midcamp_users_user_default_permissions() {
     'module' => 'profile2',
   );
 
-  // Exported permission: 'view field_experience'.
-  $permissions['view field_experience'] = array(
-    'name' => 'view field_experience',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'field_permissions',
-  );
-
   // Exported permission: 'view field_related_content'.
   $permissions['view field_related_content'] = array(
     'name' => 'view field_related_content',
@@ -2095,15 +2061,6 @@ function midcamp_users_user_default_permissions() {
       'Administrator' => 'Administrator',
     ),
     'module' => 'profile2',
-  );
-
-  // Exported permission: 'view own field_experience'.
-  $permissions['view own field_experience'] = array(
-    'name' => 'view own field_experience',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'field_permissions',
   );
 
   // Exported permission: 'view own field_related_content'.
