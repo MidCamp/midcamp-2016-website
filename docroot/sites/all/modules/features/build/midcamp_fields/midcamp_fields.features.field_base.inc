@@ -208,6 +208,54 @@ function midcamp_fields_field_default_field_bases() {
     'type' => 'datetime',
   );
 
+  // Exported field_base: 'field_description_attendees'.
+  $field_bases['field_description_attendees'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_description_attendees',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'profile2_private' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'text_long',
+  );
+
+  // Exported field_base: 'field_description_organizers'.
+  $field_bases['field_description_organizers'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_description_organizers',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'profile2_private' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'text_long',
+  );
+
   // Exported field_base: 'field_dietary_restrictions'.
   $field_bases['field_dietary_restrictions'] = array(
     'active' => 1,
@@ -296,30 +344,6 @@ function midcamp_fields_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'link_field',
-  );
-
-  // Exported field_base: 'field_experience'.
-  $field_bases['field_experience'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_experience',
-    'field_permissions' => array(
-      'type' => 2,
-    ),
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'profile2_private' => FALSE,
-    ),
-    'translatable' => 0,
-    'type' => 'text_long',
   );
 
   // Exported field_base: 'field_facebook_url'.
@@ -852,6 +876,30 @@ Prof.',
     'type' => 'image',
   );
 
+  // Exported field_base: 'field_prerequsites'.
+  $field_bases['field_prerequsites'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_prerequsites',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'profile2_private' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'text_long',
+  );
+
   // Exported field_base: 'field_register_for_this_training'.
   $field_bases['field_register_for_this_training'] = array(
     'active' => 1,
@@ -1002,8 +1050,8 @@ Prof.',
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
-        0 => 'No',
-        1 => 'Yes',
+        0 => 'This presentation is NOT Drupal specifc',
+        1 => 'This presentation IS Drupal specific',
       ),
       'allowed_values_function' => '',
       'profile2_private' => FALSE,

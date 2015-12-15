@@ -10,63 +10,6 @@
 function midcamp_node_session_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-session-body'.
-  $field_instances['node-session-body'] = array(
-    'bundle' => 'session',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Please include details like audience take-a-ways.',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 5,
-      ),
-      'schedule' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 5,
-      ),
-      'teaser' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(
-          'trim_length' => 600,
-        ),
-        'type' => 'text_summary_or_trimmed',
-        'weight' => 0,
-      ),
-      'user_page_teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'body',
-    'label' => 'Description',
-    'required' => 1,
-    'settings' => array(
-      'display_summary' => 1,
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 20,
-        'summary_rows' => 5,
-      ),
-      'type' => 'text_textarea_with_summary',
-      'weight' => 8,
-    ),
-  );
-
   // Exported field_instance: 'node-session-field_audience'.
   $field_instances['node-session-field_audience'] = array(
     'bundle' => 'session',
@@ -113,29 +56,29 @@ function midcamp_node_session_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 7,
+      'weight' => 22,
     ),
   );
 
-  // Exported field_instance: 'node-session-field_experience'.
-  $field_instances['node-session-field_experience'] = array(
+  // Exported field_instance: 'node-session-field_description_attendees'.
+  $field_instances['node-session-field_description_attendees'] = array(
     'bundle' => 'session',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Include links please.',
+    'description' => 'Why should people attend your session? You can always come back and update this information closer to the camp.',
     'display' => array(
       'default' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 6,
+        'weight' => 17,
       ),
       'schedule' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 6,
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -143,16 +86,10 @@ function midcamp_node_session_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
-      'user_page_teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_experience',
-    'label' => 'Have you written or spoken about this before?',
+    'field_name' => 'field_description_attendees',
+    'label' => 'Describe your session for attendees:',
     'required' => 0,
     'settings' => array(
       'linkit' => array(
@@ -167,10 +104,61 @@ function midcamp_node_session_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 4,
+        'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 9,
+      'weight' => 15,
+    ),
+  );
+
+  // Exported field_instance: 'node-session-field_description_organizers'.
+  $field_instances['node-session-field_description_organizers'] = array(
+    'bundle' => 'session',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Why should the selection committee accept your session? This will be used for selection purposes only and will not be shown to the public.Why should the selection committee accept your session? This will be used for selection purposes only and will not be shown to the public.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 16,
+      ),
+      'schedule' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_description_organizers',
+    'label' => 'Describe your session for the conference organizers:',
+    'required' => 0,
+    'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 14,
     ),
   );
 
@@ -223,7 +211,58 @@ function midcamp_node_session_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 4,
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'node-session-field_prerequsites'.
+  $field_instances['node-session-field_prerequsites'] = array(
+    'bundle' => 'session',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'If you aren’t sure yet, that’s okay too. You can always come back and update this information closer to the camp.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 18,
+      ),
+      'schedule' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_prerequsites',
+    'label' => 'What should attendees already know in order to get the most out of your session?',
+    'required' => 0,
+    'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 16,
     ),
   );
 
@@ -297,7 +336,7 @@ function midcamp_node_session_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 13,
+      'weight' => 20,
     ),
   );
 
@@ -346,7 +385,7 @@ function midcamp_node_session_field_default_field_instances() {
         'display_label' => 0,
       ),
       'type' => 'options_buttons',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -395,7 +434,7 @@ function midcamp_node_session_field_default_field_instances() {
         'display_label' => 0,
       ),
       'type' => 'options_onoff',
-      'weight' => 1,
+      'weight' => 2,
     ),
   );
 
@@ -454,14 +493,18 @@ function midcamp_node_session_field_default_field_instances() {
       'module' => 'youtube',
       'settings' => array(),
       'type' => 'youtube',
-      'weight' => 12,
+      'weight' => 19,
     ),
   );
 
   // Exported field_instance: 'node-session-field_session_whos_presenting'.
   $field_instances['node-session-field_session_whos_presenting'] = array(
     'bundle' => 'session',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'value' => 'single',
+      ),
+    ),
     'deleted' => 0,
     'description' => 'Since we are doing a blind selection process [link to words when available], we don’t need to know who your co-presenters are just yet.',
     'display' => array(
@@ -488,7 +531,7 @@ function midcamp_node_session_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_session_whos_presenting',
     'label' => 'Who is presenting this session?',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
@@ -497,7 +540,7 @@ function midcamp_node_session_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -551,7 +594,7 @@ function midcamp_node_session_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 10,
+      'weight' => 17,
     ),
   );
 
@@ -625,7 +668,7 @@ function midcamp_node_session_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 11,
+      'weight' => 18,
     ),
   );
 
@@ -683,7 +726,7 @@ function midcamp_node_session_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete_tags',
-      'weight' => 6,
+      'weight' => 23,
     ),
   );
 
@@ -696,7 +739,7 @@ function midcamp_node_session_field_default_field_instances() {
       ),
     ),
     'deleted' => 0,
-    'description' => 'Please <a href="#terms">read below</a> before confirming.',
+    'description' => 'Please read the terms and conditions before confirming.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -737,7 +780,7 @@ function midcamp_node_session_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 14,
+      'weight' => 17,
     ),
   );
 
@@ -789,7 +832,7 @@ For full track descriptions, please review the track descriptions page.',
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -797,16 +840,15 @@ For full track descriptions, please review the track descriptions page.',
   // Included for use with string extractors like potx.
   t('A beginner session assumes that the audience has not heard of Drupal before attending this camp.');
   t('Audience');
-  t('Description');
-  t('Have you written or spoken about this before?');
+  t('Describe your session for attendees:');
+  t('Describe your session for the conference organizers:');
   t('I accept the terms and conditions');
-  t('Include links please.');
+  t('If you aren’t sure yet, that’s okay too. You can always come back and update this information closer to the camp.');
   t('Input a comma separated list of speakers. (Yes, put your own username in here, and any co-presenters you will have.)');
   t('Input a link to your presentation slides.');
   t('Is your presentation Drupal-specific?');
   t('Is your presentation for Drupal beginners');
-  t('Please <a href="#terms">read below</a> before confirming.');
-  t('Please include details like audience take-a-ways.');
+  t('Please read the terms and conditions before confirming.');
   t('Related Content');
   t('Session video');
   t('Since we are doing a blind selection process [link to words when available], we don’t need to know who your co-presenters are just yet.');
@@ -818,8 +860,11 @@ For full track descriptions, please review the track descriptions page.',
 For full track descriptions, please review the track descriptions page.');
   t('We welcome presentations that are not specific to Drupal!');
   t('What is your planned session length?');
+  t('What should attendees already know in order to get the most out of your session?');
   t('Which track(s) would best fit your session content? Select up to 3:');
   t('Who is presenting this session?');
+  t('Why should people attend your session? You can always come back and update this information closer to the camp.');
+  t('Why should the selection committee accept your session? This will be used for selection purposes only and will not be shown to the public.Why should the selection committee accept your session? This will be used for selection purposes only and will not be shown to the public.');
 
   return $field_instances;
 }
