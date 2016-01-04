@@ -77,4 +77,5 @@ features[variable][] = transliteration_file_uploads_display_name
 features[variable][] = update_notify_emails
 features[variable][] = webform_email_address_individual
 features[variable][] = webform_email_html_capable
+features[variable][] = webform_node_session
 features[variable][] = webform_node_webform

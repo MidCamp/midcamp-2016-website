@@ -669,15 +669,6 @@ function midcamp_users_user_default_permissions() {
     'module' => 'user',
   );
 
-  // Exported permission: 'create field_experience'.
-  $permissions['create field_experience'] = array(
-    'name' => 'create field_experience',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'field_permissions',
-  );
-
   // Exported permission: 'create field_related_content'.
   $permissions['create field_related_content'] = array(
     'name' => 'create field_related_content',
@@ -696,6 +687,15 @@ function midcamp_users_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: 'create field_session_video'.
+  $permissions['create field_session_video'] = array(
+    'name' => 'create field_session_video',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: 'create field_slides'.
   $permissions['create field_slides'] = array(
     'name' => 'create field_slides',
@@ -708,6 +708,15 @@ function midcamp_users_user_default_permissions() {
   // Exported permission: 'create field_slides_url'.
   $permissions['create field_slides_url'] = array(
     'name' => 'create field_slides_url',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'create field_speakers'.
+  $permissions['create field_speakers'] = array(
+    'name' => 'create field_speakers',
     'roles' => array(
       'Administrator' => 'Administrator',
     ),
@@ -775,6 +784,8 @@ function midcamp_users_user_default_permissions() {
     'name' => 'create session content',
     'roles' => array(
       'Administrator' => 'Administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'node',
   );
@@ -1519,15 +1530,6 @@ function midcamp_users_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'edit field_experience'.
-  $permissions['edit field_experience'] = array(
-    'name' => 'edit field_experience',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'field_permissions',
-  );
-
   // Exported permission: 'edit field_related_content'.
   $permissions['edit field_related_content'] = array(
     'name' => 'edit field_related_content',
@@ -1546,6 +1548,15 @@ function midcamp_users_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: 'edit field_session_video'.
+  $permissions['edit field_session_video'] = array(
+    'name' => 'edit field_session_video',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: 'edit field_slides'.
   $permissions['edit field_slides'] = array(
     'name' => 'edit field_slides',
@@ -1558,6 +1569,15 @@ function midcamp_users_user_default_permissions() {
   // Exported permission: 'edit field_slides_url'.
   $permissions['edit field_slides_url'] = array(
     'name' => 'edit field_slides_url',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'edit field_speakers'.
+  $permissions['edit field_speakers'] = array(
+    'name' => 'edit field_speakers',
     'roles' => array(
       'Administrator' => 'Administrator',
     ),
@@ -1591,15 +1611,6 @@ function midcamp_users_user_default_permissions() {
     'module' => 'profile2',
   );
 
-  // Exported permission: 'edit own field_experience'.
-  $permissions['edit own field_experience'] = array(
-    'name' => 'edit own field_experience',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'field_permissions',
-  );
-
   // Exported permission: 'edit own field_related_content'.
   $permissions['edit own field_related_content'] = array(
     'name' => 'edit own field_related_content',
@@ -1618,6 +1629,15 @@ function midcamp_users_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: 'edit own field_session_video'.
+  $permissions['edit own field_session_video'] = array(
+    'name' => 'edit own field_session_video',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: 'edit own field_slides'.
   $permissions['edit own field_slides'] = array(
     'name' => 'edit own field_slides',
@@ -1630,6 +1650,15 @@ function midcamp_users_user_default_permissions() {
   // Exported permission: 'edit own field_slides_url'.
   $permissions['edit own field_slides_url'] = array(
     'name' => 'edit own field_slides_url',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'edit own field_speakers'.
+  $permissions['edit own field_speakers'] = array(
+    'name' => 'edit own field_speakers',
     'roles' => array(
       'Administrator' => 'Administrator',
     ),
@@ -1706,6 +1735,7 @@ function midcamp_users_user_default_permissions() {
     'name' => 'edit own session content',
     'roles' => array(
       'Administrator' => 'Administrator',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'node',
   );
@@ -2052,15 +2082,6 @@ function midcamp_users_user_default_permissions() {
     'module' => 'profile2',
   );
 
-  // Exported permission: 'view field_experience'.
-  $permissions['view field_experience'] = array(
-    'name' => 'view field_experience',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'field_permissions',
-  );
-
   // Exported permission: 'view field_related_content'.
   $permissions['view field_related_content'] = array(
     'name' => 'view field_related_content',
@@ -2073,6 +2094,15 @@ function midcamp_users_user_default_permissions() {
   // Exported permission: 'view field_room'.
   $permissions['view field_room'] = array(
     'name' => 'view field_room',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'view field_session_video'.
+  $permissions['view field_session_video'] = array(
+    'name' => 'view field_session_video',
     'roles' => array(
       'Administrator' => 'Administrator',
     ),
@@ -2097,6 +2127,15 @@ function midcamp_users_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: 'view field_speakers'.
+  $permissions['view field_speakers'] = array(
+    'name' => 'view field_speakers',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: 'view field_timeslot'.
   $permissions['view field_timeslot'] = array(
     'name' => 'view field_timeslot',
@@ -2113,15 +2152,6 @@ function midcamp_users_user_default_permissions() {
       'Administrator' => 'Administrator',
     ),
     'module' => 'profile2',
-  );
-
-  // Exported permission: 'view own field_experience'.
-  $permissions['view own field_experience'] = array(
-    'name' => 'view own field_experience',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'field_permissions',
   );
 
   // Exported permission: 'view own field_related_content'.
@@ -2142,6 +2172,15 @@ function midcamp_users_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: 'view own field_session_video'.
+  $permissions['view own field_session_video'] = array(
+    'name' => 'view own field_session_video',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: 'view own field_slides'.
   $permissions['view own field_slides'] = array(
     'name' => 'view own field_slides',
@@ -2154,6 +2193,15 @@ function midcamp_users_user_default_permissions() {
   // Exported permission: 'view own field_slides_url'.
   $permissions['view own field_slides_url'] = array(
     'name' => 'view own field_slides_url',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'view own field_speakers'.
+  $permissions['view own field_speakers'] = array(
+    'name' => 'view own field_speakers',
     'roles' => array(
       'Administrator' => 'Administrator',
     ),

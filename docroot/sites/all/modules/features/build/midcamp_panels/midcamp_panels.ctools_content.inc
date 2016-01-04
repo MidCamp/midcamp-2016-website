@@ -13,6 +13,38 @@ function midcamp_panels_default_ctools_custom_content() {
   $content = new stdClass();
   $content->disabled = FALSE; /* Edit this to true to make a default content disabled initially */
   $content->api_version = 1;
+  $content->name = 'content_session_guidelines';
+  $content->admin_title = 'Session submission guidelines';
+  $content->admin_description = '';
+  $content->category = '';
+  $content->settings = array(
+    'admin_title' => 'Session submission guidelines',
+    'title' => '',
+    'body' => '<h3>Guidelines</h3><ul><li>We encourage experienced speakers to submit talks for a beginner audience.</li><li>Use a format that works for you and your topic: formal talk, panel, short documentary, spoken word, musical, etc.</li><li>Sessions can be 50 minutes or 20 minutes.</li><li>We prefer sessions be presented in English. If you need a translator, please mention that.</li><li>You are welcome to submit more than one talk, but&nbsp;speakers will usually only have one session selected. (Some might appear also on a panel.)</li><li>You may promote a project or organization you are working on if it is relevant, but please&nbsp;no sales pitches.</li><li>We prefer speakers speak on issues affecting&nbsp;groups they belong to, instead of speaking to issues on another group&#39;s behalf. (That is, a panel about &quot;Women in Drupal&quot; should be composed of&nbsp;women.)</li><li>Speakers are expected to follow our <strong>code of conduct</strong>.</li></ul>',
+    'format' => 'full_html',
+    'substitute' => 1,
+  );
+  $export['content_session_guidelines'] = $content;
+
+  $content = new stdClass();
+  $content->disabled = FALSE; /* Edit this to true to make a default content disabled initially */
+  $content->api_version = 1;
+  $content->name = 'content_speaker_terms_conditions';
+  $content->admin_title = 'Speaker terms and conditions';
+  $content->admin_description = '';
+  $content->category = 'MidCamp';
+  $content->settings = array(
+    'admin_title' => 'Speaker terms and conditions',
+    'title' => 'Speaker Terms and Conditions',
+    'body' => '<p>By submitting to present a session at MidCamp you are confirming your understanding and acceptance of the rules and expectations as outlined below.</p><p>As a MidCamp speaker, you are directly responsible for your session, its content, quality, and all deliverables.</p><h3>Session cancellation</h3><p>MidCamp reserves the right to revise or cancel any events on the schedule should registration, venue, equipment or other conditions dictate. We will notify all involved speakers of any schedule modifications or cancellations as soon as possible. If for any reason a speaker must cancel a session, that speaker must contact MidCamp so a substitute can be arranged.</p><h3>Session AV + Setup</h3><p>Speakers should arrive to their room 10 minutes early for setup. You will have access to the session rooms prior to the first session of the day and during the breaks. There is WiFi available in all of the rooms, however, since connections to WiFi can sometimes be unreliable, we <strong>STRONGLY</strong> recommend you have the ability to do your session <strong>without</strong> a connection to the internet.</p><p><strong>What to bring</strong>:</p><ul><li>Your laptop, with session slides loaded (it doesn&#39;t hurt to bring a backup USB)</li><li>Your laptop&#39;s power adaptor</li><li>The appropriate power converter if you are visiting from another&nbsp;country</li><li>The proper dongle/adapter/cable to connect your laptop to a VGA input (we do not use HDMI projectors)</li><li>A slide advancer, if you want one</li></ul><h3>Promotion</h3><p>After session are&nbsp;selected speakers are encouraged to promote their sessions through personal invitations and social media outlets like Twitter, personal blogs and digital newsletters. Be sure to include <a href="https://twitter.com/midwestcamp">@midwestcamp</a> and <a href="https://twitter.com/search?f=realtime&amp;q=%23midcamp&amp;src=typd">#MidCamp</a> in your tweets about the conference!</p><h3>Permissions</h3><p>You must have explicit permission from your client/company to present any proprietary material in your session. Proposing a session without permission is grounds for session cancellation.</p><h3>Session Recording</h3><p>When you agree to speak at MidCamp, you consent for your talk to be recorded in audio and possibly video format.</p><p>We reserve the right to publicly distribute and publish these recordings under the <a href="http://creativecommons.org/licenses/by/3.0/" target="_blank">Creative Commons Attribution 3.0</a> license.</p><p>Your session material, including content and recordings may be used in various promotions or for other related endeavors. This material may also appear on the MidCamp web site, social media channels or other digital mediums controlled by MidCamp.</p><p><a href="#edit-field-tc-und">Go back to the submission form ☝︎</a></p>',
+    'format' => 'full_html',
+    'substitute' => 1,
+  );
+  $export['content_speaker_terms_conditions'] = $content;
+
+  $content = new stdClass();
+  $content->disabled = FALSE; /* Edit this to true to make a default content disabled initially */
+  $content->api_version = 1;
   $content->name = 'home_dates';
   $content->admin_title = 'Home Dates';
   $content->admin_description = '';

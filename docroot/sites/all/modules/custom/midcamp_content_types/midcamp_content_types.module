@@ -42,6 +42,16 @@ function midcamp_content_types_form_session_node_form_alter(&$form, &$form_state
   if (user_is_anonymous() && !array_key_exists('destination', $_GET)) {
     $_GET['destination'] = $_GET['q'];
   }
+
+  // Show drupal beginners checkbox only if drupal-specific session is checked.
+  $form['field_beginners']['#states'] = array(
+    'visible' => array(
+      ':input[name="field_drupal_specific[und]"]' => array(
+        'checked' => TRUE,
+      ),
+    ),
+  );
+
 }
 
 /**

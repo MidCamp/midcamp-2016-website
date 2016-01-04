@@ -44,13 +44,13 @@ function midcamp_node_session_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '13',
+          'weight' => '17',
         ),
         'redirect' => array(
-          'weight' => '12',
+          'weight' => '15',
         ),
         'metatags' => array(
-          'weight' => '15',
+          'weight' => '18',
         ),
         'xmlsitemap' => array(
           'weight' => '14',
@@ -63,7 +63,7 @@ function midcamp_node_session_strongarm() {
             'visible' => TRUE,
           ),
           'default' => array(
-            'weight' => '100',
+            'weight' => '15',
             'visible' => FALSE,
           ),
           'teaser' => array(
@@ -81,7 +81,7 @@ function midcamp_node_session_strongarm() {
             'visible' => TRUE,
           ),
           'default' => array(
-            'weight' => '100',
+            'weight' => '14',
             'visible' => FALSE,
           ),
           'teaser' => array(
@@ -120,7 +120,6 @@ function midcamp_node_session_strongarm() {
   $strongarm->name = 'node_options_session';
   $strongarm->value = array(
     0 => 'status',
-    1 => 'revision',
   );
   $export['node_options_session'] = $strongarm;
 
@@ -128,7 +127,7 @@ function midcamp_node_session_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_session';
-  $strongarm->value = '1';
+  $strongarm->value = '0';
   $export['node_preview_session'] = $strongarm;
 
   $strongarm = new stdClass();

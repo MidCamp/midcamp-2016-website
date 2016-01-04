@@ -55,12 +55,15 @@ function midcamp_panels_default_page_manager_handlers() {
     ),
   );
   $display = new panels_display();
-  $display->layout = 'flexible';
-  $display->layout_settings = array();
+  $display->layout = 'zen_no_wrapper';
+  $display->layout_settings = array(
+    'main_classes' => '',
+  );
   $display->panel_settings = array(
     'style_settings' => array(
       'default' => NULL,
       'center' => NULL,
+      'main' => NULL,
     ),
   );
   $display->cache = array();
@@ -69,21 +72,19 @@ function midcamp_panels_default_page_manager_handlers() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-a72401b2-19c7-4e1e-9fa2-3582de043d0d';
-    $pane->panel = 'center';
-    $pane->type = 'node';
-    $pane->subtype = 'node';
+    $pane->pid = 'new-4edd5312-8f67-403a-a26a-c62c57e8f953';
+    $pane->panel = 'main';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'nid' => '3',
-      'links' => 0,
-      'leave_node_title' => 0,
-      'identifier' => '',
-      'build_mode' => 'full',
-      'link_node_title' => 0,
-      'override_title' => 1,
-      'override_title_text' => '',
+      'admin_title' => 'Session submission guidelines',
+      'title' => '',
+      'body' => '<h3>Guidelines</h3><ul><li>We encourage experienced speakers to submit talks for a beginner audience.</li><li>Use a format that works for you and your topic: formal talk, panel, short documentary, spoken word, musical, etc.</li><li>Sessions can be 50 minutes or 20 minutes.</li><li>We prefer sessions be presented in English. If you need a translator, please mention that.</li><li>You are welcome to submit more than one talk, but&nbsp;speakers will usually only have one session selected. (Some might appear also on a panel.)</li><li>You may promote a project or organization you are working on if it is relevant, but please&nbsp;no sales pitches.</li><li>We prefer speakers speak on issues affecting&nbsp;groups they belong to, instead of speaking to issues on another group&#39;s behalf. (That is, a panel about &quot;Women in Drupal&quot; should be composed of&nbsp;women.)</li><li>Speakers are expected to follow our <strong>code of conduct</strong>.</li></ul>',
+      'format' => 'full_html',
+      'substitute' => 1,
+      'name' => 'content_session_guidelines',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -93,12 +94,12 @@ function midcamp_panels_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'a72401b2-19c7-4e1e-9fa2-3582de043d0d';
-    $display->content['new-a72401b2-19c7-4e1e-9fa2-3582de043d0d'] = $pane;
-    $display->panels['center'][0] = 'new-a72401b2-19c7-4e1e-9fa2-3582de043d0d';
+    $pane->uuid = '4edd5312-8f67-403a-a26a-c62c57e8f953';
+    $display->content['new-4edd5312-8f67-403a-a26a-c62c57e8f953'] = $pane;
+    $display->panels['main'][0] = 'new-4edd5312-8f67-403a-a26a-c62c57e8f953';
     $pane = new stdClass();
     $pane->pid = 'new-16acb401-0b66-482d-8f16-44abf5284364';
-    $pane->panel = 'center';
+    $pane->panel = 'main';
     $pane->type = 'custom';
     $pane->subtype = 'custom';
     $pane->shown = TRUE;
@@ -120,10 +121,10 @@ function midcamp_panels_default_page_manager_handlers() {
     $pane->locks = array();
     $pane->uuid = '16acb401-0b66-482d-8f16-44abf5284364';
     $display->content['new-16acb401-0b66-482d-8f16-44abf5284364'] = $pane;
-    $display->panels['center'][1] = 'new-16acb401-0b66-482d-8f16-44abf5284364';
+    $display->panels['main'][1] = 'new-16acb401-0b66-482d-8f16-44abf5284364';
     $pane = new stdClass();
     $pane->pid = 'new-09860910-2a8a-4613-b6d7-379343c3bf31';
-    $pane->panel = 'center';
+    $pane->panel = 'main';
     $pane->type = 'block';
     $pane->subtype = 'user-login';
     $pane->shown = TRUE;
@@ -142,7 +143,7 @@ function midcamp_panels_default_page_manager_handlers() {
     $pane->locks = array();
     $pane->uuid = '09860910-2a8a-4613-b6d7-379343c3bf31';
     $display->content['new-09860910-2a8a-4613-b6d7-379343c3bf31'] = $pane;
-    $display->panels['center'][2] = 'new-09860910-2a8a-4613-b6d7-379343c3bf31';
+    $display->panels['main'][2] = 'new-09860910-2a8a-4613-b6d7-379343c3bf31';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -242,35 +243,6 @@ function midcamp_panels_default_page_manager_handlers() {
     $pane->uuid = '96cd7c9f-948e-4fa0-aca3-0b127a12ce6a';
     $display->content['new-96cd7c9f-948e-4fa0-aca3-0b127a12ce6a'] = $pane;
     $display->panels['middle'][0] = 'new-96cd7c9f-948e-4fa0-aca3-0b127a12ce6a';
-    $pane = new stdClass();
-    $pane->pid = 'new-3e15f505-3cfe-4f57-a128-1680a87a9f90';
-    $pane->panel = 'middle';
-    $pane->type = 'node_content';
-    $pane->subtype = 'node_content';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'links' => 1,
-      'no_extras' => 1,
-      'override_title' => 0,
-      'override_title_text' => '',
-      'identifier' => '',
-      'link' => 0,
-      'leave_node_title' => 0,
-      'build_mode' => 'full',
-      'context' => 'context_entity:node_2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = '3e15f505-3cfe-4f57-a128-1680a87a9f90';
-    $display->content['new-3e15f505-3cfe-4f57-a128-1680a87a9f90'] = $pane;
-    $display->panels['middle'][1] = 'new-3e15f505-3cfe-4f57-a128-1680a87a9f90';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -1068,7 +1040,7 @@ function midcamp_panels_default_page_manager_handlers() {
     $pane->panel = 'right';
     $pane->type = 'user_sessions';
     $pane->subtype = 'user_sessions';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array(
       'plugins' => array(),
     );
@@ -1133,6 +1105,32 @@ function midcamp_panels_default_page_manager_handlers() {
     $pane->uuid = 'b552fb46-7d05-4e5e-bd3a-168e31907eb1';
     $display->content['new-b552fb46-7d05-4e5e-bd3a-168e31907eb1'] = $pane;
     $display->panels['right'][2] = 'new-b552fb46-7d05-4e5e-bd3a-168e31907eb1';
+    $pane = new stdClass();
+    $pane->pid = 'new-5ffd5151-91e0-4996-aef9-37ee48e58167';
+    $pane->panel = 'right';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'speaker_s_session_proposals-panel_pane_user_sessions';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'arguments' => array(
+        'uid' => '%user:uid%',
+      ),
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = '5ffd5151-91e0-4996-aef9-37ee48e58167';
+    $display->content['new-5ffd5151-91e0-4996-aef9-37ee48e58167'] = $pane;
+    $display->panels['right'][3] = 'new-5ffd5151-91e0-4996-aef9-37ee48e58167';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

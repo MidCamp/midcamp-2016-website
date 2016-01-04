@@ -6,6 +6,7 @@ dependencies[] = features
 dependencies[] = list
 dependencies[] = midcamp_fields
 dependencies[] = midcamp_goodies
+dependencies[] = midcamp_seo
 dependencies[] = og
 dependencies[] = options
 features[ctools][] = strongarm:strongarm:1
