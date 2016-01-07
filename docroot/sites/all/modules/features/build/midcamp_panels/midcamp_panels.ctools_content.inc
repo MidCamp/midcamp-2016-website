@@ -20,7 +20,7 @@ function midcamp_panels_default_ctools_custom_content() {
   $content->settings = array(
     'admin_title' => 'Session submission guidelines',
     'title' => '',
-    'body' => '<h3>Guidelines</h3><ul><li>We encourage experienced speakers to submit talks for a beginner audience.</li><li>Use a format that works for you and your topic: formal talk, panel, short documentary, spoken word, musical, etc.</li><li>Sessions can be 50 minutes or 20 minutes.</li><li>We prefer sessions be presented in English. If you need a translator, please mention that.</li><li>You are welcome to submit more than one talk, but&nbsp;speakers will usually only have one session selected. (Some might appear also on a panel.)</li><li>You may promote a project or organization you are working on if it is relevant, but please&nbsp;no sales pitches.</li><li>We prefer speakers speak on issues affecting&nbsp;groups they belong to, instead of speaking to issues on another group&#39;s behalf. (That is, a panel about &quot;Women in Drupal&quot; should be composed of&nbsp;women.)</li><li>Speakers are expected to follow our <strong>code of conduct</strong>.</li></ul>',
+    'body' => '<h3>Guidelines</h3><ul><li>We encourage experienced speakers to submit talks for a beginner audience.</li><li>Use a format that works for you and your topic: formal talk, panel, short documentary, spoken word, musical, etc.</li><li>Sessions can be 50 minutes or 20 minutes.</li><li>We prefer sessions be presented in English. If you need a translator, please mention that.</li><li>You are welcome to submit more than one talk, but&nbsp;speakers will usually only have one session selected. (Some might appear also on a panel.)</li><li>You may promote a project or organization you are working on if it is relevant, but please&nbsp;no sales pitches.</li><li>We prefer speakers speak on issues affecting&nbsp;groups they belong to, instead of speaking to issues on another group&#39;s behalf. (That is, a panel about &quot;Women in Drupal&quot; should be composed of&nbsp;women.)</li><li>Speakers are expected to follow our <a href="/code-conduct"><strong>code of conduct</strong></a>.</li></ul>',
     'format' => 'full_html',
     'substitute' => 1,
   );
@@ -89,6 +89,22 @@ function midcamp_panels_default_ctools_custom_content() {
     'substitute' => 1,
   );
   $export['home_sponsors'] = $content;
+
+  $content = new stdClass();
+  $content->disabled = FALSE; /* Edit this to true to make a default content disabled initially */
+  $content->api_version = 1;
+  $content->name = 'schedule_overview';
+  $content->admin_title = 'schedule overview';
+  $content->admin_description = '';
+  $content->category = '';
+  $content->settings = array(
+    'admin_title' => '',
+    'title' => 'Schedule',
+    'body' => '<h2>THURSDAY, MARCH 17, 2016&mdash;TRAINING (AND SPRINTING)</h2><h3>Training Sessions</h3><p>MidCamp will offer professional full- and half-day training to anyone interested in gaining additional hands-on knowledge on a variety of hot Drupal topics by world-class Drupal trainers.</p><p>Trainings are not included in the cost of a MidCamp registration.</p><p>Registration 8 am. Trainings 9 am - 5 pm.</p><h3>Sprints</h3><p>Sprint location on&nbsp;Thursday TBA.&nbsp;We will work in groups on issues, and have fun doing it.</p><p>We also have a big official sprint day on Sunday.</p><h2>FRIDAY, MARCH 18, 2016&mdash;SESSIONS</h2><p>All sessions of Friday&nbsp;are included in price of your MidCamp registration, as well as lunch and afternoon coffee &amp; snacks.&nbsp;</p><p>Registration 8 am. Sessions 9 am - 5:30 pm.</p><h2>SATURDAY, MARCH 19, 2016&mdash;SESSIONS</h2><p>All sessions of Saturday are included in price of your MidCamp registration, as well as lunch and afternoon coffee &amp; snacks.&nbsp;</p><p>Registration 8 am. Sessions 9 am - 5:30 pm.</p><h2>SUNDAY, MARCH 20, 2016&mdash;SPRINT</h2><p>A sprint is a get-together for focused work on a project. Sprints are an important part of Drupal&#39;s growth, and are also a great opportunity to get involved, because others are on hand to help you contribute. Contributors of all skill sets and levels are welcome and encouraged. We will have a first-time sprinter workshop to help new contributors get started and work efficently. Location TBA.</p><p>Sprint 10 am - 5 pm.</p>',
+    'format' => 'full_html',
+    'substitute' => 1,
+  );
+  $export['schedule_overview'] = $content;
 
   $content = new stdClass();
   $content->disabled = FALSE; /* Edit this to true to make a default content disabled initially */
