@@ -1831,6 +1831,31 @@ function midcamp_panels_default_page_manager_pages() {
     $pane->uuid = '49ac1e6a-226e-47df-a4e3-2bc69883ea9e';
     $display->content['new-49ac1e6a-226e-47df-a4e3-2bc69883ea9e'] = $pane;
     $display->panels['middle'][0] = 'new-49ac1e6a-226e-47df-a4e3-2bc69883ea9e';
+    $pane = new stdClass();
+    $pane->pid = 'new-7469a358-da32-45c0-b256-23ab56c2bb80';
+    $pane->panel = 'middle';
+    $pane->type = 'custom';
+    $pane->subtype = 'schedule_overview';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => '',
+      'title' => '',
+      'body' => '',
+      'format' => 'full_html',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '7469a358-da32-45c0-b256-23ab56c2bb80';
+    $display->content['new-7469a358-da32-45c0-b256-23ab56c2bb80'] = $pane;
+    $display->panels['middle'][1] = 'new-7469a358-da32-45c0-b256-23ab56c2bb80';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
