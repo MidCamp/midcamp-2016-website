@@ -63,7 +63,7 @@ function midcamp_site_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'date_default_timezone';
-  $strongarm->value = 'America/Chicago';
+  $strongarm->value = 'UTC';
   $export['date_default_timezone'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -357,14 +357,14 @@ function midcamp_site_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'site_mail';
-  $strongarm->value = 'info@midcamp.org';
+  $strongarm->value = 'admin@example.com';
   $export['site_mail'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'site_name';
-  $strongarm->value = 'MidCamp';
+  $strongarm->value = 'Site-Install';
   $export['site_name'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -476,7 +476,7 @@ function midcamp_site_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'update_notify_emails';
   $strongarm->value = array(
-    0 => 'web@midcamp.org',
+    0 => 'admin@example.com',
   );
   $export['update_notify_emails'] = $strongarm;
 
