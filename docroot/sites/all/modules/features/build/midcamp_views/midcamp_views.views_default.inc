@@ -4084,27 +4084,22 @@ function midcamp_views_views_default_views() {
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Submitted Sessions';
   $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    7 => '7',
+  );
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['style_plugin'] = 'table';
-  $handler->display->display_options['style_options']['grouping'] = array(
-    0 => array(
-      'field' => 'field_timeslot',
-      'rendered' => 1,
-      'rendered_strip' => 0,
-    ),
-  );
   $handler->display->display_options['style_options']['columns'] = array(
     'title' => 'title',
     'field_track' => 'field_track',
-    'field_audience' => 'field_audience',
+    'field_drupal_specific' => 'field_drupal_specific',
+    'field_beginners' => 'field_beginners',
     'field_length' => 'field_length',
-    'field_speakers' => 'field_speakers',
-    'field_room' => 'field_room',
-    'field_timeslot' => 'field_timeslot',
+    'ops' => 'ops',
   );
   $handler->display->display_options['style_options']['default'] = '-1';
   $handler->display->display_options['style_options']['info'] = array(
@@ -4120,7 +4115,14 @@ function midcamp_views_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
-    'field_audience' => array(
+    'field_drupal_specific' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_beginners' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
@@ -4134,21 +4136,7 @@ function midcamp_views_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
-    'field_speakers' => array(
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_room' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_timeslot' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'asc',
+    'ops' => array(
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
@@ -4168,6 +4156,21 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['footer']['result']['content'] = 'Displaying @start - @end of @total
 <p>
 (<a href="session-submissions">Submitted sessions</a>)';
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area_1']['id'] = 'area_1';
+  $handler->display->display_options['empty']['area_1']['table'] = 'views';
+  $handler->display->display_options['empty']['area_1']['field'] = 'area';
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area_2']['id'] = 'area_2';
+  $handler->display->display_options['empty']['area_2']['table'] = 'views';
+  $handler->display->display_options['empty']['area_2']['field'] = 'area';
+  $handler->display->display_options['empty']['area_2']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area_2']['content'] = 'There are no proposed sessions yet.';
+  $handler->display->display_options['empty']['area_2']['format'] = 'full_html';
   /* Relationship: Flags: accepted */
   $handler->display->display_options['relationships']['flag_content_rel']['id'] = 'flag_content_rel';
   $handler->display->display_options['relationships']['flag_content_rel']['table'] = 'node';
@@ -4188,11 +4191,6 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['fields']['field_track']['field'] = 'field_track';
   $handler->display->display_options['fields']['field_track']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_track']['delta_offset'] = '0';
-  /* Field: Content: Audience */
-  $handler->display->display_options['fields']['field_audience']['id'] = 'field_audience';
-  $handler->display->display_options['fields']['field_audience']['table'] = 'field_data_field_audience';
-  $handler->display->display_options['fields']['field_audience']['field'] = 'field_audience';
-  $handler->display->display_options['fields']['field_audience']['type'] = 'taxonomy_term_reference_plain';
   /* Field: Content: What is your planned session length? */
   $handler->display->display_options['fields']['field_length']['id'] = 'field_length';
   $handler->display->display_options['fields']['field_length']['table'] = 'field_data_field_length';
@@ -4232,46 +4230,34 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'session' => 'session',
   );
-  /* Filter criterion: Broken/missing handler */
-  $handler->display->display_options['filters']['field_track_tid']['id'] = 'field_track_tid';
-  $handler->display->display_options['filters']['field_track_tid']['table'] = 'field_data_field_track';
-  $handler->display->display_options['filters']['field_track_tid']['field'] = 'field_track_tid';
-  $handler->display->display_options['filters']['field_track_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_track_tid']['expose']['operator_id'] = 'field_track_tid_op';
-  $handler->display->display_options['filters']['field_track_tid']['expose']['label'] = 'Track';
-  $handler->display->display_options['filters']['field_track_tid']['expose']['operator'] = 'field_track_tid_op';
-  $handler->display->display_options['filters']['field_track_tid']['expose']['identifier'] = 'field_track_tid';
-  $handler->display->display_options['filters']['field_track_tid']['expose']['multiple'] = TRUE;
-  $handler->display->display_options['filters']['field_track_tid']['expose']['remember_roles'] = array(
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Which track(s) would best fit your session content? Select up to 3: (field_track) */
+  $handler->display->display_options['filters']['field_track_value']['id'] = 'field_track_value';
+  $handler->display->display_options['filters']['field_track_value']['table'] = 'field_data_field_track';
+  $handler->display->display_options['filters']['field_track_value']['field'] = 'field_track_value';
+  $handler->display->display_options['filters']['field_track_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_track_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_track_value']['expose']['operator_id'] = 'field_track_value_op';
+  $handler->display->display_options['filters']['field_track_value']['expose']['label'] = 'Track(s)';
+  $handler->display->display_options['filters']['field_track_value']['expose']['use_operator'] = TRUE;
+  $handler->display->display_options['filters']['field_track_value']['expose']['operator'] = 'field_track_value_op';
+  $handler->display->display_options['filters']['field_track_value']['expose']['identifier'] = 'field_track_value';
+  $handler->display->display_options['filters']['field_track_value']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_track_value']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
-    4 => 0,
-    5 => 0,
+    8 => 0,
+    7 => 0,
     3 => 0,
-  );
-  /* Filter criterion: Content: Audience (field_audience) */
-  $handler->display->display_options['filters']['field_audience_tid']['id'] = 'field_audience_tid';
-  $handler->display->display_options['filters']['field_audience_tid']['table'] = 'field_data_field_audience';
-  $handler->display->display_options['filters']['field_audience_tid']['field'] = 'field_audience_tid';
-  $handler->display->display_options['filters']['field_audience_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_audience_tid']['expose']['operator_id'] = 'field_audience_tid_op';
-  $handler->display->display_options['filters']['field_audience_tid']['expose']['label'] = 'Audience';
-  $handler->display->display_options['filters']['field_audience_tid']['expose']['operator'] = 'field_audience_tid_op';
-  $handler->display->display_options['filters']['field_audience_tid']['expose']['identifier'] = 'field_audience_tid';
-  $handler->display->display_options['filters']['field_audience_tid']['expose']['multiple'] = TRUE;
-  $handler->display->display_options['filters']['field_audience_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    4 => 0,
     5 => 0,
-    3 => 0,
+    6 => 0,
+    4 => 0,
   );
-  $handler->display->display_options['filters']['field_audience_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_audience_tid']['vocabulary'] = 'session_audience';
   /* Filter criterion: Content: What is your planned session length? (field_length) */
   $handler->display->display_options['filters']['field_length_value']['id'] = 'field_length_value';
   $handler->display->display_options['filters']['field_length_value']['table'] = 'field_data_field_length';
   $handler->display->display_options['filters']['field_length_value']['field'] = 'field_length_value';
+  $handler->display->display_options['filters']['field_length_value']['group'] = 1;
   $handler->display->display_options['filters']['field_length_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_length_value']['expose']['operator_id'] = 'field_length_value_op';
   $handler->display->display_options['filters']['field_length_value']['expose']['label'] = 'Length';
@@ -4287,14 +4273,13 @@ function midcamp_views_views_default_views() {
 
   /* Display: Sessions page */
   $handler = $view->new_display('page', 'Sessions page', 'page_sessions');
+  $handler->display->display_options['defaults']['access'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['defaults']['footer'] = FALSE;
   /* Footer: Global: Result summary */
   $handler->display->display_options['footer']['result']['id'] = 'result';
   $handler->display->display_options['footer']['result']['table'] = 'views';
   $handler->display->display_options['footer']['result']['field'] = 'result';
-  $handler->display->display_options['footer']['result']['content'] = 'Displaying @start - @end of @total
-<p>
-(<a href="sessions">Accepted sessions</a>)';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -4303,21 +4288,32 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Content: Which track(s) would best fit your session content? Select up to 3: */
   $handler->display->display_options['fields']['field_track']['id'] = 'field_track';
   $handler->display->display_options['fields']['field_track']['table'] = 'field_data_field_track';
   $handler->display->display_options['fields']['field_track']['field'] = 'field_track';
-  $handler->display->display_options['fields']['field_track']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_track']['label'] = 'Tracks';
+  $handler->display->display_options['fields']['field_track']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_track']['delta_offset'] = '0';
-  /* Field: Content: Audience */
-  $handler->display->display_options['fields']['field_audience']['id'] = 'field_audience';
-  $handler->display->display_options['fields']['field_audience']['table'] = 'field_data_field_audience';
-  $handler->display->display_options['fields']['field_audience']['field'] = 'field_audience';
-  $handler->display->display_options['fields']['field_audience']['type'] = 'taxonomy_term_reference_plain';
+  /* Field: Content: Is your presentation Drupal-specific? */
+  $handler->display->display_options['fields']['field_drupal_specific']['id'] = 'field_drupal_specific';
+  $handler->display->display_options['fields']['field_drupal_specific']['table'] = 'field_data_field_drupal_specific';
+  $handler->display->display_options['fields']['field_drupal_specific']['field'] = 'field_drupal_specific';
+  $handler->display->display_options['fields']['field_drupal_specific']['label'] = 'Drupal-specific';
+  $handler->display->display_options['fields']['field_drupal_specific']['element_label_colon'] = FALSE;
+  /* Field: Content: Is your presentation for Drupal beginners? */
+  $handler->display->display_options['fields']['field_beginners']['id'] = 'field_beginners';
+  $handler->display->display_options['fields']['field_beginners']['table'] = 'field_data_field_beginners';
+  $handler->display->display_options['fields']['field_beginners']['field'] = 'field_beginners';
+  $handler->display->display_options['fields']['field_beginners']['label'] = 'Drupal beginners';
+  $handler->display->display_options['fields']['field_beginners']['element_label_colon'] = FALSE;
   /* Field: Content: What is your planned session length? */
   $handler->display->display_options['fields']['field_length']['id'] = 'field_length';
   $handler->display->display_options['fields']['field_length']['table'] = 'field_data_field_length';
   $handler->display->display_options['fields']['field_length']['field'] = 'field_length';
+  $handler->display->display_options['fields']['field_length']['label'] = 'Session length';
+  $handler->display->display_options['fields']['field_length']['element_label_colon'] = FALSE;
   /* Field: Flags: Flag link */
   $handler->display->display_options['fields']['ops']['id'] = 'ops';
   $handler->display->display_options['fields']['ops']['table'] = 'flagging';
@@ -4325,14 +4321,6 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['fields']['ops']['relationship'] = 'flag_content_rel';
   $handler->display->display_options['fields']['ops']['label'] = '';
   $handler->display->display_options['fields']['ops']['element_label_colon'] = FALSE;
-  /* Field: Content: Speakers */
-  $handler->display->display_options['fields']['field_speakers']['id'] = 'field_speakers';
-  $handler->display->display_options['fields']['field_speakers']['table'] = 'field_data_field_speakers';
-  $handler->display->display_options['fields']['field_speakers']['field'] = 'field_speakers';
-  $handler->display->display_options['fields']['field_speakers']['settings'] = array(
-    'link' => 1,
-  );
-  $handler->display->display_options['fields']['field_speakers']['delta_offset'] = '0';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
@@ -4357,6 +4345,14 @@ function midcamp_views_views_default_views() {
 <p>
 <a href="/sessions/friday">Friday</a> | <a href="/sessions/saturday">Saturday</a> | <strong>All</strong>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'We have not begun to accept sessions yet. Until announced this page is only shown to selection admins.';
+  $handler->display->display_options['empty']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Flags: accepted */
   $handler->display->display_options['relationships']['flag_content_rel']['id'] = 'flag_content_rel';
@@ -4388,17 +4384,15 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['fields']['field_track']['id'] = 'field_track';
   $handler->display->display_options['fields']['field_track']['table'] = 'field_data_field_track';
   $handler->display->display_options['fields']['field_track']['field'] = 'field_track';
-  $handler->display->display_options['fields']['field_track']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_track']['label'] = 'Tracks';
+  $handler->display->display_options['fields']['field_track']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_track']['delta_offset'] = '0';
-  /* Field: Content: Audience */
-  $handler->display->display_options['fields']['field_audience']['id'] = 'field_audience';
-  $handler->display->display_options['fields']['field_audience']['table'] = 'field_data_field_audience';
-  $handler->display->display_options['fields']['field_audience']['field'] = 'field_audience';
-  $handler->display->display_options['fields']['field_audience']['type'] = 'taxonomy_term_reference_plain';
   /* Field: Content: What is your planned session length? */
   $handler->display->display_options['fields']['field_length']['id'] = 'field_length';
   $handler->display->display_options['fields']['field_length']['table'] = 'field_data_field_length';
   $handler->display->display_options['fields']['field_length']['field'] = 'field_length';
+  $handler->display->display_options['fields']['field_length']['label'] = 'Session length';
+  $handler->display->display_options['fields']['field_length']['element_label_colon'] = FALSE;
   /* Field: Content: Speakers */
   $handler->display->display_options['fields']['field_speakers']['id'] = 'field_speakers';
   $handler->display->display_options['fields']['field_speakers']['table'] = 'field_data_field_speakers';
@@ -4460,64 +4454,35 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'session' => 'session',
   );
-  /* Filter criterion: Broken/missing handler */
-  $handler->display->display_options['filters']['field_track_tid']['id'] = 'field_track_tid';
-  $handler->display->display_options['filters']['field_track_tid']['table'] = 'field_data_field_track';
-  $handler->display->display_options['filters']['field_track_tid']['field'] = 'field_track_tid';
-  $handler->display->display_options['filters']['field_track_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_track_tid']['expose']['operator_id'] = 'field_track_tid_op';
-  $handler->display->display_options['filters']['field_track_tid']['expose']['label'] = 'Track';
-  $handler->display->display_options['filters']['field_track_tid']['expose']['operator'] = 'field_track_tid_op';
-  $handler->display->display_options['filters']['field_track_tid']['expose']['identifier'] = 'field_track_tid';
-  $handler->display->display_options['filters']['field_track_tid']['expose']['multiple'] = TRUE;
-  $handler->display->display_options['filters']['field_track_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    4 => 0,
-    5 => 0,
-    3 => 0,
-  );
-  /* Filter criterion: Content: Audience (field_audience) */
-  $handler->display->display_options['filters']['field_audience_tid']['id'] = 'field_audience_tid';
-  $handler->display->display_options['filters']['field_audience_tid']['table'] = 'field_data_field_audience';
-  $handler->display->display_options['filters']['field_audience_tid']['field'] = 'field_audience_tid';
-  $handler->display->display_options['filters']['field_audience_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_audience_tid']['expose']['operator_id'] = 'field_audience_tid_op';
-  $handler->display->display_options['filters']['field_audience_tid']['expose']['label'] = 'Audience';
-  $handler->display->display_options['filters']['field_audience_tid']['expose']['operator'] = 'field_audience_tid_op';
-  $handler->display->display_options['filters']['field_audience_tid']['expose']['identifier'] = 'field_audience_tid';
-  $handler->display->display_options['filters']['field_audience_tid']['expose']['multiple'] = TRUE;
-  $handler->display->display_options['filters']['field_audience_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    4 => 0,
-    5 => 0,
-    3 => 0,
-  );
-  $handler->display->display_options['filters']['field_audience_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_audience_tid']['vocabulary'] = 'session_audience';
-  /* Filter criterion: Content: What is your planned session length? (field_length) */
-  $handler->display->display_options['filters']['field_length_value']['id'] = 'field_length_value';
-  $handler->display->display_options['filters']['field_length_value']['table'] = 'field_data_field_length';
-  $handler->display->display_options['filters']['field_length_value']['field'] = 'field_length_value';
-  $handler->display->display_options['filters']['field_length_value']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_length_value']['expose']['operator_id'] = 'field_length_value_op';
-  $handler->display->display_options['filters']['field_length_value']['expose']['label'] = 'Length';
-  $handler->display->display_options['filters']['field_length_value']['expose']['operator'] = 'field_length_value_op';
-  $handler->display->display_options['filters']['field_length_value']['expose']['identifier'] = 'field_length_value';
-  $handler->display->display_options['filters']['field_length_value']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    5 => 0,
-    4 => 0,
-    3 => 0,
-  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Flags: Flagged */
   $handler->display->display_options['filters']['flagged']['id'] = 'flagged';
   $handler->display->display_options['filters']['flagged']['table'] = 'flagging';
   $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
   $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
   $handler->display->display_options['filters']['flagged']['value'] = '1';
+  $handler->display->display_options['filters']['flagged']['group'] = 1;
+  /* Filter criterion: Content: Which track(s) would best fit your session content? Select up to 3: (field_track) */
+  $handler->display->display_options['filters']['field_track_value']['id'] = 'field_track_value';
+  $handler->display->display_options['filters']['field_track_value']['table'] = 'field_data_field_track';
+  $handler->display->display_options['filters']['field_track_value']['field'] = 'field_track_value';
+  $handler->display->display_options['filters']['field_track_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_track_value']['expose']['operator_id'] = 'field_track_value_op';
+  $handler->display->display_options['filters']['field_track_value']['expose']['label'] = 'Track(s)';
+  $handler->display->display_options['filters']['field_track_value']['expose']['use_operator'] = TRUE;
+  $handler->display->display_options['filters']['field_track_value']['expose']['operator'] = 'field_track_value_op';
+  $handler->display->display_options['filters']['field_track_value']['expose']['identifier'] = 'field_track_value';
+  $handler->display->display_options['filters']['field_track_value']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_track_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    8 => 0,
+    7 => 0,
+    3 => 0,
+    5 => 0,
+    6 => 0,
+    4 => 0,
+  );
   $handler->display->display_options['path'] = 'sessions';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Accepted Sessions';
@@ -4609,6 +4574,14 @@ function midcamp_views_views_default_views() {
 <p>
 <strong>Friday</strong> | <a href="/sessions/saturday">Saturday</a> | <a href="/sessions">All</a>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'There are no Friday scheduled accepted sessions yet.';
+  $handler->display->display_options['empty']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Flags: accepted */
   $handler->display->display_options['relationships']['flag_content_rel']['id'] = 'flag_content_rel';
@@ -4705,65 +4678,21 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'session' => 'session',
   );
-  /* Filter criterion: Broken/missing handler */
-  $handler->display->display_options['filters']['field_track_tid']['id'] = 'field_track_tid';
-  $handler->display->display_options['filters']['field_track_tid']['table'] = 'field_data_field_track';
-  $handler->display->display_options['filters']['field_track_tid']['field'] = 'field_track_tid';
-  $handler->display->display_options['filters']['field_track_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_track_tid']['expose']['operator_id'] = 'field_track_tid_op';
-  $handler->display->display_options['filters']['field_track_tid']['expose']['label'] = 'Track';
-  $handler->display->display_options['filters']['field_track_tid']['expose']['operator'] = 'field_track_tid_op';
-  $handler->display->display_options['filters']['field_track_tid']['expose']['identifier'] = 'field_track_tid';
-  $handler->display->display_options['filters']['field_track_tid']['expose']['multiple'] = TRUE;
-  $handler->display->display_options['filters']['field_track_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    4 => 0,
-    5 => 0,
-    3 => 0,
-  );
-  /* Filter criterion: Content: Audience (field_audience) */
-  $handler->display->display_options['filters']['field_audience_tid']['id'] = 'field_audience_tid';
-  $handler->display->display_options['filters']['field_audience_tid']['table'] = 'field_data_field_audience';
-  $handler->display->display_options['filters']['field_audience_tid']['field'] = 'field_audience_tid';
-  $handler->display->display_options['filters']['field_audience_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_audience_tid']['expose']['operator_id'] = 'field_audience_tid_op';
-  $handler->display->display_options['filters']['field_audience_tid']['expose']['label'] = 'Audience';
-  $handler->display->display_options['filters']['field_audience_tid']['expose']['operator'] = 'field_audience_tid_op';
-  $handler->display->display_options['filters']['field_audience_tid']['expose']['identifier'] = 'field_audience_tid';
-  $handler->display->display_options['filters']['field_audience_tid']['expose']['multiple'] = TRUE;
-  $handler->display->display_options['filters']['field_audience_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    4 => 0,
-    5 => 0,
-    3 => 0,
-  );
-  $handler->display->display_options['filters']['field_audience_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_audience_tid']['vocabulary'] = 'session_audience';
-  /* Filter criterion: Content: What is your planned session length? (field_length) */
-  $handler->display->display_options['filters']['field_length_value']['id'] = 'field_length_value';
-  $handler->display->display_options['filters']['field_length_value']['table'] = 'field_data_field_length';
-  $handler->display->display_options['filters']['field_length_value']['field'] = 'field_length_value';
-  $handler->display->display_options['filters']['field_length_value']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_length_value']['expose']['operator_id'] = 'field_length_value_op';
-  $handler->display->display_options['filters']['field_length_value']['expose']['label'] = 'Length';
-  $handler->display->display_options['filters']['field_length_value']['expose']['operator'] = 'field_length_value_op';
-  $handler->display->display_options['filters']['field_length_value']['expose']['identifier'] = 'field_length_value';
-  $handler->display->display_options['filters']['field_length_value']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    5 => 0,
-    4 => 0,
-    3 => 0,
-  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: SCAMP: Date -  start date (field_date_time) */
   $handler->display->display_options['filters']['field_date_time_value']['id'] = 'field_date_time_value';
   $handler->display->display_options['filters']['field_date_time_value']['table'] = 'field_data_field_date_time';
   $handler->display->display_options['filters']['field_date_time_value']['field'] = 'field_date_time_value';
   $handler->display->display_options['filters']['field_date_time_value']['relationship'] = 'field_timeslot_target_id';
-  $handler->display->display_options['filters']['field_date_time_value']['value']['value'] = '2015-03-20';
+  $handler->display->display_options['filters']['field_date_time_value']['value']['value'] = '2016-03-18';
+  $handler->display->display_options['filters']['field_date_time_value']['group'] = 1;
   $handler->display->display_options['filters']['field_date_time_value']['form_type'] = 'date_popup';
+  /* Filter criterion: Flags: Flagged */
+  $handler->display->display_options['filters']['flagged']['id'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['table'] = 'flagging';
+  $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
+  $handler->display->display_options['filters']['flagged']['value'] = '1';
   $handler->display->display_options['path'] = 'sessions/friday';
 
   /* Display: Saturday */
@@ -4779,6 +4708,18 @@ function midcamp_views_views_default_views() {
 <p>
 <a href="/sessions/friday">Friday</a> | <strong>Saturday</strong> | <a href="/sessions">All</a>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area_1']['id'] = 'area_1';
+  $handler->display->display_options['empty']['area_1']['table'] = 'views';
+  $handler->display->display_options['empty']['area_1']['field'] = 'area';
+  $handler->display->display_options['empty']['area_1']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area_1']['content'] = 'There are no Saturday scheduled accepted sessions yet.';
+  $handler->display->display_options['empty']['area_1']['format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Flags: accepted */
   $handler->display->display_options['relationships']['flag_content_rel']['id'] = 'flag_content_rel';
@@ -4828,65 +4769,21 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'session' => 'session',
   );
-  /* Filter criterion: Broken/missing handler */
-  $handler->display->display_options['filters']['field_track_tid']['id'] = 'field_track_tid';
-  $handler->display->display_options['filters']['field_track_tid']['table'] = 'field_data_field_track';
-  $handler->display->display_options['filters']['field_track_tid']['field'] = 'field_track_tid';
-  $handler->display->display_options['filters']['field_track_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_track_tid']['expose']['operator_id'] = 'field_track_tid_op';
-  $handler->display->display_options['filters']['field_track_tid']['expose']['label'] = 'Track';
-  $handler->display->display_options['filters']['field_track_tid']['expose']['operator'] = 'field_track_tid_op';
-  $handler->display->display_options['filters']['field_track_tid']['expose']['identifier'] = 'field_track_tid';
-  $handler->display->display_options['filters']['field_track_tid']['expose']['multiple'] = TRUE;
-  $handler->display->display_options['filters']['field_track_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    4 => 0,
-    5 => 0,
-    3 => 0,
-  );
-  /* Filter criterion: Content: Audience (field_audience) */
-  $handler->display->display_options['filters']['field_audience_tid']['id'] = 'field_audience_tid';
-  $handler->display->display_options['filters']['field_audience_tid']['table'] = 'field_data_field_audience';
-  $handler->display->display_options['filters']['field_audience_tid']['field'] = 'field_audience_tid';
-  $handler->display->display_options['filters']['field_audience_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_audience_tid']['expose']['operator_id'] = 'field_audience_tid_op';
-  $handler->display->display_options['filters']['field_audience_tid']['expose']['label'] = 'Audience';
-  $handler->display->display_options['filters']['field_audience_tid']['expose']['operator'] = 'field_audience_tid_op';
-  $handler->display->display_options['filters']['field_audience_tid']['expose']['identifier'] = 'field_audience_tid';
-  $handler->display->display_options['filters']['field_audience_tid']['expose']['multiple'] = TRUE;
-  $handler->display->display_options['filters']['field_audience_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    4 => 0,
-    5 => 0,
-    3 => 0,
-  );
-  $handler->display->display_options['filters']['field_audience_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_audience_tid']['vocabulary'] = 'session_audience';
-  /* Filter criterion: Content: What is your planned session length? (field_length) */
-  $handler->display->display_options['filters']['field_length_value']['id'] = 'field_length_value';
-  $handler->display->display_options['filters']['field_length_value']['table'] = 'field_data_field_length';
-  $handler->display->display_options['filters']['field_length_value']['field'] = 'field_length_value';
-  $handler->display->display_options['filters']['field_length_value']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_length_value']['expose']['operator_id'] = 'field_length_value_op';
-  $handler->display->display_options['filters']['field_length_value']['expose']['label'] = 'Length';
-  $handler->display->display_options['filters']['field_length_value']['expose']['operator'] = 'field_length_value_op';
-  $handler->display->display_options['filters']['field_length_value']['expose']['identifier'] = 'field_length_value';
-  $handler->display->display_options['filters']['field_length_value']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    5 => 0,
-    4 => 0,
-    3 => 0,
-  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: SCAMP: Date -  start date (field_date_time) */
   $handler->display->display_options['filters']['field_date_time_value']['id'] = 'field_date_time_value';
   $handler->display->display_options['filters']['field_date_time_value']['table'] = 'field_data_field_date_time';
   $handler->display->display_options['filters']['field_date_time_value']['field'] = 'field_date_time_value';
   $handler->display->display_options['filters']['field_date_time_value']['relationship'] = 'field_timeslot_target_id';
-  $handler->display->display_options['filters']['field_date_time_value']['value']['value'] = '2015-03-21';
+  $handler->display->display_options['filters']['field_date_time_value']['value']['value'] = '2016-03-19';
+  $handler->display->display_options['filters']['field_date_time_value']['group'] = 1;
   $handler->display->display_options['filters']['field_date_time_value']['form_type'] = 'date_popup';
+  /* Filter criterion: Flags: Flagged */
+  $handler->display->display_options['filters']['flagged']['id'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['table'] = 'flagging';
+  $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
+  $handler->display->display_options['filters']['flagged']['value'] = '1';
   $handler->display->display_options['path'] = 'sessions/saturday';
   $export['session_submissions'] = $view;
 
