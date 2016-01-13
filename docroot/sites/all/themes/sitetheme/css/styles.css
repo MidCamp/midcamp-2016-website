@@ -1369,32 +1369,51 @@ h2 a:link, #commerce-checkout-form-checkout .fieldset-legend a:link, h2 a:visite
 }
  */
 /* Random Sponsor */
-/* line 127, ../sass/components/_footer.scss */
+/* line 128, ../sass/components/_footer.scss */
 #footer .block-panels-mini .pane-inner,
+#footer .block-panels-mini .block-inner,
+#footer .block-views .pane-inner,
 #footer .block-views .block-inner {
   margin: 10px;
   padding: 20px;
   background-color: #eeeeee;
   border-radius: 10px;
 }
-/* line 132, ../sass/components/_footer.scss */
+/* line 134, ../sass/components/_footer.scss */
+#footer .block-panels-mini .pane-inner .view-content,
+#footer .block-panels-mini .block-inner .view-content,
+#footer .block-views .pane-inner .view-content,
 #footer .block-views .block-inner .view-content {
   margin-bottom: 1em;
 }
-/* line 134, ../sass/components/_footer.scss */
+/* line 136, ../sass/components/_footer.scss */
 #footer .block-panels-mini .pane-inner .view-content img,
+#footer .block-panels-mini .block-inner .view-content img,
+#footer .block-views .pane-inner .view-content img,
 #footer .block-views .block-inner .view-content img {
   display: block;
   margin: 0 auto;
 }
-/* line 139, ../sass/components/_footer.scss */
-#footer .block-panels-mini .pane-inner h2.sponsor-title,
+/* line 141, ../sass/components/_footer.scss */
+#footer .block-panels-mini .pane-inner h2.sponsor-title, #footer .block-panels-mini .pane-inner #commerce-checkout-form-checkout .sponsor-title.fieldset-legend, #commerce-checkout-form-checkout #footer .block-panels-mini .pane-inner .sponsor-title.fieldset-legend,
+#footer .block-panels-mini .pane-inner .block__title,
+#footer .block-panels-mini .block-inner h2.sponsor-title,
+#footer .block-panels-mini .block-inner #commerce-checkout-form-checkout .sponsor-title.fieldset-legend,
+#commerce-checkout-form-checkout #footer .block-panels-mini .block-inner .sponsor-title.fieldset-legend,
+#footer .block-panels-mini .block-inner .block__title,
+#footer .block-views .pane-inner h2.sponsor-title,
+#footer .block-views .pane-inner #commerce-checkout-form-checkout .sponsor-title.fieldset-legend,
+#commerce-checkout-form-checkout #footer .block-views .pane-inner .sponsor-title.fieldset-legend,
+#footer .block-views .pane-inner .block__title,
+#footer .block-views .block-inner h2.sponsor-title,
+#footer .block-views .block-inner #commerce-checkout-form-checkout .sponsor-title.fieldset-legend,
+#commerce-checkout-form-checkout #footer .block-views .block-inner .sponsor-title.fieldset-legend,
 #footer .block-views .block-inner .block__title {
   text-align: right;
   margin-bottom: 0;
 }
 @media all and (min-width: 960px) {
-  /* line 149, ../sass/components/_footer.scss */
+  /* line 152, ../sass/components/_footer.scss */
   #footer .pane-random-sponsor-panel-pane-gold-sponsor-logo,
   #footer #block-views-random-sponsor-gold {
     float: left;
@@ -1402,7 +1421,7 @@ h2 a:link, #commerce-checkout-form-checkout .fieldset-legend a:link, h2 a:visite
     margin-left: 0%;
     margin-right: -60%;
   }
-  /* line 152, ../sass/components/_footer.scss */
+  /* line 156, ../sass/components/_footer.scss */
   #footer .pane-random-sponsor-panel-pane-silver-sponsor-logo,
   #footer #block-views-random-sponsor-silver {
     float: left;
@@ -1483,6 +1502,16 @@ a.button {
 #user-login-form {
   text-align: left;
   /* LTR */
+}
+
+/* line 69, ../sass/components/_forms.scss */
+#mc_embed_signup_scroll input {
+  width: 100%;
+}
+
+/* line 73, ../sass/components/_forms.scss */
+#mc_embed_signup_scroll input.button {
+  width: auto;
 }
 
 /**
@@ -2579,7 +2608,7 @@ tr.selected td {
 /* line 408, ../sass/components/_misc.scss */
 .progress .filled {
   background-color: #0072b9;
-  background-image: url('../images/progress.gif?1426203995');
+  background-image: url('../images/progress.gif?1452556744');
 }
 
 /**
@@ -2618,12 +2647,12 @@ tr.selected td {
   #navigation .menu > .level-1 {
     position: relative;
     float: left;
-    width: 20%;
     /* width: 16.66667%; */
+    width: 16.66667%;
     padding-bottom: 17px;
   }
 }
-/* line 34, ../sass/components/_navbar.scss */
+/* line 35, ../sass/components/_navbar.scss */
 #navigation .menu > .level-1:hover > a,
 #navigation .menu > .level-1 a:focus {
   outline: 0;
@@ -2631,7 +2660,7 @@ tr.selected td {
   background-color: rgba(74, 130, 148, 0.2);
 }
 @media (min-width: 601px) {
-  /* line 34, ../sass/components/_navbar.scss */
+  /* line 35, ../sass/components/_navbar.scss */
   #navigation .menu > .level-1:hover > a,
   #navigation .menu > .level-1 a:focus {
     -webkit-border-radius: 10px;
@@ -2644,7 +2673,7 @@ tr.selected td {
   }
 }
 
-/* line 48, ../sass/components/_navbar.scss */
+/* line 49, ../sass/components/_navbar.scss */
 #navigation .menu > .level-1 > a {
   outline: none;
   text-transform: uppercase;
@@ -2653,20 +2682,20 @@ tr.selected td {
   font-weight: 800;
   font-family: "Raleway", sans-serif;
 }
-/* line 55, ../sass/components/_navbar.scss */
+/* line 56, ../sass/components/_navbar.scss */
 #navigation .menu > .level-1 > a:link, #navigation .menu > .level-1 > a:visited {
   outline: 0;
   color: #27546B;
   text-decoration: none;
 }
-/* line 61, ../sass/components/_navbar.scss */
+/* line 62, ../sass/components/_navbar.scss */
 #navigation .menu > .level-1 > a:active {
   outline: 0;
   color: #6CD2EA;
   text-shadow: 0px 0px 24px #333333, 2px 2px 1px rgba(0, 0, 0, 0.6);
 }
 @media (min-width: 601px) {
-  /* line 48, ../sass/components/_navbar.scss */
+  /* line 49, ../sass/components/_navbar.scss */
   #navigation .menu > .level-1 > a {
     -webkit-transition: all 300ms ease;
     -moz-transition: all 300ms ease;
@@ -2681,14 +2710,14 @@ tr.selected td {
   }
 }
 
-/* line 78, ../sass/components/_navbar.scss */
+/* line 79, ../sass/components/_navbar.scss */
 #navigation .menu ul {
   display: none;
   background-color: white;
   margin: 0;
 }
 @media (min-width: 601px) {
-  /* line 78, ../sass/components/_navbar.scss */
+  /* line 79, ../sass/components/_navbar.scss */
   #navigation .menu ul {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -2699,26 +2728,26 @@ tr.selected td {
     z-index: 9;
     min-width: 220px;
   }
-  /* line 90, ../sass/components/_navbar.scss */
+  /* line 91, ../sass/components/_navbar.scss */
   li:last-child #navigation .menu ul, #navigation .menu li:last-child ul {
     left: auto;
     right: 0;
   }
 }
 
-/* line 98, ../sass/components/_navbar.scss */
+/* line 99, ../sass/components/_navbar.scss */
 #navigation .menu ul > .level-2 > a {
   color: #27546B;
   display: block;
   padding: 10px 20px;
   text-align: left;
 }
-/* line 104, ../sass/components/_navbar.scss */
+/* line 105, ../sass/components/_navbar.scss */
 #navigation .menu ul > .level-2 > a:hover, #navigation .menu ul > .level-2 > a:focus {
   background-color: rgba(74, 130, 148, 0.2);
 }
 
-/* line 110, ../sass/components/_navbar.scss */
+/* line 111, ../sass/components/_navbar.scss */
 #navigation {
   -webkit-box-shadow: 0px 6px 16px -6px rgba(26, 26, 26, 0.3);
   -moz-box-shadow: 0px 6px 16px -6px rgba(26, 26, 26, 0.3);
@@ -2730,7 +2759,7 @@ tr.selected td {
   /* Main menu and secondary menu links and menu block links. */
 }
 @media (min-width: 601px) {
-  /* line 110, ../sass/components/_navbar.scss */
+  /* line 111, ../sass/components/_navbar.scss */
   #navigation {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -2741,28 +2770,28 @@ tr.selected td {
     padding-top: 18px;
   }
 }
-/* line 124, ../sass/components/_navbar.scss */
+/* line 125, ../sass/components/_navbar.scss */
 #navigation .block {
   margin-bottom: 0;
 }
-/* line 133, ../sass/components/_navbar.scss */
+/* line 134, ../sass/components/_navbar.scss */
 #navigation ul,
 #navigation li {
   list-style-type: none;
   list-style-image: none;
 }
-/* line 149, ../sass/components/_navbar.scss */
+/* line 150, ../sass/components/_navbar.scss */
 #navigation .menu > .level-1.clicked ul {
   display: block;
 }
 
 @media (min-width: 601px) {
-  /* line 167, ../sass/components/_navbar.scss */
+  /* line 168, ../sass/components/_navbar.scss */
   .links--mobile__container {
     display: block !important;
   }
 
-  /* line 171, ../sass/components/_navbar.scss */
+  /* line 172, ../sass/components/_navbar.scss */
   #navigation #user-menu {
     position: absolute !important;
     height: 1px;
@@ -3884,7 +3913,7 @@ a.logo-mobile {
   width: 50%;
   margin-left: 0%;
   margin-right: -50%;
-  background: #e1f6fa;
+  background: #e2f6fb;
   list-style: none outside none !important;
   text-align: center;
   position: relative;
@@ -3911,9 +3940,9 @@ a.logo-mobile {
 }
 /* line 90, ../sass/components/_price-table.scss */
 .sponsorship:hover .sponsorship--cost {
-  -webkit-box-shadow: inset 0 0 45px -8px #2b545d;
-  -moz-box-shadow: inset 0 0 45px -8px #2b545d;
-  box-shadow: inset 0 0 45px -8px #2b545d;
+  -webkit-box-shadow: inset 0 0 45px -8px #2b545e;
+  -moz-box-shadow: inset 0 0 45px -8px #2b545e;
+  box-shadow: inset 0 0 45px -8px #2b545e;
 }
 /* line 94, ../sass/components/_price-table.scss */
 .sponsorship:hover .sponsorship--cost__price {
@@ -4019,7 +4048,7 @@ a.logo-mobile {
 
 /* line 182, ../sass/components/_price-table.scss */
 .sponsorship--actions {
-  background: #e1f6fa;
+  background: #e2f6fb;
   padding: 1em;
 }
 /* line 186, ../sass/components/_price-table.scss */
@@ -4435,7 +4464,7 @@ li.session--schedule-item .session--track {
   -o-border-radius: 100px;
   border-radius: 100px;
   background-color: transparent;
-  background-image: url('../images/track-icons.png?1426203995');
+  background-image: url('../images/track-icons.png?1452556744');
   background-repeat: no-repeat;
   display: inline-block;
   width: 26px;
@@ -4859,9 +4888,9 @@ html[xmlns] .slides {
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
   border-radius: 4px;
-  -webkit-box-shadow: 4px 6px 18px -3px rgba(66, 66, 66, 0.3);
-  -moz-box-shadow: 4px 6px 18px -3px rgba(66, 66, 66, 0.3);
-  box-shadow: 4px 6px 18px -3px rgba(66, 66, 66, 0.3);
+  -webkit-box-shadow: 4px 6px 18px -3px rgba(67, 67, 67, 0.3);
+  -moz-box-shadow: 4px 6px 18px -3px rgba(67, 67, 67, 0.3);
+  box-shadow: 4px 6px 18px -3px rgba(67, 67, 67, 0.3);
   -webkit-transition: all 300ms ease;
   -moz-transition: all 300ms ease;
   -o-transition: all 300ms ease;
@@ -5719,13 +5748,4 @@ html body.admin-menu #admin-menu {
   html body.admin-menu #admin-menu {
     display: block;
   }
-}
-
-/* Mailchimp form */
-#mc_embed_signup_scroll input {
-  width: 100%;
-}
-
-#mc_embed_signup_scroll input.button {
-    width: auto;
 }
