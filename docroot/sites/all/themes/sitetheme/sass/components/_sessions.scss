@@ -13,11 +13,12 @@
  * The submission list.
  */
 .view-session-submissions {
-  tbody {
+  thead {
     .views-field-field-track,
-    .views-field-field-audience,
+    .views-field-field-drupal-specific,
+    .views-field-field-beginners,
+    .views-field-field-legnth,
     .views-field-field-presenters {
-      font-size: 80%;
       padding: 5px;
     }
   }
