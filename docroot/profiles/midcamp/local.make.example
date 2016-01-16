@@ -48,6 +48,8 @@ projects[midcamp_flag_accepted][subdir] = "custom"
 
 projects[midcamp_flag_featured_user][subdir] = "custom"
 
+projects[midcamp_content_types][subdir] = "custom"
+projects[midcamp_ctools][subdir] = "custom"
 projects[midcamp_goodies][subdir] = "custom"
 
 projects[midcamp_og_features_permission_node_sponsor][subdir] = "custom"
