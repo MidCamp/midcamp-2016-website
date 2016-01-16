@@ -1338,13 +1338,15 @@ function midcamp_panels_default_page_manager_pages() {
     $display->content['new-3f496428-7245-4a52-b988-27bbf0a73120'] = $pane;
     $display->panels['left'][0] = 'new-3f496428-7245-4a52-b988-27bbf0a73120';
     $pane = new stdClass();
-    $pane->pid = 'new-37e70696-e482-420e-b675-1995428e196f';
+    $pane->pid = 'new-c08a30ac-6950-4458-9476-e8d58d2c2016';
     $pane->panel = 'middle';
     $pane->type = 'views_panes';
-    $pane->subtype = 'front_news-panel_pane_2';
+    $pane->subtype = 'front_news-panel_pane_1';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array();
+    $pane->configuration = array(
+      'offset' => '1',
+    );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
@@ -1353,17 +1355,19 @@ function midcamp_panels_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '37e70696-e482-420e-b675-1995428e196f';
-    $display->content['new-37e70696-e482-420e-b675-1995428e196f'] = $pane;
-    $display->panels['middle'][0] = 'new-37e70696-e482-420e-b675-1995428e196f';
+    $pane->uuid = 'c08a30ac-6950-4458-9476-e8d58d2c2016';
+    $display->content['new-c08a30ac-6950-4458-9476-e8d58d2c2016'] = $pane;
+    $display->panels['middle'][0] = 'new-c08a30ac-6950-4458-9476-e8d58d2c2016';
     $pane = new stdClass();
-    $pane->pid = 'new-866806a3-739f-47f1-8ebb-42aaae75e57d';
+    $pane->pid = 'new-51823432-b208-4a4d-b974-ca1a7a048bd6';
     $pane->panel = 'right';
     $pane->type = 'views_panes';
-    $pane->subtype = 'front_news-panel_pane_5';
+    $pane->subtype = 'front_news-panel_pane_1';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array();
+    $pane->configuration = array(
+      'offset' => '2',
+    );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
@@ -1372,9 +1376,9 @@ function midcamp_panels_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '866806a3-739f-47f1-8ebb-42aaae75e57d';
-    $display->content['new-866806a3-739f-47f1-8ebb-42aaae75e57d'] = $pane;
-    $display->panels['right'][0] = 'new-866806a3-739f-47f1-8ebb-42aaae75e57d';
+    $pane->uuid = '51823432-b208-4a4d-b974-ca1a7a048bd6';
+    $display->content['new-51823432-b208-4a4d-b974-ca1a7a048bd6'] = $pane;
+    $display->panels['right'][0] = 'new-51823432-b208-4a4d-b974-ca1a7a048bd6';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -1389,7 +1393,10 @@ function midcamp_panels_default_page_manager_pages() {
   $page->admin_title = 'page-become-a-sponsor';
   $page->admin_description = '';
   $page->path = 'become-a-sponsor';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array(
     'type' => 'normal',
     'title' => 'Become a Sponsor',
@@ -1482,7 +1489,10 @@ function midcamp_panels_default_page_manager_pages() {
   $page->admin_title = 'Schedule';
   $page->admin_description = '';
   $page->path = 'schedule/!day';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array(
     'day' => array(
@@ -2288,7 +2298,10 @@ function midcamp_panels_default_page_manager_pages() {
   $page->admin_title = 'Sponsors';
   $page->admin_description = '';
   $page->path = 'sponsors';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array(
     'type' => 'normal',
     'title' => 'Sponsors',
@@ -2546,6 +2559,8 @@ function midcamp_panels_default_page_manager_pages() {
   $page->access = array(
     'plugins' => array(),
     'logic' => 'and',
+    'type' => 'none',
+    'settings' => NULL,
   );
   $page->menu = array();
   $page->arguments = array();
