@@ -16,7 +16,6 @@ features[ctools_custom_content][] = content_speaker_terms_conditions
 features[ctools_custom_content][] = home_dates
 features[ctools_custom_content][] = home_mailchimp
 features[ctools_custom_content][] = home_sponsors
-features[ctools_custom_content][] = schedule_overview
 features[ctools_custom_content][] = sponsor_content
 features[ctools_custom_content][] = sponsors_become_a_sponsor
 features[features_api][] = api:2

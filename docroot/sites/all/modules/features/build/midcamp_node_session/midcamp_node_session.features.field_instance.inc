@@ -776,7 +776,7 @@ function midcamp_node_session_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'We recommend that you focus your session’s intended audience, but realize that not every topic will fit neatly into one of these categories. For example, a presentation on Multilingual could be primarily Site Building, Content Admin, or Back-End, depending on the focus of the talk. 
 
-For full track descriptions, please review the <a href="/2016-session-tracks" target="_blank">track descriptions page</a>.',
+For full track descriptions, please review the <a href="/midcamp-2016-session-tracks" target="_blank">track descriptions page</a>.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -840,7 +840,7 @@ For full track descriptions, please review the <a href="/2016-session-tracks" ta
   t('Upload your slides here or link to them from the slides link field. This is typically done after your session.');
   t('We recommend that you focus your session’s intended audience, but realize that not every topic will fit neatly into one of these categories. For example, a presentation on Multilingual could be primarily Site Building, Content Admin, or Back-End, depending on the focus of the talk. 
 
-For full track descriptions, please review the <a href="/2016-session-tracks" target="_blank">track descriptions page</a>.');
+For full track descriptions, please review the <a href="/midcamp-2016-session-tracks" target="_blank">track descriptions page</a>.');
   t('We welcome presentations that are not specific to Drupal!');
   t('What is your planned session length?');
   t('What should attendees already know in order to get the most out of your session?');
