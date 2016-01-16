@@ -65,6 +65,8 @@ dependencies[] = pathologic
 ; Media
 dependencies[] = imce
 ; MidCamp
+dependencies[] = midcamp_content_types
+dependencies[] = midcamp_ctools
 dependencies[] = midcamp_goodies
 ; Organic groups
 dependencies[] = og
@@ -135,6 +137,7 @@ dependencies[] = midcamp_panels
 dependencies[] = midcamp_profile2_type_conference_details
 dependencies[] = midcamp_profile2_type_main
 dependencies[] = midcamp_profile2_type_orders
+dependencies[] = midcamp_seo
 dependencies[] = midcamp_site
 dependencies[] = midcamp_taxonomy
 ; dependencies[] = midcamp_users

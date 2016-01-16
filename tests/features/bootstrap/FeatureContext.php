@@ -189,4 +189,17 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
     $ms = $seconds * 1000;
     $this->getSession()->wait($ms);
   }
+
+  /**
+   * Checks the pane title element for title.
+   *
+   * @Then I should see the pane title :text
+   *
+   * @param string $text
+   *   The pane title to check for.
+   */
+  public function iShouldSeePaneTitle($text) {
+    // Todo: Fix step argument here when implemented.
+    $this->assertSession()->elementContains('css', 'h2.pane-title', $text);
+  }
 }
