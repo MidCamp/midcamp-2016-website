@@ -4,10 +4,24 @@ Feature: Front page content
   @midcamp-224
   Scenario: Front page content
     Given I am an anonymous user
+    Given "news" content:
+      | title                     | promote | body                  |
+      | Example news 1            | 1       | Lorem Ipsum Example 1 |
+      | Example news 2            | 0       | Lorem Ipsum Example 2 |
+      | Example news 3            | 1       | Lorem Ipsum Example 3 |
+      | Example news 4            | 0       | Lorem Ipsum Example 4 |
+      | Example news 5            | 1       | Lorem Ipsum Example 5 |
     When I am on the homepage
 
     #Date and venue block (not part of story description)
     Then I should see "March 17-20, 2016 at University of Illinois at Chicago (UIC)" in the header_top
+
+    # News section
+    Then I should see "Example news 1"
+    Then I should not see "Example news 2"
+    Then I should see "Example new 3"
+    Then I should not see "Example news 4"
+    Then I should see "Example news 5"
 
     #Info section
     #And I see the heading "Save the Date for MidCamp 2016"
