@@ -37,10 +37,10 @@ function midcamp_panels_default_panels_mini() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-38c849bc-7ba5-4c4f-bd67-088a319948a5';
+    $pane->pid = 'new-577da07a-9021-45a9-ba1e-fde521effd1e';
     $pane->panel = 'main';
     $pane->type = 'views_panes';
-    $pane->subtype = 'random_sponsor-panel_pane_gold_sponsor_logo';
+    $pane->subtype = 'random_sponsor-panel_pane_1';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -52,16 +52,43 @@ function midcamp_panels_default_panels_mini() {
     $pane->style = array(
       'settings' => NULL,
     );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '577da07a-9021-45a9-ba1e-fde521effd1e';
+    $display->content['new-577da07a-9021-45a9-ba1e-fde521effd1e'] = $pane;
+    $display->panels['main'][0] = 'new-577da07a-9021-45a9-ba1e-fde521effd1e';
+    $pane = new stdClass();
+    $pane->pid = 'new-38c849bc-7ba5-4c4f-bd67-088a319948a5';
+    $pane->panel = 'main';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'random_sponsor-panel_pane_gold_sponsor_logo';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array(
+      'method' => '0',
+      'settings' => array(),
+    );
+    $pane->style = array(
+      'settings' => NULL,
+      'style' => 'default',
+    );
     $pane->css = array(
       'css_id' => '',
       'css_class' => '',
     );
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = '38c849bc-7ba5-4c4f-bd67-088a319948a5';
     $display->content['new-38c849bc-7ba5-4c4f-bd67-088a319948a5'] = $pane;
-    $display->panels['main'][0] = 'new-38c849bc-7ba5-4c4f-bd67-088a319948a5';
+    $display->panels['main'][1] = 'new-38c849bc-7ba5-4c4f-bd67-088a319948a5';
     $pane = new stdClass();
     $pane->pid = 'new-feca2027-6820-46a3-a505-b5d3945fe2b8';
     $pane->panel = 'main';
@@ -74,20 +101,24 @@ function midcamp_panels_default_panels_mini() {
       'override_title_text' => '',
       'override_title_heading' => 'h2',
     );
-    $pane->cache = array();
+    $pane->cache = array(
+      'method' => '0',
+      'settings' => array(),
+    );
     $pane->style = array(
       'settings' => NULL,
+      'style' => 'default',
     );
     $pane->css = array(
       'css_id' => '',
       'css_class' => '',
     );
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = 'feca2027-6820-46a3-a505-b5d3945fe2b8';
     $display->content['new-feca2027-6820-46a3-a505-b5d3945fe2b8'] = $pane;
-    $display->panels['main'][1] = 'new-feca2027-6820-46a3-a505-b5d3945fe2b8';
+    $display->panels['main'][2] = 'new-feca2027-6820-46a3-a505-b5d3945fe2b8';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = 'new-38c849bc-7ba5-4c4f-bd67-088a319948a5';
   $mini->display = $display;

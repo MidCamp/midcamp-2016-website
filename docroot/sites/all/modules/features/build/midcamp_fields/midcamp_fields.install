@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * @file
+ * Contains install and deployment steps for midcamp_fields.
+ */
+
+/**
+ * Ensure 'Platinum' is a field value for Sponsors.
+ */
+function midcamp_fields_update_7001() {
+  // Note for later: Should use allowed values function instead.
+  features_rebuild(array(
+    'midcamp_fields' => array(
+      'field_base',
+    )
+  ));
+}
