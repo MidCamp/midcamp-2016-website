@@ -1337,6 +1337,7 @@ Prof.',
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
+        'platinum' => 'Platinum',
         'gold' => 'Gold',
         'silver' => 'Silver',
         'bronze' => 'Bronze',
