@@ -1,0 +1,88 @@
+<?php
+
+/**
+ * @file
+ * Contains module file for Eventbrite integration for MidCamp.
+ */
+
+define('EVENTBRITE_API_ENDPOINT', 'https://www.eventbriteapi.com/v3');
+
+
+
+/**
+ * Implements hook_ctools_plugin_directory().
+ */
+function midcamp_eventbrite_ctools_plugin_directory($owner, $plugin_type) {
+  if ($owner == 'ctools' && $plugin_type == 'content_types') {
+    return 'plugins/content_types';
+  }
+  return null;
+}
+
+/**
+ * Returns the OAuth token for the Eventbrite API.
+ *
+ * @return string
+ */
+function midcamp_eventbrite_get_oauth_token() {
+  // This returns the personal OAuth token used.
+  return variable_get('midcamp_eventbrite_oauth_token');
+}
+
+/**
+ * Returns the current event ID on Eventbrite.
+ *
+ * @return string
+ */
+function midcamp_eventbrite_event_id() {
+  return variable_get('midcamp_eventbrite_event_id');
+}
+
+/**
+ * Runs an API request.
+ *
+ * @param $method
+ * @param $endpoint
+ * @param array $data
+ * @return array
+ */
+function midcamp_eventbrite_api_request($method, $endpoint, array $data = array()) {
+  $token = midcamp_eventbrite_get_oauth_token();
+
+  $url = url(EVENTBRITE_API_ENDPOINT . $endpoint, array(
+    'query' => array(
+      'token' => $token,
+    )
+  ));
+  $response = drupal_http_request($url, array(
+    'method' => $method,
+  ));
+
+  $data = array();
+  if (!isset($response->error)) {
+    $data = drupal_json_decode($response->data);
+  }
+
+  return $data;
+}
+
+/**
+ * Get the current event's details.
+ *
+ * @return array
+ */
+function midcamp_eventbrite_get_current_event() {
+  $event_id = midcamp_eventbrite_event_id();
+  $response = midcamp_eventbrite_api_request('GET', "/events/$event_id");
+  return $response;
+}
+
+/**
+ * Get the ticket classes for the event.
+ * @return array
+ */
+function midcamp_eventbrite_get_ticket_classes() {
+  $event_id = midcamp_eventbrite_event_id();
+  $response = midcamp_eventbrite_api_request('GET', "/events/$event_id/ticket_classes");
+  return $response;
+}
