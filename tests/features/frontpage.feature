@@ -5,12 +5,12 @@ Feature: Front page content
   Scenario: Front page content
     Given I am an anonymous user
     Given "news" content:
-      | title                     | promote | body                  |
-      | Example news 1            | 1       | Lorem Ipsum Example 1 |
-      | Example news 2            | 0       | Lorem Ipsum Example 2 |
-      | Example news 3            | 1       | Lorem Ipsum Example 3 |
-      | Example news 4            | 0       | Lorem Ipsum Example 4 |
-      | Example news 5            | 1       | Lorem Ipsum Example 5 |
+      | title                     | promote | body                  | created           | updated           |
+      | Example news 1            | 1       | Lorem Ipsum Example 1 | 2016-01-01 8:00am | 2016-01-01 8:00am |
+      | Example news 2            | 0       | Lorem Ipsum Example 2 | 2016-01-01 8:01am | 2016-01-01 8:01am |
+      | Example news 3            | 1       | Lorem Ipsum Example 3 | 2016-01-01 8:02am | 2016-01-01 8:02am |
+      | Example news 4            | 0       | Lorem Ipsum Example 4 | 2016-01-01 8:03am | 2016-01-01 8:03am |
+      | Example news 5            | 1       | Lorem Ipsum Example 5 | 2016-01-01 8:04am | 2016-01-01 8:04am |
     When I am on the homepage
 
     #Date and venue block (not part of story description)
