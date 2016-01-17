@@ -1886,6 +1886,85 @@ function midcamp_panels_default_page_manager_pages() {
   $page = new stdClass();
   $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
+  $page->name = 'buy_tickets_now_';
+  $page->task = 'page';
+  $page->admin_title = 'Buy Tickets Now!';
+  $page->admin_description = '';
+  $page->path = 'buy-tickets-now';
+  $page->access = array();
+  $page->menu = array();
+  $page->arguments = array();
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_buy_tickets_now___panel';
+  $handler->task = 'page';
+  $handler->subtask = 'buy_tickets_now_';
+  $handler->handler = 'panel_context';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'Panel',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'name' => 'panel',
+  );
+  $display = new panels_display();
+  $display->layout = 'home';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'feature_1' => NULL,
+      'feature_2' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->uuid = '2aceb075-2dfd-4af4-91a5-b8f8ea1e28d0';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-f1c7a6c5-3eda-484b-bf9a-556ffe84e6fc';
+    $pane->panel = 'feature_1';
+    $pane->type = 'event_info';
+    $pane->subtype = 'event_info';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'f1c7a6c5-3eda-484b-bf9a-556ffe84e6fc';
+    $display->content['new-f1c7a6c5-3eda-484b-bf9a-556ffe84e6fc'] = $pane;
+    $display->panels['feature_1'][0] = 'new-f1c7a6c5-3eda-484b-bf9a-556ffe84e6fc';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['buy_tickets_now_'] = $page;
+
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
   $page->name = 'jobs';
   $page->task = 'page';
   $page->admin_title = 'Jobs';
@@ -2015,7 +2094,10 @@ function midcamp_panels_default_page_manager_pages() {
   $page->admin_title = 'MidCamp home page';
   $page->admin_description = '';
   $page->path = 'home';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array();
   $page->conf = array(
@@ -2305,7 +2387,10 @@ function midcamp_panels_default_page_manager_pages() {
   $page->admin_title = 'Schedule';
   $page->admin_description = '';
   $page->path = 'schedule/!day';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array(
     'day' => array(
