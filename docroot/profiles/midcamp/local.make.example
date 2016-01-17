@@ -18,6 +18,7 @@ projects[midcamp_menu][subdir] = "custom"
 
 projects[midcamp_menu_links][subdir] = "custom"
 
+projects[midcamp_seo][subdir] = "custom"
 projects[midcamp_site][subdir] = "custom"
 
 projects[midcamp_taxonomy][subdir] = "custom"
