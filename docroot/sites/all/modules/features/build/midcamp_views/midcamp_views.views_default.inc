@@ -4211,6 +4211,11 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['fields']['field_room']['settings'] = array(
     'link' => 0,
   );
+  /* Field: Content: Smart timeslot */
+  $handler->display->display_options['fields']['smart_timeslot']['id'] = 'smart_timeslot';
+  $handler->display->display_options['fields']['smart_timeslot']['table'] = 'node';
+  $handler->display->display_options['fields']['smart_timeslot']['field'] = 'smart_timeslot';
+  $handler->display->display_options['fields']['smart_timeslot']['label'] = 'Timeslot';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -4365,6 +4370,66 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['relationships']['reverse_field_sessions_scamp']['field'] = 'reverse_field_sessions_scamp';
   $handler->display->display_options['relationships']['reverse_field_sessions_scamp']['ui_name'] = 'Schedule Assignment';
   $handler->display->display_options['relationships']['reverse_field_sessions_scamp']['label'] = 'Schedule Assignment';
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_timeslot_target_id']['id'] = 'field_timeslot_target_id';
+  $handler->display->display_options['relationships']['field_timeslot_target_id']['table'] = 'field_data_field_timeslot';
+  $handler->display->display_options['relationships']['field_timeslot_target_id']['field'] = 'field_timeslot_target_id';
+  $handler->display->display_options['relationships']['field_timeslot_target_id']['relationship'] = 'reverse_field_sessions_scamp';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Content: Which track(s) would best fit your session content? Select up to 3: */
+  $handler->display->display_options['fields']['field_track']['id'] = 'field_track';
+  $handler->display->display_options['fields']['field_track']['table'] = 'field_data_field_track';
+  $handler->display->display_options['fields']['field_track']['field'] = 'field_track';
+  $handler->display->display_options['fields']['field_track']['label'] = 'Tracks';
+  $handler->display->display_options['fields']['field_track']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_track']['delta_offset'] = '0';
+  /* Field: Content: What is your planned session length? */
+  $handler->display->display_options['fields']['field_length']['id'] = 'field_length';
+  $handler->display->display_options['fields']['field_length']['table'] = 'field_data_field_length';
+  $handler->display->display_options['fields']['field_length']['field'] = 'field_length';
+  $handler->display->display_options['fields']['field_length']['label'] = 'Session length';
+  $handler->display->display_options['fields']['field_length']['element_label_colon'] = FALSE;
+  /* Field: Content: Speakers */
+  $handler->display->display_options['fields']['field_speakers']['id'] = 'field_speakers';
+  $handler->display->display_options['fields']['field_speakers']['table'] = 'field_data_field_speakers';
+  $handler->display->display_options['fields']['field_speakers']['field'] = 'field_speakers';
+  $handler->display->display_options['fields']['field_speakers']['settings'] = array(
+    'link' => 1,
+  );
+  $handler->display->display_options['fields']['field_speakers']['delta_offset'] = '0';
+  /* Field: Field: Room */
+  $handler->display->display_options['fields']['field_room']['id'] = 'field_room';
+  $handler->display->display_options['fields']['field_room']['table'] = 'field_data_field_room';
+  $handler->display->display_options['fields']['field_room']['field'] = 'field_room';
+  $handler->display->display_options['fields']['field_room']['relationship'] = 'reverse_field_sessions_scamp';
+  $handler->display->display_options['fields']['field_room']['settings'] = array(
+    'link' => 0,
+  );
+  /* Field: SCAMP: Date */
+  $handler->display->display_options['fields']['field_date_time']['id'] = 'field_date_time';
+  $handler->display->display_options['fields']['field_date_time']['table'] = 'field_data_field_date_time';
+  $handler->display->display_options['fields']['field_date_time']['field'] = 'field_date_time';
+  $handler->display->display_options['fields']['field_date_time']['relationship'] = 'field_timeslot_target_id';
+  $handler->display->display_options['fields']['field_date_time']['label'] = 'Day';
+  $handler->display->display_options['fields']['field_date_time']['settings'] = array(
+    'format_type' => 'day',
+    'fromto' => 'value',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Field: Content: Smart timeslot */
+  $handler->display->display_options['fields']['smart_timeslot']['id'] = 'smart_timeslot';
+  $handler->display->display_options['fields']['smart_timeslot']['table'] = 'node';
+  $handler->display->display_options['fields']['smart_timeslot']['field'] = 'smart_timeslot';
+  $handler->display->display_options['fields']['smart_timeslot']['label'] = 'Timeslot';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: SCAMP: Timeslot (field_timeslot) */
   $handler->display->display_options['sorts']['field_timeslot_target_id']['id'] = 'field_timeslot_target_id';

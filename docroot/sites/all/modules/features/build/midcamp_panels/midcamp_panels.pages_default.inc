@@ -1489,10 +1489,7 @@ function midcamp_panels_default_page_manager_pages() {
   $page->admin_title = 'Schedule';
   $page->admin_description = '';
   $page->path = 'schedule/!day';
-  $page->access = array(
-    'type' => 'none',
-    'settings' => NULL,
-  );
+  $page->access = array();
   $page->menu = array();
   $page->arguments = array(
     'day' => array(
