@@ -781,7 +781,7 @@ function midcamp_views_views_default_views() {
   $view->human_name = 'Attendee / User Profiles';
   $view->core = 7;
   $view->api_version = '3.0';
-  $view->disabled = TRUE; /* Edit this to true to make a default view disabled initially */
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
@@ -2172,7 +2172,7 @@ function midcamp_views_views_default_views() {
   $view->human_name = 'Front Page News';
   $view->core = 7;
   $view->api_version = '3.0';
-  $view->disabled = TRUE; /* Edit this to true to make a default view disabled initially */
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
@@ -4270,7 +4270,7 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['fields']['field_room']['settings'] = array(
     'link' => 0,
   );
-  /* Field: Content: Smart timeslot */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['smart_timeslot']['id'] = 'smart_timeslot';
   $handler->display->display_options['fields']['smart_timeslot']['table'] = 'node';
   $handler->display->display_options['fields']['smart_timeslot']['field'] = 'smart_timeslot';
@@ -4484,7 +4484,7 @@ function midcamp_views_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Field: Content: Smart timeslot */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['smart_timeslot']['id'] = 'smart_timeslot';
   $handler->display->display_options['fields']['smart_timeslot']['table'] = 'node';
   $handler->display->display_options['fields']['smart_timeslot']['field'] = 'smart_timeslot';
