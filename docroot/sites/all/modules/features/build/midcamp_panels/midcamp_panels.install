@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains install and deployment code for MidCamp Panels.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function midcamp_panels_enable() {
+  // Ajaxify sponsor logos, so they are actually random!.
+  midcamp_panels_update_7001();
+}
+
+/**
+ * Enable AjaxBlocks and Ajaxify our footer sponsor logos.
+ */
+function midcamp_panels_update_7001() {
+  module_enable(array('ajaxblocks'));
+
+  db_merge('ajaxblocks')
+    ->key(array('block_id' => 'panels_mini-sponsor_footer_logos'))
+    ->fields(array(
+      'is_ajax' => 1,
+      'loader_picture' => 8,
+      'is_late' => 0,
+      'delay' => 0,
+      'include_noscript' => 1,
+      'cached_roles' => 1,
+      'uncached_roles' => '',
+    ))
+    ->execute();
+  ajaxblocks_update_cache();
+}
