@@ -159,6 +159,9 @@ function midcamp_install() {
     )), 'error');
   };
 
+  // Ajaxify sponsor logos, so they are actually random!.
+  midcamp_update_7002();
+
   menu_rebuild();
 
   // Revert features to ensure they are all installed.
@@ -169,4 +172,37 @@ function midcamp_install() {
 
   // Ignore any other install messages.
   drupal_get_messages();
+}
+
+/**
+ * Ensure 'Platinum' is a field value for Sponsors.
+ */
+function midcamp_update_7001() {
+  // Note for later: Should use allowed values function instead.
+  features_rebuild(array(
+    'midcamp_fields' => array(
+      'field_base',
+    )
+  ));
+}
+
+/**
+ * Enable AjaxBlocks and Ajaxify our footer sponsor logos.
+ */
+function midcamp_update_7002() {
+  module_enable(array('ajaxblocks'));
+
+  db_merge('ajaxblocks')
+    ->key(array('block_id' => 'panels_mini-sponsor_footer_logos'))
+    ->fields(array(
+      'is_ajax' => 1,
+      'loader_picture' => 8,
+      'is_late' => 0,
+      'delay' => 0,
+      'include_noscript' => 1,
+      'cached_roles' => 1,
+      'uncached_roles' => '',
+    ))
+    ->execute();
+  ajaxblocks_update_cache();
 }
