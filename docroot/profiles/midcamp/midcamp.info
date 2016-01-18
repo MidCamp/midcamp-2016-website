@@ -74,6 +74,7 @@ dependencies[] = og_access
 dependencies[] = og_context
 dependencies[] = og_ui
 ; Other
+dependencies[] = ajaxblocks
 dependencies[] = backup_migrate
 dependencies[] = diff
 dependencies[] = entity
