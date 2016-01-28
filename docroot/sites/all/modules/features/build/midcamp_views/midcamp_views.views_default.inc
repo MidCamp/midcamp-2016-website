@@ -269,11 +269,6 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['filters']['uid_raw']['field'] = 'uid_raw';
   $handler->display->display_options['filters']['uid_raw']['operator'] = '!=';
   $handler->display->display_options['filters']['uid_raw']['value']['value'] = '1';
-  /* Filter criterion: Broken/missing handler */
-  $handler->display->display_options['filters']['order_id']['id'] = 'order_id';
-  $handler->display->display_options['filters']['order_id']['table'] = 'midcamp_eventbrite_users';
-  $handler->display->display_options['filters']['order_id']['field'] = 'order_id';
-  $handler->display->display_options['filters']['order_id']['operator'] = 'not empty';
   $handler->display->display_options['path'] = 'community';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Community';
