@@ -4347,7 +4347,6 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Content: Which track(s) would best fit your session content? Select up to 3: */
   $handler->display->display_options['fields']['field_track']['id'] = 'field_track';
   $handler->display->display_options['fields']['field_track']['table'] = 'field_data_field_track';

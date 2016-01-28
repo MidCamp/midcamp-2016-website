@@ -251,6 +251,254 @@ function midcamp_panels_default_page_manager_handlers() {
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
+  $handler->name = 'node_view__non-author-view-of-session-submission-nodes-anonymized';
+  $handler->task = 'node_view';
+  $handler->subtask = '';
+  $handler->handler = 'panel_context';
+  $handler->weight = 2;
+  $handler->conf = array(
+    'title' => 'non-author view of session submission nodes - anonymized',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(
+      0 => array(
+        'identifier' => 'User from Content (on node.node_author)',
+        'keyword' => 'user front content',
+        'name' => 'entity_from_schema:uid-node-user',
+        'context' => 'argument_entity_id:node_1',
+        'id' => 1,
+      ),
+    ),
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'node_type',
+          'settings' => array(
+            'type' => array(
+              'session' => 'session',
+            ),
+          ),
+          'context' => 'argument_entity_id:node_1',
+          'not' => FALSE,
+        ),
+        1 => array(
+          'name' => 'compare_users',
+          'settings' => array(
+            'equality' => '0',
+          ),
+          'context' => array(
+            0 => 'logged-in-user',
+            1 => 'relationship_entity_from_schema:uid-node-user_1',
+          ),
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
+    'name' => 'non-author-view-of-session-submission-nodes-anonymized',
+  );
+  $display = new panels_display();
+  $display->layout = 'flexible';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'center' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->uuid = '193c05a6-59e1-4276-ab99-f627f700d259';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-c58ac0a9-db53-4299-800a-c08a56c99934';
+    $pane->panel = 'center';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_attendee_description';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'hidden',
+      'formatter' => 'text_default',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(),
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'c58ac0a9-db53-4299-800a-c08a56c99934';
+    $display->content['new-c58ac0a9-db53-4299-800a-c08a56c99934'] = $pane;
+    $display->panels['center'][0] = 'new-c58ac0a9-db53-4299-800a-c08a56c99934';
+    $pane = new stdClass();
+    $pane->pid = 'new-1efa9fa0-ead8-45e8-b956-71852e37e3e3';
+    $pane->panel = 'center';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_track';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'hidden',
+      'formatter' => 'list_default',
+      'delta_limit' => '0',
+      'delta_offset' => '0',
+      'delta_reversed' => 0,
+      'formatter_settings' => array(),
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 1,
+      'override_title_text' => 'Track(s)',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '1efa9fa0-ead8-45e8-b956-71852e37e3e3';
+    $display->content['new-1efa9fa0-ead8-45e8-b956-71852e37e3e3'] = $pane;
+    $display->panels['center'][1] = 'new-1efa9fa0-ead8-45e8-b956-71852e37e3e3';
+    $pane = new stdClass();
+    $pane->pid = 'new-645b0cfa-5f36-48d3-9e8d-19ff3d904b60';
+    $pane->panel = 'center';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_drupal_specific';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'hidden',
+      'formatter' => 'list_default',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(),
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 1,
+      'override_title_text' => 'Drupal-specific',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '645b0cfa-5f36-48d3-9e8d-19ff3d904b60';
+    $display->content['new-645b0cfa-5f36-48d3-9e8d-19ff3d904b60'] = $pane;
+    $display->panels['center'][2] = 'new-645b0cfa-5f36-48d3-9e8d-19ff3d904b60';
+    $pane = new stdClass();
+    $pane->pid = 'new-ee27eda9-f29b-4481-85bb-b13f78b1363d';
+    $pane->panel = 'center';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_beginners';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'hidden',
+      'formatter' => 'list_default',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(),
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 1,
+      'override_title_text' => 'Drupal beginners',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = 'ee27eda9-f29b-4481-85bb-b13f78b1363d';
+    $display->content['new-ee27eda9-f29b-4481-85bb-b13f78b1363d'] = $pane;
+    $display->panels['center'][3] = 'new-ee27eda9-f29b-4481-85bb-b13f78b1363d';
+    $pane = new stdClass();
+    $pane->pid = 'new-d4fcca1d-fcc1-4ec8-a595-f27fd8b4d909';
+    $pane->panel = 'center';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_length';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'hidden',
+      'formatter' => 'list_default',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(),
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 1,
+      'override_title_text' => 'Session length',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 4;
+    $pane->locks = array();
+    $pane->uuid = 'd4fcca1d-fcc1-4ec8-a595-f27fd8b4d909';
+    $display->content['new-d4fcca1d-fcc1-4ec8-a595-f27fd8b4d909'] = $pane;
+    $display->panels['center'][4] = 'new-d4fcca1d-fcc1-4ec8-a595-f27fd8b4d909';
+    $pane = new stdClass();
+    $pane->pid = 'new-f6370f53-a1bd-4bca-baa4-d17203cf2d8b';
+    $pane->panel = 'center';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'warning anonymized session proposal',
+      'title' => '',
+      'body' => '<p>The speaker info is not shown and the description has been anonymized at this point because we are doing anonymized <a href="/session-faq">session selection</a>.</p>',
+      'format' => 'full_html',
+      'substitute' => 1,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 5;
+    $pane->locks = array();
+    $pane->uuid = 'f6370f53-a1bd-4bca-baa4-d17203cf2d8b';
+    $display->content['new-f6370f53-a1bd-4bca-baa4-d17203cf2d8b'] = $pane;
+    $display->panels['center'][5] = 'new-f6370f53-a1bd-4bca-baa4-d17203cf2d8b';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $export['node_view__non-author-view-of-session-submission-nodes-anonymized'] = $handler;
+
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
   $handler->name = 'node_view_panel_context';
   $handler->task = 'node_view';
   $handler->subtask = '';
