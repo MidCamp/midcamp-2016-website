@@ -27,6 +27,24 @@ function midcamp_menu_links_menu_default_menu_links() {
     'external' => 1,
     'has_children' => 0,
     'expanded' => 0,
+    'weight' => -45,
+    'customized' => 1,
+    'parent_identifier' => 'main-menu_camp:node/14',
+  );
+  // Exported menu link: main-menu_community:community.
+  $menu_links['main-menu_community:community'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'community',
+    'router_path' => 'community',
+    'link_title' => 'Community',
+    'options' => array(
+      'identifier' => 'main-menu_community:community',
+    ),
+    'module' => 'system',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
     'weight' => -46,
     'customized' => 1,
     'parent_identifier' => 'main-menu_camp:node/14',
@@ -35,6 +53,7 @@ function midcamp_menu_links_menu_default_menu_links() {
   // Translatables
   // Included for use with string extractors like potx.
   t('2015 MidCamp');
+  t('Community');
 
   return $menu_links;
 }
