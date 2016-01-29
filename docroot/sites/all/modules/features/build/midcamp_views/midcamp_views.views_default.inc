@@ -3329,6 +3329,8 @@ function midcamp_views_views_default_views() {
 
   /* Display: owner profile session content pane */
   $handler = $view->new_display('panel_pane', 'owner profile session content pane', 'panel_pane_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Your session proposals';
   $handler->display->display_options['allow']['use_pager'] = 0;
   $handler->display->display_options['allow']['items_per_page'] = 0;
   $handler->display->display_options['allow']['offset'] = 0;

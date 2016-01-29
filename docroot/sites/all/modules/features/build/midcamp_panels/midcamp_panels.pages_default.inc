@@ -654,6 +654,19 @@ function midcamp_panels_default_page_manager_handlers() {
     'relationships' => array(),
     'access' => array(
       'logic' => 'and',
+      'plugins' => array(
+        0 => array(
+          'name' => 'compare_users',
+          'settings' => array(
+            'equality' => '1',
+          ),
+          'context' => array(
+            0 => 'logged-in-user',
+            1 => 'argument_entity_id:user_1',
+          ),
+          'not' => FALSE,
+        ),
+      ),
     ),
   );
   $display = new panels_display();
@@ -1106,10 +1119,10 @@ function midcamp_panels_default_page_manager_handlers() {
     $display->content['new-b552fb46-7d05-4e5e-bd3a-168e31907eb1'] = $pane;
     $display->panels['right'][2] = 'new-b552fb46-7d05-4e5e-bd3a-168e31907eb1';
     $pane = new stdClass();
-    $pane->pid = 'new-5ffd5151-91e0-4996-aef9-37ee48e58167';
+    $pane->pid = 'new-f67d67e4-6d7b-4d6f-b80f-0a1f6aefcdec';
     $pane->panel = 'right';
     $pane->type = 'views_panes';
-    $pane->subtype = 'speaker_s_session_proposals-panel_pane_user_sessions';
+    $pane->subtype = 'speaker_s_session_proposals-panel_pane_1';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -1128,9 +1141,9 @@ function midcamp_panels_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 3;
     $pane->locks = array();
-    $pane->uuid = '5ffd5151-91e0-4996-aef9-37ee48e58167';
-    $display->content['new-5ffd5151-91e0-4996-aef9-37ee48e58167'] = $pane;
-    $display->panels['right'][3] = 'new-5ffd5151-91e0-4996-aef9-37ee48e58167';
+    $pane->uuid = 'f67d67e4-6d7b-4d6f-b80f-0a1f6aefcdec';
+    $display->content['new-f67d67e4-6d7b-4d6f-b80f-0a1f6aefcdec'] = $pane;
+    $display->panels['right'][3] = 'new-f67d67e4-6d7b-4d6f-b80f-0a1f6aefcdec';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
