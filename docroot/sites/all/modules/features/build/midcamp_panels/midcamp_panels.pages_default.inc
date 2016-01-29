@@ -662,7 +662,7 @@ function midcamp_panels_default_page_manager_handlers() {
               0 => 1,
             ),
           ),
-          'context' => 'argument_entity_id:user_1',
+          'context' => 'logged-in-user',
           'not' => FALSE,
         ),
       ),
