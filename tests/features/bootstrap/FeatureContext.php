@@ -202,4 +202,17 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
     // Todo: Fix step argument here when implemented.
     $this->assertSession()->elementContains('css', 'h2.pane-title', $text);
   }
+
+  /**
+   * Checks the pane title element for title is not seen.
+   *
+   * @Then I should not see the pane title :text
+   *
+   * @param string $text
+   *   The pane title to check for.
+   */
+  public function iShouldNotSeePaneTitle($text) {
+    $this->assertSession()->elementNotContains('css', 'h2.pane-title', $text);
+  }
+
 }
