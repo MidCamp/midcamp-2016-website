@@ -380,7 +380,7 @@ function midcamp_users_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
-      'default_image' => 46,
+      'default_image' => 4,
       'file_directory' => 'users',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',

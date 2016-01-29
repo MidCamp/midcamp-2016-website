@@ -1,5 +1,7 @@
 <?php
 /**
  * @file
- * Drupal needs this blank file.
+ * Code for the MidCamp Default og membership type feature.
  */
+
+include_once 'midcamp_og_membership_type_og_membership_type_og_membership_type_default.features.inc';
