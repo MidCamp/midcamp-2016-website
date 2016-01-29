@@ -10,7 +10,7 @@
 function midcamp_menu_links_menu_default_menu_links() {
   $menu_links = array();
 
-  // Exported menu link: main-menu_2015-midcamp:http://2015.midcamp.org
+  // Exported menu link: main-menu_2015-midcamp:http://2015.midcamp.org.
   $menu_links['main-menu_2015-midcamp:http://2015.midcamp.org'] = array(
     'menu_name' => 'main-menu',
     'link_path' => 'http://2015.midcamp.org',
@@ -27,8 +27,9 @@ function midcamp_menu_links_menu_default_menu_links() {
     'external' => 1,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => 50,
+    'weight' => -46,
     'customized' => 1,
+    'parent_identifier' => 'main-menu_camp:node/14',
   );
 
   // Translatables
