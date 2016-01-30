@@ -38,7 +38,7 @@ Feature: Session proposal functionality
     And I am on the homepage
     When I click "Submitted sessions"
     Then I should be on "session-submissions"
-    And I should see "Drupal 101 Site Building Yes Yes 60 minutes" in the ".view-session-submissions table.views-table tbody tr:nth-child(1)" element
+    And I should see "Drupal 101 Site Building Yes Yes 60 minutes" in the ".view-session-submissions table.views-table tbody" element
 
   @midcamp-277
   Scenario: Potential speaker see title and description of other sessions
