@@ -2009,10 +2009,7 @@ function midcamp_panels_default_page_manager_pages() {
   $page->admin_title = 'MidCamp home page';
   $page->admin_description = '';
   $page->path = 'home';
-  $page->access = array(
-    'type' => 'none',
-    'settings' => NULL,
-  );
+  $page->access = array();
   $page->menu = array();
   $page->arguments = array();
   $page->conf = array(
