@@ -3,8 +3,8 @@ php:
   - 5.5
 
 branches:
-  except:
-    - prod
+  only:
+    - develop
 
 mysql:
   database: drupal
