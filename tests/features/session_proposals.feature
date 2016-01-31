@@ -40,7 +40,7 @@ Feature: Session proposal functionality
     Then I should be on "session-submissions"
     And I should see "Drupal 101 Site Building Yes Yes 60 minutes" in the ".view-session-submissions table.views-table tbody" element
 
-  @midcamp-277
+  @midcamp-277 @midcamp-278 @session-selection
   Scenario: Potential speaker see title and description of other sessions
 
     Given users:
@@ -67,7 +67,30 @@ Feature: Session proposal functionality
     Then I should see the pane title "Session Description"
     And I see the text "Build something amazing"
 
+    #Authenticated non-author viewing author profile
+    When I visit "users/joe-session1"
+    Then I should not see "Session proposals"
+    And I should not see "Drupal 101"
+
     #Author viewing session
     When I am logged in as "Joe Session1"
     And I visit "session/drupal-101"
     Then I should not see the text "Session Description"
+
+    #Author sees their proposal on profile
+    When I visit "users/joe-session1"
+    Then I should see "Your session proposals"
+    And I should see "Drupal 101"
+    And I click "Drupal 101"
+
+    #Session selection admin should not see proposals on profile
+    When I am logged in as a user with the "Session Selection Admin" role
+    And I visit "users/joe-session1"
+    Then I should not see "Session proposals"
+    And I should not see "Drupal 101"
+
+    #Anonymous user should not see proposals on profile
+    When I am an anonymous user
+    And I visit "users/joe-session1"
+    Then I should not see "Session proposals"
+    And I should not see "Drupal 101"
