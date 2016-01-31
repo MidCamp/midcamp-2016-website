@@ -40,7 +40,7 @@ Feature: Session proposal functionality
     Then I should be on "session-submissions"
     And I should see "Drupal 101 Site Building Yes Yes 60 minutes" in the ".view-session-submissions table.views-table tbody" element
 
-  @midcamp-277
+  @midcamp-277 @midcamp-278 @session-selection
   Scenario: Potential speaker see title and description of other sessions
 
     Given users:
