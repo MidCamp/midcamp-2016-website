@@ -4951,7 +4951,7 @@ function midcamp_views_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Your session proposals';
+  $handler->display->display_options['title'] = 'Session proposals';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -5004,8 +5004,32 @@ function midcamp_views_views_default_views() {
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
 
-  /* Display: Content pane */
-  $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_user_sessions');
+  /* Display: non-owner profile session content pane */
+  $handler = $view->new_display('panel_pane', 'non-owner profile session content pane', 'panel_pane_user_sessions');
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
+  $handler->display->display_options['argument_input'] = array(
+    'uid' => array(
+      'type' => 'user',
+      'context' => 'entity:file.basename',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Content: Author uid',
+    ),
+  );
+
+  /* Display: owner profile session content pane */
+  $handler = $view->new_display('panel_pane', 'owner profile session content pane', 'panel_pane_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Your session proposals';
   $handler->display->display_options['allow']['use_pager'] = 0;
   $handler->display->display_options['allow']['items_per_page'] = 0;
   $handler->display->display_options['allow']['offset'] = 0;

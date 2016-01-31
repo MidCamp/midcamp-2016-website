@@ -1,6 +1,7 @@
 name = MidCamp Panels
 core = 7.x
 package = Ctools
+dependencies[] = ctools
 dependencies[] = ctools_custom_content
 dependencies[] = page_manager
 dependencies[] = panels
@@ -25,6 +26,7 @@ features[page_manager_handlers][] = node_edit_panel_context_2
 features[page_manager_handlers][] = node_view__non-author-view-of-session-submission-nodes-anonymized
 features[page_manager_handlers][] = node_view_panel_context
 features[page_manager_handlers][] = node_view_panel_context_2
+features[page_manager_handlers][] = user_view__non-owner-user-profile
 features[page_manager_handlers][] = user_view_panel_context
 features[page_manager_pages][] = jobs
 features[page_manager_pages][] = midcamp_home_page
