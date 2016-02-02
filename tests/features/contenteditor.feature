@@ -11,7 +11,8 @@ Feature: Test coverage for content editor
       | anonymous user     | 403    |
       | authenticated user | 403    |
 
-  Scenario: Sponsor fields
+  @midcamp-269
+  Scenario: Sponsor fields for Content Editor and ability to unpublish
     Given I am logged in as a user with the "Content Editor" role
     When I go to "node/add/sponsor"
     Then I should see the fields:
@@ -21,6 +22,7 @@ Feature: Test coverage for content editor
       | Logo                               |
       | field_attendees[und][0][target_id] |
       | Description                        |
+      | status                             |
     And I should not see the fields:
       | field id or name or label or value |
       | Group                              |
