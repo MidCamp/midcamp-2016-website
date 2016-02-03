@@ -112,6 +112,16 @@ function midcamp_install() {
       'pages' => '',
       'cache' => -1,
     ),
+    array(
+      'module' => 'panels_mini',
+      'delta' => 'sponsor_sidebar',
+      'theme' => $default_theme,
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'sidebar_second',
+      'pages' => '',
+      'cache' => -1,
+    ),
   );
 
   // Drop system / user blocks to ensure correct building.
