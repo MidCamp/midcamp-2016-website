@@ -5,6 +5,7 @@
  */
 
 use Behat\Behat\Hook\Scope\BeforeScenarioScope;
+use Behat\Gherkin\Node\TableNode;
 use Drupal\DrupalExtension\Context\DrupalSubContextBase;
 use Drupal\DrupalExtension\Context\DrupalSubContextInterface;
 
@@ -195,5 +196,82 @@ class ContentTypesSubContext extends DrupalSubContextBase implements DrupalSubCo
    */
   public function iSeeAdminSessionNodeForm() {
     $this->iSeeSessionNodeForm(TRUE);
+  }
+
+  /**
+   * Finds a node by its title.
+   *
+   * @param string $type
+   *   Node type.
+   * @param string $title
+   *   Title of node.
+   *
+   * @return mixed|null
+   *   Loaded entity.
+   *
+   * @throws \Exception
+   */
+  protected function getNodeByTitle($type, $title) {
+    $q = new EfqHelper('node');
+    $q->propertyCondition('type', $type)
+      ->propertyCondition('title', $title);
+    if (!$q) {
+      throw new \Exception(sprintf('No %s named %s', $type, $title));
+    }
+    return $q->first();
+  }
+
+  /**
+   * Adds current logged in user to the named Sponsor group.
+   *
+   * @param string $sponsor
+   *   Name of sponsor node.
+   *
+   * @Given I am a member of :sponsor
+   */
+  public function iAmMemberOf($sponsor) {
+    // Find the sponsor node.
+    $node = $this->getNodeByTitle('sponsor', $sponsor);
+    $user = $this->getUser();
+
+    $og_values = array(
+      'entity_type' => 'user',
+      'entity' => $user,
+    );
+
+    og_group('node', $node->nid, $og_values);
+  }
+
+  /**
+   * Creates job nodes for Sponsors provided in form:
+   *
+   *| sponsor      | title     | field_location     |field_job_type | field_skill_level | body                                   |                                                     |
+   *| Sponsor name | Job title | arbitrary location | part          | intermediate      | Art party YOLO squid four loko hammock |
+   *
+   * $param TableNode $table_node
+   *   TableNode object of the passed in table.
+   *
+   * @Given sponsor jobs:
+   */
+  public function sponsorJobs(TableNode $table_node) {
+    $sponsor_nodes = array();
+    foreach ($table_node->getHash() as $hash) {
+      $sponsor = $hash['sponsor'];
+      if (!array_key_exists($sponsor, $sponsor_nodes)) {
+        $sponsor_node = $this->getNodeByTitle('sponsor', $sponsor);
+        $sponsor_nodes[$sponsor] = $sponsor_node->nid;
+      }
+      unset($hash['sponsor']);
+      // $hash['og_group_ref'] = $sponsor_nodes[$sponsor];
+      $hash['type'] = 'job';
+      $node = (object) $hash;
+      $node = $this->nodeCreate($node);
+
+      $og_values = array(
+        'entity_type' => 'node',
+        'entity' => $node,
+      );
+      og_group('node', $sponsor_nodes[$sponsor], $og_values);
+    }
   }
 }
