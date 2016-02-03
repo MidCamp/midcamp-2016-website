@@ -144,7 +144,7 @@ function midcamp_node_sponsor_field_default_field_instances() {
     'label' => 'Logo',
     'required' => 1,
     'settings' => array(
-      'alt_field' => 0,
+      'alt_field' => 1,
       'default_image' => 0,
       'file_directory' => 'sponsors',
       'file_extensions' => 'png gif jpg jpeg',
