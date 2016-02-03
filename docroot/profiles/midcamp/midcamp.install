@@ -112,16 +112,6 @@ function midcamp_install() {
       'pages' => '',
       'cache' => -1,
     ),
-    array(
-      'module' => 'panels_mini',
-      'delta' => 'sponsor_sidebar',
-      'theme' => $default_theme,
-      'status' => 1,
-      'weight' => 0,
-      'region' => 'sidebar_second',
-      'pages' => '',
-      'cache' => -1,
-    ),
   );
 
   // Drop system / user blocks to ensure correct building.
@@ -139,10 +129,15 @@ function midcamp_install() {
     'pages',
     'cache'
   ));
+
   foreach ($blocks as $block) {
     $query->values($block);
   }
   $query->execute();
+
+  // Call sponsor_sidebar block config from functions for update compatibility.
+  block_sponsor_sidebar($default_theme);
+  block_node_type_sponsor_sidebar();
 
   // Create a default role for site administrators, with all available permissions assigned.
   $admin_role = new stdClass();
@@ -185,6 +180,38 @@ function midcamp_install() {
 }
 
 /**
+ * Adds sponsor_sidebar mini panel to region.
+ *
+ * @param string $default_theme
+ *   The default theme to add block. Leave empty to use theme_default setting.
+ *
+ * @throws \Exception
+ *   Exception is from db_insert.
+ */
+function block_sponsor_sidebar($default_theme = '') {
+  if (empty(trim($default_theme))) {
+    $default_theme = variable_get('theme_default', 'sitetheme');
+  }
+  db_insert('block')
+    ->fields(array('module', 'delta', 'theme', 'status', 'weight', 'region', 'pages', 'cache'))
+    ->values(array('panels_mini', 'sponsor_sidebar', $default_theme, 1, 0, 'sidebar_second', '', -1))
+    ->execute();
+}
+
+/**
+ * Adds sponsor_sidebar node type restrition.
+ *
+ * @throws \Exception
+ *   Exception is from db_insert.
+ */
+function block_node_type_sponsor_sidebar() {
+  db_insert('block_node_type')
+    ->fields(array('module', 'delta', 'type'))
+    ->values(array('panels_mini', 'sponsor_sidebar', 'sponsor'))
+    ->execute();
+}
+
+/**
  * Ensure 'Platinum' is a field value for Sponsors.
  */
 function midcamp_update_7001() {
@@ -215,4 +242,12 @@ function midcamp_update_7002() {
     ))
     ->execute();
   ajaxblocks_update_cache();
+}
+
+/**
+ * Adds sponsor_sidebar mini panel to block config.
+ */
+function midcamp_update_7003() {
+  block_sponsor_sidebar();
+  block_node_type_sponsor_sidebar();
 }
