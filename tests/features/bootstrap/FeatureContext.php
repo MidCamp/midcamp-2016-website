@@ -215,4 +215,26 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
     $this->assertSession()->elementNotContains('css', 'h2.pane-title', $text);
   }
 
+  /**
+   * Sets user's full name (given and family).
+   *
+   * @When user :username has given name :given and family name :family
+   *
+   * @param string $username
+   *   The user's username.
+   * @param string $given
+   *   The user's given (first) name.
+   * @param string $family
+   *   The user's family (last) name.
+   */
+  public function setFullName($username, $given, $family) {
+    $field_full_name = array(
+      'given' => $given,
+      'family' => $family,
+    );
+    $user = user_load_by_name($username);
+    $uw = entity_metadata_wrapper('user', $user);
+    $uw->field_name = $field_full_name;
+    $uw->save();
+  }
 }
