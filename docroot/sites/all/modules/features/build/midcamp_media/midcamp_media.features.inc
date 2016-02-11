@@ -54,31 +54,6 @@ function midcamp_media_image_default_styles() {
     'label' => 'linkit_thumb',
   );
 
-  // Exported image style: logo_sponsor_view_full.
-  $styles['logo_sponsor_view_full'] = array(
-    'label' => 'Logo on full sponsor view page',
-    'effects' => array(
-      1 => array(
-        'name' => 'image_scale',
-        'data' => array(
-          'width' => '',
-          'height' => 300,
-          'upscale' => 0,
-        ),
-        'weight' => 1,
-      ),
-      2 => array(
-        'name' => 'image_scale',
-        'data' => array(
-          'width' => 300,
-          'height' => '',
-          'upscale' => 0,
-        ),
-        'weight' => 2,
-      ),
-    ),
-  );
-
   // Exported image style: medium.
   $styles['medium'] = array(
     'label' => 'Medium (220x220)',

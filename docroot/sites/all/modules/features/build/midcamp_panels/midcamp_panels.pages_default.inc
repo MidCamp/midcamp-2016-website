@@ -807,13 +807,12 @@ function midcamp_panels_default_page_manager_handlers() {
       'delta_offset' => '0',
       'delta_reversed' => FALSE,
       'formatter_settings' => array(
-        'image_style' => 'logo_sponsor_view_full',
+        'image_style' => 'medium',
         'image_link' => '',
       ),
       'context' => 'argument_entity_id:node_1',
       'override_title' => 0,
       'override_title_text' => '',
-      'override_title_heading' => 'h2',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -2284,11 +2283,64 @@ function midcamp_panels_default_page_manager_pages() {
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
-  $handler->name = 'page_schedule__panel_context_12b8055e-8c69-4624-9add-a7b4a1a560b7';
+  $handler->name = 'page_schedule__panel_context_5996adcd-ca29-4230-87e3-de22c833d5da';
   $handler->task = 'page';
   $handler->subtask = 'schedule';
   $handler->handler = 'panel_context';
-  $handler->weight = -29;
+  $handler->weight = -24;
+  $handler->conf = array(
+    'title' => 'Thursday',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'name' => '',
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'string_equal',
+          'settings' => array(
+            'operator' => '=',
+            'value' => 'thursday',
+            'case' => 0,
+          ),
+          'context' => 'argument_string_1',
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
+  );
+  $display = new panels_display();
+  $display->layout = 'onecol';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'middle' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = 'Thursday March 19';
+  $display->uuid = '1e694f48-37b6-4f69-bf50-cd520c303b5c';
+  $display->content = array();
+  $display->panels = array();
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_schedule__panel_context_7878a4a7-62d8-48e8-b245-318e85e3d575';
+  $handler->task = 'page';
+  $handler->subtask = 'schedule';
+  $handler->handler = 'panel_context';
+  $handler->weight = -23;
   $handler->conf = array(
     'title' => 'Friday',
     'no_blocks' => 0,
@@ -2314,6 +2366,7 @@ function midcamp_panels_default_page_manager_pages() {
       ),
       'logic' => 'and',
     ),
+    'name' => '',
   );
   $display = new panels_display();
   $display->layout = 'onecol';
@@ -2544,74 +2597,11 @@ function midcamp_panels_default_page_manager_pages() {
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
-  $handler->name = 'page_schedule__no_day';
+  $handler->name = 'page_schedule__panel_context_e0893fcc-bd77-4b46-a558-8d5151e573bd';
   $handler->task = 'page';
   $handler->subtask = 'schedule';
   $handler->handler = 'panel_context';
-  $handler->weight = -25;
-  $handler->conf = array(
-    'title' => 'Default',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
-    'name' => 'no_day',
-  );
-  $display = new panels_display();
-  $display->layout = 'onecol';
-  $display->layout_settings = array();
-  $display->panel_settings = array(
-    'style_settings' => array(
-      'default' => NULL,
-      'middle' => NULL,
-    ),
-  );
-  $display->cache = array();
-  $display->title = 'Schedule';
-  $display->uuid = '7c2e3ca5-3664-4bed-8c37-bccb87569cd3';
-  $display->content = array();
-  $display->panels = array();
-    $pane = new stdClass();
-    $pane->pid = 'new-7469a358-da32-45c0-b256-23ab56c2bb80';
-    $pane->panel = 'middle';
-    $pane->type = 'custom';
-    $pane->subtype = 'schedule_overview';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => '',
-      'title' => '',
-      'body' => '',
-      'format' => 'full_html',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '7469a358-da32-45c0-b256-23ab56c2bb80';
-    $display->content['new-7469a358-da32-45c0-b256-23ab56c2bb80'] = $pane;
-    $display->panels['middle'][0] = 'new-7469a358-da32-45c0-b256-23ab56c2bb80';
-  $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = '0';
-  $handler->conf['display'] = $display;
-  $page->default_handlers[$handler->name] = $handler;
-  $handler = new stdClass();
-  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
-  $handler->api_version = 1;
-  $handler->name = 'page_schedule__panel_context_f8b2cdba-0e40-4b10-b4fb-aeebe78ba025';
-  $handler->task = 'page';
-  $handler->subtask = 'schedule';
-  $handler->handler = 'panel_context';
-  $handler->weight = -28;
+  $handler->weight = -22;
   $handler->conf = array(
     'title' => 'Saturday',
     'no_blocks' => 0,
@@ -2637,6 +2627,7 @@ function midcamp_panels_default_page_manager_pages() {
       ),
       'logic' => 'and',
     ),
+    'name' => '',
   );
   $display = new panels_display();
   $display->layout = 'onecol';
@@ -2867,64 +2858,11 @@ function midcamp_panels_default_page_manager_pages() {
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
-  $handler->name = 'page_schedule__thursday';
+  $handler->name = 'page_schedule__panel_context_ece83c4a-baa0-47ff-afbf-e9c097fb2246';
   $handler->task = 'page';
   $handler->subtask = 'schedule';
   $handler->handler = 'panel_context';
-  $handler->weight = -30;
-  $handler->conf = array(
-    'title' => 'Thursday',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
-    'name' => 'thursday',
-    'access' => array(
-      'plugins' => array(
-        0 => array(
-          'name' => 'string_equal',
-          'settings' => array(
-            'operator' => '=',
-            'value' => 'thursday',
-            'case' => 0,
-          ),
-          'context' => 'argument_string_1',
-          'not' => FALSE,
-        ),
-      ),
-      'logic' => 'and',
-    ),
-  );
-  $display = new panels_display();
-  $display->layout = 'onecol';
-  $display->layout_settings = array();
-  $display->panel_settings = array(
-    'style_settings' => array(
-      'default' => NULL,
-      'middle' => NULL,
-    ),
-  );
-  $display->cache = array();
-  $display->title = 'Thursday March 19';
-  $display->uuid = '1e694f48-37b6-4f69-bf50-cd520c303b5c';
-  $display->content = array();
-  $display->panels = array();
-  $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = '0';
-  $handler->conf['display'] = $display;
-  $page->default_handlers[$handler->name] = $handler;
-  $handler = new stdClass();
-  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
-  $handler->api_version = 1;
-  $handler->name = 'page_schedule__sunday';
-  $handler->task = 'page';
-  $handler->subtask = 'schedule';
-  $handler->handler = 'panel_context';
-  $handler->weight = -27;
+  $handler->weight = -21;
   $handler->conf = array(
     'title' => 'Sunday',
     'no_blocks' => 0,
@@ -2935,7 +2873,7 @@ function midcamp_panels_default_page_manager_pages() {
     'css' => '',
     'contexts' => array(),
     'relationships' => array(),
-    'name' => 'sunday',
+    'name' => '',
     'access' => array(
       'logic' => 'and',
       'plugins' => array(
@@ -2973,11 +2911,11 @@ function midcamp_panels_default_page_manager_pages() {
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
-  $handler->name = 'page_schedule__next';
+  $handler->name = 'page_schedule__panel_context_e872924b-5efe-4e75-95e2-a88b93a8f81e';
   $handler->task = 'page';
   $handler->subtask = 'schedule';
   $handler->handler = 'panel_context';
-  $handler->weight = -26;
+  $handler->weight = -20;
   $handler->conf = array(
     'title' => 'Next',
     'no_blocks' => 0,
@@ -2996,7 +2934,7 @@ function midcamp_panels_default_page_manager_pages() {
       ),
     ),
     'relationships' => array(),
-    'name' => 'next',
+    'name' => '',
     'access' => array(
       'plugins' => array(
         0 => array(
@@ -3055,6 +2993,69 @@ function midcamp_panels_default_page_manager_pages() {
     $display->panels['middle'][0] = 'new-63b8f69a-20f9-40b6-81de-0d8f7294cd02';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-63b8f69a-20f9-40b6-81de-0d8f7294cd02';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_schedule__panel_context_3473c605-91cf-448a-8d3b-e13c749d9a6e';
+  $handler->task = 'page';
+  $handler->subtask = 'schedule';
+  $handler->handler = 'panel_context';
+  $handler->weight = -19;
+  $handler->conf = array(
+    'title' => 'Default',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'name' => '',
+  );
+  $display = new panels_display();
+  $display->layout = 'onecol';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'middle' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = 'Schedule';
+  $display->uuid = '7c2e3ca5-3664-4bed-8c37-bccb87569cd3';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-7469a358-da32-45c0-b256-23ab56c2bb80';
+    $pane->panel = 'middle';
+    $pane->type = 'custom';
+    $pane->subtype = 'schedule_overview';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => '',
+      'title' => '',
+      'body' => '',
+      'format' => 'full_html',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '7469a358-da32-45c0-b256-23ab56c2bb80';
+    $display->content['new-7469a358-da32-45c0-b256-23ab56c2bb80'] = $pane;
+    $display->panels['middle'][0] = 'new-7469a358-da32-45c0-b256-23ab56c2bb80';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
   $pages['schedule'] = $page;

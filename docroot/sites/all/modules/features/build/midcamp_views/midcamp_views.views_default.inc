@@ -807,7 +807,7 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['relationships']['flag_content_rel']['required'] = 0;
   $handler->display->display_options['relationships']['flag_content_rel']['flag'] = 'featured_user';
   $handler->display->display_options['relationships']['flag_content_rel']['user_scope'] = 'any';
-  /* Field: Field: Logo */
+  /* Field: Field: Avatar */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -934,7 +934,7 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: Logo */
+  /* Field: Field: Avatar */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -1070,7 +1070,7 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['footer']['area']['content'] = '<a href="community">All user profiles (to flag more featured)</a>';
   $handler->display->display_options['footer']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: Logo */
+  /* Field: Field: Avatar */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -1158,7 +1158,7 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['fields']['ops']['label'] = '';
   $handler->display->display_options['fields']['ops']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Field: Logo (field_image:fid) */
+  /* Sort criterion: Field: Avatar (field_image:fid) */
   $handler->display->display_options['sorts']['field_image_fid']['id'] = 'field_image_fid';
   $handler->display->display_options['sorts']['field_image_fid']['table'] = 'field_data_field_image';
   $handler->display->display_options['sorts']['field_image_fid']['field'] = 'field_image_fid';
@@ -1254,7 +1254,7 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['relationships']['flag_content_rel']['flag'] = 'featured_user';
   $handler->display->display_options['relationships']['flag_content_rel']['user_scope'] = 'any';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: Logo */
+  /* Field: Field: Avatar */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -1363,7 +1363,7 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: Logo */
+  /* Field: Field: Avatar */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -1503,7 +1503,7 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['relationships']['reverse_field_speakers_node']['table'] = 'users';
   $handler->display->display_options['relationships']['reverse_field_speakers_node']['field'] = 'reverse_field_speakers_node';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: Logo */
+  /* Field: Field: Avatar */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -1681,7 +1681,7 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: Logo */
+  /* Field: Field: Avatar */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -2164,106 +2164,6 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['menu']['name'] = 'main-menu';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
-
-  /* Display: all session export */
-  $handler = $view->new_display('page', 'all session export', 'page_1');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'All sessions';
-  $handler->display->display_options['defaults']['access'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'role';
-  $handler->display->display_options['access']['role'] = array(
-    3 => '3',
-  );
-  $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Global: Text area */
-  $handler->display->display_options['header']['area']['id'] = 'area';
-  $handler->display->display_options['header']['area']['table'] = 'views';
-  $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = 'Subject to confirmation by the speaker that they are still able to present. Sessions not accepted are encouraged to sign up for BoFs.
-<p>
-<a href="/sessions/friday">Friday</a> | <a href="/sessions/saturday">Saturday</a> | <strong>All</strong>';
-  $handler->display->display_options['header']['area']['format'] = 'full_html';
-  $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Flags: accepted */
-  $handler->display->display_options['relationships']['flag_content_rel']['id'] = 'flag_content_rel';
-  $handler->display->display_options['relationships']['flag_content_rel']['table'] = 'node';
-  $handler->display->display_options['relationships']['flag_content_rel']['field'] = 'flag_content_rel';
-  $handler->display->display_options['relationships']['flag_content_rel']['required'] = 0;
-  $handler->display->display_options['relationships']['flag_content_rel']['flag'] = 'accepted';
-  $handler->display->display_options['relationships']['flag_content_rel']['user_scope'] = 'any';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Which track(s) would best fit your session content? Select up to 3: */
-  $handler->display->display_options['fields']['field_track_1']['id'] = 'field_track_1';
-  $handler->display->display_options['fields']['field_track_1']['table'] = 'field_data_field_track';
-  $handler->display->display_options['fields']['field_track_1']['field'] = 'field_track';
-  $handler->display->display_options['fields']['field_track_1']['label'] = 'Tracks';
-  $handler->display->display_options['fields']['field_track_1']['delta_offset'] = '0';
-  /* Field: Content: Is your presentation Drupal-specific? */
-  $handler->display->display_options['fields']['field_drupal_specific']['id'] = 'field_drupal_specific';
-  $handler->display->display_options['fields']['field_drupal_specific']['table'] = 'field_data_field_drupal_specific';
-  $handler->display->display_options['fields']['field_drupal_specific']['field'] = 'field_drupal_specific';
-  $handler->display->display_options['fields']['field_drupal_specific']['label'] = 'Drupal-specific?';
-  /* Field: Content: Is your presentation for Drupal beginners? */
-  $handler->display->display_options['fields']['field_beginners']['id'] = 'field_beginners';
-  $handler->display->display_options['fields']['field_beginners']['table'] = 'field_data_field_beginners';
-  $handler->display->display_options['fields']['field_beginners']['field'] = 'field_beginners';
-  $handler->display->display_options['fields']['field_beginners']['label'] = 'Drupal beginners?';
-  /* Field: Content: What is your planned session length? */
-  $handler->display->display_options['fields']['field_length_1']['id'] = 'field_length_1';
-  $handler->display->display_options['fields']['field_length_1']['table'] = 'field_data_field_length';
-  $handler->display->display_options['fields']['field_length_1']['field'] = 'field_length';
-  $handler->display->display_options['fields']['field_length_1']['label'] = 'Session Length';
-  /* Field: Content: Describe your session for attendees */
-  $handler->display->display_options['fields']['field_attendee_description']['id'] = 'field_attendee_description';
-  $handler->display->display_options['fields']['field_attendee_description']['table'] = 'field_data_field_attendee_description';
-  $handler->display->display_options['fields']['field_attendee_description']['field'] = 'field_attendee_description';
-  $handler->display->display_options['fields']['field_attendee_description']['label'] = 'Attendee description';
-  /* Field: Content: What should attendees already know in order to get the most out of your session? */
-  $handler->display->display_options['fields']['field_prereqs']['id'] = 'field_prereqs';
-  $handler->display->display_options['fields']['field_prereqs']['table'] = 'field_data_field_prereqs';
-  $handler->display->display_options['fields']['field_prereqs']['field'] = 'field_prereqs';
-  $handler->display->display_options['fields']['field_prereqs']['label'] = 'Attendee Pre-reqs';
-  /* Field: Content: Describe your session for the conference organizers */
-  $handler->display->display_options['fields']['field_organizer_description']['id'] = 'field_organizer_description';
-  $handler->display->display_options['fields']['field_organizer_description']['table'] = 'field_data_field_organizer_description';
-  $handler->display->display_options['fields']['field_organizer_description']['field'] = 'field_organizer_description';
-  $handler->display->display_options['fields']['field_organizer_description']['label'] = 'Organization Description';
-  /* Field: Flags: Flagged */
-  $handler->display->display_options['fields']['flagged']['id'] = 'flagged';
-  $handler->display->display_options['fields']['flagged']['table'] = 'flagging';
-  $handler->display->display_options['fields']['flagged']['field'] = 'flagged';
-  $handler->display->display_options['fields']['flagged']['relationship'] = 'flag_content_rel';
-  $handler->display->display_options['fields']['flagged']['not'] = 0;
-  $handler->display->display_options['defaults']['sorts'] = FALSE;
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'session' => 'session',
-  );
-  $handler->display->display_options['path'] = 'all-sessions/export';
-  $handler->display->display_options['menu']['title'] = 'Accepted Sessions';
-  $handler->display->display_options['menu']['weight'] = '0';
-  $handler->display->display_options['menu']['name'] = 'main-menu';
-  $handler->display->display_options['menu']['context'] = 0;
-  $handler->display->display_options['menu']['context_only_inline'] = 0;
   $export['clone_of_session_submissions'] = $view;
 
   $view = new view();
@@ -2274,7 +2174,7 @@ function midcamp_views_views_default_views() {
   $view->human_name = 'Front Page News';
   $view->core = 7;
   $view->api_version = '3.0';
-  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+  $view->disabled = TRUE; /* Edit this to true to make a default view disabled initially */
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
@@ -2308,7 +2208,7 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['fields']['changed']['label'] = 'Updated';
   $handler->display->display_options['fields']['changed']['date_format'] = 'long';
   $handler->display->display_options['fields']['changed']['second_date_format'] = 'long';
-  /* Field: Field: Logo */
+  /* Field: Field: Avatar */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -2753,7 +2653,7 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['fields']['access']['field'] = 'access';
   $handler->display->display_options['fields']['access']['date_format'] = 'raw time ago';
   $handler->display->display_options['fields']['access']['second_date_format'] = 'long';
-  /* Field: Field: Logo */
+  /* Field: Field: Avatar */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -3744,7 +3644,7 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '1';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Field: Field: Logo */
+  /* Field: Field: Avatar */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -3781,7 +3681,7 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['title'] = 'Is a gold sponsor!';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: Logo */
+  /* Field: Field: Avatar */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -3840,7 +3740,7 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['title'] = 'Is a silver sponsor!';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: Logo */
+  /* Field: Field: Avatar */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -3899,7 +3799,7 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['title'] = 'Is a gold sponsor!';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: Logo */
+  /* Field: Field: Avatar */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -4185,251 +4085,6 @@ function midcamp_views_views_default_views() {
     ),
   );
   $export['session_assignment'] = $view;
-
-  $view = new view();
-  $view->name = 'session_export';
-  $view->description = 'Export all sessions';
-  $view->tag = 'MidCamp';
-  $view->base_table = 'node';
-  $view->human_name = 'Session export';
-  $view->core = 7;
-  $view->api_version = '3.0';
-  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
-
-  /* Display: Master */
-  $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'role';
-  $handler->display->display_options['access']['role'] = array(
-    3 => '3',
-  );
-  $handler->display->display_options['cache']['type'] = 'none';
-  $handler->display->display_options['query']['type'] = 'views_query';
-  $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '0';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['pager']['options']['id'] = '0';
-  $handler->display->display_options['pager']['options']['quantity'] = '9';
-  $handler->display->display_options['style_plugin'] = 'table';
-  $handler->display->display_options['style_options']['columns'] = array(
-    'title' => 'title',
-    'field_attendee_description' => 'field_attendee_description',
-    'field_organizer_description' => 'field_organizer_description',
-    'field_drupal_specific' => 'field_drupal_specific',
-    'field_beginners' => 'field_beginners',
-    'field_length' => 'field_length',
-    'field_prereqs' => 'field_prereqs',
-    'field_track' => 'field_track',
-  );
-  $handler->display->display_options['style_options']['default'] = '-1';
-  $handler->display->display_options['style_options']['info'] = array(
-    'title' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_attendee_description' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_organizer_description' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_drupal_specific' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_beginners' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_length' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_prereqs' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_track' => array(
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-  );
-  /* Relationship: Content: Author */
-  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
-  $handler->display->display_options['relationships']['uid']['table'] = 'node';
-  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
-  $handler->display->display_options['relationships']['uid']['required'] = TRUE;
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Describe your session for attendees */
-  $handler->display->display_options['fields']['field_attendee_description']['id'] = 'field_attendee_description';
-  $handler->display->display_options['fields']['field_attendee_description']['table'] = 'field_data_field_attendee_description';
-  $handler->display->display_options['fields']['field_attendee_description']['field'] = 'field_attendee_description';
-  $handler->display->display_options['fields']['field_attendee_description']['label'] = 'Attendee description';
-  $handler->display->display_options['fields']['field_attendee_description']['exclude'] = TRUE;
-  /* Field: Content: Describe your session for the conference organizers */
-  $handler->display->display_options['fields']['field_organizer_description']['id'] = 'field_organizer_description';
-  $handler->display->display_options['fields']['field_organizer_description']['table'] = 'field_data_field_organizer_description';
-  $handler->display->display_options['fields']['field_organizer_description']['field'] = 'field_organizer_description';
-  $handler->display->display_options['fields']['field_organizer_description']['label'] = 'Organization description';
-  $handler->display->display_options['fields']['field_organizer_description']['exclude'] = TRUE;
-  /* Field: Content: Is your presentation Drupal-specific? */
-  $handler->display->display_options['fields']['field_drupal_specific']['id'] = 'field_drupal_specific';
-  $handler->display->display_options['fields']['field_drupal_specific']['table'] = 'field_data_field_drupal_specific';
-  $handler->display->display_options['fields']['field_drupal_specific']['field'] = 'field_drupal_specific';
-  $handler->display->display_options['fields']['field_drupal_specific']['label'] = 'Drupal-specific?';
-  $handler->display->display_options['fields']['field_drupal_specific']['exclude'] = TRUE;
-  /* Field: Content: Is your presentation for Drupal beginners? */
-  $handler->display->display_options['fields']['field_beginners']['id'] = 'field_beginners';
-  $handler->display->display_options['fields']['field_beginners']['table'] = 'field_data_field_beginners';
-  $handler->display->display_options['fields']['field_beginners']['field'] = 'field_beginners';
-  $handler->display->display_options['fields']['field_beginners']['label'] = 'Drupal beginners?';
-  $handler->display->display_options['fields']['field_beginners']['exclude'] = TRUE;
-  /* Field: Content: What is your planned session length? */
-  $handler->display->display_options['fields']['field_length']['id'] = 'field_length';
-  $handler->display->display_options['fields']['field_length']['table'] = 'field_data_field_length';
-  $handler->display->display_options['fields']['field_length']['field'] = 'field_length';
-  $handler->display->display_options['fields']['field_length']['label'] = 'Session length';
-  /* Field: Content: What should attendees already know in order to get the most out of your session? */
-  $handler->display->display_options['fields']['field_prereqs']['id'] = 'field_prereqs';
-  $handler->display->display_options['fields']['field_prereqs']['table'] = 'field_data_field_prereqs';
-  $handler->display->display_options['fields']['field_prereqs']['field'] = 'field_prereqs';
-  $handler->display->display_options['fields']['field_prereqs']['label'] = 'Attendee pre-reqs';
-  $handler->display->display_options['fields']['field_prereqs']['exclude'] = TRUE;
-  /* Field: Content: Which track(s) would best fit your session content? Select up to 3: */
-  $handler->display->display_options['fields']['field_track']['id'] = 'field_track';
-  $handler->display->display_options['fields']['field_track']['table'] = 'field_data_field_track';
-  $handler->display->display_options['fields']['field_track']['field'] = 'field_track';
-  $handler->display->display_options['fields']['field_track']['label'] = 'Tracks';
-  $handler->display->display_options['fields']['field_track']['delta_offset'] = '0';
-  /* Field: Content: Author uid */
-  $handler->display->display_options['fields']['uid']['id'] = 'uid';
-  $handler->display->display_options['fields']['uid']['table'] = 'node';
-  $handler->display->display_options['fields']['uid']['field'] = 'uid';
-  $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
-  /* Field: User: Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'users';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['relationship'] = 'uid';
-  /* Field: User: E-mail */
-  $handler->display->display_options['fields']['mail']['id'] = 'mail';
-  $handler->display->display_options['fields']['mail']['table'] = 'users';
-  $handler->display->display_options['fields']['mail']['field'] = 'mail';
-  $handler->display->display_options['fields']['mail']['relationship'] = 'uid';
-  /* Field: User: Name */
-  $handler->display->display_options['fields']['field_name']['id'] = 'field_name';
-  $handler->display->display_options['fields']['field_name']['table'] = 'field_data_field_name';
-  $handler->display->display_options['fields']['field_name']['field'] = 'field_name';
-  $handler->display->display_options['fields']['field_name']['relationship'] = 'uid';
-  $handler->display->display_options['fields']['field_name']['label'] = 'First Name';
-  $handler->display->display_options['fields']['field_name']['click_sort_column'] = 'title';
-  $handler->display->display_options['fields']['field_name']['settings'] = array(
-    'format' => 'given',
-    'markup' => 0,
-    'output' => 'default',
-    'multiple' => 'default',
-    'multiple_delimiter' => ', ',
-    'multiple_and' => 'text',
-    'multiple_delimiter_precedes_last' => 'never',
-    'multiple_el_al_min' => '3',
-    'multiple_el_al_first' => '1',
-  );
-  /* Field: User: Name */
-  $handler->display->display_options['fields']['field_name_1']['id'] = 'field_name_1';
-  $handler->display->display_options['fields']['field_name_1']['table'] = 'field_data_field_name';
-  $handler->display->display_options['fields']['field_name_1']['field'] = 'field_name';
-  $handler->display->display_options['fields']['field_name_1']['relationship'] = 'uid';
-  $handler->display->display_options['fields']['field_name_1']['label'] = 'Last Name';
-  $handler->display->display_options['fields']['field_name_1']['click_sort_column'] = 'title';
-  $handler->display->display_options['fields']['field_name_1']['settings'] = array(
-    'format' => 'family',
-    'markup' => 0,
-    'output' => 'default',
-    'multiple' => 'default',
-    'multiple_delimiter' => ', ',
-    'multiple_and' => 'text',
-    'multiple_delimiter_precedes_last' => 'never',
-    'multiple_el_al_min' => '3',
-    'multiple_el_al_first' => '1',
-  );
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'session' => 'session',
-  );
-
-  /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page_sessions_all');
-  $handler->display->display_options['path'] = 'admin/sessions/all';
-  $handler->display->display_options['menu']['title'] = 'All sessions';
-  $handler->display->display_options['menu']['weight'] = '0';
-  $handler->display->display_options['menu']['name'] = 'management';
-  $handler->display->display_options['menu']['context'] = 0;
-  $handler->display->display_options['menu']['context_only_inline'] = 0;
-
-  /* Display: Data export */
-  $handler = $view->new_display('views_data_export', 'Data export', 'views_data_export_sessions_all');
-  $handler->display->display_options['pager']['type'] = 'none';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['style_plugin'] = 'views_data_export_csv';
-  $handler->display->display_options['style_options']['provide_file'] = 0;
-  $handler->display->display_options['style_options']['parent_sort'] = 0;
-  $handler->display->display_options['style_options']['quote'] = 1;
-  $handler->display->display_options['style_options']['trim'] = 0;
-  $handler->display->display_options['style_options']['replace_newlines'] = 0;
-  $handler->display->display_options['style_options']['newline_token'] = '1';
-  $handler->display->display_options['style_options']['header'] = 1;
-  $handler->display->display_options['style_options']['keep_html'] = 0;
-  $handler->display->display_options['path'] = 'admin/sessions/all/export';
-  $handler->display->display_options['displays'] = array(
-    'page_sessions_all' => 'page_sessions_all',
-    'default' => 0,
-  );
-  $export['session_export'] = $view;
 
   $view = new view();
   $view->name = 'session_guidelines';
@@ -5732,7 +5387,7 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['style_options']['wrapper_classes'] = 'views-zen-grid-container';
   $handler->display->display_options['style_options']['column_classes'] = 'views-sponsors-gold-column';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Field: Field: Logo */
+  /* Field: Field: Avatar */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -5807,7 +5462,7 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: Logo */
+  /* Field: Field: Avatar */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -5874,7 +5529,7 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: Logo */
+  /* Field: Field: Avatar */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -5941,7 +5596,7 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: Logo */
+  /* Field: Field: Avatar */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -6009,7 +5664,7 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: Logo */
+  /* Field: Field: Avatar */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -6066,7 +5721,7 @@ function midcamp_views_views_default_views() {
   /* Display: Other Sponsors pane */
   $handler = $view->new_display('panel_pane', 'Other Sponsors pane', 'panel_pane_other_sponsor');
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: Logo */
+  /* Field: Field: Avatar */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -6119,11 +5774,10 @@ function midcamp_views_views_default_views() {
       'label' => 'Tid of Sponsorship Level (field_level)',
     ),
   );
-
-  /* Display: Other Sponsors pane */
+  /* Display: Platinum Sponsor pane */
   $handler = $view->new_display('panel_pane', 'Other Sponsors pane', 'panel_pane_platinum_sponsor');
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: Logo */
+  /* Field: Field: Avatar */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
