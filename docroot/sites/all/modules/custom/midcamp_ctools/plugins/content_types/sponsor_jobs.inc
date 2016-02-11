@@ -69,8 +69,13 @@ function sponsor_jump($form, $form_state, $conf, $args) {
         $options['default_value'] = $jump_path;
       }
     }
+    return ctools_jump_menu($form, $form_state, $select, $options);
   }
 
-  return ctools_jump_menu($form, $form_state, $select, $options);
-
+  return array(
+    array(
+      '#type' => 'item',
+      '#markup' => t('There are no job postings yet.'),
+    ),
+  );
 }

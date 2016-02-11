@@ -129,6 +129,7 @@ function midcamp_install() {
     'pages',
     'cache'
   ));
+
   foreach ($blocks as $block) {
     $query->values($block);
   }
@@ -161,6 +162,9 @@ function midcamp_install() {
 
   // Ajaxify sponsor logos, so they are actually random!.
   midcamp_update_7002();
+
+  // Adds sponsor_sidebar to block and configure.
+  midcamp_update_7003();
 
   menu_rebuild();
 
@@ -205,4 +209,19 @@ function midcamp_update_7002() {
     ))
     ->execute();
   ajaxblocks_update_cache();
+}
+
+/**
+ * Adds sponsor_sidebar mini panel to block config.
+ */
+function midcamp_update_7003() {
+  db_insert('block')
+    ->fields(array('module', 'delta', 'theme', 'status', 'weight', 'region', 'pages', 'cache'))
+    ->values(array('panels_mini', 'sponsor_sidebar', 'sitetheme', 1, 0, 'sidebar_second', '', -1))
+    ->execute();
+
+  db_insert('block_node_type')
+    ->fields(array('module', 'delta', 'type'))
+    ->values(array('panels_mini', 'sponsor_sidebar', 'sponsor'))
+    ->execute();
 }

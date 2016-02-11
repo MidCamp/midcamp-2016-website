@@ -1897,7 +1897,7 @@ function midcamp_panels_default_page_manager_pages() {
     'type' => 'normal',
     'title' => 'Jobs',
     'name' => 'main-menu',
-    'weight' => '0',
+    'weight' => '60',
     'parent' => array(
       'type' => 'none',
       'title' => '',
@@ -1930,12 +1930,15 @@ function midcamp_panels_default_page_manager_pages() {
     'relationships' => array(),
   );
   $display = new panels_display();
-  $display->layout = 'onecol';
-  $display->layout_settings = array();
+  $display->layout = 'zen_no_wrapper';
+  $display->layout_settings = array(
+    'main_classes' => '',
+  );
   $display->panel_settings = array(
     'style_settings' => array(
       'default' => NULL,
       'middle' => NULL,
+      'main' => NULL,
     ),
   );
   $display->cache = array();
@@ -1945,7 +1948,7 @@ function midcamp_panels_default_page_manager_pages() {
   $display->panels = array();
     $pane = new stdClass();
     $pane->pid = 'new-102735c3-a72b-4638-bb3b-be765f70fe25';
-    $pane->panel = 'middle';
+    $pane->panel = 'main';
     $pane->type = 'sponsor_jobs';
     $pane->subtype = 'sponsor_jobs';
     $pane->shown = TRUE;
@@ -1954,6 +1957,7 @@ function midcamp_panels_default_page_manager_pages() {
       'jobs_path' => 'jobs',
       'override_title' => 0,
       'override_title_text' => '',
+      'override_title_heading' => 'h2',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -1965,10 +1969,10 @@ function midcamp_panels_default_page_manager_pages() {
     $pane->locks = array();
     $pane->uuid = '102735c3-a72b-4638-bb3b-be765f70fe25';
     $display->content['new-102735c3-a72b-4638-bb3b-be765f70fe25'] = $pane;
-    $display->panels['middle'][0] = 'new-102735c3-a72b-4638-bb3b-be765f70fe25';
+    $display->panels['main'][0] = 'new-102735c3-a72b-4638-bb3b-be765f70fe25';
     $pane = new stdClass();
     $pane->pid = 'new-752ea083-65d1-4c62-9798-f9a1bbd94aef';
-    $pane->panel = 'middle';
+    $pane->panel = 'main';
     $pane->type = 'views_panes';
     $pane->subtype = 'midcamp_sponsor_content-panel_pane_job_page';
     $pane->shown = TRUE;
@@ -1994,7 +1998,7 @@ function midcamp_panels_default_page_manager_pages() {
     $pane->locks = array();
     $pane->uuid = '752ea083-65d1-4c62-9798-f9a1bbd94aef';
     $display->content['new-752ea083-65d1-4c62-9798-f9a1bbd94aef'] = $pane;
-    $display->panels['middle'][1] = 'new-752ea083-65d1-4c62-9798-f9a1bbd94aef';
+    $display->panels['main'][1] = 'new-752ea083-65d1-4c62-9798-f9a1bbd94aef';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

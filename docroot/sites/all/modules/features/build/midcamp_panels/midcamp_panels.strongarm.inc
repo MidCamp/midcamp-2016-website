@@ -24,7 +24,7 @@ function midcamp_panels_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'default_page_manager_pages';
   $strongarm->value = array(
-    'jobs' => TRUE,
+    'jobs' => FALSE,
     'sponsors' => FALSE,
   );
   $export['default_page_manager_pages'] = $strongarm;
