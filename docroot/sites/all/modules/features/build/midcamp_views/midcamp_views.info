@@ -35,7 +35,6 @@ features[views_view][] = og_user_groups
 features[views_view][] = random_sponsor
 features[views_view][] = redirects
 features[views_view][] = session_assignment
-features[views_view][] = session_export
 features[views_view][] = session_guidelines
 features[views_view][] = session_submissions
 features[views_view][] = speaker_discount_codes
