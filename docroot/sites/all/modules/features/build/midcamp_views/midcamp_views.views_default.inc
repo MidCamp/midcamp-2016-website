@@ -1456,6 +1456,8 @@ function midcamp_views_views_default_views() {
 
   /* Display: Keynotes Block */
   $handler = $view->new_display('block', 'Keynotes Block', 'block_2');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Keynote';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'view-attendee-user-profiles-block';
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
@@ -1578,7 +1580,7 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
   $handler->display->display_options['filters']['rid']['field'] = 'rid';
   $handler->display->display_options['filters']['rid']['value'] = array(
-    7 => '7',
+    5 => '5',
   );
 
   /* Display: Attendee All Admin Page */
