@@ -7,6 +7,7 @@
 use Behat\Behat\Context\SnippetAcceptingContext;
 use Behat\Gherkin\Node\TableNode;
 use Drupal\DrupalExtension\Context\RawDrupalContext;
+use Drupal\DrupalExtension\Hook\Scope\AfterUserCreateScope;
 
 /**
  * Defines application features from the specific context.
@@ -236,5 +237,35 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
     $uw = entity_metadata_wrapper('user', $user);
     $uw->field_name = $field_full_name;
     $uw->save();
+  }
+
+  /**
+   * Supports field_name and featured_user flag.
+   *
+   * Add these columns to the Given users step:
+   * | given name | family name | is featured |
+   * | Dries      | Buytaert    | 1           |
+   *
+   * @AfterUserCreate
+   *
+   * @param \Drupal\DrupalExtension\Hook\Scope\AfterUserCreateScope $scope
+   */
+  public function midcampAfterUserCreateScope(AfterUserCreateScope $scope) {
+    $entity = $scope->getEntity();
+    $user = (array) $entity;
+
+    $username = $user['name'];
+
+    // Populate name from name field module.
+    $given_name = array_key_exists('given name', $user) ? $user['given name'] : '';
+    $family_name = array_key_exists('family name', $user) ? $user['family name'] : '';
+    $this->setFullName($username, $given_name, $family_name);
+
+    if (array_key_exists('is featured', $user) && $user['is featured'] == 1) {
+      $flag = flag_get_flag('featured_user');
+      $user_doing_the_flagging = user_load(1);
+      $flag->flag('flag', $user['uid'], $user_doing_the_flagging);
+    }
+
   }
 }
