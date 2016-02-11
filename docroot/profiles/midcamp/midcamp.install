@@ -18,11 +18,35 @@ function midcamp_install() {
       'body' => "<p>March 17-20, 2016 at University of Illinois at Chicago (UIC)</p>",
       'info' => 'Date and venue',
       'format' => 'full_html'
-      ))
+    ))
     ->execute();
   db_insert('block')
-    ->fields(array('module', 'delta', 'theme', 'status', 'weight', 'region', 'custom', 'visibility', 'pages', 'title', 'cache'))
-    ->values(array('block', $bid, 'sitetheme', 1, 2, 'header', 0, 0, '', '', -1))
+    ->fields(array(
+      'module',
+      'delta',
+      'theme',
+      'status',
+      'weight',
+      'region',
+      'custom',
+      'visibility',
+      'pages',
+      'title',
+      'cache'
+    ))
+    ->values(array(
+      'block',
+      $bid,
+      'sitetheme',
+      1,
+      2,
+      'header',
+      0,
+      0,
+      '',
+      '',
+      -1
+    ))
     ->execute();
 
   // Enable default and admin themes.
@@ -129,6 +153,7 @@ function midcamp_install() {
     'pages',
     'cache'
   ));
+
   foreach ($blocks as $block) {
     $query->values($block);
   }
@@ -152,7 +177,12 @@ function midcamp_install() {
   // here instead of as a dependency so we can guarantee the administrator role
   // as rid 3. The og feature modules are here because the install does not see
   // group reference field on the user at this point.
-  $module_list = array('midcamp_og_features_permission_node_sponsor','midcamp_og_membership_type_og_membership_type_og_membership_type_default', 'midcamp_eck_scamp', 'midcamp_users');
+  $module_list = array(
+    'midcamp_og_features_permission_node_sponsor',
+    'midcamp_og_membership_type_og_membership_type_og_membership_type_default',
+    'midcamp_eck_scamp',
+    'midcamp_users'
+  );
   if (!module_enable($module_list)) {
     drupal_set_message($t('Unable to enabled @modules', array(
       '@modules' => implode(',', $module_list),
@@ -161,6 +191,9 @@ function midcamp_install() {
 
   // Ajaxify sponsor logos, so they are actually random!.
   midcamp_update_7002();
+
+  // Adds sponsor_sidebar to block and configure.
+  midcamp_update_7003();
 
   menu_rebuild();
 
@@ -205,4 +238,52 @@ function midcamp_update_7002() {
     ))
     ->execute();
   ajaxblocks_update_cache();
+}
+
+/**
+ * Adds sponsor_sidebar mini panel to block config.
+ */
+function midcamp_update_7003() {
+  // Add sponsor_sidebar to block config. Block Record has the potential to
+  // already exist if ran as an update. During a fresh install the Block record
+  // will not exist.
+  $theme = 'sitetheme';
+  $result = db_select('block', 'b')
+    ->fields('b')
+    ->condition('b.theme', $theme)
+    ->condition('b.module', 'panels_mini')
+    ->condition('b.delta', 'sponsor_sidebar')
+    ->addTag('block_load')
+    ->addTag('translatable')
+    ->execute();
+  $blocks = $result->fetchAllAssoc('bid');
+  if (!empty($blocks)) {
+    // Update the record. There will be only one.
+    foreach ($blocks as $bid => $block) {
+      if (!$block->status) {
+        db_update('block')
+          ->fields(array(
+            'status' => 1,
+            'weight' => 0,
+            'region' => 'sidebar_second',
+            'pages' => '',
+            'cache' => 1,
+          ))
+          ->condition('bid', $bid)
+          ->execute();
+      }
+    }
+  }
+  else {
+    // Insert the record.
+    db_insert('block')
+      ->fields(array('module', 'delta', 'theme', 'status', 'weight', 'region', 'pages', 'cache'))
+      ->values(array('panels_mini', 'sponsor_sidebar', $theme, 1, 0, 'sidebar_second', '', -1))
+      ->execute();
+  }
+
+  db_insert('block_node_type')
+    ->fields(array('module', 'delta', 'type'))
+    ->values(array('panels_mini', 'sponsor_sidebar', 'sponsor'))
+    ->execute();
 }

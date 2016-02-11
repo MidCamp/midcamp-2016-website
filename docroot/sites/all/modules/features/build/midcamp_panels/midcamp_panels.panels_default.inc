@@ -197,6 +197,7 @@ function midcamp_panels_default_panels_mini() {
       'context' => 'requiredcontext_entity:node_1',
       'override_title' => 1,
       'override_title_text' => 'Post new',
+      'override_title_heading' => 'h2',
     );
     $pane->cache = array();
     $pane->style = array(

@@ -31,6 +31,7 @@ default:
         header_top: "div.header__top"
         navigation: "div#navigation"
         content: "div#page"
+        sidebar_second: "section.region.region-sidebar-second"
         footer: "div.footer-wrapper"
       selectors:
         message_selector: '.messages.status'
