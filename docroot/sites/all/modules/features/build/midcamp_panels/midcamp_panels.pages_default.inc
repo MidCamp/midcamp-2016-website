@@ -2040,7 +2040,7 @@ function midcamp_panels_default_page_manager_pages() {
     'relationships' => array(),
   );
   $display = new panels_display();
-  $display->layout = 'threecol_33_34_33';
+  $display->layout = 'threecol_33_34_33_stacked';
   $display->layout_settings = array(
     'main_classes' => '',
   );
@@ -2053,6 +2053,8 @@ function midcamp_panels_default_page_manager_pages() {
       'left' => NULL,
       'middle' => NULL,
       'right' => NULL,
+      'top' => NULL,
+      'bottom' => NULL,
     ),
   );
   $display->cache = array();
@@ -2060,6 +2062,41 @@ function midcamp_panels_default_page_manager_pages() {
   $display->uuid = 'a162d926-1261-4de3-ac93-0613b389f8ca';
   $display->content = array();
   $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-e9275d10-f12d-4d1d-b6e1-b873944d4ac4';
+    $pane->panel = 'bottom';
+    $pane->type = 'views';
+    $pane->subtype = 'attendee_user_profiles';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 1,
+      'nodes_per_page' => '5',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '',
+      'url' => '',
+      'display' => 'block_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'e9275d10-f12d-4d1d-b6e1-b873944d4ac4';
+    $display->content['new-e9275d10-f12d-4d1d-b6e1-b873944d4ac4'] = $pane;
+    $display->panels['bottom'][0] = 'new-e9275d10-f12d-4d1d-b6e1-b873944d4ac4';
     $pane = new stdClass();
     $pane->pid = 'new-3f496428-7245-4a52-b988-27bbf0a73120';
     $pane->panel = 'left';
