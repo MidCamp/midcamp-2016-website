@@ -1063,6 +1063,8 @@ function midcamp_views_views_default_views() {
 
   /* Display: Featured Attendee Page */
   $handler = $view->new_display('page', 'Featured Attendee Page', 'page_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Featured Attendees';
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'role';
   $handler->display->display_options['access']['role'] = array(
