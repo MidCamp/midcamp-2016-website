@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function midcamp_users_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -40,7 +40,7 @@ function midcamp_users_field_group_info() {
       ),
     ),
   );
-  $export['group_community|user|user|form'] = $field_group;
+  $field_groups['group_community|user|user|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -70,7 +70,7 @@ function midcamp_users_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_personal|user|user|form'] = $field_group;
+  $field_groups['group_personal|user|user|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -99,7 +99,7 @@ function midcamp_users_field_group_info() {
       ),
     ),
   );
-  $export['group_professional|user|user|form'] = $field_group;
+  $field_groups['group_professional|user|user|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -135,7 +135,14 @@ function midcamp_users_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_social_media|user|user|plaque'] = $field_group;
+  $field_groups['group_social_media|user|user|plaque'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Community Info');
+  t('Personal Info');
+  t('Professional Info');
+  t('Social Media Links');
+
+  return $field_groups;
 }
