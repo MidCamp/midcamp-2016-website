@@ -231,6 +231,8 @@ function eck__bundle__add($form, &$form_state, $entity_type) {
 
   $form['bundle_name'] = array(
     '#type' => 'machine_name',
+    '#maxlength' => 32,
+    '#description' => t('A unique machine-readable name. Can only contain lowercase letters, numbers, and underscores. Maximum length 32 characters.'),
     '#required' => FALSE,
     '#machine_name' => array(
       'exists' => '_eck_fake_exists',
@@ -282,8 +284,18 @@ function eck__bundle__add_submit($form, &$form_state) {
   $bundle->entity_type = $entity_type->name;
   $bundle->save();
 
-  drupal_set_message(t('the bundle %bundle for entity type %entity_type has been created.',
-      array('%bundle' => $bundle->label, '%entity_type' => $entity_type->label)));
+  $msg = 'the bundle @bundle for entity type @entity_type has been created.';
+  $args = array(
+    '@bundle' => $bundle->label,
+    '@entity_type' => $entity_type->label,
+  );
+
+  $context = array('bundle' => $bundle, 'form_state' => $form_state);
+  drupal_alter('eck_bundle_save_message', $msg, $args, $context);
+
+  if ($msg) {
+    drupal_set_message(t($msg, $args));
+  }
 
   $form_state['redirect'] = "{$path}/{$entity_type->name}";
 }

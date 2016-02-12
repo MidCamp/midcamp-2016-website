@@ -1,6 +1,6 @@
 name = MidCamp Panels
 core = 7.x
-package = Ctools
+package = CTools
 dependencies[] = ctools_custom_content
 dependencies[] = page_manager
 dependencies[] = panels

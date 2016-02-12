@@ -35,7 +35,6 @@ class NodeFeaturesBuilder extends EntityFeaturesBuilder {
 
 
     // Add Fields and Field Groups assigned to the bundle.
-    $this->setNamedComponents('dependencies', array($this->prefix . '_fields'));
     $bundle = substr($this->name, 5);
     $this->setFields('node', $bundle);
     $this->setAutoNodeTitle($bundle);

@@ -10,7 +10,7 @@ class PanelsFeaturesBuilder extends FeaturesBuilderBase {
    * {@inheritdoc}
    */
   public function package() {
-    return 'Ctools';
+    return 'CTools';
   }
 
   protected function setComponents() {

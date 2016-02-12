@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function midcamp_profile2_type_orders_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -35,7 +35,7 @@ function midcamp_profile2_type_orders_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_midcamp_sessions|profile2|orders|default'] = $field_group;
+  $field_groups['group_midcamp_sessions|profile2|orders|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -62,7 +62,12 @@ function midcamp_profile2_type_orders_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_midcamp_training|profile2|orders|default'] = $field_group;
+  $field_groups['group_midcamp_training|profile2|orders|default'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('MidCamp Session Tickets');
+  t('MidCamp Training Tickets');
+
+  return $field_groups;
 }
