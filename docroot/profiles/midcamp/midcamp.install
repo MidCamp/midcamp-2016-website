@@ -173,6 +173,14 @@ function midcamp_install() {
     ->fields(array('uid' => 1, 'rid' => $admin_role->rid))
     ->execute();
 
+  // Match production role ids (4=Individual Sponsor, 5=Keynote, etc.).
+  $prod_role_names = array('Individual Sponsor', 'Keynote', 'Session Selection Admin', 'Speaker', 'Content Editor');
+  foreach ($prod_role_names as $prod_role_name) {
+    $prod_role = new stdClass();
+    $prod_role->name = $prod_role_name;
+    user_role_save($prod_role);
+  }
+
   // The midcamp_users module defines roles and permissions, and is enabled
   // here instead of as a dependency so we can guarantee the administrator role
   // as rid 3. The og feature modules are here because the install does not see
