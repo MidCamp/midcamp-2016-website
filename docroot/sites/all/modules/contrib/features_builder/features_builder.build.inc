@@ -285,7 +285,11 @@ function features_builder_build($feature, $component_types) {
     if (!in_array($extension, array('module', 'info'))) {
       $extension .= '.inc';
     }
-    file_put_contents("{$directory}/$module_name.$extension", $file_contents);
+    $filepath = "{$directory}/{$module_name}.{$extension}";
+    file_put_contents($filepath, $file_contents);
+    if (function_exists('drupal_clear_opcode_cache')) {
+      drupal_clear_opcode_cache($filepath);
+    }
   }
 
 }

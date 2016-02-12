@@ -83,6 +83,11 @@ class SiteFeaturesBuilder extends FeaturesBuilderBase {
       }
     }
 
+    if (module_exists('scheduler')) {
+      $this->setNamedComponents('dependencies', array('scheduler'));
+      $this->setRegexComponents('variable', '/^scheduler_.*/');
+    }
+
     if (module_exists('search')) {
       $this->setNamedComponents('dependencies', array('search'));
       $variables = array(

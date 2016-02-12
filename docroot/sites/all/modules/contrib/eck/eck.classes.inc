@@ -396,7 +396,7 @@ class EntityType extends DBObject {
       $_eck_entity_types_cache->reset();
     }
 
-    variable_set('eck_clear_caches', TRUE);
+    eck_clean_up_request();
   }
   /**
    * Delete.
@@ -420,7 +420,7 @@ class EntityType extends DBObject {
     if ($cache_enabled) {
       $_eck_entity_types_cache->reset();
     }
-    variable_set('eck_clear_caches', TRUE);
+    eck_clean_up_request();
   }
 
   /**
@@ -553,7 +553,7 @@ class Bundle extends DBObject {
           $_eck_bundles_cache->reset();
         }
 
-        variable_set('eck_clear_caches', TRUE);
+        eck_clean_up_request();
       }
       else {
         // @todo throw some error.
@@ -579,7 +579,7 @@ class Bundle extends DBObject {
 
     if (!empty($results)) {
       $ids = array_keys($results[$this->entity_type]);
-      entity_delete($this->entity_type, $ids);
+      entity_delete_multiple($this->entity_type, $ids);
     }
 
     // Then we delete the bundle (field_instances).
@@ -594,7 +594,7 @@ class Bundle extends DBObject {
       $_eck_bundles_cache->reset();
     }
 
-    variable_set('eck_clear_caches', TRUE);
+    eck_clean_up_request();
   }
 
   /**

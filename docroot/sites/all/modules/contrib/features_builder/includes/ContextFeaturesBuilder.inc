@@ -15,7 +15,6 @@ class ContextFeaturesBuilder extends FeaturesBuilderBase {
 
   protected function setComponents() {
     $this->setAllComponents('context');
-    $this->setNamedComponents('ctools', array('context:context:3'));
   }
 
 }

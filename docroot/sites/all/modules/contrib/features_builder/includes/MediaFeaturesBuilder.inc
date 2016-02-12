@@ -1,6 +1,6 @@
 <?php
 
-class MediaFeaturesBuilder extends FeaturesBuilderBase {
+class MediaFeaturesBuilder extends EntityFeaturesBuilder {
 
   protected $dependencies = array(
     'ctools',
@@ -83,6 +83,38 @@ class MediaFeaturesBuilder extends FeaturesBuilderBase {
     }
 
     $this->setNamedComponents('dependencies', array_filter($this->dependencies));
+
+    if (module_exists('file_entity')) {
+      $this->setFileEntityComponents();
+    }
+  }
+
+  /**
+   * Add file_entity module configuration.
+   */
+  protected function setFileEntityComponents() {
+    // Only applicable to 7.x-2.x release of file_entity.
+    $info = system_get_info('module', 'file_entity');
+    list($major, $minor) = explode('-', $info['version']);
+    if ($major != '7.x' || floor((float) $minor) != 2) {
+      return;
+    }
+
+    $dependencies[] = 'file_entity';
+    $this->setAllComponents('file_display');
+    $this->setAllComponents('file_entity');
+    $this->setAllComponents('file_type');
+
+    $this->setRegexComponents('variable', '/^file_entity_.+/');
+
+    if ($bundles = field_info_bundles('file')) {
+      $dependencies[] = $this->prefix . '_fields';
+      foreach (array_keys($bundles) as $bundle) {
+        $this->setFields('file', $bundle);
+      }
+    }
+
+    $this->setNamedComponents('dependencies', $dependencies);
   }
 
 }
