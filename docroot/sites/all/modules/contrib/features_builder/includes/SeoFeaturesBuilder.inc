@@ -6,6 +6,7 @@ class SeoFeaturesBuilder extends FeaturesBuilderBase {
     'globalredirect',
     'metatag',
     'pathauto',
+    'trailing_slash',
     'xmlsitemap',
     'xmlsitemap_custom',
     'xmlsitemap_engines',
@@ -47,6 +48,7 @@ class SeoFeaturesBuilder extends FeaturesBuilderBase {
     $this->setAllComponents('metatag');
     $this->setRegexComponents('variable', '/^globalredirect_settings$/');
     $this->setRegexComponents('variable', '/^pathauto_/');
+    $this->setRegexComponents('variable', '/^trailing_slash/');
     $this->setRegexComponents('variable', '/^xmlsitemap_.*/');
     if (!empty($this->components['variable'])) {
       $this->components['variable'] = array_diff($this->components['variable'], $this->exclude);
