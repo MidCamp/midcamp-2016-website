@@ -2100,35 +2100,6 @@ function midcamp_panels_default_page_manager_pages() {
     $display->content['new-459c3290-c24f-4548-8c8b-7732e57f3acb'] = $pane;
     $display->panels['bottom'][0] = 'new-459c3290-c24f-4548-8c8b-7732e57f3acb';
     $pane = new stdClass();
-    $pane->pid = 'new-89dda9a1-5631-4fc8-b04f-3f9d1685d831';
-    $pane->panel = 'bottom';
-    $pane->type = 'node';
-    $pane->subtype = 'node';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'nid' => '56',
-      'links' => 0,
-      'leave_node_title' => 0,
-      'identifier' => '',
-      'build_mode' => 'teaser',
-      'link_node_title' => 1,
-      'override_title' => 0,
-      'override_title_text' => '',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = '89dda9a1-5631-4fc8-b04f-3f9d1685d831';
-    $display->content['new-89dda9a1-5631-4fc8-b04f-3f9d1685d831'] = $pane;
-    $display->panels['bottom'][1] = 'new-89dda9a1-5631-4fc8-b04f-3f9d1685d831';
-    $pane = new stdClass();
     $pane->pid = 'new-e9275d10-f12d-4d1d-b6e1-b873944d4ac4';
     $pane->panel = 'bottom';
     $pane->type = 'views';
@@ -2158,11 +2129,11 @@ function midcamp_panels_default_page_manager_pages() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = 'e9275d10-f12d-4d1d-b6e1-b873944d4ac4';
     $display->content['new-e9275d10-f12d-4d1d-b6e1-b873944d4ac4'] = $pane;
-    $display->panels['bottom'][2] = 'new-e9275d10-f12d-4d1d-b6e1-b873944d4ac4';
+    $display->panels['bottom'][1] = 'new-e9275d10-f12d-4d1d-b6e1-b873944d4ac4';
     $pane = new stdClass();
     $pane->pid = 'new-3f496428-7245-4a52-b988-27bbf0a73120';
     $pane->panel = 'left';
