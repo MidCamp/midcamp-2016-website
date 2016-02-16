@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * @file
+ * Contains module file for Eventbrite integration for MidCamp.
+ */
+
+define('EVENTBRITE_API_ENDPOINT', 'https://www.eventbriteapi.com/v3');
+
+/**
+ * Implements hook_ctools_plugin_directory().
+ */
+function midcamp_eventbrite_ctools_plugin_directory($owner, $plugin_type) {
+  if ($owner == 'ctools' && $plugin_type == 'content_types') {
+    return 'plugins/content_types';
+  }
+  return NULL;
+}
