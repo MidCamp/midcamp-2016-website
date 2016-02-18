@@ -4172,6 +4172,7 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'role';
   $handler->display->display_options['access']['role'] = array(
+    1 => '1',
     7 => '7',
   );
   $handler->display->display_options['cache']['type'] = 'none';
