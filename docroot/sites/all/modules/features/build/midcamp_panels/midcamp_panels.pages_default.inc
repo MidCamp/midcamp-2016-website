@@ -2451,7 +2451,7 @@ function midcamp_panels_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = 'Thursday March 19';
+  $display->title = 'Thursday March 17';
   $display->uuid = '1e694f48-37b6-4f69-bf50-cd520c303b5c';
   $display->content = array();
   $display->panels = array();
@@ -2504,7 +2504,7 @@ function midcamp_panels_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = 'Friday March 20';
+  $display->title = 'Friday March 18';
   $display->uuid = '8a4e1b5f-397a-4e19-901f-3a27f6d2e7d5';
   $display->content = array();
   $display->panels = array();
@@ -2765,7 +2765,7 @@ function midcamp_panels_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = 'Saturday March 21';
+  $display->title = 'Saturday March 19';
   $display->uuid = '8a4e1b5f-397a-4e19-901f-3a27f6d2e7d5';
   $display->content = array();
   $display->panels = array();
@@ -3023,10 +3023,11 @@ function midcamp_panels_default_page_manager_pages() {
     'style_settings' => array(
       'default' => NULL,
       'center' => NULL,
+      'middle' => NULL,
     ),
   );
   $display->cache = array();
-  $display->title = 'Sunday March 22';
+  $display->title = 'Sunday March 20';
   $display->uuid = '9ddd4a24-69a0-4d9c-be40-8865073e1648';
   $display->content = array();
   $display->panels = array();
