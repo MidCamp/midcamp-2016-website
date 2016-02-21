@@ -18,6 +18,7 @@ features[filter][] = plain_text
 features[filter][] = rich_text
 features[image][] = large
 features[image][] = linkit_thumb
+features[image][] = logo_sponsor_view_full
 features[image][] = medium
 features[image][] = sponsor_bronze
 features[image][] = sponsor_footer
