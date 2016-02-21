@@ -1398,6 +1398,8 @@ function midcamp_users_user_default_permissions() {
     'name' => 'eck view scamp room entities',
     'roles' => array(
       'Administrator' => 'Administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'eck',
   );
@@ -1407,6 +1409,8 @@ function midcamp_users_user_default_permissions() {
     'name' => 'eck view scamp timeslot entities',
     'roles' => array(
       'Administrator' => 'Administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'eck',
   );
@@ -2071,6 +2075,8 @@ function midcamp_users_user_default_permissions() {
     'name' => 'view field_room',
     'roles' => array(
       'Administrator' => 'Administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -2107,6 +2113,8 @@ function midcamp_users_user_default_permissions() {
     'name' => 'view field_timeslot',
     'roles' => array(
       'Administrator' => 'Administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
