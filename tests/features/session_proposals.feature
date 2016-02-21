@@ -48,9 +48,8 @@ Feature: Session proposal functionality
       | Joe Session1 | behat | joesession1@example.com | authenticated user |
       | Joe Session2 | behat | joesession2@example.com | authenticated user |
     And session content:
-      | title      | author       | field_speakers | field_drupal_specific | field_beginners | field_track   | field_length | field_attendee_description | is accepted |
-      | Drupal 101 | Joe Session1 | Joe Session1   | Yes                   | Yes             | Site Building | 60 minutes   | Build something amazing    | 1           |
-      | Drupal 102 | Joe Session1 | Joe Session1   | Yes                   | Yes             | Site Building | 60 minutes   | Build something more       | 0           |
+      | title      | author       | field_speakers | field_drupal_specific | field_beginners | field_track   | field_length | field_attendee_description |
+      | Drupal 101 | Joe Session1 | Joe Session1   | Yes                   | Yes             | Site Building | 60 minutes   | Build something amazing    |
 
     When I am an anonymous user
 
@@ -59,6 +58,8 @@ Feature: Session proposal functionality
     And I click "Drupal 101"
 
     #Anonymous user viewing session
+    Then I break
+    And I break
     Then I should see "Session Description"
     And I should see "Build something amazing"
     And I should see "Joe Session1"
@@ -72,7 +73,6 @@ Feature: Session proposal functionality
 
     #Authenticated non-author viewing author profile
     When I visit "users/joe-session1"
-    And I break
     Then I should see "Sessions"
     And I should see "Drupal 101"
 

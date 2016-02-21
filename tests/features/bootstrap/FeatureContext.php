@@ -268,27 +268,4 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
     }
 
   }
-
-  /**
-   * Supports accepted flag.
-   *
-   * Add these columns to the Given session content step:
-   * | is accepted |
-   * | 1           |
-   *
-   * @AfterNodeCreate
-   *
-   * @param \Drupal\DrupalExtension\Hook\Scope\AfterNodeCreateScope $scope
-   */
-  public function midcampAfterNodeCreateScope(AfterNodeCreateScope $scope) {
-    $entity = $scope->getEntity();
-    $node = (array) $entity;
-
-    if (array_key_exists('is accepted', $node) && $node['is accepted'] == 1) {
-      $flag = flag_get_flag('accepted');
-      $user_doing_the_flagging = user_load(1);
-      $flag->flag('flag', $node['nid'], $user_doing_the_flagging);
-    }
-  }
-
 }
