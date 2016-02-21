@@ -350,15 +350,6 @@ function midcamp_users_user_default_permissions() {
     'module' => 'flag',
   );
 
-  // Exported permission: 'administer google analytics'.
-  $permissions['administer google analytics'] = array(
-    'name' => 'administer google analytics',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'googleanalytics',
-  );
-
   // Exported permission: 'administer group'.
   $permissions['administer group'] = array(
     'name' => 'administer group',
@@ -1416,8 +1407,6 @@ function midcamp_users_user_default_permissions() {
     'name' => 'eck view scamp room entities',
     'roles' => array(
       'Administrator' => 'Administrator',
-      'anonymous user' => 'anonymous user',
-      'authenticated user' => 'authenticated user',
     ),
     'module' => 'eck',
   );
@@ -1427,8 +1416,6 @@ function midcamp_users_user_default_permissions() {
     'name' => 'eck view scamp timeslot entities',
     'roles' => array(
       'Administrator' => 'Administrator',
-      'anonymous user' => 'anonymous user',
-      'authenticated user' => 'authenticated user',
     ),
     'module' => 'eck',
   );
@@ -1905,15 +1892,6 @@ function midcamp_users_user_default_permissions() {
     'module' => 'pathauto',
   );
 
-  // Exported permission: 'opt-in or out of tracking'.
-  $permissions['opt-in or out of tracking'] = array(
-    'name' => 'opt-in or out of tracking',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'googleanalytics',
-  );
-
   // Exported permission: 'perform backup'.
   $permissions['perform backup'] = array(
     'name' => 'perform backup',
@@ -1985,15 +1963,6 @@ function midcamp_users_user_default_permissions() {
       'Administrator' => 'Administrator',
     ),
     'module' => 'flag',
-  );
-
-  // Exported permission: 'use PHP for tracking visibility'.
-  $permissions['use PHP for tracking visibility'] = array(
-    'name' => 'use PHP for tracking visibility',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'googleanalytics',
   );
 
   // Exported permission: 'use ctools import'.
@@ -2129,8 +2098,6 @@ function midcamp_users_user_default_permissions() {
     'name' => 'view field_room',
     'roles' => array(
       'Administrator' => 'Administrator',
-      'anonymous user' => 'anonymous user',
-      'authenticated user' => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -2176,8 +2143,6 @@ function midcamp_users_user_default_permissions() {
     'name' => 'view field_timeslot',
     'roles' => array(
       'Administrator' => 'Administrator',
-      'anonymous user' => 'anonymous user',
-      'authenticated user' => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
