@@ -48,8 +48,8 @@ Feature: Session proposal functionality
       | Joe Session1 | behat | joesession1@example.com | authenticated user |
       | Joe Session2 | behat | joesession2@example.com | authenticated user |
     And session content:
-      | title      | author       | field_drupal_specific | field_beginners | field_track   | field_length | field_attendee_description |
-      | Drupal 101 | Joe Session1 | Yes                   | Yes             | Site Building | 60 minutes   | Build something amazing    |
+      | title      | author       | field_speakers | field_drupal_specific | field_beginners | field_track   | field_length | field_attendee_description |
+      | Drupal 101 | Joe Session1 | Joe Session1   | Yes                   | Yes             | Site Building | 60 minutes   | Build something amazing    |
 
     When I am an anonymous user
 
@@ -58,19 +58,23 @@ Feature: Session proposal functionality
     And I click "Drupal 101"
 
     #Anonymous user viewing session
-    Then I should see the pane title "Session Description"
-    And I see the text "Build something amazing"
+    Then I break
+    And I break
+    Then I should see "Session Description"
+    And I should see "Build something amazing"
+    And I should see "Joe Session1"
 
     #Authenticated non-author viewing session
     When I am logged in as "Joe Session2"
     And I visit "session/drupal-101"
-    Then I should see the pane title "Session Description"
-    And I see the text "Build something amazing"
+    Then I should see "Session Description"
+    And I should see "Build something amazing"
+    And I should see "Joe Session1"
 
     #Authenticated non-author viewing author profile
     When I visit "users/joe-session1"
-    Then I should not see "Session proposals"
-    And I should not see "Drupal 101"
+    Then I should see "Sessions"
+    And I should see "Drupal 101"
 
     #Author viewing session
     When I am logged in as "Joe Session1"
