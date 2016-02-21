@@ -1254,7 +1254,7 @@ Prof.',
     'entity_types' => array(),
     'field_name' => 'field_speakers',
     'field_permissions' => array(
-      'type' => 0,
+      'type' => 2,
     ),
     'indexes' => array(
       'target_id' => array(

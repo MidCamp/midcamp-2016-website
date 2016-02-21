@@ -1929,7 +1929,7 @@ function midcamp_panels_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = 'Buy Tickets Now';
+  $display->title = '';
   $display->uuid = '2aceb075-2dfd-4af4-91a5-b8f8ea1e28d0';
   $display->content = array();
   $display->panels = array();
@@ -2094,7 +2094,10 @@ function midcamp_panels_default_page_manager_pages() {
   $page->admin_title = 'MidCamp home page';
   $page->admin_description = '';
   $page->path = 'home';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array();
   $page->conf = array(
