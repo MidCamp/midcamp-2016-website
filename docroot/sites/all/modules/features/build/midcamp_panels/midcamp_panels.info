@@ -1,7 +1,6 @@
 name = MidCamp Panels
 core = 7.x
-package = Ctools
-dependencies[] = ctools
+package = CTools
 dependencies[] = ctools_custom_content
 dependencies[] = page_manager
 dependencies[] = panels
@@ -42,3 +41,4 @@ features[variable][] = default_page_manager_pages
 features[variable][] = page_manager_node_edit_disabled
 features[variable][] = page_manager_node_view_disabled
 features[variable][] = page_manager_user_view_disabled
+features[panels_renderer_pipeline][] = standard
