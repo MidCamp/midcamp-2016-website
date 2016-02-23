@@ -6138,7 +6138,7 @@ function midcamp_views_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = '[field_timeslot]';
+  $handler->display->display_options['title'] = '[smart_timeslot]';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -6191,16 +6191,14 @@ display: none; visibility: hidden;
   $handler->display->display_options['fields']['rendered_entity']['display'] = 'view';
   $handler->display->display_options['fields']['rendered_entity']['view_mode'] = 'schedule';
   $handler->display->display_options['fields']['rendered_entity']['bypass_access'] = 0;
-  /* Field: SCAMP: Timeslot */
-  $handler->display->display_options['fields']['field_timeslot']['id'] = 'field_timeslot';
-  $handler->display->display_options['fields']['field_timeslot']['table'] = 'field_data_field_timeslot';
-  $handler->display->display_options['fields']['field_timeslot']['field'] = 'field_timeslot';
-  $handler->display->display_options['fields']['field_timeslot']['label'] = '';
-  $handler->display->display_options['fields']['field_timeslot']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_timeslot']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_timeslot']['settings'] = array(
-    'link' => 0,
-  );
+  /* Field: Content: Smart timeslot */
+  $handler->display->display_options['fields']['smart_timeslot']['id'] = 'smart_timeslot';
+  $handler->display->display_options['fields']['smart_timeslot']['table'] = 'node';
+  $handler->display->display_options['fields']['smart_timeslot']['field'] = 'smart_timeslot';
+  $handler->display->display_options['fields']['smart_timeslot']['relationship'] = 'field_sessions_target_id';
+  $handler->display->display_options['fields']['smart_timeslot']['label'] = '';
+  $handler->display->display_options['fields']['smart_timeslot']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['smart_timeslot']['element_label_colon'] = FALSE;
   /* Sort criterion: SCAMP: Id */
   $handler->display->display_options['sorts']['id']['id'] = 'id';
   $handler->display->display_options['sorts']['id']['table'] = 'eck_scamp';
