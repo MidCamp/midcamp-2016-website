@@ -2451,7 +2451,7 @@ function midcamp_panels_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = 'Thursday March 19';
+  $display->title = 'Thursday March 17';
   $display->uuid = '1e694f48-37b6-4f69-bf50-cd520c303b5c';
   $display->content = array();
   $display->panels = array();
@@ -2504,36 +2504,10 @@ function midcamp_panels_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = 'Friday March 20';
+  $display->title = 'Friday March 18';
   $display->uuid = '8a4e1b5f-397a-4e19-901f-3a27f6d2e7d5';
   $display->content = array();
   $display->panels = array();
-    $pane = new stdClass();
-    $pane->pid = 'new-c3be7d6f-9217-439f-983d-c69540da41d6';
-    $pane->panel = 'middle';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'timeslot_sessions-panel_pane_1';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'arguments' => array(
-        'field_timeslot_target_id' => '1',
-      ),
-      'override_title' => 1,
-      'override_title_text' => '8:00am-9:00am',
-      'override_title_heading' => 'h3',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'c3be7d6f-9217-439f-983d-c69540da41d6';
-    $display->content['new-c3be7d6f-9217-439f-983d-c69540da41d6'] = $pane;
-    $display->panels['middle'][0] = 'new-c3be7d6f-9217-439f-983d-c69540da41d6';
     $pane = new stdClass();
     $pane->pid = 'new-5551202b-6c1a-46d1-a181-c06407ee1f58';
     $pane->panel = 'middle';
@@ -2545,7 +2519,7 @@ function midcamp_panels_default_page_manager_pages() {
       'arguments' => array(
         'field_timeslot_target_id' => '2',
       ),
-      'override_title' => 1,
+      'override_title' => 0,
       'override_title_text' => '9:00am-10:15am',
       'override_title_heading' => 'h3',
     );
@@ -2555,13 +2529,13 @@ function midcamp_panels_default_page_manager_pages() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 0;
     $pane->locks = array();
     $pane->uuid = '5551202b-6c1a-46d1-a181-c06407ee1f58';
     $display->content['new-5551202b-6c1a-46d1-a181-c06407ee1f58'] = $pane;
-    $display->panels['middle'][1] = 'new-5551202b-6c1a-46d1-a181-c06407ee1f58';
+    $display->panels['middle'][0] = 'new-5551202b-6c1a-46d1-a181-c06407ee1f58';
     $pane = new stdClass();
-    $pane->pid = 'new-34fe61d6-4180-4020-b3ec-a8c5b2a05ca7';
+    $pane->pid = 'new-89c6fbc8-c010-40d7-8150-192010c1cfb6';
     $pane->panel = 'middle';
     $pane->type = 'views_panes';
     $pane->subtype = 'timeslot_sessions-panel_pane_1';
@@ -2569,11 +2543,11 @@ function midcamp_panels_default_page_manager_pages() {
     $pane->access = array();
     $pane->configuration = array(
       'arguments' => array(
-        'field_timeslot_target_id' => '4',
+        'field_timeslot_target_id' => '9',
       ),
-      'override_title' => 1,
-      'override_title_text' => '10:30am-11:30am',
-      'override_title_heading' => 'h3',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -2581,63 +2555,11 @@ function midcamp_panels_default_page_manager_pages() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 1;
     $pane->locks = array();
-    $pane->uuid = '34fe61d6-4180-4020-b3ec-a8c5b2a05ca7';
-    $display->content['new-34fe61d6-4180-4020-b3ec-a8c5b2a05ca7'] = $pane;
-    $display->panels['middle'][2] = 'new-34fe61d6-4180-4020-b3ec-a8c5b2a05ca7';
-    $pane = new stdClass();
-    $pane->pid = 'new-71a77f83-8cb9-4636-84ad-5fdb8c51fe0f';
-    $pane->panel = 'middle';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'timeslot_sessions-panel_pane_1';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'arguments' => array(
-        'field_timeslot_target_id' => '6',
-      ),
-      'override_title' => 1,
-      'override_title_text' => '12:30pm-1:30pm',
-      'override_title_heading' => 'h3',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 3;
-    $pane->locks = array();
-    $pane->uuid = '71a77f83-8cb9-4636-84ad-5fdb8c51fe0f';
-    $display->content['new-71a77f83-8cb9-4636-84ad-5fdb8c51fe0f'] = $pane;
-    $display->panels['middle'][3] = 'new-71a77f83-8cb9-4636-84ad-5fdb8c51fe0f';
-    $pane = new stdClass();
-    $pane->pid = 'new-5e6c50c7-7a82-42d3-bce3-d5ddbd7dbe60';
-    $pane->panel = 'middle';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'timeslot_sessions-panel_pane_1';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'arguments' => array(
-        'field_timeslot_target_id' => '8',
-      ),
-      'override_title' => 1,
-      'override_title_text' => '1:45pm-2:45pm',
-      'override_title_heading' => 'h3',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 4;
-    $pane->locks = array();
-    $pane->uuid = '5e6c50c7-7a82-42d3-bce3-d5ddbd7dbe60';
-    $display->content['new-5e6c50c7-7a82-42d3-bce3-d5ddbd7dbe60'] = $pane;
-    $display->panels['middle'][4] = 'new-5e6c50c7-7a82-42d3-bce3-d5ddbd7dbe60';
+    $pane->uuid = '89c6fbc8-c010-40d7-8150-192010c1cfb6';
+    $display->content['new-89c6fbc8-c010-40d7-8150-192010c1cfb6'] = $pane;
+    $display->panels['middle'][1] = 'new-89c6fbc8-c010-40d7-8150-192010c1cfb6';
     $pane = new stdClass();
     $pane->pid = 'new-5cfb2288-0126-4bb6-8106-366a15875f62';
     $pane->panel = 'middle';
@@ -2649,7 +2571,7 @@ function midcamp_panels_default_page_manager_pages() {
       'arguments' => array(
         'field_timeslot_target_id' => '10',
       ),
-      'override_title' => 1,
+      'override_title' => 0,
       'override_title_text' => '3:00pm-4:00pm',
       'override_title_heading' => 'h2',
     );
@@ -2659,11 +2581,37 @@ function midcamp_panels_default_page_manager_pages() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 5;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = '5cfb2288-0126-4bb6-8106-366a15875f62';
     $display->content['new-5cfb2288-0126-4bb6-8106-366a15875f62'] = $pane;
-    $display->panels['middle'][5] = 'new-5cfb2288-0126-4bb6-8106-366a15875f62';
+    $display->panels['middle'][2] = 'new-5cfb2288-0126-4bb6-8106-366a15875f62';
+    $pane = new stdClass();
+    $pane->pid = 'new-237ea7a6-3cce-4ba4-add4-05daf8931dec';
+    $pane->panel = 'middle';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'timeslot_sessions-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'arguments' => array(
+        'field_timeslot_target_id' => '11',
+      ),
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = '237ea7a6-3cce-4ba4-add4-05daf8931dec';
+    $display->content['new-237ea7a6-3cce-4ba4-add4-05daf8931dec'] = $pane;
+    $display->panels['middle'][3] = 'new-237ea7a6-3cce-4ba4-add4-05daf8931dec';
     $pane = new stdClass();
     $pane->pid = 'new-dfd57f01-d4dc-48f2-b609-e2823c0178c0';
     $pane->panel = 'middle';
@@ -2675,7 +2623,7 @@ function midcamp_panels_default_page_manager_pages() {
       'arguments' => array(
         'field_timeslot_target_id' => '12',
       ),
-      'override_title' => 1,
+      'override_title' => 0,
       'override_title_text' => '4:30pm-5:30pm',
       'override_title_heading' => 'h3',
     );
@@ -2685,37 +2633,11 @@ function midcamp_panels_default_page_manager_pages() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 6;
+    $pane->position = 4;
     $pane->locks = array();
     $pane->uuid = 'dfd57f01-d4dc-48f2-b609-e2823c0178c0';
     $display->content['new-dfd57f01-d4dc-48f2-b609-e2823c0178c0'] = $pane;
-    $display->panels['middle'][6] = 'new-dfd57f01-d4dc-48f2-b609-e2823c0178c0';
-    $pane = new stdClass();
-    $pane->pid = 'new-7930d2af-a0b0-4c45-88b4-52a27e6ef0e4';
-    $pane->panel = 'middle';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'timeslot_sessions-panel_pane_1';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'arguments' => array(
-        'field_timeslot_target_id' => '13',
-      ),
-      'override_title' => 1,
-      'override_title_text' => '5:30pm-8:30pm',
-      'override_title_heading' => 'h3',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 7;
-    $pane->locks = array();
-    $pane->uuid = '7930d2af-a0b0-4c45-88b4-52a27e6ef0e4';
-    $display->content['new-7930d2af-a0b0-4c45-88b4-52a27e6ef0e4'] = $pane;
-    $display->panels['middle'][7] = 'new-7930d2af-a0b0-4c45-88b4-52a27e6ef0e4';
+    $display->panels['middle'][4] = 'new-dfd57f01-d4dc-48f2-b609-e2823c0178c0';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -2765,10 +2687,36 @@ function midcamp_panels_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = 'Saturday March 21';
+  $display->title = 'Saturday March 19';
   $display->uuid = '8a4e1b5f-397a-4e19-901f-3a27f6d2e7d5';
   $display->content = array();
   $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-a4f698a0-5f2f-48e9-a8c8-d71768be09f4';
+    $pane->panel = 'middle';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'timeslot_sessions-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'arguments' => array(
+        'field_timeslot_target_id' => '13',
+      ),
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'a4f698a0-5f2f-48e9-a8c8-d71768be09f4';
+    $display->content['new-a4f698a0-5f2f-48e9-a8c8-d71768be09f4'] = $pane;
+    $display->panels['middle'][0] = 'new-a4f698a0-5f2f-48e9-a8c8-d71768be09f4';
     $pane = new stdClass();
     $pane->pid = 'new-62ba945e-72ba-42ae-9635-b9705f688432';
     $pane->panel = 'middle';
@@ -2780,7 +2728,7 @@ function midcamp_panels_default_page_manager_pages() {
       'arguments' => array(
         'field_timeslot_target_id' => '14',
       ),
-      'override_title' => 1,
+      'override_title' => 0,
       'override_title_text' => '8:00am-9:00am',
       'override_title_heading' => 'h3',
     );
@@ -2790,11 +2738,11 @@ function midcamp_panels_default_page_manager_pages() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = '62ba945e-72ba-42ae-9635-b9705f688432';
     $display->content['new-62ba945e-72ba-42ae-9635-b9705f688432'] = $pane;
-    $display->panels['middle'][0] = 'new-62ba945e-72ba-42ae-9635-b9705f688432';
+    $display->panels['middle'][1] = 'new-62ba945e-72ba-42ae-9635-b9705f688432';
     $pane = new stdClass();
     $pane->pid = 'new-5551202b-6c1a-46d1-a181-c06407ee1f58';
     $pane->panel = 'middle';
@@ -2806,7 +2754,7 @@ function midcamp_panels_default_page_manager_pages() {
       'arguments' => array(
         'field_timeslot_target_id' => '15',
       ),
-      'override_title' => 1,
+      'override_title' => 0,
       'override_title_text' => '9:00am-10:15am',
       'override_title_heading' => 'h3',
     );
@@ -2816,11 +2764,37 @@ function midcamp_panels_default_page_manager_pages() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = '5551202b-6c1a-46d1-a181-c06407ee1f58';
     $display->content['new-5551202b-6c1a-46d1-a181-c06407ee1f58'] = $pane;
-    $display->panels['middle'][1] = 'new-5551202b-6c1a-46d1-a181-c06407ee1f58';
+    $display->panels['middle'][2] = 'new-5551202b-6c1a-46d1-a181-c06407ee1f58';
+    $pane = new stdClass();
+    $pane->pid = 'new-20fb7cf2-2336-4f1e-82b8-ebd3ad009342';
+    $pane->panel = 'middle';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'timeslot_sessions-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'arguments' => array(
+        'field_timeslot_target_id' => '16',
+      ),
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = '20fb7cf2-2336-4f1e-82b8-ebd3ad009342';
+    $display->content['new-20fb7cf2-2336-4f1e-82b8-ebd3ad009342'] = $pane;
+    $display->panels['middle'][3] = 'new-20fb7cf2-2336-4f1e-82b8-ebd3ad009342';
     $pane = new stdClass();
     $pane->pid = 'new-34fe61d6-4180-4020-b3ec-a8c5b2a05ca7';
     $pane->panel = 'middle';
@@ -2832,60 +2806,8 @@ function midcamp_panels_default_page_manager_pages() {
       'arguments' => array(
         'field_timeslot_target_id' => '17',
       ),
-      'override_title' => 1,
+      'override_title' => 0,
       'override_title_text' => '10:30am-11:30am',
-      'override_title_heading' => 'h3',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $pane->uuid = '34fe61d6-4180-4020-b3ec-a8c5b2a05ca7';
-    $display->content['new-34fe61d6-4180-4020-b3ec-a8c5b2a05ca7'] = $pane;
-    $display->panels['middle'][2] = 'new-34fe61d6-4180-4020-b3ec-a8c5b2a05ca7';
-    $pane = new stdClass();
-    $pane->pid = 'new-71a77f83-8cb9-4636-84ad-5fdb8c51fe0f';
-    $pane->panel = 'middle';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'timeslot_sessions-panel_pane_1';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'arguments' => array(
-        'field_timeslot_target_id' => '19',
-      ),
-      'override_title' => 1,
-      'override_title_text' => '12:30pm-1:30pm',
-      'override_title_heading' => 'h3',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 3;
-    $pane->locks = array();
-    $pane->uuid = '71a77f83-8cb9-4636-84ad-5fdb8c51fe0f';
-    $display->content['new-71a77f83-8cb9-4636-84ad-5fdb8c51fe0f'] = $pane;
-    $display->panels['middle'][3] = 'new-71a77f83-8cb9-4636-84ad-5fdb8c51fe0f';
-    $pane = new stdClass();
-    $pane->pid = 'new-5e6c50c7-7a82-42d3-bce3-d5ddbd7dbe60';
-    $pane->panel = 'middle';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'timeslot_sessions-panel_pane_1';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'arguments' => array(
-        'field_timeslot_target_id' => '21',
-      ),
-      'override_title' => 1,
-      'override_title_text' => '1:45pm-2:45pm',
       'override_title_heading' => 'h3',
     );
     $pane->cache = array();
@@ -2896,87 +2818,9 @@ function midcamp_panels_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 4;
     $pane->locks = array();
-    $pane->uuid = '5e6c50c7-7a82-42d3-bce3-d5ddbd7dbe60';
-    $display->content['new-5e6c50c7-7a82-42d3-bce3-d5ddbd7dbe60'] = $pane;
-    $display->panels['middle'][4] = 'new-5e6c50c7-7a82-42d3-bce3-d5ddbd7dbe60';
-    $pane = new stdClass();
-    $pane->pid = 'new-5cfb2288-0126-4bb6-8106-366a15875f62';
-    $pane->panel = 'middle';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'timeslot_sessions-panel_pane_1';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'arguments' => array(
-        'field_timeslot_target_id' => '23',
-      ),
-      'override_title' => 1,
-      'override_title_text' => '3:00pm-4:00pm',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 5;
-    $pane->locks = array();
-    $pane->uuid = '5cfb2288-0126-4bb6-8106-366a15875f62';
-    $display->content['new-5cfb2288-0126-4bb6-8106-366a15875f62'] = $pane;
-    $display->panels['middle'][5] = 'new-5cfb2288-0126-4bb6-8106-366a15875f62';
-    $pane = new stdClass();
-    $pane->pid = 'new-dfd57f01-d4dc-48f2-b609-e2823c0178c0';
-    $pane->panel = 'middle';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'timeslot_sessions-panel_pane_1';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'arguments' => array(
-        'field_timeslot_target_id' => '25',
-      ),
-      'override_title' => 1,
-      'override_title_text' => '4:30pm-5:30pm',
-      'override_title_heading' => 'h3',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 6;
-    $pane->locks = array();
-    $pane->uuid = 'dfd57f01-d4dc-48f2-b609-e2823c0178c0';
-    $display->content['new-dfd57f01-d4dc-48f2-b609-e2823c0178c0'] = $pane;
-    $display->panels['middle'][6] = 'new-dfd57f01-d4dc-48f2-b609-e2823c0178c0';
-    $pane = new stdClass();
-    $pane->pid = 'new-f26c380d-e058-44f9-9eff-abc3bf1d7ee4';
-    $pane->panel = 'middle';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'timeslot_sessions-panel_pane_1';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'arguments' => array(
-        'field_timeslot_target_id' => '26',
-      ),
-      'override_title' => 1,
-      'override_title_text' => 'Evening Social',
-      'override_title_heading' => 'h3',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 7;
-    $pane->locks = array();
-    $pane->uuid = 'f26c380d-e058-44f9-9eff-abc3bf1d7ee4';
-    $display->content['new-f26c380d-e058-44f9-9eff-abc3bf1d7ee4'] = $pane;
-    $display->panels['middle'][7] = 'new-f26c380d-e058-44f9-9eff-abc3bf1d7ee4';
+    $pane->uuid = '34fe61d6-4180-4020-b3ec-a8c5b2a05ca7';
+    $display->content['new-34fe61d6-4180-4020-b3ec-a8c5b2a05ca7'] = $pane;
+    $display->panels['middle'][4] = 'new-34fe61d6-4180-4020-b3ec-a8c5b2a05ca7';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -3023,10 +2867,11 @@ function midcamp_panels_default_page_manager_pages() {
     'style_settings' => array(
       'default' => NULL,
       'center' => NULL,
+      'middle' => NULL,
     ),
   );
   $display->cache = array();
-  $display->title = 'Sunday March 22';
+  $display->title = 'Sunday March 20';
   $display->uuid = '9ddd4a24-69a0-4d9c-be40-8865073e1648';
   $display->content = array();
   $display->panels = array();
