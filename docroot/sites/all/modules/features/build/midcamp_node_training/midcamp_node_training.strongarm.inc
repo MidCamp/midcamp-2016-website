@@ -46,6 +46,9 @@ function midcamp_node_training_strongarm() {
         'xmlsitemap' => array(
           'weight' => '7',
         ),
+        'redirect' => array(
+          'weight' => '11',
+        ),
       ),
       'display' => array(),
     ),

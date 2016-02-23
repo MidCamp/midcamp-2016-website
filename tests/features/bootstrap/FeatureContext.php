@@ -7,6 +7,7 @@
 use Behat\Behat\Context\SnippetAcceptingContext;
 use Behat\Gherkin\Node\TableNode;
 use Drupal\DrupalExtension\Context\RawDrupalContext;
+use Drupal\DrupalExtension\Hook\Scope\AfterNodeCreateScope;
 use Drupal\DrupalExtension\Hook\Scope\AfterUserCreateScope;
 
 /**
@@ -237,6 +238,38 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
     $uw = entity_metadata_wrapper('user', $user);
     $uw->field_name = $field_full_name;
     $uw->save();
+  }
+
+  /**
+   * Do Midcamp things with nodes.
+   *
+   * @afterNodeCreate
+   *
+   * @param \Drupal\DrupalExtension\Hook\Scope\AfterNodeCreateScope $scope
+   *   EntityScope object.
+   *
+   * @throws \Exception
+   */
+  public function afterNodeCreate(AfterNodeCreateScope $scope) {
+    if (!$node = $scope->getEntity()) {
+      throw new \Exception('Failed to find a node in @afterNodeCreate hook.');
+    }
+    $type = $node->type;
+    switch ($type) {
+      case 'training':
+        if (isset($node->field_register_url)) {
+          $wrapper = entity_metadata_wrapper('node', $node);
+          $wrapper->field_register_for_this_training = array(
+            'url' => $node->field_register_url,
+          );
+          $wrapper->save();
+        }
+        break;
+
+      default:
+        break;
+
+    }
   }
 
   /**
