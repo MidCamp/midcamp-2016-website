@@ -15,7 +15,8 @@ function midcamp_panels_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'default_page_manager_handlers';
   $strongarm->value = array(
-    'node_view_panel_context' => TRUE,
+    'node_view_panel_context' => FALSE,
+    'node_view__non-author-view-of-session-submission-nodes-anonymized' => TRUE,
   );
   $export['default_page_manager_handlers'] = $strongarm;
 
