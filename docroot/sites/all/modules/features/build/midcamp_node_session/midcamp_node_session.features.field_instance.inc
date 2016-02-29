@@ -22,7 +22,7 @@ function midcamp_node_session_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 6,
+        'weight' => 7,
       ),
       'schedule' => array(
         'label' => 'above',
@@ -84,7 +84,7 @@ function midcamp_node_session_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 1,
+        'weight' => 2,
       ),
       'schedule' => array(
         'label' => 'above',
@@ -139,7 +139,7 @@ function midcamp_node_session_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 0,
+        'weight' => 1,
       ),
       'schedule' => array(
         'label' => 'above',
@@ -194,7 +194,7 @@ function midcamp_node_session_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'schedule' => array(
         'label' => 'inline',
@@ -243,7 +243,7 @@ function midcamp_node_session_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 6,
       ),
       'schedule' => array(
         'label' => 'above',
@@ -300,7 +300,7 @@ function midcamp_node_session_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 7,
+        'weight' => 8,
       ),
       'schedule' => array(
         'label' => 'above',
@@ -357,7 +357,7 @@ function midcamp_node_session_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 4,
+        'weight' => 5,
       ),
       'schedule' => array(
         'label' => 'above',
@@ -406,7 +406,7 @@ function midcamp_node_session_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 10,
+        'weight' => 11,
       ),
       'schedule' => array(
         'label' => 'hidden',
@@ -490,7 +490,7 @@ function midcamp_node_session_field_default_field_instances() {
           'youtube_width' => '',
         ),
         'type' => 'youtube_video',
-        'weight' => 11,
+        'weight' => 12,
       ),
       'schedule' => array(
         'label' => 'above',
@@ -538,7 +538,7 @@ function midcamp_node_session_field_default_field_instances() {
         'module' => 'file',
         'settings' => array(),
         'type' => 'file_default',
-        'weight' => 8,
+        'weight' => 9,
       ),
       'schedule' => array(
         'label' => 'inline',
@@ -593,7 +593,7 @@ function midcamp_node_session_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 9,
+        'weight' => 10,
       ),
       'schedule' => array(
         'label' => 'inline',
@@ -664,10 +664,13 @@ function midcamp_node_session_field_default_field_instances() {
     'description' => 'Input a comma separated list of speakers. (Yes, put your own username in here, and any co-presenters you will have.)',
     'display' => array(
       'default' => array(
-        'label' => 'inline',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 12,
+        'label' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 0,
       ),
       'schedule' => array(
         'label' => 'inline',
@@ -784,7 +787,7 @@ For full track descriptions, please review the <a href="/2016-session-tracks" ta
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'schedule' => array(
         'label' => 'above',
