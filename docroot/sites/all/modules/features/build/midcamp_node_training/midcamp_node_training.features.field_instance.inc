@@ -60,49 +60,6 @@ function midcamp_node_training_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-training-field_audience'.
-  $field_instances['node-training-field_audience'] = array(
-    'bundle' => 'training',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'inline',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 2,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'user_page_teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_audience',
-    'label' => 'Audience',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 3,
-    ),
-  );
-
   // Exported field_instance: 'node-training-field_cost'.
   $field_instances['node-training-field_cost'] = array(
     'bundle' => 'training',
@@ -151,7 +108,7 @@ function midcamp_node_training_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -219,7 +176,7 @@ function midcamp_node_training_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -265,6 +222,49 @@ function midcamp_node_training_field_default_field_instances() {
       'settings' => array(),
       'type' => 'options_select',
       'weight' => 11,
+    ),
+  );
+
+  // Exported field_instance: 'node-training-field_skill_level'.
+  $field_instances['node-training-field_skill_level'] = array(
+    'bundle' => 'training',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 8,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'user_page_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_skill_level',
+    'label' => 'Audience',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 4,
     ),
   );
 
@@ -416,7 +416,7 @@ function midcamp_node_training_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 

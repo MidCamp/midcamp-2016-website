@@ -3584,7 +3584,18 @@ function midcamp_panels_default_page_manager_pages() {
     'type' => 'none',
     'settings' => NULL,
   );
-  $page->menu = array();
+  $page->menu = array(
+    'type' => 'normal',
+    'title' => 'Training Day',
+    'name' => 'main-menu',
+    'weight' => '-46',
+    'parent' => array(
+      'type' => 'none',
+      'title' => '',
+      'name' => 'navigation',
+      'weight' => '0',
+    ),
+  );
   $page->arguments = array();
   $page->conf = array(
     'admin_paths' => FALSE,
@@ -3621,7 +3632,7 @@ function midcamp_panels_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = 'Training Day: March 19th';
+  $display->title = 'Training Day: Thursday, March 17th';
   $display->uuid = '3126402b-7c1e-431e-a2f0-8bbba4a86b04';
   $display->content = array();
   $display->panels = array();

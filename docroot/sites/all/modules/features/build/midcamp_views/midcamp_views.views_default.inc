@@ -6622,8 +6622,10 @@ display: none; visibility: hidden;
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = 'Training Day is sponsored by <a href="https://pantheon.io/">Pantheon</a>.
-All trainings include coffee, snacks, and lunch.';
+  $handler->display->display_options['header']['area']['content'] = '<!--
+Training Day is sponsored by <a href="https://pantheon.io/">Pantheon</a>.
+All trainings include coffee, snacks, and lunch.
+-->';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
