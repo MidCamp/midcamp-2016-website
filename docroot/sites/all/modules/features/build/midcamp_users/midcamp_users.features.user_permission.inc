@@ -721,6 +721,7 @@ function midcamp_users_user_default_permissions() {
     'name' => 'create field_speakers',
     'roles' => array(
       'Administrator' => 'Administrator',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -1582,6 +1583,7 @@ function midcamp_users_user_default_permissions() {
     'name' => 'edit field_speakers',
     'roles' => array(
       'Administrator' => 'Administrator',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -1663,6 +1665,7 @@ function midcamp_users_user_default_permissions() {
     'name' => 'edit own field_speakers',
     'roles' => array(
       'Administrator' => 'Administrator',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -2134,6 +2137,8 @@ function midcamp_users_user_default_permissions() {
     'name' => 'view field_speakers',
     'roles' => array(
       'Administrator' => 'Administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -2206,6 +2211,7 @@ function midcamp_users_user_default_permissions() {
     'name' => 'view own field_speakers',
     'roles' => array(
       'Administrator' => 'Administrator',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );

@@ -23,6 +23,7 @@ features[features_api][] = api:2
 features[page_manager_handlers][] = node_edit_panel_context
 features[page_manager_handlers][] = node_edit_panel_context_2
 features[page_manager_handlers][] = node_view__non-author-view-of-session-submission-nodes-anonymized
+features[page_manager_handlers][] = node_view__session-proposal-view-after-selection
 features[page_manager_handlers][] = node_view_panel_context
 features[page_manager_handlers][] = node_view_panel_context_2
 features[page_manager_handlers][] = user_view__non-owner-user-profile
