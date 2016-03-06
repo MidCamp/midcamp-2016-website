@@ -1,7 +1,6 @@
 name = MidCamp Default og membership type
 core = 7.x
 package = OG
-dependencies[] = features
 dependencies[] = midcamp_fields
 dependencies[] = og
 features[features_api][] = api:2

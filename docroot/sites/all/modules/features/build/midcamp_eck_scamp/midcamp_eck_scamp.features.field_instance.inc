@@ -14,6 +14,7 @@ function midcamp_eck_scamp_field_default_field_instances() {
   $field_instances['scamp-assignment-field_room'] = array(
     'bundle' => 'assignment',
     'default_value' => NULL,
+    'default_value_function' => '',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -41,6 +42,11 @@ function midcamp_eck_scamp_field_default_field_instances() {
     'label' => 'Room',
     'required' => 1,
     'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -49,6 +55,55 @@ function midcamp_eck_scamp_field_default_field_instances() {
       'settings' => array(),
       'type' => 'options_select',
       'weight' => 32,
+    ),
+  );
+
+  // Exported field_instance: 'scamp-assignment-field_schedule_item'.
+  $field_instances['scamp-assignment-field_schedule_item'] = array(
+    'bundle' => 'assignment',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'scamp',
+    'field_name' => 'field_schedule_item',
+    'label' => 'Schedule Item',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 36,
     ),
   );
 
@@ -238,6 +293,7 @@ function midcamp_eck_scamp_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Date');
   t('Room');
+  t('Schedule Item');
   t('Sessions');
   t('Sponsor');
   t('Timeslot');

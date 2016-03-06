@@ -99,12 +99,12 @@ function midcamp_media_image_default_styles() {
   $styles['sponsor_bronze'] = array(
     'label' => 'Bronze sponsor',
     'effects' => array(
-      4 => array(
+      3 => array(
         'name' => 'image_scale',
         'data' => array(
           'width' => 150,
           'height' => '',
-          'upscale' => 1,
+          'upscale' => 0,
         ),
         'weight' => 1,
       ),

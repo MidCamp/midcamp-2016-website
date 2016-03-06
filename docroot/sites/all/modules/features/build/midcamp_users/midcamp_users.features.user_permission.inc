@@ -680,15 +680,6 @@ function midcamp_users_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
-  // Exported permission: 'create field_room'.
-  $permissions['create field_room'] = array(
-    'name' => 'create field_room',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'field_permissions',
-  );
-
   // Exported permission: 'create field_session_video'.
   $permissions['create field_session_video'] = array(
     'name' => 'create field_session_video',
@@ -1390,6 +1381,8 @@ function midcamp_users_user_default_permissions() {
     'name' => 'eck view scamp assignment entities',
     'roles' => array(
       'Administrator' => 'Administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'eck',
   );
@@ -1408,6 +1401,8 @@ function midcamp_users_user_default_permissions() {
     'name' => 'eck view scamp room entities',
     'roles' => array(
       'Administrator' => 'Administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'eck',
   );
@@ -1417,6 +1412,8 @@ function midcamp_users_user_default_permissions() {
     'name' => 'eck view scamp timeslot entities',
     'roles' => array(
       'Administrator' => 'Administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'eck',
   );
@@ -1542,15 +1539,6 @@ function midcamp_users_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
-  // Exported permission: 'edit field_room'.
-  $permissions['edit field_room'] = array(
-    'name' => 'edit field_room',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'field_permissions',
-  );
-
   // Exported permission: 'edit field_session_video'.
   $permissions['edit field_session_video'] = array(
     'name' => 'edit field_session_video',
@@ -1618,15 +1606,6 @@ function midcamp_users_user_default_permissions() {
   // Exported permission: 'edit own field_related_content'.
   $permissions['edit own field_related_content'] = array(
     'name' => 'edit own field_related_content',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'field_permissions',
-  );
-
-  // Exported permission: 'edit own field_room'.
-  $permissions['edit own field_room'] = array(
-    'name' => 'edit own field_room',
     'roles' => array(
       'Administrator' => 'Administrator',
     ),
@@ -2096,15 +2075,6 @@ function midcamp_users_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
-  // Exported permission: 'view field_room'.
-  $permissions['view field_room'] = array(
-    'name' => 'view field_room',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'field_permissions',
-  );
-
   // Exported permission: 'view field_session_video'.
   $permissions['view field_session_video'] = array(
     'name' => 'view field_session_video',
@@ -2148,6 +2118,8 @@ function midcamp_users_user_default_permissions() {
     'name' => 'view field_timeslot',
     'roles' => array(
       'Administrator' => 'Administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -2164,15 +2136,6 @@ function midcamp_users_user_default_permissions() {
   // Exported permission: 'view own field_related_content'.
   $permissions['view own field_related_content'] = array(
     'name' => 'view own field_related_content',
-    'roles' => array(
-      'Administrator' => 'Administrator',
-    ),
-    'module' => 'field_permissions',
-  );
-
-  // Exported permission: 'view own field_room'.
-  $permissions['view own field_room'] = array(
-    'name' => 'view own field_room',
     'roles' => array(
       'Administrator' => 'Administrator',
     ),
@@ -2221,6 +2184,7 @@ function midcamp_users_user_default_permissions() {
     'name' => 'view own field_timeslot',
     'roles' => array(
       'Administrator' => 'Administrator',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
