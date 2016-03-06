@@ -47,6 +47,7 @@ features[field_base][] = field_presenters
 features[field_base][] = field_register_for_this_training
 features[field_base][] = field_related_content
 features[field_base][] = field_room
+features[field_base][] = field_schedule_item
 features[field_base][] = field_session_video
 features[field_base][] = field_sessions
 features[field_base][] = field_skill_level

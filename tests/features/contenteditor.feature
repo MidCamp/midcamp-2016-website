@@ -44,15 +44,3 @@ Feature: Test coverage for content editor
       | field_training_length[und]                    |
       | Cost                                          |
       | field_register_for_this_training[und][0][url] |
-    And I should not see the fields:
-      | field id or name or label or value |
-      | Room                               |
-
-  @midcamp-294 @training
-  Scenario: Training fields for Admin
-    Given I am logged in as a user with the "administrator" role
-    When I am at "node/add/training"
-    Then I should see the fields:
-      | field id or name or label or value |
-      | Room                               |
-
