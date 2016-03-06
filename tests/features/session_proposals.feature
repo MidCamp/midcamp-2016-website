@@ -113,3 +113,8 @@ Feature: Session proposal functionality
     And I visit "sessions"
     Then I should see the link "Drupal 101"
     And I should not see the link "Drupal 403"
+
+    When I am logged in as a user with the "authenticated user" role
+    And I visit "sessions"
+    Then I should see the link "Drupal 101"
+    And I should not see the link "Drupal 403"
