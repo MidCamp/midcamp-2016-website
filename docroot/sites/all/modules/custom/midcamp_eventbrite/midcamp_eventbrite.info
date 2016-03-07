@@ -2,5 +2,6 @@ name = MidCamp Eventbrite
 description = Eventbrite integrations
 core = 7.x
 files[] = includes/EventbriteApi.php
+files[] = includes/EventbriteTicket.php
 
 dependencies[] = ctools

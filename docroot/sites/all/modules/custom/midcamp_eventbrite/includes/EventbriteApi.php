@@ -51,7 +51,7 @@ class EventbriteApi {
     $url_query = array(
       'token' => self::oauthToken()
     ) + $query;
-    $url = url($endpoint, array(
+    $url = url('https://www.eventbriteapi.com/v3' . $endpoint, array(
       'query' => array(
         $url_query,
       )
