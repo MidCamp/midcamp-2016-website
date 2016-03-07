@@ -4815,6 +4815,151 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['sorts']['field_room_target_id']['table'] = 'field_data_field_room';
   $handler->display->display_options['sorts']['field_room_target_id']['field'] = 'field_room_target_id';
   $handler->display->display_options['sorts']['field_room_target_id']['relationship'] = 'reverse_field_sessions_scamp';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'session' => 'session',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Which track(s) would best fit your session content? Select up to 3: (field_track) */
+  $handler->display->display_options['filters']['field_track_value']['id'] = 'field_track_value';
+  $handler->display->display_options['filters']['field_track_value']['table'] = 'field_data_field_track';
+  $handler->display->display_options['filters']['field_track_value']['field'] = 'field_track_value';
+  $handler->display->display_options['filters']['field_track_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_track_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_track_value']['expose']['operator_id'] = 'field_track_value_op';
+  $handler->display->display_options['filters']['field_track_value']['expose']['label'] = 'Track(s)';
+  $handler->display->display_options['filters']['field_track_value']['expose']['use_operator'] = TRUE;
+  $handler->display->display_options['filters']['field_track_value']['expose']['operator'] = 'field_track_value_op';
+  $handler->display->display_options['filters']['field_track_value']['expose']['identifier'] = 'field_track_value';
+  $handler->display->display_options['filters']['field_track_value']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_track_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    8 => 0,
+    7 => 0,
+    3 => 0,
+    5 => 0,
+    6 => 0,
+    4 => 0,
+  );
+  /* Filter criterion: Content: Is your presentation Drupal-specific? (field_drupal_specific) */
+  $handler->display->display_options['filters']['field_drupal_specific_value']['id'] = 'field_drupal_specific_value';
+  $handler->display->display_options['filters']['field_drupal_specific_value']['table'] = 'field_data_field_drupal_specific';
+  $handler->display->display_options['filters']['field_drupal_specific_value']['field'] = 'field_drupal_specific_value';
+  $handler->display->display_options['filters']['field_drupal_specific_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_drupal_specific_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_drupal_specific_value']['expose']['operator_id'] = 'field_drupal_specific_value_op';
+  $handler->display->display_options['filters']['field_drupal_specific_value']['expose']['label'] = 'Drupal-specific';
+  $handler->display->display_options['filters']['field_drupal_specific_value']['expose']['operator'] = 'field_drupal_specific_value_op';
+  $handler->display->display_options['filters']['field_drupal_specific_value']['expose']['identifier'] = 'field_drupal_specific_value';
+  $handler->display->display_options['filters']['field_drupal_specific_value']['expose']['remember'] = TRUE;
+  $handler->display->display_options['filters']['field_drupal_specific_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => '1',
+    7 => 0,
+    6 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    8 => 0,
+  );
+  $handler->display->display_options['filters']['field_drupal_specific_value']['group_info']['label'] = 'Drupal-specific';
+  $handler->display->display_options['filters']['field_drupal_specific_value']['group_info']['identifier'] = 'field_drupal_specific_value';
+  $handler->display->display_options['filters']['field_drupal_specific_value']['group_info']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_drupal_specific_value']['group_info']['remember'] = 1;
+  $handler->display->display_options['filters']['field_drupal_specific_value']['group_info']['group_items'] = array(
+    1 => array(
+      'title' => '',
+      'operator' => 'or',
+      'value' => array(),
+    ),
+    2 => array(
+      'title' => '',
+      'operator' => 'or',
+      'value' => array(),
+    ),
+    3 => array(
+      'title' => '',
+      'operator' => 'or',
+      'value' => array(),
+    ),
+  );
+  /* Filter criterion: Content: Is your presentation for Drupal beginners? (field_beginners) */
+  $handler->display->display_options['filters']['field_beginners_value']['id'] = 'field_beginners_value';
+  $handler->display->display_options['filters']['field_beginners_value']['table'] = 'field_data_field_beginners';
+  $handler->display->display_options['filters']['field_beginners_value']['field'] = 'field_beginners_value';
+  $handler->display->display_options['filters']['field_beginners_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_beginners_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_beginners_value']['expose']['operator_id'] = 'field_beginners_value_op';
+  $handler->display->display_options['filters']['field_beginners_value']['expose']['label'] = 'Drupal beginners';
+  $handler->display->display_options['filters']['field_beginners_value']['expose']['operator'] = 'field_beginners_value_op';
+  $handler->display->display_options['filters']['field_beginners_value']['expose']['identifier'] = 'field_beginners_value';
+  $handler->display->display_options['filters']['field_beginners_value']['expose']['remember'] = TRUE;
+  $handler->display->display_options['filters']['field_beginners_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => '1',
+    7 => 0,
+    6 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    8 => 0,
+  );
+  $handler->display->display_options['filters']['field_beginners_value']['group_info']['label'] = 'Drupal beginners';
+  $handler->display->display_options['filters']['field_beginners_value']['group_info']['identifier'] = 'field_beginners_value';
+  $handler->display->display_options['filters']['field_beginners_value']['group_info']['remember'] = 1;
+  $handler->display->display_options['filters']['field_beginners_value']['group_info']['group_items'] = array(
+    1 => array(
+      'title' => '',
+      'operator' => 'or',
+      'value' => array(),
+    ),
+    2 => array(
+      'title' => '',
+      'operator' => 'or',
+      'value' => array(),
+    ),
+    3 => array(
+      'title' => '',
+      'operator' => 'or',
+      'value' => array(),
+    ),
+  );
+  /* Filter criterion: Content: What is your planned session length? (field_length) */
+  $handler->display->display_options['filters']['field_length_value']['id'] = 'field_length_value';
+  $handler->display->display_options['filters']['field_length_value']['table'] = 'field_data_field_length';
+  $handler->display->display_options['filters']['field_length_value']['field'] = 'field_length_value';
+  $handler->display->display_options['filters']['field_length_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_length_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_length_value']['expose']['operator_id'] = 'field_length_value_op';
+  $handler->display->display_options['filters']['field_length_value']['expose']['label'] = 'Length';
+  $handler->display->display_options['filters']['field_length_value']['expose']['operator'] = 'field_length_value_op';
+  $handler->display->display_options['filters']['field_length_value']['expose']['identifier'] = 'field_length_value';
+  $handler->display->display_options['filters']['field_length_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    5 => 0,
+    4 => 0,
+    3 => 0,
+  );
+  /* Filter criterion: Flags: Flagged */
+  $handler->display->display_options['filters']['flagged']['id'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['table'] = 'flagging';
+  $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
+  $handler->display->display_options['filters']['flagged']['value'] = '1';
   $handler->display->display_options['path'] = 'sessions';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Accepted Sessions';
