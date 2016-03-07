@@ -3519,7 +3519,7 @@ function midcamp_panels_default_page_manager_pages() {
     $pane->panel = 'middle';
     $pane->type = 'views_panes';
     $pane->subtype = 'attendee_user_profiles-panel_pane__individual_sponsors';
-    $pane->shown = FALSE;
+    $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
       'more_link' => 0,

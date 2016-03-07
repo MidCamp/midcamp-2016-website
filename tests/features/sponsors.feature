@@ -139,3 +139,16 @@ Feature: Coverage for sponsor treatment
     And I press "Go"
     Then I should see "MidCamp web lead at UberShop"
     And I should see "Art party at Drupal Hipsters"
+
+  @midcamp-299 @individual-sponsors
+  Scenario: Individual sponsors show up on the sponsors page
+    Given users:
+      | name  | pass  | mail              | roles              | given name | family name |
+      | dries | behat | dries@example.com | Individual Sponsor | Dries      | Buytaert    |
+      | drew  | behat | drew@example.com  | authenticated user | Drew       | Paul        |
+    And I am an anonymous user
+    When I am on "sponsors"
+    Then I should see the pane title "Individual Sponsors"
+    And I see the text "Dries Buytaert"
+    And I see the text "dries"
+    But I should not see the text "drew"
