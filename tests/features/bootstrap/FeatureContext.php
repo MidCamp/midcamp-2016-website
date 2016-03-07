@@ -199,10 +199,33 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
    *
    * @param string $text
    *   The pane title to check for.
+   *
+   * @throws \Exception
    */
   public function iShouldSeePaneTitle($text) {
-    // Todo: Fix step argument here when implemented.
-    $this->assertSession()->elementContains('css', 'h2.pane-title', $text);
+    $page = $this->getSession()->getPage();
+    $nodes = $page->findAll('css', 'h2.pane-title');
+    if (empty($nodes)) {
+      throw new \Exception('Expecting a pane title, found none.');
+    }
+
+    $exceptions = array();
+    $found = FALSE;
+    foreach ($nodes as $node) {
+      try {
+        $xpath = $node->getXpath();
+        $xpath = str_replace('//html', '', $xpath);
+        $this->assertSession()->elementContains('xpath', $xpath, $text);
+        $found = TRUE;
+        break;
+      }
+      catch (\Exception $e) {
+        $exceptions[] = $e->getMessage();
+      }
+    }
+    if (!$found) {
+      throw new \Exception(implode(PHP_EOL, $exceptions));
+    }
   }
 
   /**
@@ -214,7 +237,13 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
    *   The pane title to check for.
    */
   public function iShouldNotSeePaneTitle($text) {
-    $this->assertSession()->elementNotContains('css', 'h2.pane-title', $text);
+    $page = $this->getSession()->getPage();
+    $nodes = $page->findAll('css', 'h2.pane-title');
+    foreach ($nodes as $node) {
+      $xpath = $node->getXpath();
+      $xpath = str_replace('//html', '', $xpath);
+      $this->assertSession()->elementNotContains('xpath', $xpath, $text);
+    }
   }
 
   /**

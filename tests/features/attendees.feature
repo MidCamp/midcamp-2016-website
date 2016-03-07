@@ -22,4 +22,4 @@ Feature: Attendee scenarios
       | evilehk | behat | evilehk@example.com | authenticated user | Evil       | E           | 0           |
       | fuser   | behat | fuser@example.com   | authenticated user | Featured   | User        | 0           |
     When I am on the homepage
-    Then I should not see the text "Featured Attendees"
+    Then I should not see the pane title "Featured Attendees"

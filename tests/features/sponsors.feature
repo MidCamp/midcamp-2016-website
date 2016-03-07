@@ -60,7 +60,7 @@ Feature: Coverage for sponsor treatment
     #Anonymous user does not see job link
     When I am an anonymous user
     And I am on "sponsor/ubershop"
-    Then I should not see "Post new"
+    Then I should not see the pane title "Post new"
     #No sidebar_second region
     #And I should not see the link "Job" in the sidebar_second
     And I should not see an "section.region.region-sidebar-second" element
@@ -68,7 +68,7 @@ Feature: Coverage for sponsor treatment
     #Authenticated user not a member of sponsor does not see job link
     When I am logged in as a user with the "authenticated user" role
     And I am on "sponsor/ubershop"
-    Then I should not see "Post new"
+    Then I should not see the pane title "Post new"
     And I should not see an "section.region.region-sidebar-second" element
 
     #Jobs for sponsor not shown unless there are jobs
