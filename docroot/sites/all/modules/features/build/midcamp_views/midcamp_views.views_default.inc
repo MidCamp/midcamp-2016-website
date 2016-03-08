@@ -6278,7 +6278,7 @@ function midcamp_views_views_default_views() {
   $view = new view();
   $view->name = 'syncd_tickets';
   $view->description = '';
-  $view->tag = 'default';
+  $view->tag = 'MidCamp';
   $view->base_table = 'eventbrite_ticket';
   $view->human_name = 'Sync\'d Tickets';
   $view->core = 7;
@@ -6364,21 +6364,23 @@ function midcamp_views_views_default_views() {
     ),
   );
   /* Field: Eventbrite Ticket: Ticket ID */
-  $handler->display->display_options['fields']['rid']['id'] = 'rid';
-  $handler->display->display_options['fields']['rid']['table'] = 'eventbrite_ticket';
-  $handler->display->display_options['fields']['rid']['field'] = 'rid';
+  $handler->display->display_options['fields']['ticket_id']['id'] = 'ticket_id';
+  $handler->display->display_options['fields']['ticket_id']['table'] = 'eventbrite_ticket';
+  $handler->display->display_options['fields']['ticket_id']['field'] = 'ticket_id';
   /* Field: Eventbrite Ticket: Attendee ID */
   $handler->display->display_options['fields']['attendee_id']['id'] = 'attendee_id';
   $handler->display->display_options['fields']['attendee_id']['table'] = 'eventbrite_ticket';
   $handler->display->display_options['fields']['attendee_id']['field'] = 'attendee_id';
+  $handler->display->display_options['fields']['attendee_id']['separator'] = '';
   /* Field: Eventbrite Ticket: E-mail */
-  $handler->display->display_options['fields']['mail']['id'] = 'mail';
-  $handler->display->display_options['fields']['mail']['table'] = 'eventbrite_ticket';
-  $handler->display->display_options['fields']['mail']['field'] = 'mail';
+  $handler->display->display_options['fields']['email']['id'] = 'email';
+  $handler->display->display_options['fields']['email']['table'] = 'eventbrite_ticket';
+  $handler->display->display_options['fields']['email']['field'] = 'email';
   /* Field: Eventbrite Ticket: Order Id */
   $handler->display->display_options['fields']['order_id']['id'] = 'order_id';
   $handler->display->display_options['fields']['order_id']['table'] = 'eventbrite_ticket';
   $handler->display->display_options['fields']['order_id']['field'] = 'order_id';
+  $handler->display->display_options['fields']['order_id']['separator'] = '';
   /* Field: Eventbrite Ticket: Post date */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'eventbrite_ticket';
