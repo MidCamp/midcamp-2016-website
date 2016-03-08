@@ -16,3 +16,132 @@ function midcamp_eventbrite_ctools_plugin_directory($owner, $plugin_type) {
   }
   return NULL;
 }
+
+function midcamp_eventbrite_get_attendees($page = NULL, DateTime $changed_since = NULL) {
+  $params = array(
+    'expand' => 'order',
+  );
+
+  if ($changed_since) {
+    $params['changed_since'] = $changed_since->format(DateTime::ISO8601);
+  }
+
+  if ($page) {
+    $params['page'] = $page;
+  }
+
+  $data = EventbriteApi::request('GET', '/events/' . variable_get('midcamp_eventbrite_event_id') . '/attendees', $params);
+
+  return $data;
+}
+
+/**
+ * Returns array of Eventbrite ticket classes.
+ *
+ * @return array
+ *   Key is the Eventbrite ticket class id, value is the ticket class name.
+ */
+function midcamp_eventbrite_get_ticket_classes() {
+  $tickets = &drupal_static(__FUNCTION__, NULL);
+  if ($tickets !== NULL) {
+    return $tickets;
+  }
+
+  $cid = 'eventbrite';
+  $bin = 'ticket_classes';
+  if ($data = cache_get($cid, $bin)) {
+    return $data->data;
+  }
+
+  // Assumes we don't have over 50 tickets and ignores pagination.
+  $response = EventbriteApi::request('GET', '/events/' .
+    variable_get('midcamp_eventbrite_event_id') . '/ticket_classes');
+  $ticket_classes = array_key_exists('ticket_classes', $response) ?
+    $response['ticket_classes'] : array();
+
+  $tickets = array();
+  foreach ($ticket_classes as $ticket_class) {
+    $tickets[$ticket_class['id']] = $ticket_class['name'];
+  }
+  cache_set($cid, $tickets, $bin);
+  return $tickets;
+}
+
+function midcamp_eventbrite_process_attendees(DateTime $last_run = NULL) {
+  $response = midcamp_eventbrite_get_attendees(NULL, $last_run);
+  $attendees = $response['attendees'];
+  if (!empty($attendees) && isset($response['pagination'])) {
+    for ($i = 1; $i <= $response['pagination']['page_count']; $i++) {
+      $paginated_attendees = midcamp_eventbrite_get_attendees($i, $last_run);
+      $attendees = array_merge($attendees, $paginated_attendees['attendees']);
+    }
+  }
+
+  if (empty($attendees)) {
+    return;
+  }
+
+  foreach ($attendees as $attendee) {
+    $user = user_load_by_mail($attendee['profile']['email']);
+    if (empty($user)) {
+      // Attempt to load from account field.
+      $query = new EntityFieldQuery();
+      $query->entityCondition('entity_type', 'user')
+        ->fieldCondition('field_eventbrite_email', 'value', $attendee['profile']['email']);
+      $results = $query->execute();
+      if (!empty($results)) {
+        $user = reset($results['user']);
+      }
+    }
+
+    $query = db_merge('eventbrite_ticket')
+      ->key(array(
+        'attendee_id' => $attendee['id'],
+        'order_id' => $attendee['order_id'],
+        'ticket_class_id' => $attendee['ticket_class_id'],
+      ))
+      ->fields(array(
+        'uid' => $user->uid,
+        'email' => $attendee['profile']['email'],
+        'attendee_id' => $attendee['id'],
+        'order_id' => $attendee['order_id'],
+        'ticket_class_id' => $attendee['ticket_class_id'],
+        'order_url' => 'https://www.eventbrite.com/mytickets/' . $attendee['order_id'],
+        'created' => strtotime($attendee['created']),
+        'changed' => strtotime($attendee['changed']),
+      ));
+    $result = $query->execute();
+
+    drupal_set_message(t('Update Eventbrite Ticket: @attendee:@order:@class', array(
+      '@attendee' => $attendee['id'],
+      '@order' => $attendee['order_id'],
+      '@class' => $attendee['ticket_class_id'],
+    )));
+  }
+}
+
+/**
+ * Implements hook_cron().
+ */
+function midcamp_eventbrite_cron() {
+  // Eventbrite says UTC; We get current time, as we'll save this as our last
+  // run, so we don't miss any in case this is a long process.
+  $now = new DateTime('now', new DateTimeZone('UTC'));
+
+  // Get last run. Send it.
+  $last_run = variable_get('midcamp_eventbrite_attendees_last_process', NULL);
+  midcamp_eventbrite_process_attendees($last_run);
+
+  // Save last run DateTime object.
+  variable_set('midcamp_eventbrite_attendees_last_process', $now);
+}
+
+/**
+ * Implements hook_views_api().
+ */
+function midcamp_eventbrite_views_api() {
+  return array(
+    'api' => 3,
+    'path' => drupal_get_path('module', 'midcamp_eventbrite') . '/views',
+  );
+}
