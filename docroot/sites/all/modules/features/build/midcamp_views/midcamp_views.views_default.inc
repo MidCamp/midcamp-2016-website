@@ -1930,7 +1930,7 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['fields']['field_track']['field'] = 'field_track';
   $handler->display->display_options['fields']['field_track']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_track']['delta_offset'] = '0';
-  /* Field: Broken/missing handler */
+  /* Field: Content: Audience */
   $handler->display->display_options['fields']['field_audience']['id'] = 'field_audience';
   $handler->display->display_options['fields']['field_audience']['table'] = 'field_data_field_audience';
   $handler->display->display_options['fields']['field_audience']['field'] = 'field_audience';
@@ -1985,7 +1985,7 @@ function midcamp_views_views_default_views() {
     5 => 0,
     3 => 0,
   );
-  /* Filter criterion: Broken/missing handler */
+  /* Filter criterion: Content: Audience (field_audience) */
   $handler->display->display_options['filters']['field_audience_tid']['id'] = 'field_audience_tid';
   $handler->display->display_options['filters']['field_audience_tid']['table'] = 'field_data_field_audience';
   $handler->display->display_options['filters']['field_audience_tid']['field'] = 'field_audience_tid';
@@ -2002,6 +2002,7 @@ function midcamp_views_views_default_views() {
     5 => 0,
     3 => 0,
   );
+  $handler->display->display_options['filters']['field_audience_tid']['vocabulary'] = 'session_audience';
   /* Filter criterion: Content: What is your planned session length? (field_length) */
   $handler->display->display_options['filters']['field_length_value']['id'] = 'field_length_value';
   $handler->display->display_options['filters']['field_length_value']['table'] = 'field_data_field_length';
@@ -2130,7 +2131,7 @@ function midcamp_views_views_default_views() {
     5 => 0,
     3 => 0,
   );
-  /* Filter criterion: Broken/missing handler */
+  /* Filter criterion: Content: Audience (field_audience) */
   $handler->display->display_options['filters']['field_audience_tid']['id'] = 'field_audience_tid';
   $handler->display->display_options['filters']['field_audience_tid']['table'] = 'field_data_field_audience';
   $handler->display->display_options['filters']['field_audience_tid']['field'] = 'field_audience_tid';
@@ -2147,6 +2148,7 @@ function midcamp_views_views_default_views() {
     5 => 0,
     3 => 0,
   );
+  $handler->display->display_options['filters']['field_audience_tid']['vocabulary'] = 'session_audience';
   /* Filter criterion: Content: What is your planned session length? (field_length) */
   $handler->display->display_options['filters']['field_length_value']['id'] = 'field_length_value';
   $handler->display->display_options['filters']['field_length_value']['table'] = 'field_data_field_length';
@@ -2185,7 +2187,7 @@ function midcamp_views_views_default_views() {
   $view->human_name = 'Front Page News';
   $view->core = 7;
   $view->api_version = '3.0';
-  $view->disabled = TRUE; /* Edit this to true to make a default view disabled initially */
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
@@ -6638,6 +6640,132 @@ function midcamp_views_views_default_views() {
     'default' => 0,
   );
   $export['submitted_sessions_admin'] = $view;
+
+  $view = new view();
+  $view->name = 'syncd_tickets';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'eventbrite_ticket';
+  $view->human_name = 'Sync\'d Tickets';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'rid' => 'rid',
+    'attendee_id' => 'attendee_id',
+    'mail' => 'mail',
+    'order_id' => 'order_id',
+    'created' => 'created',
+    'ticket_class_id' => 'ticket_class_id',
+    'changed' => 'changed',
+    'uid' => 'uid',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'rid' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'attendee_id' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'mail' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'order_id' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'created' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'ticket_class_id' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'changed' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'uid' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  /* Field: Eventbrite Ticket: Ticket ID */
+  $handler->display->display_options['fields']['rid']['id'] = 'rid';
+  $handler->display->display_options['fields']['rid']['table'] = 'eventbrite_ticket';
+  $handler->display->display_options['fields']['rid']['field'] = 'rid';
+  /* Field: Eventbrite Ticket: Attendee ID */
+  $handler->display->display_options['fields']['attendee_id']['id'] = 'attendee_id';
+  $handler->display->display_options['fields']['attendee_id']['table'] = 'eventbrite_ticket';
+  $handler->display->display_options['fields']['attendee_id']['field'] = 'attendee_id';
+  /* Field: Eventbrite Ticket: E-mail */
+  $handler->display->display_options['fields']['mail']['id'] = 'mail';
+  $handler->display->display_options['fields']['mail']['table'] = 'eventbrite_ticket';
+  $handler->display->display_options['fields']['mail']['field'] = 'mail';
+  /* Field: Eventbrite Ticket: Order Id */
+  $handler->display->display_options['fields']['order_id']['id'] = 'order_id';
+  $handler->display->display_options['fields']['order_id']['table'] = 'eventbrite_ticket';
+  $handler->display->display_options['fields']['order_id']['field'] = 'order_id';
+  /* Field: Eventbrite Ticket: Post date */
+  $handler->display->display_options['fields']['created']['id'] = 'created';
+  $handler->display->display_options['fields']['created']['table'] = 'eventbrite_ticket';
+  $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['date_format'] = 'long';
+  $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
+  /* Field: Eventbrite Ticket: Ticket Class ID */
+  $handler->display->display_options['fields']['ticket_class_id']['id'] = 'ticket_class_id';
+  $handler->display->display_options['fields']['ticket_class_id']['table'] = 'eventbrite_ticket';
+  $handler->display->display_options['fields']['ticket_class_id']['field'] = 'ticket_class_id';
+  /* Field: Eventbrite Ticket: Updated date */
+  $handler->display->display_options['fields']['changed']['id'] = 'changed';
+  $handler->display->display_options['fields']['changed']['table'] = 'eventbrite_ticket';
+  $handler->display->display_options['fields']['changed']['field'] = 'changed';
+  $handler->display->display_options['fields']['changed']['date_format'] = 'long';
+  $handler->display->display_options['fields']['changed']['second_date_format'] = 'long';
+  /* Field: Eventbrite Ticket: User ID */
+  $handler->display->display_options['fields']['uid']['id'] = 'uid';
+  $handler->display->display_options['fields']['uid']['table'] = 'eventbrite_ticket';
+  $handler->display->display_options['fields']['uid']['field'] = 'uid';
+  $export['syncd_tickets'] = $view;
 
   $view = new view();
   $view->name = 'taxonomy_term';

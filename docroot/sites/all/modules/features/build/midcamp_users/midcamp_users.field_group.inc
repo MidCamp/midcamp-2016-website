@@ -55,8 +55,8 @@ function midcamp_users_field_group_info() {
     'label' => 'Personal Info',
     'weight' => '43',
     'children' => array(
-      0 => 'field_image',
-      1 => 'field_about_me',
+      0 => 'field_about_me',
+      1 => 'field_image',
       2 => 'field_name',
     ),
     'format_type' => 'fieldset',

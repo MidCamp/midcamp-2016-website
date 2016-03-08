@@ -46,6 +46,7 @@ features[views_view][] = sponsor_export
 features[views_view][] = sponsor_table
 features[views_view][] = sponsors
 features[views_view][] = submitted_sessions_admin
+features[views_view][] = syncd_tickets
 features[views_view][] = taxonomy_term
 features[views_view][] = timeslot_sessions
 features[views_view][] = trainings
