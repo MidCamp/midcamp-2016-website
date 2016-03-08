@@ -27,7 +27,7 @@ function midcamp_eventbrite_get_attendees($page = NULL, DateTime $changed_since 
   }
 
   if ($page) {
-    $params['page'] = 2;
+    $params['page'] = $page;
   }
 
   $data = EventbriteApi::request('GET', '/events/' . variable_get('midcamp_eventbrite_event_id') . '/attendees', $params);
@@ -50,7 +50,7 @@ function midcamp_eventbrite_process_attendees(DateTime $last_run = NULL) {
   }
 
   foreach ($attendees as $attendee) {
-    $user = user_load($attendee['profile']['email']);
+    $user = user_load_by_mail($attendee['profile']['email']);
     if (empty($user)) {
       // Attempt to load from account field.
       $query = new EntityFieldQuery();
@@ -83,7 +83,7 @@ function midcamp_eventbrite_process_attendees(DateTime $last_run = NULL) {
     drupal_set_message(t('Update Eventbrite Ticket: @attendee:@order:@class', array(
       '@attendee' => $attendee['id'],
       '@order' => $attendee['order_id'],
-      '@class' => $attendee['ticket_class_id']
+      '@class' => $attendee['ticket_class_id'],
     )));
   }
 }
