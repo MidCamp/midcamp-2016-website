@@ -1,5 +1,12 @@
 <?php
+/**
+ * @file
+ * Install functions for midcamp_eventbrite.
+ */
 
+/**
+ * Implements hook_schema().
+ */
 function midcamp_eventbrite_schema() {
   $schema['eventbrite_ticket'] = array(
     'description' => 'Stores ticket items.',
