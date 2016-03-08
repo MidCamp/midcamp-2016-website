@@ -4960,6 +4960,85 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
   $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
   $handler->display->display_options['filters']['flagged']['value'] = '1';
+  /* Filter criterion: Field: Room (field_room) */
+  $handler->display->display_options['filters']['field_room_target_id']['id'] = 'field_room_target_id';
+  $handler->display->display_options['filters']['field_room_target_id']['table'] = 'field_data_field_room';
+  $handler->display->display_options['filters']['field_room_target_id']['field'] = 'field_room_target_id';
+  $handler->display->display_options['filters']['field_room_target_id']['relationship'] = 'reverse_field_sessions_scamp';
+  $handler->display->display_options['filters']['field_room_target_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_room_target_id']['expose']['operator_id'] = 'field_room_target_id_op';
+  $handler->display->display_options['filters']['field_room_target_id']['expose']['label'] = 'Room (field_room)';
+  $handler->display->display_options['filters']['field_room_target_id']['expose']['operator'] = 'field_room_target_id_op';
+  $handler->display->display_options['filters']['field_room_target_id']['expose']['identifier'] = 'field_room_target_id';
+  $handler->display->display_options['filters']['field_room_target_id']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    7 => 0,
+    6 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    8 => 0,
+  );
+  $handler->display->display_options['filters']['field_room_target_id']['is_grouped'] = TRUE;
+  $handler->display->display_options['filters']['field_room_target_id']['group_info']['label'] = 'Room';
+  $handler->display->display_options['filters']['field_room_target_id']['group_info']['identifier'] = 'room';
+  $handler->display->display_options['filters']['field_room_target_id']['group_info']['group_items'] = array(
+    1 => array(
+      'title' => 'SCW Thompson - Pantheon',
+      'operator' => '=',
+      'value' => array(
+        'value' => '1',
+        'min' => '',
+        'max' => '',
+      ),
+    ),
+    2 => array(
+      'title' => 'SRH 218 - Palantir.net',
+      'operator' => '=',
+      'value' => array(
+        'value' => '4',
+        'min' => '',
+        'max' => '',
+      ),
+    ),
+    3 => array(
+      'title' => 'SRH 219 - Breakthrough Technologies',
+      'operator' => '=',
+      'value' => array(
+        'value' => '5',
+        'min' => '',
+        'max' => '',
+      ),
+    ),
+    4 => array(
+      'title' => 'SCW 206AB - BlackMesh (live caption)',
+      'operator' => '=',
+      'value' => array(
+        'value' => '6',
+        'min' => '',
+        'max' => '',
+      ),
+    ),
+    5 => array(
+      'title' => 'SCW 213AB - Acquia',
+      'operator' => '=',
+      'value' => array(
+        'value' => '7',
+        'min' => '',
+        'max' => '',
+      ),
+    ),
+    6 => array(
+      'title' => 'SCW 216AB - Promet',
+      'operator' => '=',
+      'value' => array(
+        'value' => '8',
+        'min' => '',
+        'max' => '',
+      ),
+    ),
+  );
   $handler->display->display_options['path'] = 'sessions';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Accepted Sessions';
@@ -5191,6 +5270,85 @@ function midcamp_views_views_default_views() {
     5 => 0,
     8 => 0,
   );
+  /* Filter criterion: Field: Room (field_room) */
+  $handler->display->display_options['filters']['field_room_target_id']['id'] = 'field_room_target_id';
+  $handler->display->display_options['filters']['field_room_target_id']['table'] = 'field_data_field_room';
+  $handler->display->display_options['filters']['field_room_target_id']['field'] = 'field_room_target_id';
+  $handler->display->display_options['filters']['field_room_target_id']['relationship'] = 'reverse_field_sessions_scamp';
+  $handler->display->display_options['filters']['field_room_target_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_room_target_id']['expose']['operator_id'] = 'field_room_target_id_op';
+  $handler->display->display_options['filters']['field_room_target_id']['expose']['label'] = 'Room (field_room)';
+  $handler->display->display_options['filters']['field_room_target_id']['expose']['operator'] = 'field_room_target_id_op';
+  $handler->display->display_options['filters']['field_room_target_id']['expose']['identifier'] = 'field_room_target_id';
+  $handler->display->display_options['filters']['field_room_target_id']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    7 => 0,
+    6 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    8 => 0,
+  );
+  $handler->display->display_options['filters']['field_room_target_id']['is_grouped'] = TRUE;
+  $handler->display->display_options['filters']['field_room_target_id']['group_info']['label'] = 'Room';
+  $handler->display->display_options['filters']['field_room_target_id']['group_info']['identifier'] = 'room';
+  $handler->display->display_options['filters']['field_room_target_id']['group_info']['group_items'] = array(
+    1 => array(
+      'title' => 'SCW Thompson - Pantheon',
+      'operator' => '=',
+      'value' => array(
+        'value' => '1',
+        'min' => '',
+        'max' => '',
+      ),
+    ),
+    2 => array(
+      'title' => 'SRH 218 - Palantir.net',
+      'operator' => '=',
+      'value' => array(
+        'value' => '4',
+        'min' => '',
+        'max' => '',
+      ),
+    ),
+    3 => array(
+      'title' => 'SRH 219 - Breakthrough Technologies',
+      'operator' => '=',
+      'value' => array(
+        'value' => '5',
+        'min' => '',
+        'max' => '',
+      ),
+    ),
+    4 => array(
+      'title' => 'SCW 206AB - BlackMesh (live caption)',
+      'operator' => '=',
+      'value' => array(
+        'value' => '6',
+        'min' => '',
+        'max' => '',
+      ),
+    ),
+    5 => array(
+      'title' => 'SCW 213AB - Acquia',
+      'operator' => '=',
+      'value' => array(
+        'value' => '7',
+        'min' => '',
+        'max' => '',
+      ),
+    ),
+    6 => array(
+      'title' => 'SCW 216AB - Promet',
+      'operator' => '=',
+      'value' => array(
+        'value' => '8',
+        'min' => '',
+        'max' => '',
+      ),
+    ),
+  );
   $handler->display->display_options['path'] = 'sessions/friday';
 
   /* Display: Saturday */
@@ -5366,6 +5524,85 @@ function midcamp_views_views_default_views() {
     4 => 0,
     5 => 0,
     8 => 0,
+  );
+  /* Filter criterion: Field: Room (field_room) */
+  $handler->display->display_options['filters']['field_room_target_id']['id'] = 'field_room_target_id';
+  $handler->display->display_options['filters']['field_room_target_id']['table'] = 'field_data_field_room';
+  $handler->display->display_options['filters']['field_room_target_id']['field'] = 'field_room_target_id';
+  $handler->display->display_options['filters']['field_room_target_id']['relationship'] = 'reverse_field_sessions_scamp';
+  $handler->display->display_options['filters']['field_room_target_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_room_target_id']['expose']['operator_id'] = 'field_room_target_id_op';
+  $handler->display->display_options['filters']['field_room_target_id']['expose']['label'] = 'Room (field_room)';
+  $handler->display->display_options['filters']['field_room_target_id']['expose']['operator'] = 'field_room_target_id_op';
+  $handler->display->display_options['filters']['field_room_target_id']['expose']['identifier'] = 'field_room_target_id';
+  $handler->display->display_options['filters']['field_room_target_id']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    7 => 0,
+    6 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    8 => 0,
+  );
+  $handler->display->display_options['filters']['field_room_target_id']['is_grouped'] = TRUE;
+  $handler->display->display_options['filters']['field_room_target_id']['group_info']['label'] = 'Room';
+  $handler->display->display_options['filters']['field_room_target_id']['group_info']['identifier'] = 'room';
+  $handler->display->display_options['filters']['field_room_target_id']['group_info']['group_items'] = array(
+    1 => array(
+      'title' => 'SCW Thompson - Pantheon',
+      'operator' => '=',
+      'value' => array(
+        'value' => '1',
+        'min' => '',
+        'max' => '',
+      ),
+    ),
+    2 => array(
+      'title' => 'SRH 218 - Palantir.net',
+      'operator' => '=',
+      'value' => array(
+        'value' => '4',
+        'min' => '',
+        'max' => '',
+      ),
+    ),
+    3 => array(
+      'title' => 'SRH 219 - Breakthrough Technologies',
+      'operator' => '=',
+      'value' => array(
+        'value' => '5',
+        'min' => '',
+        'max' => '',
+      ),
+    ),
+    4 => array(
+      'title' => 'SCW 206AB - BlackMesh (live caption)',
+      'operator' => '=',
+      'value' => array(
+        'value' => '6',
+        'min' => '',
+        'max' => '',
+      ),
+    ),
+    5 => array(
+      'title' => 'SCW 213AB - Acquia',
+      'operator' => '=',
+      'value' => array(
+        'value' => '7',
+        'min' => '',
+        'max' => '',
+      ),
+    ),
+    6 => array(
+      'title' => 'SCW 216AB - Promet',
+      'operator' => '=',
+      'value' => array(
+        'value' => '8',
+        'min' => '',
+        'max' => '',
+      ),
+    ),
   );
   $handler->display->display_options['path'] = 'sessions/saturday';
   $export['session_submissions'] = $view;
