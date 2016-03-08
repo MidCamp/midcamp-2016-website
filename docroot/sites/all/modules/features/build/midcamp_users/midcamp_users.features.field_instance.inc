@@ -199,6 +199,45 @@ function midcamp_users_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'user-user-field_eventbrite_email'.
+  $field_instances['user-user-field_eventbrite_email'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'If the email you used on eventbrite differs from your email on midcamp.org, please add the eventbrite email.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 18,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_eventbrite_email',
+    'label' => 'Eventbrite Email',
+    'required' => 0,
+    'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 65,
+    ),
+  );
+
   // Exported field_instance: 'user-user-field_facebook_url'.
   $field_instances['user-user-field_facebook_url'] = array(
     'bundle' => 'user',
@@ -932,9 +971,11 @@ function midcamp_users_field_default_field_instances() {
   t('Avatar');
   t('Company URL');
   t('Drupal.org Profile');
+  t('Eventbrite Email');
   t('Facebook URL');
   t('Google Plus URL');
   t('Group membership');
+  t('If the email you used on eventbrite differs from your email on midcamp.org, please add the eventbrite email.');
   t('Job Title');
   t('Joind.in URL');
   t('Name');

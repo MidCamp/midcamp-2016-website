@@ -2,5 +2,8 @@ name = MidCamp Eventbrite
 description = Eventbrite integrations
 core = 7.x
 files[] = includes/EventbriteApi.php
+files[] = includes/EventbriteTicket.php
+files[] = views/handlers/eventbrite_views_handler_field_ticket.inc
 
 dependencies[] = ctools
+dependencies[] = views

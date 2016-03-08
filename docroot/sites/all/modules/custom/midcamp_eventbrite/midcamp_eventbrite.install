@@ -1,0 +1,89 @@
+<?php
+/**
+ * @file
+ * Install functions for midcamp_eventbrite.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function midcamp_eventbrite_schema() {
+  $schema['eventbrite_ticket'] = array(
+    'description' => 'Stores ticket items.',
+    'fields' => array(
+      'ticket_id' => array(
+        'type' => 'serial',
+        'not null' => TRUE,
+        'description' => 'Primary Key: Unique ticket item ID.',
+      ),
+      'uid' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => FALSE,
+        'default' => NULL,
+        'description' => "The {users}.uid of the associated user.",
+      ),
+      'email' => array(
+        'description' => 'Attendee ID',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'attendee_id' => array(
+        'description' => 'Attendee ID',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+        'size' => 'big',
+      ),
+      'order_id' => array(
+        'description' => 'Order ID',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+        'size' => 'big',
+      ),
+      'order_url' => array(
+        'description' => 'Order Url',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'ticket_class_id' => array(
+        'description' => 'Order ID',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+        'size' => 'big',
+      ),
+      'created' => array(
+        'description' => 'The Unix timestamp when the ticket was created.',
+        'type' => 'int',
+        'not null' => FALSE,
+      ),
+      'changed' => array(
+        'description' => 'The Unix timestamp when the ticket was most recently saved.',
+        'type' => 'int',
+        'not null' => FALSE,
+      ),
+    ),
+    'indexes' => array(
+      'uid' => array('uid'),
+      'ticket_attendee' => array('attendee_id', 'order_id', 'ticket_class_id'),
+    ),
+    'foreign keys' => array(
+      'uid' => array(
+        'table' => 'users',
+        'columns' => array('uid' => 'uid'),
+      ),
+    ),
+    'primary key' => array('ticket_id'),
+  );
+
+  return $schema;
+}
