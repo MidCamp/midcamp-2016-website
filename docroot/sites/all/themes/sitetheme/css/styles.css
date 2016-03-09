@@ -3725,11 +3725,13 @@ a.logo-mobile {
   clear: both;
 }
 /* line 37, ../sass/components/_persons.scss */
+.view-id-individual_sponsors .profile,
 .view-id-attendee_user_profiles .profile {
   position: relative;
 }
 @media (min-width: 601px) {
   /* line 37, ../sass/components/_persons.scss */
+  .view-id-individual_sponsors .profile,
   .view-id-attendee_user_profiles .profile {
     height: 425px;
     overflow: hidden;
@@ -3737,16 +3739,17 @@ a.logo-mobile {
 }
 @media (min-width: 601px) {
   /* line 45, ../sass/components/_persons.scss */
+  .view-id-individual_sponsors.view-display-id-panel_pane__individual_sponsors .profile,
   .view-id-attendee_user_profiles.view-display-id-panel_pane__individual_sponsors .profile {
     height: auto;
   }
 }
 /* line 51, ../sass/components/_persons.scss */
-.view-id-attendee_user_profiles h2, .view-id-attendee_user_profiles #commerce-checkout-form-checkout .fieldset-legend, #commerce-checkout-form-checkout .view-id-attendee_user_profiles .fieldset-legend {
+.view-id-individual_sponsors h2, .view-id-attendee_user_profiles h2, .view-id-attendee_user_profiles #commerce-checkout-form-checkout .fieldset-legend, #commerce-checkout-form-checkout .view-id-attendee_user_profiles .fieldset-legend {
   margin-bottom: 8px;
 }
 /* line 54, ../sass/components/_persons.scss */
-.view-id-attendee_user_profiles h3 {
+.view-id-individual_sponsors h3, .view-id-attendee_user_profiles h3 {
   color: #18545E;
   font-family: "Raleway", sans-serif;
   font-weight: 800;
@@ -3781,6 +3784,7 @@ a.logo-mobile {
 }
 @media (min-width: 601px) {
   /* line 83, ../sass/components/_persons.scss */
+  .view-id-individual_sponsors .views-field-view-user,
   .view-id-attendee_user_profiles .views-field-view-user {
     position: absolute;
     top: 425px;
