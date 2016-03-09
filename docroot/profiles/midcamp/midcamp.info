@@ -118,6 +118,7 @@ dependencies[] = features
 dependencies[] = features_builder
 dependencies[] = features_builder_default
 ;dependencies[] = midcamp_eck_scamp
+dependencies[] = midcamp_eventbrite
 dependencies[] = midcamp_fields
 dependencies[] = midcamp_flag_accepted
 dependencies[] = midcamp_flag_featured_user
