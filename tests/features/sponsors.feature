@@ -140,15 +140,21 @@ Feature: Coverage for sponsor treatment
     Then I should see "MidCamp web lead at UberShop"
     And I should see "Art party at Drupal Hipsters"
 
-  @midcamp-299 @individual-sponsors
+  @midcamp-299 @individual-sponsors @eventbrite
   Scenario: Individual sponsors show up on the sponsors page
     Given users:
-      | name  | pass  | mail              | roles              | given name | family name |
-      | dries | behat | dries@example.com | Individual Sponsor | Dries      | Buytaert    |
-      | drew  | behat | drew@example.com  | authenticated user | Drew       | Paul        |
+      | name  | pass  | mail              | roles              | given name | family name | field_drupal_org_profile       |
+      | dries | behat | dries@example.com | authenticated user | Dries      | Buytaert    | https://www.drupal.org/u/dries |
+
+    And attendees:
+      | ticket_id | email                | name           | attendee_id | order_id | ticket_name            |
+      | 1         | notauser@example.com | Drew Paul      | 1           | 1        | Individual Sponsorship |
+      | 2         | dries@example.com    | Dries Buytaert | 2           | 2        | Individual Sponsorship |
+
     And I am an anonymous user
     When I am on "sponsors"
     Then I should see the pane title "Individual Sponsors"
+    And I should see 2 ".view.view-individual-sponsors .person" elements
     And I see the text "Dries Buytaert"
-    And I see the text "dries"
-    But I should not see the text "drew"
+    And I should see the link "dries"
+    And I see the text "Drew Paul"
