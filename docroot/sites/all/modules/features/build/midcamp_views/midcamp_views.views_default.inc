@@ -1456,7 +1456,7 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
   $handler->display->display_options['filters']['rid']['field'] = 'rid';
   $handler->display->display_options['filters']['rid']['value'] = array(
-    6 => '6',
+    4 => '4',
   );
   $handler->display->display_options['allow']['use_pager'] = 0;
   $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
@@ -2148,6 +2148,63 @@ function midcamp_views_views_default_views() {
   );
   $handler->display->display_options['inherit_arguments'] = FALSE;
   $export['glossary'] = $view;
+
+  $view = new view();
+  $view->name = 'individual_sponsors';
+  $view->description = '';
+  $view->tag = 'MidCamp';
+  $view->base_table = 'eventbrite_ticket';
+  $view->human_name = 'Individual Sponsors';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Individual Sponsors';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'eachperson';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Relationship: Eventbrite Ticket: User ID */
+  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['table'] = 'eventbrite_ticket';
+  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
+  /* Field: Eventbrite Ticket: Name */
+  $handler->display->display_options['fields']['name_1']['id'] = 'name_1';
+  $handler->display->display_options['fields']['name_1']['table'] = 'eventbrite_ticket';
+  $handler->display->display_options['fields']['name_1']['field'] = 'name';
+  $handler->display->display_options['fields']['name_1']['label'] = '';
+  $handler->display->display_options['fields']['name_1']['element_label_colon'] = FALSE;
+  /* Field: User: Drupal.org Profile */
+  $handler->display->display_options['fields']['field_drupal_org_profile']['id'] = 'field_drupal_org_profile';
+  $handler->display->display_options['fields']['field_drupal_org_profile']['table'] = 'field_data_field_drupal_org_profile';
+  $handler->display->display_options['fields']['field_drupal_org_profile']['field'] = 'field_drupal_org_profile';
+  $handler->display->display_options['fields']['field_drupal_org_profile']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['field_drupal_org_profile']['label'] = '';
+  $handler->display->display_options['fields']['field_drupal_org_profile']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_drupal_org_profile']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_drupal_org_profile']['type'] = 'midcamp_goodies_drupal_org_link';
+  /* Sort criterion: Global: Random seed */
+  $handler->display->display_options['sorts']['random_seed']['id'] = 'random_seed';
+  $handler->display->display_options['sorts']['random_seed']['table'] = 'views';
+  $handler->display->display_options['sorts']['random_seed']['field'] = 'random_seed';
+  $handler->display->display_options['sorts']['random_seed']['user_seed_type'] = 'diff_per_user';
+  /* Filter criterion: Eventbrite Ticket: Ticket Class ID */
+  $handler->display->display_options['filters']['ticket_class_id']['id'] = 'ticket_class_id';
+  $handler->display->display_options['filters']['ticket_class_id']['table'] = 'eventbrite_ticket';
+  $handler->display->display_options['filters']['ticket_class_id']['field'] = 'ticket_class_id';
+  $handler->display->display_options['filters']['ticket_class_id']['value']['value'] = '41713970';
+
+  /* Display: Content pane */
+  $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane__individual_sponsors');
+  $export['individual_sponsors'] = $view;
 
   $view = new view();
   $view->name = 'midcamp_find_duplicates';

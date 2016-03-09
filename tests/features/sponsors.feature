@@ -60,7 +60,7 @@ Feature: Coverage for sponsor treatment
     #Anonymous user does not see job link
     When I am an anonymous user
     And I am on "sponsor/ubershop"
-    Then I should not see "Post new"
+    Then I should not see the pane title "Post new"
     #No sidebar_second region
     #And I should not see the link "Job" in the sidebar_second
     And I should not see an "section.region.region-sidebar-second" element
@@ -68,7 +68,7 @@ Feature: Coverage for sponsor treatment
     #Authenticated user not a member of sponsor does not see job link
     When I am logged in as a user with the "authenticated user" role
     And I am on "sponsor/ubershop"
-    Then I should not see "Post new"
+    Then I should not see the pane title "Post new"
     And I should not see an "section.region.region-sidebar-second" element
 
     #Jobs for sponsor not shown unless there are jobs
@@ -139,3 +139,22 @@ Feature: Coverage for sponsor treatment
     And I press "Go"
     Then I should see "MidCamp web lead at UberShop"
     And I should see "Art party at Drupal Hipsters"
+
+  @midcamp-299 @individual-sponsors @eventbrite
+  Scenario: Individual sponsors show up on the sponsors page
+    Given users:
+      | name  | pass  | mail              | roles              | given name | family name | field_drupal_org_profile       |
+      | dries | behat | dries@example.com | authenticated user | Dries      | Buytaert    | https://www.drupal.org/u/dries |
+
+    And attendees:
+      | ticket_id | email                | name           | attendee_id | order_id | ticket_name            |
+      | 1         | notauser@example.com | Drew Paul      | 1           | 1        | Individual Sponsorship |
+      | 2         | dries@example.com    | Dries Buytaert | 2           | 2        | Individual Sponsorship |
+
+    And I am an anonymous user
+    When I am on "sponsors"
+    Then I should see the pane title "Individual Sponsors"
+    And I should see 2 ".view.view-individual-sponsors .person" elements
+    And I see the text "Dries Buytaert"
+    And I should see the link "dries"
+    And I see the text "Drew Paul"

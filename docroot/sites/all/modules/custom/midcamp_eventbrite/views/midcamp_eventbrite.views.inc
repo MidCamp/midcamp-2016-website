@@ -19,7 +19,7 @@ function midcamp_eventbrite_views_data() {
   );
   $data['eventbrite_ticket']['ticket_id'] = array(
     'title' => t('Ticket ID'),
-    'help' => t('The internal ID of the ticker.'),
+    'help' => t('The internal ID of the ticket.'),
     'field' => array(
       'handler' => 'views_handler_field',
       'click sortable' => TRUE,
@@ -41,7 +41,7 @@ function midcamp_eventbrite_views_data() {
   );
   $data['eventbrite_ticket']['uid'] = array(
     'title' => t('User ID'),
-    'help' => t('ID of user who created the URL redirect.'),
+    'help' => t('ID of user matching eventbrite email.'),
     'field' => array(
       'handler' => 'views_handler_field_user',
       'click sortable' => TRUE,
@@ -81,9 +81,24 @@ function midcamp_eventbrite_views_data() {
       'handler' => 'views_handler_argument_string',
     ),
   );
+  $data['eventbrite_ticket']['name'] = array(
+    'title' => t('Name'),
+    'help' => t('Eventbrite profile name.'),
+    'field' => array(
+      'handler' => 'views_handler_field',
+      'click sortable' => TRUE,
+    ),
+    'sort' => array(
+      'handler' => 'views_handler_sort',
+    ),
+    'filter' => array(
+      'handler' => 'views_handler_filter_string',
+    ),
+  );
+
   $data['eventbrite_ticket']['attendee_id'] = array(
     'title' => t('Attendee ID'),
-    'help' => '',
+    'help' => t('Eventbrite attendee id.'),
 
     'field' => array(
       'handler' => 'views_handler_field_numeric',
@@ -98,7 +113,7 @@ function midcamp_eventbrite_views_data() {
   );
   $data['eventbrite_ticket']['order_id'] = array(
     'title' => t('Order Id'),
-    'help' => '',
+    'help' => 'Eventbrite order id.',
 
     'field' => array(
       'handler' => 'views_handler_field_numeric',
@@ -113,8 +128,7 @@ function midcamp_eventbrite_views_data() {
   );
   $data['eventbrite_ticket']['ticket_class_id'] = array(
     'title' => t('Ticket Class ID'),
-    'help' => '',
-    // @todo custom handler for mapping display.
+    'help' => t('Eventbrite ticket_class_id.'),
     'field' => array(
       'handler' => 'eventbrite_views_handler_field_ticket',
       'click sortable' => TRUE,
@@ -126,7 +140,7 @@ function midcamp_eventbrite_views_data() {
       'handler' => 'views_handler_sort',
     ),
   );
-  // created field
+  // Created field.
   $data['eventbrite_ticket']['created'] = array(
     'title' => t('Post date'),
     'help' => t('The date the content was posted.'),
@@ -142,10 +156,10 @@ function midcamp_eventbrite_views_data() {
     ),
   );
 
-  // changed field
+  // Changed field.
   $data['eventbrite_ticket']['changed'] = array(
-    'title' => t('Updated date'), // The item it appears as on the UI,
-    'help' => t('The date the content was last updated.'), // The help that appears on the UI,
+    'title' => t('Updated date'),
+    'help' => t('The date the content was last updated.'),
     'field' => array(
       'handler' => 'views_handler_field_date',
       'click sortable' => TRUE,

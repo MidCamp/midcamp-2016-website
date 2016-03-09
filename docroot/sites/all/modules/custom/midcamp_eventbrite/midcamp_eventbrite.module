@@ -103,6 +103,7 @@ function midcamp_eventbrite_process_attendees(DateTime $last_run = NULL) {
       ->fields(array(
         'uid' => $user->uid,
         'email' => $attendee['profile']['email'],
+        'name' => $attendee['profile']['name'] ? $attendee['profile']['name'] : '',
         'attendee_id' => $attendee['id'],
         'order_id' => $attendee['order_id'],
         'ticket_class_id' => $attendee['ticket_class_id'],

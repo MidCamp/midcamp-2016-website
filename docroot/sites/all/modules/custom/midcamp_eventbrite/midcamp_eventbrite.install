@@ -24,7 +24,14 @@ function midcamp_eventbrite_schema() {
         'description' => "The {users}.uid of the associated user.",
       ),
       'email' => array(
-        'description' => 'Attendee ID',
+        'description' => 'Eventbrite email',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'name' => array(
+        'description' => 'Eventbrite profile name.',
         'type' => 'varchar',
         'length' => 255,
         'not null' => TRUE,
@@ -86,4 +93,34 @@ function midcamp_eventbrite_schema() {
   );
 
   return $schema;
+}
+
+/**
+ * Installs eventbrite_ticket database schema.
+ */
+function midcamp_eventbrite_update_7000() {
+  if (!db_table_exists('eventbrite_ticket')) {
+    drupal_install_schema('eventbrite_ticket');
+  }
+}
+
+/**
+ * Adds name field to eventbrite_ticket.
+ */
+function midcamp_eventbrite_update_7001() {
+  $spec = array(
+    'description' => 'Eventbrite profile name.',
+    'type' => 'varchar',
+    'length' => 255,
+    'not null' => TRUE,
+    'default' => '',
+  );
+  db_add_field('eventbrite_ticket', 'name', $spec);
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function midcamp_eventbrite_uninstall() {
+  variable_del('midcamp_eventbrite_attendees_last_process');
 }
