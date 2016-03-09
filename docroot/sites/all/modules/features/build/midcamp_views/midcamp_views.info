@@ -23,6 +23,7 @@ features[views_view][] = attendee_user_profiles
 features[views_view][] = front_news
 features[views_view][] = frontpage
 features[views_view][] = glossary
+features[views_view][] = individual_sponsors
 features[views_view][] = midcamp_find_duplicates
 features[views_view][] = midcamp_sponsor_content
 features[views_view][] = midcamp_user_orders

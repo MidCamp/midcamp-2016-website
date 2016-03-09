@@ -3515,19 +3515,13 @@ function midcamp_panels_default_page_manager_pages() {
     $display->content['new-290820e2-b5fd-4d82-841a-4dcbc361bdbd'] = $pane;
     $display->panels['middle'][6] = 'new-290820e2-b5fd-4d82-841a-4dcbc361bdbd';
     $pane = new stdClass();
-    $pane->pid = 'new-5f38b742-23be-4e18-ad76-40d51dd9a70a';
+    $pane->pid = 'new-cc645dc2-5e41-4124-aada-e6a5156045e3';
     $pane->panel = 'middle';
     $pane->type = 'views_panes';
-    $pane->subtype = 'attendee_user_profiles-panel_pane__individual_sponsors';
+    $pane->subtype = 'individual_sponsors-panel_pane__individual_sponsors';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array(
-      'more_link' => 0,
-      'items_per_page' => '10',
-      'override_title' => 0,
-      'override_title_text' => '',
-      'override_title_heading' => 'h2',
-    );
+    $pane->configuration = array();
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
@@ -3536,9 +3530,9 @@ function midcamp_panels_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 7;
     $pane->locks = array();
-    $pane->uuid = '5f38b742-23be-4e18-ad76-40d51dd9a70a';
-    $display->content['new-5f38b742-23be-4e18-ad76-40d51dd9a70a'] = $pane;
-    $display->panels['middle'][7] = 'new-5f38b742-23be-4e18-ad76-40d51dd9a70a';
+    $pane->uuid = 'cc645dc2-5e41-4124-aada-e6a5156045e3';
+    $display->content['new-cc645dc2-5e41-4124-aada-e6a5156045e3'] = $pane;
+    $display->panels['middle'][7] = 'new-cc645dc2-5e41-4124-aada-e6a5156045e3';
     $pane = new stdClass();
     $pane->pid = 'new-2c84a8be-333f-4ba6-8da2-ef0395a21b78';
     $pane->panel = 'middle';
