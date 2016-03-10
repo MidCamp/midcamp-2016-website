@@ -93,6 +93,20 @@ function sitetheme_preprocess_views_view_list(&$vars) {
   }
 }
 
+function sitetheme_preprocess_views_view_grid(&$vars) {
+  if (isset($vars['view']->name)) {
+    $function = __FUNCTION__ . '__' . $vars['view']->name . '__' . $vars['view']->current_display;
+
+    if (function_exists($function)) {
+      $function($vars);
+    }
+  }
+}
+
+function sitetheme_preprocess_views_view_grid__attendees__page(&$vars) {
+  drupal_add_css(drupal_get_path('theme', 'sitetheme') . '/css/attendees.css');
+}
+
 function sitetheme_preprocess_views_view_fields(&$vars) {
   if (isset($vars['view']->name)) {
     $function = __FUNCTION__ . '__' . $vars['view']->name . '__' . $vars['view']->current_display;

@@ -919,7 +919,7 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['title'] = 'MidCamp Attendees';
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['access']['perm'] = 'access user profiles';
+  $handler->display->display_options['access']['perm'] = 'administer users';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '30';
@@ -1812,6 +1812,130 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
   $export['attendee_user_profiles'] = $view;
+
+  $view = new view();
+  $view->name = 'attendees';
+  $view->description = 'Grid view of ticket purchasers';
+  $view->tag = 'MidCamp';
+  $view->base_table = 'eventbrite_ticket';
+  $view->human_name = 'Attendees';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Attendees';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['perm'] = 'access user profiles';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '30';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['style_plugin'] = 'grid';
+  $handler->display->display_options['style_options']['columns'] = '3';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Relationship: Eventbrite Ticket: User ID */
+  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['table'] = 'eventbrite_ticket';
+  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
+  /* Field: Field: Logo */
+  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['field_image']['label'] = '';
+  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['empty'] = '<img src="http://midcamp.org/sites/default/files/styles/user__headshot/public/default_images/user_default-whom.png" width="300" height="300" alt="">';
+  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image']['settings'] = array(
+    'image_style' => 'user__headshot',
+    'image_link' => 'content',
+  );
+  /* Field: Eventbrite Ticket: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'eventbrite_ticket';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  /* Field: User: Drupal.org Profile */
+  $handler->display->display_options['fields']['field_drupal_org_profile']['id'] = 'field_drupal_org_profile';
+  $handler->display->display_options['fields']['field_drupal_org_profile']['table'] = 'field_data_field_drupal_org_profile';
+  $handler->display->display_options['fields']['field_drupal_org_profile']['field'] = 'field_drupal_org_profile';
+  $handler->display->display_options['fields']['field_drupal_org_profile']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['field_drupal_org_profile']['label'] = '';
+  $handler->display->display_options['fields']['field_drupal_org_profile']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_drupal_org_profile']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_drupal_org_profile']['type'] = 'midcamp_goodies_drupal_org_link';
+  /* Field: User: Company URL */
+  $handler->display->display_options['fields']['field_company_website']['id'] = 'field_company_website';
+  $handler->display->display_options['fields']['field_company_website']['table'] = 'field_data_field_company_website';
+  $handler->display->display_options['fields']['field_company_website']['field'] = 'field_company_website';
+  $handler->display->display_options['fields']['field_company_website']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['field_company_website']['label'] = '';
+  $handler->display->display_options['fields']['field_company_website']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_company_website']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_company_website']['click_sort_column'] = 'url';
+  /* Field: User: Organization */
+  $handler->display->display_options['fields']['field_organization']['id'] = 'field_organization';
+  $handler->display->display_options['fields']['field_organization']['table'] = 'field_data_field_organization';
+  $handler->display->display_options['fields']['field_organization']['field'] = 'field_organization';
+  $handler->display->display_options['fields']['field_organization']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['field_organization']['label'] = '';
+  $handler->display->display_options['fields']['field_organization']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_organization']['alter']['path'] = '[field_company_website]';
+  $handler->display->display_options['fields']['field_organization']['element_label_colon'] = FALSE;
+  /* Sort criterion: Global: Random seed */
+  $handler->display->display_options['sorts']['random_seed']['id'] = 'random_seed';
+  $handler->display->display_options['sorts']['random_seed']['table'] = 'views';
+  $handler->display->display_options['sorts']['random_seed']['field'] = 'random_seed';
+  $handler->display->display_options['sorts']['random_seed']['user_seed_type'] = 'diff_per_user';
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'OR',
+  );
+  /* Filter criterion: Eventbrite Ticket: Ticket Class ID */
+  $handler->display->display_options['filters']['ticket_class_id']['id'] = 'ticket_class_id';
+  $handler->display->display_options['filters']['ticket_class_id']['table'] = 'eventbrite_ticket';
+  $handler->display->display_options['filters']['ticket_class_id']['field'] = 'ticket_class_id';
+  $handler->display->display_options['filters']['ticket_class_id']['value']['value'] = '41713961';
+  $handler->display->display_options['filters']['ticket_class_id']['group'] = 1;
+  /* Filter criterion: Eventbrite Ticket: Ticket Class ID */
+  $handler->display->display_options['filters']['ticket_class_id_1']['id'] = 'ticket_class_id_1';
+  $handler->display->display_options['filters']['ticket_class_id_1']['table'] = 'eventbrite_ticket';
+  $handler->display->display_options['filters']['ticket_class_id_1']['field'] = 'ticket_class_id';
+  $handler->display->display_options['filters']['ticket_class_id_1']['value']['value'] = '44371889';
+  $handler->display->display_options['filters']['ticket_class_id_1']['group'] = 1;
+  /* Filter criterion: Eventbrite Ticket: Ticket Class ID */
+  $handler->display->display_options['filters']['ticket_class_id_2']['id'] = 'ticket_class_id_2';
+  $handler->display->display_options['filters']['ticket_class_id_2']['table'] = 'eventbrite_ticket';
+  $handler->display->display_options['filters']['ticket_class_id_2']['field'] = 'ticket_class_id';
+  $handler->display->display_options['filters']['ticket_class_id_2']['value']['value'] = '41713962';
+  /* Filter criterion: Eventbrite Ticket: Ticket Class ID */
+  $handler->display->display_options['filters']['ticket_class_id_3']['id'] = 'ticket_class_id_3';
+  $handler->display->display_options['filters']['ticket_class_id_3']['table'] = 'eventbrite_ticket';
+  $handler->display->display_options['filters']['ticket_class_id_3']['field'] = 'ticket_class_id';
+  $handler->display->display_options['filters']['ticket_class_id_3']['value']['value'] = '41713970';
+  /* Filter criterion: Eventbrite Ticket: Ticket Class ID */
+  $handler->display->display_options['filters']['ticket_class_id_4']['id'] = 'ticket_class_id_4';
+  $handler->display->display_options['filters']['ticket_class_id_4']['table'] = 'eventbrite_ticket';
+  $handler->display->display_options['filters']['ticket_class_id_4']['field'] = 'ticket_class_id';
+  $handler->display->display_options['filters']['ticket_class_id_4']['value']['value'] = '44372156';
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'attendees';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Attendees';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+  $export['attendees'] = $view;
 
   $view = new view();
   $view->name = 'front_news';

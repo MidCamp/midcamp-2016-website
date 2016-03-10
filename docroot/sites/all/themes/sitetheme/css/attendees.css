@@ -1,0 +1,145 @@
+.view-id-attendees .view-content:before, .view-id-attendees .view-content:after,
+.view-id-attendees .view-footer:before,
+.view-id-attendees .view-footer:after {
+  content: "";
+  display: table;
+}
+.view-id-attendees .view-content:after,
+.view-id-attendees .view-footer:after {
+  clear: both;
+}
+.view-id-individual_sponsors .profile,
+.view-id-attendees .profile {
+  position: relative;
+}
+@media (min-width: 601px) {
+  .view-id-individual_sponsors .profile,
+  .view-id-attendees .profile {
+    height: 425px;
+    overflow: hidden;
+  }
+}
+@media (min-width: 601px) {
+  .view-id-individual_sponsors.view-display-id-panel_pane__individual_sponsors .profile,
+  .view-id-attendees.view-display-id-panel_pane__individual_sponsors .profile {
+    height: auto;
+  }
+}
+.view-id-individual_sponsors h2, .view-id-attendees h2, .view-id-attendees #commerce-checkout-form-checkout .fieldset-legend, #commerce-checkout-form-checkout .view-id-attendees .fieldset-legend {
+  margin-bottom: 8px;
+}
+.view-id-individual_sponsors h3, .view-id-attendees h3 {
+  color: #18545E;
+  font-family: "Raleway", sans-serif;
+  font-weight: 800;
+  border: 0;
+  margin-bottom: 0;
+}
+.view-id-attendees .views-field-field-image {
+  text-align: center;
+  max-height: 300px;
+  overflow: hidden;
+}
+.view-id-attendees .views-field-field-image img {
+  display: inline-block;
+  height: auto;
+  min-width: 100%;
+  width: auto;
+}
+.view-id-attendees .views-field-field-organization {
+  color: #5F5F5F;
+  margin-bottom: 12px;
+  font-weight: 800;
+}
+@media (min-width: 601px) {
+  .view-id-attendees .views-field-field-organization {
+    height: 3em;
+    overflow: hidden;
+  }
+}
+@media (min-width: 601px) {
+  .view-id-individual_sponsors .views-field-view-user,
+  .view-id-attendees .views-field-view-user {
+    position: absolute;
+    top: 425px;
+  }
+}
+
+.view-id-attendees.view-display-id-page .view-content table {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.view-id-attendees.view-display-id-page .view-content td {
+  background: #DDDDDD;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  display: block;
+  padding: 1em;
+  margin: 1em;
+  max-width: 100%;
+}
+
+.view-id-attendees.view-display-id-page .view-content td img {
+  width: 100%;
+}
+
+@media all and (min-width: 768px) {
+  .view-id-attendees.view-display-id-page .view-content table {
+    border-collapse: separate;
+    border-spacing: 1em;
+    max-width: none;
+  }
+
+  .view-id-attendees.view-display-id-page .view-content td {
+    display: table-cell;
+    width: 33.333%;
+  }
+}
+@media (min-width: 601px) {
+  .view-id-attendees .views-row-1 {
+    float: left;
+    width: 18%;
+    margin-left: 0%;
+    margin-right: -18%;
+  }
+
+  .view-id-attendees .views-row-2 {
+    float: left;
+    width: 18%;
+    margin-left: 20%;
+    margin-right: -38%;
+  }
+
+  .view-id-attendees .views-row-3 {
+    float: left;
+    width: 18%;
+    margin-left: 40%;
+    margin-right: -58%;
+  }
+
+  .view-id-attendees .views-row-4 {
+    float: left;
+    width: 18%;
+    margin-left: 60%;
+    margin-right: -78%;
+  }
+
+  .view-id-attendees .views-row-5 {
+    float: left;
+    width: 18%;
+    margin-left: 80%;
+    margin-right: -98%;
+  }
+
+  .view-id-attendees .view-content:before, .view-id-attendees .view-content:after, .view-id-attendees .view-footer:before, .view-id-attendees .view-footer:after {
+    content: "";
+    display: table;
+  }
+
+  .view-id-attendees .view-content:after, .view-id-attendees .view-footer:after {
+    clear: both;
+  }
+}
