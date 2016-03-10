@@ -16,6 +16,7 @@ class EventbriteContext extends DrupalSubContextBase implements DrupalSubContext
   /**
    * Truncates eventbrite_tickets.
    *
+   * @BeforeScenario @eventbrite
    * @AfterScenario @eventbrite
    */
   public function truncateEventbriteTickets() {
