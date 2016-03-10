@@ -20,6 +20,7 @@ features[views_view][] = admin_views_taxonomy_term
 features[views_view][] = admin_views_user
 features[views_view][] = archive
 features[views_view][] = attendee_user_profiles
+features[views_view][] = attendees
 features[views_view][] = front_news
 features[views_view][] = frontpage
 features[views_view][] = glossary
