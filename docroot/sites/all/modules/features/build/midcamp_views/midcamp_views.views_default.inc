@@ -3852,6 +3852,7 @@ function midcamp_views_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Session Assignment';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -3859,8 +3860,7 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['row_plugin'] = 'entity';
-  $handler->display->display_options['row_options']['view_mode'] = 'teaser';
+  $handler->display->display_options['row_plugin'] = 'fields';
   /* Relationship: Entity Reference: Referenced Entity */
   $handler->display->display_options['relationships']['field_sessions_target_id']['id'] = 'field_sessions_target_id';
   $handler->display->display_options['relationships']['field_sessions_target_id']['table'] = 'field_data_field_sessions';
@@ -3870,15 +3870,17 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['fields']['field_room']['id'] = 'field_room';
   $handler->display->display_options['fields']['field_room']['table'] = 'field_data_field_room';
   $handler->display->display_options['fields']['field_room']['field'] = 'field_room';
-  $handler->display->display_options['fields']['field_room']['type'] = 'entityreference_entity_view';
+  $handler->display->display_options['fields']['field_room']['label'] = '';
+  $handler->display->display_options['fields']['field_room']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_room']['settings'] = array(
-    'view_mode' => 'teaser',
-    'links' => 0,
+    'link' => 0,
   );
   /* Field: SCAMP: Timeslot */
   $handler->display->display_options['fields']['field_timeslot']['id'] = 'field_timeslot';
   $handler->display->display_options['fields']['field_timeslot']['table'] = 'field_data_field_timeslot';
   $handler->display->display_options['fields']['field_timeslot']['field'] = 'field_timeslot';
+  $handler->display->display_options['fields']['field_timeslot']['label'] = '';
+  $handler->display->display_options['fields']['field_timeslot']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_timeslot']['settings'] = array(
     'link' => 0,
   );
@@ -3912,6 +3914,15 @@ function midcamp_views_views_default_views() {
 
   /* Display: Content pane */
   $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_session_assignment');
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
   $handler->display->display_options['argument_input'] = array(
     'nid' => array(
       'type' => 'user',
