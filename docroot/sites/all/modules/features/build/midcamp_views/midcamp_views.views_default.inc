@@ -917,6 +917,7 @@ function midcamp_views_views_default_views() {
   $handler = $view->new_display('page', 'All Users Page', 'page');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'MidCamp Attendees';
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['access']['perm'] = 'administer users';
@@ -6711,20 +6712,24 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '50';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
-    'rid' => 'rid',
+    'ticket_id' => 'ticket_id',
     'attendee_id' => 'attendee_id',
-    'mail' => 'mail',
+    'email' => 'email',
     'order_id' => 'order_id',
     'created' => 'created',
     'ticket_class_id' => 'ticket_class_id',
     'changed' => 'changed',
     'uid' => 'uid',
   );
-  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['default'] = 'changed';
   $handler->display->display_options['style_options']['info'] = array(
-    'rid' => array(
+    'ticket_id' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
@@ -6732,55 +6737,56 @@ function midcamp_views_views_default_views() {
       'empty_column' => 0,
     ),
     'attendee_id' => array(
-      'sortable' => 0,
+      'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
-    'mail' => array(
-      'sortable' => 0,
+    'email' => array(
+      'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
     'order_id' => array(
-      'sortable' => 0,
+      'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
     'created' => array(
-      'sortable' => 0,
+      'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
     'ticket_class_id' => array(
-      'sortable' => 0,
+      'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
     'changed' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
+      'sortable' => 1,
+      'default_sort_order' => 'desc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
     'uid' => array(
-      'sortable' => 0,
+      'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
   );
+  $handler->display->display_options['style_options']['sticky'] = TRUE;
   /* Field: Eventbrite Ticket: Ticket ID */
   $handler->display->display_options['fields']['ticket_id']['id'] = 'ticket_id';
   $handler->display->display_options['fields']['ticket_id']['table'] = 'eventbrite_ticket';
@@ -6926,19 +6932,11 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['footer']['area']['field'] = 'area';
   $handler->display->display_options['footer']['area']['label'] = 'Hack: Hide session-specific info for non-sessions';
   $handler->display->display_options['footer']['area']['content'] = '<style>
-.node-179 .field-name-field-speakers,
-.node-179 .field-name-field-track,
-.node-180 .field-name-field-audience,
-.node-180 .field-name-field-speakers,
-.node-180 .field-name-field-track,
-.node-179 .field-name-field-audience,
-.node-171 .field-name-field-speakers,
-.node-171 .field-name-field-track,
-.node-171 .field-name-field-audience,
-.node-172 .field-name-field-speakers,
-.node-172 .field-name-field-track,
-.node-172 .field-name-field-audience {
+.node-162 .scamp-session-room {
 display: none; visibility: hidden;
+}
+.node-162 h3 {
+margin-bottom: 0;
 }
 </style>';
   $handler->display->display_options['footer']['area']['format'] = 'full_html';
