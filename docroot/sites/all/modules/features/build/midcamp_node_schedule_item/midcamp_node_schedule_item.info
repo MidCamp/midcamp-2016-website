@@ -1,6 +1,7 @@
 name = MidCamp Schedule Item
 core = 7.x
 package = Content
+dependencies[] = features
 dependencies[] = field_group
 dependencies[] = midcamp_fields
 dependencies[] = midcamp_seo

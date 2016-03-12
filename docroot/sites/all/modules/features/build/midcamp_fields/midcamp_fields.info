@@ -3,6 +3,7 @@ core = 7.x
 package = Configuration
 dependencies[] = date
 dependencies[] = entityreference
+dependencies[] = features
 dependencies[] = field_permissions
 dependencies[] = file
 dependencies[] = image

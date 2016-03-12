@@ -82,6 +82,7 @@ function midcamp_users_user_default_permissions() {
     'name' => 'access content overview',
     'roles' => array(
       'Administrator' => 'Administrator',
+      'Content Editor' => 'Content Editor',
     ),
     'module' => 'node',
   );
