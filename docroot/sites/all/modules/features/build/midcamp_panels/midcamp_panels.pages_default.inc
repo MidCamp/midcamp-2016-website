@@ -746,6 +746,32 @@ function midcamp_panels_default_page_manager_handlers() {
     $pane->uuid = 'd4fcca1d-fcc1-4ec8-a595-f27fd8b4d909';
     $display->content['new-d4fcca1d-fcc1-4ec8-a595-f27fd8b4d909'] = $pane;
     $display->panels['center'][5] = 'new-d4fcca1d-fcc1-4ec8-a595-f27fd8b4d909';
+    $pane = new stdClass();
+    $pane->pid = 'new-d27b5703-4164-4da0-b85a-0f25fd7356c4';
+    $pane->panel = 'center';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'session_assignment-panel_pane_session_assignment';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'arguments' => array(
+        'nid' => '%node:nid',
+      ),
+      'override_title' => 0,
+      'override_title_text' => 'Timeslot',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 6;
+    $pane->locks = array();
+    $pane->uuid = 'd27b5703-4164-4da0-b85a-0f25fd7356c4';
+    $display->content['new-d27b5703-4164-4da0-b85a-0f25fd7356c4'] = $pane;
+    $display->panels['center'][6] = 'new-d27b5703-4164-4da0-b85a-0f25fd7356c4';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
