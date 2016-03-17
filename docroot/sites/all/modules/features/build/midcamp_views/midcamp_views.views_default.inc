@@ -6419,7 +6419,7 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_image']['settings'] = array(
-    'image_style' => 'sponsor_bronze',
+    'image_style' => 'sponsor_gold',
     'image_link' => 'content',
   );
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
@@ -6465,8 +6465,8 @@ function midcamp_views_views_default_views() {
     ),
   );
 
-  /* Display: Other Sponsors pane */
-  $handler = $view->new_display('panel_pane', 'Other Sponsors pane', 'panel_pane_platinum_sponsor');
+  /* Display: Platinum Sponsors pane */
+  $handler = $view->new_display('panel_pane', 'Platinum Sponsors pane', 'panel_pane_platinum_sponsor');
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Field: Logo */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
