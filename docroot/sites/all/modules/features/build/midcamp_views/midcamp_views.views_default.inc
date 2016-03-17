@@ -1234,7 +1234,7 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['use_more_text'] = 'All attendees';
   $handler->display->display_options['defaults']['link_display'] = FALSE;
   $handler->display->display_options['link_display'] = 'page';
-  $handler->display->display_options['link_url'] = 'community';
+  $handler->display->display_options['link_url'] = 'attendees';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'mini';
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
@@ -1256,7 +1256,7 @@ function midcamp_views_views_default_views() {
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
   $handler->display->display_options['footer']['area']['content'] = '<div class="more-link">
-  <a href="/community">
+  <a href="/attendees">
     All users  </a>
 </div>';
   $handler->display->display_options['footer']['area']['format'] = 'full_html';
@@ -1946,7 +1946,7 @@ function midcamp_views_views_default_views() {
   $view->human_name = 'Front Page News';
   $view->core = 7;
   $view->api_version = '3.0';
-  $view->disabled = TRUE; /* Edit this to true to make a default view disabled initially */
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');

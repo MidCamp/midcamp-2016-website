@@ -2,7 +2,6 @@ name = MidCamp Sponsor
 core = 7.x
 package = Content
 dependencies[] = entityreference
-dependencies[] = features
 dependencies[] = image
 dependencies[] = list
 dependencies[] = midcamp_fields
