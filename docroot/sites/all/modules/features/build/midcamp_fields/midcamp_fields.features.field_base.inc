@@ -1228,7 +1228,7 @@ Prof.',
     'entity_types' => array(),
     'field_name' => 'field_slides',
     'field_permissions' => array(
-      'type' => 2,
+      'type' => 0,
     ),
     'indexes' => array(
       'fid' => array(
@@ -1255,7 +1255,7 @@ Prof.',
     'entity_types' => array(),
     'field_name' => 'field_slides_url',
     'field_permissions' => array(
-      'type' => 2,
+      'type' => 0,
     ),
     'indexes' => array(),
     'locked' => 0,

@@ -1,7 +1,6 @@
 name = MidCamp Orders
 core = 7.x
 package = Profiles
-dependencies[] = features
 dependencies[] = field_group
 dependencies[] = link
 dependencies[] = list

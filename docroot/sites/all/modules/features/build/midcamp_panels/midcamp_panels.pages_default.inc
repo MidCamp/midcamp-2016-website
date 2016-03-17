@@ -3726,6 +3726,69 @@ function midcamp_panels_default_page_manager_pages() {
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_schedule__panel_context_a6e0ae99-4672-4442-96aa-7d3f09f1367c';
+  $handler->task = 'page';
+  $handler->subtask = 'schedule';
+  $handler->handler = 'panel_context';
+  $handler->weight = -12;
+  $handler->conf = array(
+    'title' => 'Default',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'name' => '',
+  );
+  $display = new panels_display();
+  $display->layout = 'onecol';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'middle' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = 'Schedule';
+  $display->uuid = '7c2e3ca5-3664-4bed-8c37-bccb87569cd3';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-7469a358-da32-45c0-b256-23ab56c2bb80';
+    $pane->panel = 'middle';
+    $pane->type = 'custom';
+    $pane->subtype = 'schedule_overview';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => '',
+      'title' => '',
+      'body' => '',
+      'format' => 'full_html',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '7469a358-da32-45c0-b256-23ab56c2bb80';
+    $display->content['new-7469a358-da32-45c0-b256-23ab56c2bb80'] = $pane;
+    $display->panels['middle'][0] = 'new-7469a358-da32-45c0-b256-23ab56c2bb80';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
   $pages['schedule'] = $page;
 
   $page = new stdClass();
