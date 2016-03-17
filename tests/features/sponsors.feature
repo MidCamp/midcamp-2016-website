@@ -39,14 +39,14 @@ Feature: Coverage for sponsor treatment
     #Verify sponsor logo and image style by looking in the logo src attribute value.
     And the "src" attribute in the ".pane-sponsors-panel-pane-<level>-sponsor img[alt='<img alt>']" element contains "<style>"
     Examples:
-      | level heading         | level    | img alt                      | style          |
-      | Platinum sponsors     | platinum | Platinum sponsor             | sponsor_gold   |
-      | Gold sponsors         | gold     | Gold sponsor                 | sponsor_gold   |
-      | Silver sponsors       | silver   | Silver sponsor               | sponsor_silver |
-      | Program sponsors      | program  | Program sponsor              | sponsor_silver |
-      | Bronze sponsors       | bronze   | Bronze sponsor               | sponsor_bronze |
-      | Sprint day sponsors   | sprint   | Sprint day sponsor           | sponsor_bronze |
-      | Other valued sponsors | other    | Other Valued Sponsor sponsor | sponsor_bronze |
+      | level heading       | level    | img alt                      | style          |
+      | Platinum sponsors   | platinum | Platinum sponsor             | sponsor_gold   |
+      | Gold sponsors       | gold     | Gold sponsor                 | sponsor_gold   |
+      | Silver sponsors     | silver   | Silver sponsor               | sponsor_silver |
+      | Program sponsors    | program  | Program sponsor              | sponsor_silver |
+      | Bronze sponsors     | bronze   | Bronze sponsor               | sponsor_bronze |
+      | Sprint day sponsors | sprint   | Sprint day sponsor           | sponsor_bronze |
+      | On-site sponsors    | other    | Other Valued Sponsor sponsor | sponsor_gold   |
 
   @midcamp-275
   Scenario: The post new job exists only for sponsor members
