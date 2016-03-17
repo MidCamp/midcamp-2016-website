@@ -100,7 +100,63 @@ function midcamp_panels_default_ctools_custom_content() {
   $content->settings = array(
     'admin_title' => '',
     'title' => 'Schedule',
-    'body' => '<h2>THURSDAY, MARCH 17, 2016&mdash;TRAINING (AND SPRINTING)</h2><h3>Training Sessions</h3><p>MidCamp will offer professional full day training to anyone interested in gaining additional hands-on knowledge on a variety of hot Drupal topics by world-class Drupal trainers.</p><p>Trainings are not included in the cost of a MidCamp registration. <a href="/buy-tickets-now">Trainings for tickets are on sale now</a>!&nbsp;We recommend registering in advance as trainings tend to sell out.&nbsp;</p><p>Registration 8 am. Trainings 9 am - 5 pm. See <a href="https://2016.midcamp.org/venue-in-depth">Venue in depth</a> for more info about COMRB.</p><p>Trainings this year:&nbsp;</p><p dir="ltr"><strong>Introduction to Drupal 8<br />Level: Beginner<br />Thursday 9 am - 5 pm</strong></p><p dir="ltr">Whether you&#39;re a developer using Drupal for the first time, a content editor looking for an introduction to Drupal content administration, or a site builder wanting to know how to structure a Drupal website, this course will get you started on the right foot. The curriculum includes presentations, demonstrations, and lots of hands-on exercises.</p><p dir="ltr"><strong>Drupal Development Best Practices &amp; Building Sites on Pantheon<br />Level: Intermediate<br />Thursday 9 am - 5 pm</strong></p><p dir="ltr">Level up your Drupal development game and learn about version control, high-performance tools, tips, tricks and more. This session will feature Pantheon Agency and Community Engineer Steve Persch walking attendees through using the&nbsp;<a href="https://pantheon.io/">Pantheon</a> Drupal development platform to develop a Drupal site. Bring your laptop since this session will be hands on!</p><p dir="ltr"><strong>Drupal 8 Migration<br />Level: Intermediate<br />Thursday 9 am - 5 pm</strong></p><p dir="ltr">The upgrade path between major versions of Drupal is now more flexible and extensible than ever as the result of refactoring, expanding, and porting the Migrate and Drupal-to-Drupal Data Migration modules into Drupal 8 core.<br /><br />In this session we will walk you through the process of migrating using the UI, explaining how you can override the configuration, and more.</p><h3>Sprints</h3><p>Sprint location on&nbsp;Thursday COMRB.&nbsp;We will work in groups on issues, and have fun doing it. Please make sure you have a ticket for the sprint (so we can estimate food).</p><p>We also have a big official sprint day on Sunday.</p><h2>FRIDAY, MARCH 18, 2016&mdash;SESSIONS</h2><p>All sessions of Friday&nbsp;are included in price of your MidCamp registration, as well as lunch and afternoon coffee &amp; snacks.&nbsp;</p><p>BoFs will be happening all day in the main ballroom.</p><p>Registration 8 am. Sessions 9 am - 5:30 pm. See <a href="https://2016.midcamp.org/venue-in-depth">Venue in depth</a> for more info about Student Center West (SCW).</p><p>Game night social 5:30 pm - 8:30 pm in <strong>College of Medicine Research Building COMRB 8175 (8th floor)</strong>. See <a href="https://2016.midcamp.org/venue-in-depth">Venue in depth</a> for more info about COMRB. Please make sure you have a ticket for the social (so we can estimate food).&nbsp;<em>Camp admission required for social tickets</em>.</p><h2>SATURDAY, MARCH 19, 2016&mdash;SESSIONS</h2><p>All sessions of Saturday are included in price of your MidCamp registration, as well as lunch and afternoon coffee &amp; snacks.&nbsp;</p><p>BoFs will be happening all day in the main ballroom.</p><p>Registration 8 am. Sessions 9 am - 5:30 pm. See <a href="https://2016.midcamp.org/venue-in-depth">Venue in depth</a> for more info about Student Center West (SCW).</p><p>Social 5:30 pm - 8:30 pm at <strong>Vintage Lounge</strong> <a href="https://www.google.com/maps/dir/student+center+west/1449+West+Taylor+Street,+Chicago,+IL/@41.8703953,-87.6738761,16z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x880e2d139ec194ed:0x4d92b7be94419912!2m2!1d-87.6755026!2d41.8705275!1m5!1m1!1s0x880e2d1b85a91cf1:0x28d39aec7438126f!2m2!1d-87.6634948!2d41.8691598!3e2">1449 West Taylor</a>. Please make sure you have a social ticket (so we can estimate food). <em>Camp admission required for social tickets</em>. Food will be: portobello mushroom sliders, beef sliders, pulled pork sliders, chicken quesadillas, veggie quesadillas, sausage pizza, veggie pizza, chicken tenders, wings, mac &amp; cheese triangles.</p><h2>SUNDAY, MARCH 20, 2016&mdash;SPRINT</h2><p>A sprint is a get-together for focused work on a project. Sprints are an important part of Drupal&#39;s growth, and are also a great opportunity to get involved, because others are on hand to help you contribute. Contributors of all skill sets and levels are welcome and encouraged. We will have a first-time sprinter workshop to help new contributors get started and work efficiently.</p><p>Sprint 10 am - 5 pm <strong>College of Medicine Research Building&nbsp;COMRB 3175</strong>. See <a href="https://2016.midcamp.org/venue-in-depth">Venue in depth</a> for more info about COMRB. Please make sure you have a ticket for the sprint (so we can estimate food).</p>',
+    'body' => '<h2>THURSDAY, MARCH 17, 2016&mdash;TRAINING (AND SPRINTING)</h2>
+<h3>Training Sessions</h3>
+<p>MidCamp will offer professional full day training to anyone interested in gaining additional hands-on knowledge on a variety of hot Drupal topics by world-class Drupal trainers.</p>
+<p>Trainings are not included in the cost of a MidCamp registration.
+  <a href="/buy-tickets-now">Trainings for tickets are on sale now</a>!&nbsp;We recommend registering in advance as trainings tend to sell out. Lunch will be served and afternoon coffee and snacks will be available.&nbsp;</p>
+<p>Registration 8 am. Trainings 9 am - 5 pm. See
+  <a href="https://2016.midcamp.org/venue-in-depth#comrb">Venue in depth</a>
+  for more info about COMRB.</p>
+<p>Trainings this year:&nbsp;</p>
+<p dir="ltr">
+  <strong>Introduction to Drupal 8<br/>Level: Beginner<br/>Thursday 9 am - 5 pm</strong>
+</p>
+<p dir="ltr">Whether you&#39;re a developer using Drupal for the first time, a content editor looking for an introduction to Drupal content administration, or a site builder wanting to know how to structure a Drupal website, this course will get you
+  started on the right foot. The curriculum includes presentations, demonstrations, and lots of hands-on exercises.</p>
+<p dir="ltr">
+  <strong>Drupal Development Best Practices &amp; Building Sites on Pantheon<br/>Level: Intermediate<br/>Thursday 9 am - 5 pm</strong>
+</p>
+<p dir="ltr">Level up your Drupal development game and learn about version control, high-performance tools, tips, tricks and more. This session will feature Pantheon Agency and Community Engineer Steve Persch walking attendees through using the&nbsp;<a href="https://pantheon.io/">Pantheon</a>
+  Drupal development platform to develop a Drupal site. Bring your laptop since this session will be hands on!</p>
+<p dir="ltr">
+  <strong>Drupal 8 Migration<br/>Level: Intermediate<br/>Thursday 9 am - 5 pm</strong>
+</p>
+<p dir="ltr">The upgrade path between major versions of Drupal is now more flexible and extensible than ever as the result of refactoring, expanding, and porting the Migrate and Drupal-to-Drupal Data Migration modules into Drupal 8 core.<br/><br/>In this session we will walk you through the process of migrating using the UI, explaining how you can override the configuration, and more.</p>
+<h3>Sprints</h3>
+<p>Sprint location on&nbsp;Thursday COMRB.&nbsp;We will work in groups on issues, and have fun doing it. Please make sure you have a ticket for the sprint (so we can estimate food).</p>
+<p>We also have a big official sprint day on Sunday.</p>
+<h2>FRIDAY, MARCH 18, 2016&mdash;SESSIONS</h2>
+<p>All sessions of Friday&nbsp;are included in price of your MidCamp registration, as well as lunch and afternoon coffee &amp; snacks.&nbsp;</p>
+<p>BoFs will be happening all day in the main ballroom.</p>
+<p>Registration 8 am. Sessions 9 am - 5:30 pm. See
+  <a href="https://2016.midcamp.org/venue-in-depth#scw">Venue in depth</a>
+  for more info about Student Center West (SCW).</p>
+<p>Board Game night social 5:30 pm - 8:30 pm in
+  <strong>College of Medicine Research Building COMRB 8175 (8th floor)</strong>. See
+  <a href="https://2016.midcamp.org/venue-in-depth#comrb">Venue in depth</a>
+  for more info about COMRB. Please make sure you have a ticket for the social (so we can estimate food). Tacos from
+  <a href="http://jarabechicago.com/">Jarabe</a>
+  will be served as a game-time snack.&nbsp;<em>Camp admission required for social tickets</em>.</p>
+<h2>SATURDAY, MARCH 19, 2016&mdash;SESSIONS</h2>
+<p>All sessions of Saturday are included in price of your MidCamp registration, as well as lunch and afternoon coffee &amp; snacks.&nbsp;</p>
+<p>BoFs will be happening all day in the main ballroom.</p>
+<p>Registration 8 am. Sessions 9 am - 5:30 pm. See
+  <a href="https://2016.midcamp.org/venue-in-depth#scw">Venue in depth</a>
+  for more info about Student Center West (SCW).</p>
+<p>Social 5:30 pm - 8:30 pm at
+  <strong>Vintage Lounge</strong>
+  <a
+    href="https://www.google.com/maps/dir/student+center+west/1449+West+Taylor+Street,+Chicago,+IL/@41.8703953,-87.6738761,16z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x880e2d139ec194ed:0x4d92b7be94419912!2m2!1d-87.6755026!2d41.8705275!1m5!1m1!1s0x880e2d1b85a91cf1:0x28d39aec7438126f!2m2!1d-87.6634948!2d41.8691598!3e2">1449 West Taylor</a>. Please make sure you have a social ticket (so we can estimate food).
+  <em>Camp admission required for social tickets</em>. Food will be: portobello mushroom sliders, beef sliders, pulled pork sliders, chicken quesadillas, veggie quesadillas, sausage pizza, veggie pizza, chicken tenders, wings, mac &amp; cheese triangles.</p>
+<h2>SUNDAY, MARCH 20, 2016&mdash;SPRINT</h2>
+<p>A sprint is a get-together for focused work on a project. Sprints are an important part of Drupal&#39;s growth, and are also a great opportunity to get involved, because others are on hand to help you contribute. Contributors of all skill sets and
+  levels are welcome and encouraged. We will have a first-time sprinter workshop to help new contributors get started and work efficiently.</p>
+<p>Sprint 10 am - 5 pm
+  <strong>College of Medicine Research Building&nbsp;COMRB 3175</strong>. See
+  <a href="https://2016.midcamp.org/venue-in-depth#comrb">Venue in depth</a>
+  for more info about COMRB. Please make sure you have a ticket for the sprint (so we can estimate food). Lunch will be served.</p>
+',
     'format' => 'full_html',
     'substitute' => 1,
   );
